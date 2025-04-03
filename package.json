@@ -1,0 +1,27 @@
+{
+  "name": "lk_html",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.1",
+    "chokidar": "^4.0.3",
+    "jquery": "^3.7.1",
+    "js-yaml": "^4.1.0",
+    "lazysizes": "^5.3.2",
+    "packery": "^3.0.0",
+    "pug": "^3.0.3",
+    "swiper": "^11.2.6",
+    "tailwindcss": "^4.1.1",
+    "vite-plugin-pug": "^0.4.1",
+    "vite-plugin-static-copy": "^2.3.0"
+  }
+}
