@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import chokidar from 'chokidar';
 import {viteStaticCopy} from 'vite-plugin-static-copy';
-import tailwindcss from '@tailwindcss/vite'
+// import tailwindcss from '@tailwindcss/vite'
 
 const pugOptions = { pretty: true } // FIXME: pug pretty is deprecated!
 
@@ -30,6 +30,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: path.resolve(__dirname, './src/index.html'),
+                login: path.resolve(__dirname, './src/login.html'),
             },
             output: {
                 entryFileNames: '[name].js', // Имена файлов без хэша для JS
@@ -46,7 +47,7 @@ export default defineConfig({
     },
     base: '',
     plugins: [
-		tailwindcss(),
+		// tailwindcss(),
         pugPlugin(pugOptions, currentLocals),
         {
             name: 'watch-yaml',

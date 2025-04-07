@@ -1,0 +1,40 @@
+.form-control {
+    @apply w-full ring-2 ring-slate-100 rounded-xl p-4 text-blue-900 font-medium leading-6 tracking-[0.32px] placeholder-slate-400;
+    @apply transition-all;
+
+    &:hover, &:active, &:focus {
+        @apply outline-none ring-3 ring-indigo-100 shadow-form-control-active;
+    }
+}
+
+.form-control[disabled] {
+    @apply bg-slate-50 ring-slate-50 cursor-not-allowed;
+
+    &:hover, &:active, &:focus {
+        @apply shadow-none ring-2;
+    }
+}
+
+.form-group {
+    @apply space-y-2;
+
+    .hint {
+        @apply text-slate-400 text-sm font-medium leading-4 tracking-[0.28px] text-left;
+    }
+
+    .error {
+        @apply text-rose-500 text-sm font-medium leading-4 tracking-[0.28px] text-left;
+    }
+}
+
+.form-group.error .form-control {
+    @apply ring-2 ring-rose-500;
+
+    &:hover, &:active, &:focus {
+        @apply ring-orange-600 shadow-none;
+
+        & + .error {
+            @apply text-orange-600;
+        }
+    }
+}

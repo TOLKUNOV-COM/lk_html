@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/img/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ЛК TOLKUNOV</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body class="bg-blue-500 p-4">
+
+<div class="flex min-h-[calc(100vh-2rem)] justify-end">
+    <!-- Правая половина с формой -->
+    <div class="w-[692px] bg-white p-8 min-h-full rounded-3xl shadow-login flex flex-col items-center">
+
+        <!-- Верхний блок (растягивается) -->
+        <div class="flex-1 min-h-9 flex justify-center items-start">
+            <div class="flex items-center gap-2 mx-auto">
+                <span class="icon-logo w-[34px] h-[34px]"></span>
+                <span class="icon-projects w-[114px] h-[30px]"></span>
+            </div>
+        </div>
+
+        <!-- Средний блок (высота по контенту) -->
+        <div class="py-8 text-center max-w-[384px]">
+            <div class="text-[32px] leading-tight text-blue-900 font-serif font-bold mb-3">Личный кабинет</div>
+            <div class="text-lg leading-6 font-medium tracking-[0.18px] text-slate-500">Введите логин и пароль, чтобы войти в&nbsp;личный кабинет</div>
+
+            <form class="">
+                <div class="space-y-5 my-8">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder="Логин" class="form-control">
+
+                        <div class="hint">Helper text</div>
+                    </div>
+
+                    <div class="form-group error">
+                        <input type="email" id="email" name="email" required placeholder="Логин" class="form-control">
+
+                        <div class="error">Неверный пароль</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required disabled placeholder="Логин" class="form-control">
+
+                        <div class="hint">Helper text</div>
+                    </div>
+
+                    <!-- Password with toggle -->
+                    <div>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" required placeholder="Пароль" class="form-control">
+                            <!-- Глазик -->
+                            <button type="button" onclick="togglePassword()"
+                                    class="absolute inset-y-0 right-4 flex items-center text-gray-500 hover:text-gray-700 outline-none cursor-pointer">
+
+                                <!-- @formatter:off -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 22" fill="none">
+                                    <path d="M13.6154 17.8809C12.7747 18.0988 11.9029 18.2026 11 18.2026C7.60625 18.2026 4.56538 16.6147 2.4897 14.1032C1.03672 12.3492 1.03672 9.64045 2.4897 7.89687C2.65575 7.6893 2.84256 7.49211 3.02937 7.29492" stroke="#ABB1C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.5104 14.1031C18.6802 15.0994 17.6942 15.9504 16.6045 16.6147L5.38541 5.38521C7.03557 4.36813 8.9452 3.79732 11.0001 3.79732C14.3939 3.79732 17.4347 5.38522 19.5104 7.89679C20.9634 9.64037 20.9634 12.3595 19.5104 14.1031Z" stroke="#ABB1C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14.1965 10.9999C14.1965 11.8821 13.8332 12.6812 13.2624 13.2624L8.73743 8.73742C9.30824 8.15623 10.1178 7.80336 10.9999 7.80336C12.7746 7.80336 14.1965 9.22521 14.1965 10.9999Z" stroke="#ABB1C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1.39996 1.39996L5.38527 5.38527L8.7375 8.7375L13.2625 13.2625L16.6147 16.6147L20.6 20.6" stroke="#ABB1C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <!-- @formatter:on -->
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-blue-600 text-white py-4 px-6 rounded-full cursor-pointer text-lg font-bold leading-6 tracking-[0.18px] hover:bg-blue-700 active:bg-blue-800 transition">
+                    Войти
+                </button>
+            </form>
+
+            <div class="flex items-center my-7">
+                <div class="flex-grow h-px bg-zinc-100"></div>
+                <span class="mx-[10px] text-lg font-medium leading-6 tracking-[0.18px] text-slate-400 whitespace-nowrap">Нет логина и пароля?</span>
+                <div class="flex-grow h-px bg-zinc-100"></div>
+            </div>
+
+            <a href="#"
+               class="w-full flex gap-2 justify-center border-2 border-slate-100 bg-white text-blue-900 py-4 px-6 rounded-full cursor-pointer text-lg font-bold leading-6 tracking-[0.18px] hover:border-slate-150 active:border-slate-200 transition">
+                <span>Написать в Телеграм</span>
+                <span class="inline-block w-6 h-6 icon-telegram"></span>
+            </a>
+        </div>
+
+        <!-- Нижний блок (растягивается) -->
+        <div class="flex-1"></div>
+    </div>
+</div>
+
+<pug src="src/templates/includes/sprite.pug"></pug>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>
