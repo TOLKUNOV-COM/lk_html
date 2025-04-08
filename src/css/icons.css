@@ -16,3 +16,23 @@
 .icon-projects {
     background-image: url("../img/projects.svg");
 }
+
+.icon-link-simple {
+    background-image: url("../img/link_simple.svg");
+
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-star-active {
+    background-image: url("../img/star_active.svg");
+
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    filter: drop-shadow(0px 2px 8px rgba(255, 204, 0, 0.5));
+}
+
+.icon-download {
+    background-image: url("../img/download.svg");
+}

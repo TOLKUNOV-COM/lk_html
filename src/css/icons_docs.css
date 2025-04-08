@@ -1,0 +1,28 @@
+.icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.icon-docs-yandex-disk {
+    background-image: url("../img/docs/yandex_disk.svg");
+}
+
+.icon-docs-figma {
+    background-image: url("../img/docs/figma.svg");
+}
+
+.icon-docs-google-sheets {
+    background-image: url("../img/docs/google_sheets.svg");
+}
+
+.icon-docs-google-docs {
+    background-image: url("../img/docs/google_docs.svg");
+}
+
+.icon-docs-link {
+    background-image: url("../img/docs/link.svg");
+    background-size: 20px;
+
+    @apply rounded-xl bg-indigo-50;
+}
