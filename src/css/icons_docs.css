@@ -1,9 +1,3 @@
-.icon {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
 .icon-docs-yandex-disk {
     background-image: url("../img/docs/yandex_disk.svg");
 }

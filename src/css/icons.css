@@ -1,16 +1,16 @@
+.icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
 .icon-telegram {
     background-image: url("../img/telegram.svg");
 }
 
 .icon-logo {
-    /*background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IlR5cGU9SWNvbiI+CjxwYXRoIGlkPSJTdWJ0cmFjdCIgZD0iTTIuNjY0OTcgNy43NTkzMUMwLjgwMDA0OSAxMC45ODk2IDAuODAwMDQ5IDE1LjMyNjUgMC44MDAwNDkgMjQuMDAwMkMwLjgwMDA0OSAzMi42NzM4IDAuODAwMDQ5IDM3LjAxMDcgMi42NjQ5NyA0MC4yNDFDMy44ODY3MSA0Mi4zNTcyIDUuNjQzOTQgNDQuMTE0NSA3Ljc2MDA1IDQ1LjMzNjNDMTAuNTc1NSA0Ni45NjIgMTQuMjMxNiA0Ny4xNzA2IDIwLjg2NzQgNDcuMTk3NFYxNS40MDZIMTQuNzQwNEMxNC43MiAxMy42NDQxIDE0LjcyIDExLjg2MTggMTQuNzIgMTAuMDc5NEgzMi44MTZWMTUuMzg1NUgyNi42ODkxVjQ3LjE5ODlDMzMuNjA2NyA0Ny4xNzkyIDM3LjM2MjQgNDYuOTk3OCA0MC4yNCA0NS4zMzYzQzQyLjM1NjIgNDQuMTE0NSA0NC4xMTM0IDQyLjM1NzIgNDUuMzM1MSA0MC4yNDFDNDcuMiAzNy4wMTA3IDQ3LjIgMzIuNjczOCA0Ny4yIDI0LjAwMDJDNDcuMiAxNS4zMjY1IDQ3LjIgMTAuOTg5NiA0NS4zMzUxIDcuNzU5MzFDNDQuMTEzNCA1LjY0MzEgNDIuMzU2MiAzLjg4NTc3IDQwLjI0IDIuNjYzOTdDMzcuMDA5OSAwLjc5ODk1IDMyLjY3MzMgMC43OTg5NSAyNCAwLjc5ODk1QzE1LjMyNjggMC43OTg5NSAxMC45OTAyIDAuNzk4OTUgNy43NjAwNSAyLjY2Mzk3QzUuNjQzOTQgMy44ODU3NyAzLjg4NjcxIDUuNjQzMSAyLjY2NDk3IDcuNzU5MzFaIiBmaWxsPSIjMjg1NkY2Ii8+CjwvZz4KPC9zdmc+Cg==");*/
-    /*background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzQiIHZpZXdCb3g9IjAgMCAzNSAzNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkxvZ28iPgo8cGF0aCBpZD0iU3VidHJhY3QiIGQ9Ik0yLjg0NzA0IDUuNDk2MThDMS41MjYwNSA3Ljc4NDMyIDEuNTI2MDUgMTAuODU2MiAxLjUyNjA1IDE3LjAwMDFDMS41MjYwNSAyMy4xNDQgMS41MjYwNSAyNi4yMTU5IDIuODQ3MDQgMjguNTA0QzMuNzEyNDQgMzAuMDAzIDQuOTU3MTQgMzEuMjQ3OCA2LjQ1NjA1IDMyLjExMzJDOC40NTAzNiAzMy4yNjQ3IDExLjA0MDEgMzMuNDEyNSAxNS43NDA0IDMzLjQzMTVWMTAuOTEyNkgxMS40MDA1QzExLjM4NjEgOS42NjQ1OCAxMS4zODYxIDguNDAyMDkgMTEuMzg2MSA3LjEzOTU5SDI0LjIwNDFWMTAuODk4MUgxOS44NjQxVjMzLjQzMjZDMjQuNzY0MSAzMy40MTg2IDI3LjQyNDQgMzMuMjkwMSAyOS40NjI3IDMyLjExMzJDMzAuOTYxNiAzMS4yNDc4IDMyLjIwNjMgMzAuMDAzIDMzLjA3MTcgMjguNTA0QzM0LjM5MjcgMjYuMjE1OSAzNC4zOTI3IDIzLjE0NCAzNC4zOTI3IDE3LjAwMDFDMzQuMzkyNyAxMC44NTYyIDM0LjM5MjcgNy43ODQzMiAzMy4wNzE3IDUuNDk2MThDMzIuMjA2MyAzLjk5NzE5IDMwLjk2MTYgMi43NTI0MiAyOS40NjI3IDEuODg2OThDMjcuMTc0NyAwLjU2NTkxOCAyNC4xMDI5IDAuNTY1OTE4IDE3Ljk1OTQgMC41NjU5MThDMTEuODE1OCAwLjU2NTkxOCA4Ljc0NDA4IDAuNTY1OTE4IDYuNDU2MDUgMS44ODY5OEM0Ljk1NzE0IDIuNzUyNDIgMy43MTI0NCAzLjk5NzE5IDIuODQ3MDQgNS40OTYxOFoiIGZpbGw9IiMyODU2RjYiLz4KPC9nPgo8L3N2Zz4K");*/
-
     background-image: url("../img/logo.svg");
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    /*image-rendering: crisp-edges; !* можно попробовать *!*/
 }
 
 .icon-projects {
@@ -19,16 +19,10 @@
 
 .icon-link-simple {
     background-image: url("../img/link_simple.svg");
-
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .icon-star-active {
     background-image: url("../img/star_active.svg");
-
-    background-size: contain;
-    background-repeat: no-repeat;
 
     filter: drop-shadow(0px 2px 8px rgba(255, 204, 0, 0.5));
 }
