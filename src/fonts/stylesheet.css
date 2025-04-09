@@ -2,41 +2,50 @@
 
 @font-face {
     font-family: 'Craftwork Sans';
-    src: url('../fonts/craftworksans-black-webfont.woff2') format('woff2'),
-         url('../fonts/craftworksans-black-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkSans-Black.eot');
+    src: url('../fonts/CraftworkSans-Black.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkSans-Black.woff2') format('woff2'),
+    url('../fonts/CraftworkSans-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Craftwork Sans';
-    src: url('../fonts/craftworksans-bold-webfont.woff2') format('woff2'),
-         url('../fonts/craftworksans-bold-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkSans-Bold.eot');
+    src: url('../fonts/CraftworkSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkSans-Bold.woff2') format('woff2'),
+    url('../fonts/CraftworkSans-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Craftwork Sans';
-    src: url('../fonts/craftworksans-medium-webfont.woff2') format('woff2'),
-         url('../fonts/craftworksans-medium-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkSans-Medium.eot');
+    src: url('../fonts/CraftworkSans-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkSans-Medium.woff2') format('woff2'),
+    url('../fonts/CraftworkSans-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
-
 }
 
 @font-face {
     font-family: 'Craftwork Sans';
-    src: url('../fonts/craftworksans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/craftworksans-regular-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkSans-Regular.eot');
+    src: url('../fonts/CraftworkSans-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkSans-Regular.woff2') format('woff2'),
+    url('../fonts/CraftworkSans-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Craftwork Sans';
-    src: url('../fonts/craftworksans-semibold-webfont.woff2') format('woff2'),
-         url('../fonts/craftworksans-semibold-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkSans-Semibold.eot');
+    src: url('../fonts/CraftworkSans-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkSans-Semibold.woff2') format('woff2'),
+    url('../fonts/CraftworkSans-Semibold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -44,30 +53,30 @@
 
 @font-face {
     font-family: 'Craftwork Grotesk';
-    src: url('../fonts/craftworkgrotesk-regular-webfont.eot');
-    src: url('../fonts/craftworkgrotesk-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/craftworkgrotesk-regular-webfont.woff2') format('woff2'),
-    url('../fonts/craftworkgrotesk-regular-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkGrotesk-Regular.eot');
+    src: url('../fonts/CraftworkGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkGrotesk-Regular.woff2') format('woff2'),
+    url('../fonts/CraftworkGrotesk-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Craftwork Grotesk';
-    src: url('../fonts/craftworkgrotesk-medium-webfont.eot');
-    src: url('../fonts/craftworkgrotesk-medium-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/craftworkgrotesk-medium-webfont.woff2') format('woff2'),
-    url('../fonts/craftworkgrotesk-medium-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkGrotesk-Medium.eot');
+    src: url('../fonts/CraftworkGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkGrotesk-Medium.woff2') format('woff2'),
+    url('../fonts/CraftworkGrotesk-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Craftwork Grotesk';
-    src: url('../fonts/craftworkgrotesk-semibold-webfont.eot');
-    src: url('../fonts/craftworkgrotesk-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/craftworkgrotesk-semibold-webfont.woff2') format('woff2'),
-    url('../fonts/craftworkgrotesk-semibold-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkGrotesk-SemiBold.eot');
+    src: url('../fonts/CraftworkGrotesk-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkGrotesk-SemiBold.woff2') format('woff2'),
+    url('../fonts/CraftworkGrotesk-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -75,20 +84,20 @@
 
 @font-face {
     font-family: 'Craftwork Grotesk';
-    src: url('../fonts/craftworkgrotesk-bold-webfont.eot');
-    src: url('../fonts/craftworkgrotesk-bold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/craftworkgrotesk-bold-webfont.woff2') format('woff2'),
-    url('../fonts/craftworkgrotesk-bold-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkGrotesk-Bold.eot');
+    src: url('../fonts/CraftworkGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkGrotesk-Bold.woff2') format('woff2'),
+    url('../fonts/CraftworkGrotesk-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Craftwork Grotesk';
-    src: url('../fonts/craftworkgrotesk-heavy-webfont.eot');
-    src: url('../fonts/craftworkgrotesk-heavy-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/craftworkgrotesk-heavy-webfont.woff2') format('woff2'),
-    url('../fonts/craftworkgrotesk-heavy-webfont.woff') format('woff');
+    src: url('../fonts/CraftworkGrotesk-Heavy.eot');
+    src: url('../fonts/CraftworkGrotesk-Heavy.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CraftworkGrotesk-Heavy.woff2') format('woff2'),
+    url('../fonts/CraftworkGrotesk-Heavy.woff') format('woff');
     font-weight: 800;
     font-style: normal;
 }
