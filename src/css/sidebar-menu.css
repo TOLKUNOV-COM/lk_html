@@ -1,0 +1,48 @@
+.sidebar-menu {
+
+}
+
+.sidebar-menu__item {
+
+}
+
+.sidebar-menu__item_active {
+
+}
+
+.sidebar-menu__link {
+    @apply flex items-center gap-2 px-3 py-4 rounded-2xl;
+    @apply text-blue-900 text-lg font-bold leading-6 tracking-[0.18px];
+
+    @apply hover:bg-slate-170;
+}
+
+.sidebar-menu__item_active .sidebar-menu__link {
+    @apply bg-white shadow-sidebar-menu-active;
+}
+
+.sidebar-menu__arrow {
+    @apply size-5;
+
+    background-image: url("../img/menu/arrow.svg");
+    background-size: 12px 8px;
+}
+
+
+/*
+ SUBMENU
+ */
+.sidebar-submenu {
+    @apply px-2 py-3;
+}
+
+.sidebar-submenu__item {
+    @apply block px-3 py-[10px] rounded-xl;
+    @apply text-lg text-slate-500 font-medium leading-6 tracking-[0.18px];
+
+    @apply hover:bg-slate-170 hover:text-blue-900 active:text-blue-600;
+
+    &.sidebar-submenu__item_active {
+        @apply bg-slate-170 text-blue-600;
+    }
+}

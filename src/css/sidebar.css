@@ -1,0 +1,292 @@
+.sidebar {
+    --sidebar-animation-duration: 500ms;
+
+    @apply w-[338px];
+    transition: width var(--sidebar-animation-duration) ease-in-out;
+
+    .if-opened {
+        display: block;
+    }
+
+    &:not(.sidebar_collapsing):not(.sidebar_collapsed):not(.sidebar_expanding) .if-closed {
+        display: none;
+    }
+}
+
+.sidebar_collapsed {
+    @apply w-[60px];
+
+    .if-opened {
+        display: none;
+    }
+
+    .if-closed {
+        display: block;
+    }
+
+    .sidebar__header {
+        @apply flex-col px-0;
+    }
+
+    .icon-sidebar-toggle {
+        @apply rotate-180;
+    }
+
+    .sidebar-menu__arrow {
+        display: none;
+    }
+
+    .sidebar-menu__title {
+        display: none;
+    }
+
+    .sidebar-menu__link .icon {
+        margin-left: 4px;
+    }
+
+    .logout-button__title {
+        display: none;
+    }
+}
+
+.sidebar_collapsing {
+    .sidebar-menu__arrow {
+        display: none;
+    }
+
+    .logout-button__title {
+        display: none;
+    }
+}
+
+@keyframes collapseSidebar {
+    0% {
+        width: 338px;
+    }
+    100% {
+        width: 60px;
+    }
+}
+
+.sidebar_collapsing {
+    animation: collapseSidebar var(--sidebar-animation-duration) ease forwards;
+    overflow: hidden;
+}
+
+@keyframes collapseSidebarHeader {
+    0% {
+        flex-direction: row;
+        padding-bottom: 0;
+    }
+    59.99% {
+        flex-direction: row;
+        padding-bottom: 48px;
+    }
+    60% {
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    100% {
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: column;
+    }
+}
+
+.sidebar_collapsing .sidebar__header {
+    animation: collapseSidebarHeader var(--sidebar-animation-duration) ease forwards;
+}
+
+@keyframes collapseSidebarIfOpened {
+    0% {
+        opacity: 1;
+        display: block;
+        transform: scale(1);
+    }
+    15.99% {
+        opacity: 0;
+        transform: scale(0);
+        display: block;
+    }
+    16% {
+        opacity: 0;
+        transform: scale(0);
+        display: none;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+        display: none;
+    }
+}
+
+.sidebar_collapsing .if-opened {
+    animation: collapseSidebarIfOpened var(--sidebar-animation-duration) ease forwards;
+}
+
+@keyframes collapseSidebarIfClosed {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        display: none;
+    }
+    15.99% {
+        opacity: 0;
+        transform: scale(0);
+        display: none;
+    }
+    16% {
+        opacity: 0;
+        transform: scale(0);
+        display: block;
+    }
+    60% {
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        display: block;
+    }
+}
+
+.sidebar_collapsing .if-closed {
+    animation: collapseSidebarIfClosed var(--sidebar-animation-duration) ease forwards;
+}
+
+@keyframes collapseSidebarToggle {
+    0% {
+        transform: rotate(0);
+        top: 0;
+        left: 0;
+    }
+    59.99% {
+        top: 52px;
+        left: -28px;
+    }
+    60.01% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+        transform: rotate(180deg);
+    }
+}
+
+#sidebar__toggle {
+    position: relative;
+}
+
+.sidebar_collapsing #sidebar__toggle {
+    animation: collapseSidebarToggle var(--sidebar-animation-duration) ease forwards;
+}
+
+@keyframes collapseSidebarMenuTitle {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    31% {
+        display: none;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.sidebar_collapsing .sidebar-menu__title {
+    animation: collapseSidebarMenuTitle var(--sidebar-animation-duration) ease forwards;
+}
+
+@keyframes collapseSidebarSubMenu {
+    0% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.sidebar_collapsing .sidebar-submenu {
+    animation: collapseSidebarSubMenu var(--sidebar-animation-duration) ease forwards;
+}
+
+@keyframes collapseSidebarMenuLink {
+    0% {
+        margin-left: 0;
+    }
+    90% {
+        margin-left: 4px;
+    }
+    100% {
+        margin-left: 4px;
+    }
+}
+
+.sidebar_collapsing .sidebar-menu__link .icon {
+    animation: collapseSidebarMenuLink var(--sidebar-animation-duration) ease forwards;
+}
+
+/******
+  EXPAND
+ ******/
+.sidebar_expanding {
+    animation: collapseSidebar var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+    overflow: hidden;
+}
+
+.sidebar_expanding .sidebar__header {
+    animation: collapseSidebarHeader var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+}
+
+.sidebar_expanding #sidebar__toggle {
+    animation: collapseSidebarToggle var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+}
+
+.sidebar_expanding .sidebar-menu__title {
+    animation: collapseSidebarMenuTitle var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+}
+
+.sidebar_expanding .sidebar-submenu {
+    animation: collapseSidebarSubMenu var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+}
+
+.sidebar_expanding .sidebar-menu__link .icon {
+    animation: collapseSidebarMenuLink var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+}
+
+.sidebar_expanding .if-opened {
+    animation: collapseSidebarIfOpened var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+}
+
+.sidebar_expanding .if-closed {
+    animation: collapseSidebarIfClosed var(--sidebar-animation-duration) ease forwards;
+    animation-direction: reverse;
+}
+
+.sidebar_expanding {
+    .sidebar-menu__arrow {
+        display: none;
+    }
+
+    .logout-button__title {
+        display: none;
+    }
+}

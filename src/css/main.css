@@ -5,6 +5,8 @@
 @import "forms.css";
 @import "icons.css";
 @import "icons_docs.css";
+@import "sidebar-menu.css";
+@import "sidebar.css";
 
 @import "tailwindcss";
 
@@ -14,6 +16,7 @@
 
     --shadow-login: 0px 2px 14px 0px rgba(23, 31, 64, 0.05);
     --shadow-form-control-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
+    --shadow-sidebar-menu-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
 
     --color-blue-600: #2856F6;
     --color-blue-700: #2955EE;
@@ -22,6 +25,7 @@
     --color-slate-50: #F4F6FA;
     --color-slate-100: #EFF2F7;
     --color-slate-150: #ECEFF6;
+    --color-slate-170: #E9EDF5;
     --color-slate-175: #E9ECF3;
     --color-slate-200: #DFE4EC;
     --color-slate-400: #ABB1C4;

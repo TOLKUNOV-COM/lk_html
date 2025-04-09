@@ -1,6 +1,8 @@
 import tabs from "./tabs.js";
+import sidebar from "./sidebar.js";
 
 tabs();
+sidebar();
 
 function togglePassword() {
     const input = document.getElementById('password');

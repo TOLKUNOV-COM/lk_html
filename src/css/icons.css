@@ -30,3 +30,27 @@
 .icon-download {
     background-image: url("../img/download.svg");
 }
+
+.icon-x-mark {
+    background-image: url("../img/x.svg");
+}
+
+.icon-sidebar-toggle {
+    background-image: url("../img/sidebar_toggle.svg");
+    background-size: 14px 12px;
+}
+
+.icon-sidebar-menu-projects {
+    background-image: url("../img/menu/projects.svg");
+    background-size: 24px;
+}
+
+.icon-sidebar-menu-star {
+    background-image: url("../img/menu/star.svg");
+    background-size: 28px;
+}
+
+.icon-logout {
+    background-image: url("../img/logout.svg");
+    background-size: 20px;
+}
