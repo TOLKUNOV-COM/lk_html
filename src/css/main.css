@@ -76,6 +76,10 @@ h3 {
     @apply whitespace-nowrap text-slate-500 text-sm font-medium leading-4 tracking-[0.28px];
 }
 
+.tags_small .tag {
+    @apply px-[9px];
+}
+
 /*a {*/
 /*  font-weight: 500;*/
 /*  color: #646cff;*/
