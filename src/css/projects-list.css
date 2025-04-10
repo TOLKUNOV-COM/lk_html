@@ -1,0 +1,54 @@
+.projects_list {
+    tbody {
+        tr {
+            @apply cursor-pointer;
+
+            &:hover {
+                @apply bg-slate-50;
+            }
+        }
+    }
+
+    td, th {
+        @apply px-3;
+
+        &:first-child {
+            @apply pl-5 pr-1;
+        }
+
+        &:last-child {
+            @apply pr-5;
+        }
+    }
+}
+
+.projects__header {
+}
+
+.projects__body {
+    @apply text-slate-500 text-sm font-medium leading-[18px] tracking-[0.28px];
+}
+
+.projects__item {
+
+}
+
+.projects__title {
+    @apply text-blue-900 text-base leading-5 tracking-[0.32px];
+
+    @apply p-0!;
+}
+
+.projects__link {
+    @apply block py-5 px-3;
+}
+
+.projects__sort {
+    @apply flex items-center gap-1 py-2 w-full text-left;
+    @apply text-slate-400 text-xs font-black leading-4 tracking-[0.3px] uppercase;
+
+}
+
+button.projects__sort, a.projects__sort {
+    @apply cursor-pointer;
+}

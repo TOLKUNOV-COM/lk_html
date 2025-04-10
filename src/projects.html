@@ -11,7 +11,7 @@
 <body class="">
 
 
-<div class="flex gap-6 min-h-screen max-h-screen bg-slate-50 p-3 pl-5">
+<div class="flex gap-6 h-screen bg-slate-50 p-3 pl-5">
     <!-- Sidebar -->
     <aside class="sidebar py-5 flex flex-col">
         <div class="flex gap-3 justify-between items-center pl-4 pr-2 mb-7 sidebar__header">
@@ -95,18 +95,11 @@
         </div>
 
         <!-- Прокручиваемая часть -->
-        <div class="overflow-y-auto flex-1 p-4 space-y-4">
-            <p>Контент</p>
-            <p>Контент</p>
-            <p>Контент</p>
-            <p>Контент</p>
-            <!-- Искусственный скролл -->
-            <div class="h-[2000px] bg-slate-100 rounded p-4">
-                Скроллируемая часть
-            </div>
+        <div class="overflow-y-auto flex-1 pt-4">
+
+            <pug src="src/templates/partials/projects_list.pug"></pug>
+
         </div>
-
-
     </main>
 </div>
 

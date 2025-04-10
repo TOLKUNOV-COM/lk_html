@@ -1,0 +1,39 @@
+table.projects.projects_list.w-full
+    colgroup
+        col(class="w-[1px]")
+        col
+        col
+        col
+        col
+        col(class="w-[1px]")
+    thead.projects__header
+        tr
+            th
+            th: button.projects__sort(type="button")
+                span Проект
+                span.icon.size-4.icon-sort-down
+            th: button.projects__sort(type="button")
+                span Дата
+                span.icon.size-4.icon-sort-up
+            th: button.projects__sort(type="button")
+                span Категория
+                span.icon.size-4.icon-sort-down
+            th: button.projects__sort(type="button")
+                span Заказчик
+                span.icon.size-4.icon-sort-down
+            th: span.projects__sort Результат
+    tbody.projects__body
+        each project in projects
+            tr.projects__item
+                td
+                    span(class=`inline-block size-7 icon ${project.is_favorite ? 'icon-star-active' : 'icon-star-empty'}`)
+                td.projects__title
+                    a.projects__link(href="view.html") !{project.title}
+                td=project.date
+                td=project.category
+                td=project.client
+                td
+                    .flex.items-center.gap-3
+                        .size-6.icon.icon-docs-yandex-disk
+                        div(class="h-5 w-px bg-[#EEE] opacity-90")
+                        .size-6.icon.icon-docs-figma

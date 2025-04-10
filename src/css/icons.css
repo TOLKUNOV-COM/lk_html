@@ -25,6 +25,10 @@
     background-image: url("../img/link_simple.svg");
 }
 
+.icon-star-empty {
+    background-image: url("../img/star_empty.svg");
+}
+
 .icon-star-active {
     background-image: url("../img/star_active.svg");
 
@@ -73,4 +77,13 @@
 
 .icon-filters {
     background-image: url("../img/filters.svg");
+}
+
+.icon-sort-down {
+    background-image: url("../img/sort_arrow.svg");
+}
+
+.icon-sort-up {
+    background-image: url("../img/sort_arrow.svg");
+    @apply rotate-180;
 }
