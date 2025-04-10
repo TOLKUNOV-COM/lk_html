@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&text=0123456789');
 @import "../fonts/stylesheet.css";
 @import "../../node_modules/swiper/swiper-bundle.min.css";
 
@@ -16,12 +16,14 @@
 @theme {
     --font-sans: 'Craftwork Sans', 'system-ui', 'Helvetica', 'Arial', 'sans-serif';
     --font-serif: 'Craftwork Grotesk', serif;
+    --font-ubuntu: Ubuntu, 'system-ui', 'Helvetica', 'Arial', 'sans-serif';
 
     --shadow-login: 0px 2px 14px 0px rgba(23, 31, 64, 0.05);
     --shadow-form-control-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
     --shadow-sidebar-menu-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
     --shadow-content-block: 0px 2px 14px 0px rgba(80, 113, 246, 0.06);
 
+    --color-blue-100: #E6EFFF;
     --color-blue-600: #2856F6;
     --color-blue-700: #2955EE;
     --color-blue-800: #2349CD;

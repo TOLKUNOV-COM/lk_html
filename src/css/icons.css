@@ -91,3 +91,7 @@
 .icon-filter-collapse {
     background-image: url("../img/filter_collapse.svg");
 }
+
+.icon-empty-search {
+    background-image: url("../img/empty_search.svg");
+}

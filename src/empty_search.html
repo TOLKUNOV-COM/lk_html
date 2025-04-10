@@ -43,15 +43,24 @@
 
             <button id="filters_toggle"
                     class="flex gap-2 items-center justify-center h-12 border-[1.5px] border-slate-100 bg-white text-blue-900 px-5 rounded-full cursor-pointer text-base font-bold leading-5 tracking-[0.16px] hover:border-slate-150 active:border-slate-200 transition">
-                <span class="inline-block size-4 icon-filters"></span>
+                <span class="inline-block size-5 bg-blue-100 rounded-full text-blue-600 font-ubuntu text-sm font-medium leading-5 tracking-[-0.35px]">1</span>
                 <span>Фильтры</span>
             </button>
         </div>
 
         <!-- Прокручиваемая часть -->
         <div class="overflow-hidden relative flex-1">
-            <div class="overflow-y-auto pt-4 max-h-full">
-                <pug src="src/templates/partials/projects_list.pug"></pug>
+
+            <!-- Пустой результат поиска-->
+            <div class="min-h-full flex flex-col items-center justify-center gap-6 px-5">
+                <div class="size-16 bg-slate-50 rounded-full flex items-center justify-center">
+                    <span class="icon icon-empty-search size-8"></span>
+                </div>
+
+                <div class="flex flex-col gap-3 items-center text-center">
+                    <h4 class="text-blue-900 text-xl font-medium leading-7 tracking-[0.4px]">Проектов по вашему запросу не найдено</h4>
+                    <p class="text-slate-500 font-medium leading-5 tracking-[0.32px]">Попробуйте изменить запрос или параметры фильтров</p>
+                </div>
             </div>
 
             <pug src="src/templates/includes/filters.pug"></pug>

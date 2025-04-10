@@ -56,8 +56,8 @@ export default function filters() {
     });
 
     // Open / close handlers
-    document.getElementById('filters_open').addEventListener('click', () => {
-        $(container).removeClass('filters_collapsed');
+    document.getElementById('filters_toggle').addEventListener('click', () => {
+        $(container).toggleClass('filters_collapsed');
     });
     document.getElementById('filters_close').addEventListener('click', () => {
         $(container).addClass('filters_collapsed');
