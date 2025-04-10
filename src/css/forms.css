@@ -1,6 +1,7 @@
 .form-control {
-    @apply w-full ring-2 ring-slate-100 rounded-xl p-4 text-blue-900 font-medium leading-6 tracking-[0.32px] placeholder-slate-400;
+    @apply w-full ring-[1.5px] ring-slate-100 rounded-xl p-4 text-blue-900 font-medium leading-6 tracking-[0.32px] placeholder-slate-400;
     @apply transition-all;
+    @apply placeholder-shown:overflow-ellipsis;
 
     &:hover, &:active, &:focus {
         @apply outline-none ring-3 ring-indigo-100 shadow-form-control-active;
@@ -36,5 +37,15 @@
         & + .error {
             @apply text-orange-600;
         }
+    }
+}
+
+.form-control-search {
+    @apply w-full inset-ring-[1.5px] inset-ring-slate-100 rounded-full pl-5 pr-13 py-1 text-blue-900 font-medium leading-10 tracking-[0.32px] placeholder-slate-400;
+    @apply transition-all;
+    @apply placeholder-shown:overflow-ellipsis;
+
+    &:hover, &:active, &:focus {
+        @apply outline-none ring-[1.5px] ring-indigo-100 inset-ring-indigo-100 shadow-none;
     }
 }

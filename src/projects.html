@@ -11,7 +11,7 @@
 <body class="">
 
 
-<div class="flex gap-6 min-h-screen bg-slate-50 p-3 pl-5">
+<div class="flex gap-6 min-h-screen max-h-screen bg-slate-50 p-3 pl-5">
     <!-- Sidebar -->
     <aside class="sidebar py-5 flex flex-col">
         <div class="flex gap-3 justify-between items-center pl-4 pr-2 mb-7 sidebar__header">
@@ -62,8 +62,51 @@
     </aside>
 
     <!-- Main content -->
-    <main class="flex-1 bg-white">
-        <!-- основное содержимое -->
+    <main class="flex-1 bg-white rounded-2xl shadow-content-block border border-slate-100 overflow-hidden flex flex-col">
+        <!-- Фиксированная верхняя часть -->
+        <div class="px-5 py-6 border-b border-slate-100 flex gap-4">
+            <div class="switcher">
+                <button class="switcher__button switcher__button_active">
+                    <span class="switcher__icon icon icon-list-type-grid"></span>
+                </button>
+                <button class="switcher__button">
+                    <span class="switcher__icon icon icon-list-type-list"></span>
+                </button>
+            </div>
+
+            <form class="relative flex-1" role="search">
+                <input
+                        type="text"
+                        placeholder="Какой проект ищите?"
+                        class="form-control-search"
+                />
+                <button
+                        type="submit"
+                        class="absolute top-1/2 right-[6px] -translate-y-1/2 size-10 flex items-center justify-center cursor-pointer rounded-full bg-blue-600 transition hover:bg-blue-700 active:bg-blue-800"
+                >
+                    <span class="icon icon-search size-4"></span>
+                </button>
+            </form>
+
+            <button class="flex gap-2 items-center justify-center h-12 border-[1.5px] border-slate-100 bg-white text-blue-900 px-5 rounded-full cursor-pointer text-base font-bold leading-5 tracking-[0.16px] hover:border-slate-150 active:border-slate-200 transition">
+                <span class="inline-block size-4 icon-filters"></span>
+                <span>Фильтры</span>
+            </button>
+        </div>
+
+        <!-- Прокручиваемая часть -->
+        <div class="overflow-y-auto flex-1 p-4 space-y-4">
+            <p>Контент</p>
+            <p>Контент</p>
+            <p>Контент</p>
+            <p>Контент</p>
+            <!-- Искусственный скролл -->
+            <div class="h-[2000px] bg-slate-100 rounded p-4">
+                Скроллируемая часть
+            </div>
+        </div>
+
+
     </main>
 </div>
 

@@ -2,6 +2,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
 }
 
 
@@ -53,4 +57,20 @@
 .icon-logout {
     background-image: url("../img/logout.svg");
     background-size: 20px;
+}
+
+.icon-list-type-grid {
+    mask-image: url("../img/grid/list_type_grid.svg");
+}
+
+.icon-list-type-list {
+    mask-image: url("../img/grid/list_type_list.svg");
+}
+
+.icon-search {
+    background-image: url("../img/search.svg");
+}
+
+.icon-filters {
+    background-image: url("../img/filters.svg");
 }

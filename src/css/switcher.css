@@ -1,0 +1,19 @@
+.switcher {
+    @apply flex inset-ring-[1.5px] inset-ring-slate-100 rounded-full p-1;
+}
+
+.switcher__button {
+    @apply size-10 rounded-full cursor-pointer p-3 grid place-items-center;
+
+    &:hover, &:active, &:focus, &.switcher__button_active {
+        @apply bg-slate-50;
+
+        .switcher__icon {
+            @apply bg-blue-900;
+        }
+    }
+}
+
+.switcher__icon {
+    @apply size-4 bg-slate-500;
+}
