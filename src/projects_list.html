@@ -41,15 +41,20 @@
                 </button>
             </form>
 
-            <button class="flex gap-2 items-center justify-center h-12 border-[1.5px] border-slate-100 bg-white text-blue-900 px-5 rounded-full cursor-pointer text-base font-bold leading-5 tracking-[0.16px] hover:border-slate-150 active:border-slate-200 transition">
+            <button id="filters_open"
+                    class="flex gap-2 items-center justify-center h-12 border-[1.5px] border-slate-100 bg-white text-blue-900 px-5 rounded-full cursor-pointer text-base font-bold leading-5 tracking-[0.16px] hover:border-slate-150 active:border-slate-200 transition">
                 <span class="inline-block size-4 icon-filters"></span>
                 <span>Фильтры</span>
             </button>
         </div>
 
         <!-- Прокручиваемая часть -->
-        <div class="overflow-y-auto flex-1 pt-4">
-            <pug src="src/templates/partials/projects_list.pug"></pug>
+        <div class="overflow-hidden relative flex-1">
+            <div class="overflow-y-auto pt-4 max-h-full">
+                <pug src="src/templates/partials/projects_list.pug"></pug>
+            </div>
+
+            <pug src="src/templates/includes/filters.pug"></pug>
         </div>
     </main>
 </div>

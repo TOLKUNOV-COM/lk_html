@@ -1,9 +1,11 @@
 import tabs from "./tabs.js";
 import sidebar from "./sidebar.js";
+import filters from "./filters.js";
 // import $ from 'jquery';
 
 tabs();
 sidebar();
+filters();
 
 function togglePassword() {
     const input = document.getElementById('password');

@@ -1,0 +1,82 @@
+.filters {
+    @apply absolute inset-y-0 right-0;
+    @apply w-[400px];
+    @apply bg-white shadow-content-block;
+
+    @apply flex flex-col;
+    @apply border-l border-l-slate-100;
+    @apply transition;
+}
+
+.filters_collapsed {
+    @apply translate-x-full opacity-0;
+}
+
+.filters__scroll {
+    @apply flex-1 overflow-y-auto;
+}
+
+.filters__body {
+    @apply flex flex-col gap-6 p-6 pt-0;
+}
+
+.filters__bottom {
+    @apply absolute inset-x-5 h-12 bottom-0;
+    @apply transition-opacity opacity-100;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.filters__scroll.at-bottom .filters__bottom {
+    @apply opacity-0;
+}
+
+.filters__reset {
+    @apply absolute bottom-6 inset-x-6;
+    @apply px-5 py-[14px];
+    @apply text-blue-900 font-bold leading-5 tracking-[0.16px];
+
+    @apply rounded-full bg-slate-50 hover:bg-slate-100 active:bg-slate-175;
+    @apply cursor-pointer;
+}
+
+.filters:has(.filters__reset:not(.hidden)) .filters__body {
+    @apply pb-[96px];
+}
+
+.filter {
+}
+
+.filter__name {
+    @apply text-slate-400 text-sm font-bold leading-[18px] tracking-[0.14px];
+    @apply mb-3;
+}
+
+.filter__items {
+    @apply flex items-start content-start gap-2 flex-wrap;
+}
+
+.filter__item {
+    @apply border border-dashed border-slate-170 rounded-lg;
+    @apply px-[11px] py-[9px];
+
+    @apply text-slate-500 text-xs font-black leading-4;
+}
+
+.filter__item_expand {
+    @apply bg-slate-50;
+}
+
+.filter__item_collapse {
+    @apply bg-slate-50 border-slate-50 hover:bg-slate-100 hover:border-slate-100 active:bg-slate-175 active:border-slate-175;
+    @apply w-[16px] h-[16px] box-content text-center;
+    @apply flex items-center justify-center;
+}
+
+.filter__item_collapse.hidden {
+    display: none;
+}
+
+.filter__item_active {
+    @apply border-solid border-blue-600 bg-blue-600 text-white;
+}

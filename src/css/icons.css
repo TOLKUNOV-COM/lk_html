@@ -87,3 +87,7 @@
     background-image: url("../img/sort_arrow.svg");
     @apply rotate-180;
 }
+
+.icon-filter-collapse {
+    background-image: url("../img/filter_collapse.svg");
+}
