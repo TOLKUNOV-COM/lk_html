@@ -1,0 +1,47 @@
+<aside class="sidebar py-5 flex flex-col">
+    <div class="flex gap-3 justify-between items-center pl-4 pr-2 mb-7 sidebar__header">
+        <div class="if-opened">
+            <div class="flex gap-3 items-center">
+                <img src="./img/logo.svg" alt="TOLKUNOV" class="size-12">
+                <span class="icon icon-x-mark size-5 bg-[length:18px]"></span>
+                <img src="./data/avito.svg" alt="Avito" class="max-w-[132px] h-12">
+            </div>
+        </div>
+        <div class="if-closed">
+            <img src="./data/avito_square.svg" alt="Avito" class="w-12 max-h-12">
+        </div>
+
+        <button type="button" id="sidebar__toggle"
+                class="size-9 icon icon-sidebar-toggle cursor-pointer bg-slate-50 hover:bg-slate-100 active:bg-slate-175 rounded-full"></button>
+    </div>
+
+    <ul class="sidebar-menu flex-1">
+        <li class="sidebar-menu__item sidebar-menu__item_active sidebar-menu__item_opened">
+            <a href="#" class="sidebar-menu__link">
+                <span class="size-7 icon icon-sidebar-menu-projects"></span>
+                <span class="flex-1 sidebar-menu__title">Проекты</span>
+                <span class="sidebar-menu__arrow icon"></span>
+            </a>
+
+            <div class="sidebar-submenu">
+                <a href="#" class="sidebar-submenu__item sidebar-submenu__item_active">Все</a>
+                <a href="#" class="sidebar-submenu__item">Услуги</a>
+                <a href="#" class="sidebar-submenu__item">Автотека</a>
+                <a href="#" class="sidebar-submenu__item">Недвижимость</a>
+            </div>
+        </li>
+        <li class="sidebar-menu__item">
+            <a href="#" class="sidebar-menu__link">
+                <span class="size-7 icon icon-sidebar-menu-star"></span>
+                <span class="flex-1 sidebar-menu__title">Избранное</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="self-start">
+        <a href="#" class="flex items-center gap-1 px-3 rounded-full hover:bg-slate-100 active:bg-slate-175 logout-button">
+            <span class="text-slate-400 font-bold leading-5 tracking-[0.16px] logout-button__title">Выйти</span>
+            <span class="icon icon-logout size-9"></span>
+        </a>
+    </div>
+</aside>
