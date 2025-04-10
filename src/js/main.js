@@ -1,5 +1,6 @@
 import tabs from "./tabs.js";
 import sidebar from "./sidebar.js";
+// import $ from 'jquery';
 
 tabs();
 sidebar();
