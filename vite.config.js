@@ -29,6 +29,7 @@ export default defineConfig({
         outDir: '../dist', // Указываем директорию для сборки
         rollupOptions: {
             input: {
+                index: path.resolve(__dirname, './src/index.html'),
                 components: path.resolve(__dirname, './src/components.html'),
                 login: path.resolve(__dirname, './src/login.html'),
                 view: path.resolve(__dirname, './src/view.html'),
