@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&text=0123456789');
 @import "../fonts/stylesheet.css";
 @import "../../node_modules/swiper/swiper-bundle.min.css";
-@import "@fancyapps/ui/dist/fancybox.css";
+/*@import "@fancyapps/ui/dist/fancybox.css";*/
+@import "vendor/fancybox.css";
 
 @import "forms.css";
 @import "icons.css";
@@ -45,6 +46,10 @@
     --color-zinc-100: #EFEDF0;
 
     --default-transition-duration: 200ms;
+
+    --breakpoint-screen-1200: 1200px;
+    --breakpoint-screen-1366: 1366px;
+    --breakpoint-screen-1440: 1440px;
 }
 
 :root {
@@ -125,10 +130,7 @@ h3 {
 }
 
 .fancybox__slide {
-    padding-top: 48px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    padding: 48px 0 0;
 }
 
 .fancybox__content > .carousel__button.is-close {
