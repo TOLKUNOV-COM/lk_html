@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 import pugPlugin from 'vite-plugin-pug';
 import yaml from 'js-yaml';
 import fs from 'fs';
@@ -68,12 +68,12 @@ export default defineConfig({
         },
         viteStaticCopy({
             targets: [
-//                {
-//                    src: 'img/platform-logos/*', // Путь к вашим изображениям
-//                    dest: 'img/platform-logos' // Директория назначения
-//                }
+                {
+                    src: 'data/*', // Путь к вашим изображениям
+                    dest: 'data' // Директория назначения
+                }
             ],
-            // verbose: true // Включение подробного логирования
+            verbose: true // Включение подробного логирования
         }),
         {
             name: 'lock-file-plugin',
