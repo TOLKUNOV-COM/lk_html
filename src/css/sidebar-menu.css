@@ -21,13 +21,6 @@
     @apply bg-white shadow-sidebar-menu-active;
 }
 
-.sidebar-menu__arrow {
-    @apply size-5;
-
-    background-image: url("../img/menu/arrow.svg");
-    background-size: 12px 8px;
-}
-
 
 /*
  SUBMENU

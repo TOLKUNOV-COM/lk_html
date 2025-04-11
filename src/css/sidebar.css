@@ -32,10 +32,6 @@
         @apply rotate-180;
     }
 
-    .sidebar-menu__arrow {
-        display: none;
-    }
-
     .sidebar-menu__title {
         display: none;
     }
@@ -50,10 +46,6 @@
 }
 
 .sidebar_collapsing {
-    .sidebar-menu__arrow {
-        display: none;
-    }
-
     .logout-button__title {
         display: none;
     }
@@ -282,10 +274,6 @@
 }
 
 .sidebar_expanding {
-    .sidebar-menu__arrow {
-        display: none;
-    }
-
     .logout-button__title {
         display: none;
     }
