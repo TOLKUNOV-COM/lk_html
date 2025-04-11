@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&text=0123456789');
 @import "../fonts/stylesheet.css";
 @import "../../node_modules/swiper/swiper-bundle.min.css";
+@import "@fancyapps/ui/dist/fancybox.css";
 
 @import "forms.css";
 @import "icons.css";
@@ -106,6 +107,43 @@ h3 {
 
 .js-toggle-favorite.js-toggle-favorite_active .icon-star-active {
     @apply opacity-100;
+}
+
+
+.fancybox__backdrop {
+    background: rgba(15, 20, 57, 0.50);
+    backdrop-filter: blur(12.100000381469727px);
+
+    @apply cursor-pointer;
+}
+
+.fancybox__content {
+    @apply rounded-t-4xl bg-white;
+    @apply w-full;
+
+    @apply py-0;
+}
+
+.fancybox__slide {
+    padding-top: 48px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+.fancybox__content > .carousel__button.is-close {
+    svg {
+        display: none;
+    }
+
+    mask-image: url("../img/x.svg");
+    mask-size: 22px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+
+    background-color: #fff;
+
+    @apply size-12 -top-12 right-8;
 }
 
 /*a {*/

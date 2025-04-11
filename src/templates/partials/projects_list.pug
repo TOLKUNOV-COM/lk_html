@@ -24,7 +24,7 @@ table.projects.projects_list.w-full
             th: span.projects__sort Результат
     tbody.projects__body
         each project in projects
-            tr.projects__item
+            tr.projects__item(data-src="view.html")
                 td
                     button(type="button", class=`js-toggle-favorite ${project.is_favorite ? 'js-toggle-favorite_active' : ''} cursor-pointer inline-block size-7`)
                         span(class='inline-block size-7 icon icon-star-active')
