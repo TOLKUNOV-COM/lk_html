@@ -1,1 +1,1 @@
-$(document).on("click",".js-toggle-favorite",function(){$(this).toggleClass("js-toggle-favorite_active")});
+$(document).on("click",".js-toggle-favorite",function(t){t.preventDefault(),$(this).toggleClass("js-toggle-favorite_active")});
