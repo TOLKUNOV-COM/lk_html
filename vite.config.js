@@ -36,6 +36,8 @@ export default defineConfig({
                 projects_list: path.resolve(__dirname, './src/projects_list.html'),
                 empty_search: path.resolve(__dirname, './src/empty_search.html'),
                 empty_favorites: path.resolve(__dirname, './src/empty_favorites.html'),
+
+                test: path.resolve(__dirname, './src/js/test.js'),
             },
             output: {
                 entryFileNames: '[name].js', // Имена файлов без хэша для JS

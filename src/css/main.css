@@ -104,7 +104,7 @@ h3 {
 
 .js-toggle-favorite .icon {
     @apply transition-opacity opacity-0;
-    @apply absolute inset-0;
+    @apply absolute left-1/2 top-1/2 -translate-1/2;
 }
 
 .js-toggle-favorite:not(.js-toggle-favorite_active) .icon-star-empty {
