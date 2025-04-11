@@ -12,7 +12,7 @@ export default function shareButton() {
         }
     }
 
-    $('.share-button').on('click', async function (e) {
+    $(document).on('click', '.share-button', async function (e) {
         e.preventDefault();
 
         let text = $(this).data('url');
