@@ -20,11 +20,25 @@
     @apply flex flex-col gap-6 p-6 pt-0;
 }
 
-.filters__bottom {
-    @apply absolute inset-x-5 h-12 bottom-0;
+.filters__top, .filters__bottom {
+    @apply absolute inset-x-5 h-12;
     @apply transition-opacity opacity-100 pointer-events-none;
+}
+
+.filters__top {
+    @apply top-24;
+
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.filters__bottom {
+    @apply bottom-0;
 
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.filters__scroll.at-top .filters__top {
+    @apply opacity-0;
 }
 
 .filters__scroll.at-bottom .filters__bottom {

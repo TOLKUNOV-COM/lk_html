@@ -46,13 +46,11 @@ export default function filters() {
 
     // Hide shadow at scroll bottom
     el.addEventListener('scroll', () => {
+        const isAtTop = el.scrollTop === 0;
         const isAtBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
 
-        if (isAtBottom) {
-            el.classList.add('at-bottom');
-        } else {
-            el.classList.remove('at-bottom');
-        }
+        el.classList.toggle('at-top', isAtTop);
+        el.classList.toggle('at-bottom', isAtBottom);
     });
 
     // Open / close handlers
