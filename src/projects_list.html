@@ -52,6 +52,14 @@
         <div class="overflow-hidden relative flex-1">
             <div class="overflow-y-auto pt-4 max-h-full">
                 <pug src="src/templates/partials/projects_list.pug"></pug>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        $('.js-toggle-favorite').on('click', function () {
+                            $(this).toggleClass('js-toggle-favorite_active');
+                        });
+                    });
+                </script>
             </div>
 
             <pug src="src/templates/includes/filters.pug"></pug>

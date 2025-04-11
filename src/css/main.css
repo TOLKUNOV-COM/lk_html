@@ -91,6 +91,23 @@ h3 {
     @apply px-[9px];
 }
 
+.js-toggle-favorite {
+    @apply relative;
+}
+
+.js-toggle-favorite .icon {
+    @apply transition-opacity opacity-0;
+    @apply absolute inset-0;
+}
+
+.js-toggle-favorite:not(.js-toggle-favorite_active) .icon-star-empty {
+    @apply opacity-100;
+}
+
+.js-toggle-favorite.js-toggle-favorite_active .icon-star-active {
+    @apply opacity-100;
+}
+
 /*a {*/
 /*  font-weight: 500;*/
 /*  color: #646cff;*/

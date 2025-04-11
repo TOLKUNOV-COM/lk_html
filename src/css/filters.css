@@ -22,7 +22,7 @@
 
 .filters__bottom {
     @apply absolute inset-x-5 h-12 bottom-0;
-    @apply transition-opacity opacity-100;
+    @apply transition-opacity opacity-100 pointer-events-none;
 
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }

@@ -26,7 +26,9 @@ table.projects.projects_list.w-full
         each project in projects
             tr.projects__item
                 td
-                    span(class=`inline-block size-7 icon ${project.is_favorite ? 'icon-star-active' : 'icon-star-empty'}`)
+                    button(type="button", class=`js-toggle-favorite ${project.is_favorite ? 'js-toggle-favorite_active' : ''} cursor-pointer inline-block size-7`)
+                        span(class='inline-block size-7 icon icon-star-active')
+                        span(class='inline-block size-7 icon icon-star-empty')
                 td.projects__title
                     a.projects__link(href="view.html") !{project.title}
                 td=project.date
@@ -34,6 +36,6 @@ table.projects.projects_list.w-full
                 td=project.client
                 td
                     .flex.items-center.gap-3
-                        .size-6.icon.icon-docs-yandex-disk
+                        a.size-6.icon.icon-docs-yandex-disk(href="https://ya.ru", target="_blank")
                         div(class="h-5 w-px bg-[#EEE] opacity-90")
-                        .size-6.icon.icon-docs-figma
+                        a.size-6.icon.icon-docs-figma(href="https://ya.ru", target="_blank")
