@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="./assets/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ЛК TOLKUNOV</title>
+
+  <script type="module" crossorigin src="./main.js"></script>
+  <link rel="stylesheet" crossorigin href="./main.css">
+</head>
+<body>
+
+<div class="flex gap-6 h-screen bg-slate-50 p-3 pl-5">
+    <!-- Sidebar -->
+    <aside class="sidebar py-5 flex flex-col">
+    <div class="flex gap-3 justify-between items-center pl-4 pr-2 mb-7 sidebar__header">
+        <div class="if-opened">
+            <div class="flex gap-3 items-center">
+                <img src="./img/logo.svg" alt="TOLKUNOV" class="size-12">
+                <span class="icon icon-x-mark size-5 bg-[length:18px]"></span>
+                <img src="./data/avito.svg" alt="Avito" class="max-w-[132px] h-12">
+            </div>
+        </div>
+        <div class="if-closed">
+            <img src="./data/avito_square.svg" alt="Avito" class="w-12 max-h-12">
+        </div>
+
+        <button type="button" id="sidebar__toggle"
+                class="size-9 icon icon-sidebar-toggle cursor-pointer bg-slate-50 hover:bg-slate-100 active:bg-slate-175 rounded-full"></button>
+    </div>
+
+    <ul class="sidebar-menu flex-1">
+        <li class="sidebar-menu__item sidebar-menu__item_active sidebar-menu__item_opened">
+            <a href="projects_list.html" class="sidebar-menu__link">
+                <span class="size-7 icon icon-sidebar-menu-projects"></span>
+                <span class="flex-1 sidebar-menu__title">Проекты</span>
+            </a>
+
+            <div class="sidebar-submenu">
+                <a href="#" class="sidebar-submenu__item sidebar-submenu__item_active">Все</a>
+                <a href="#" class="sidebar-submenu__item">Услуги</a>
+                <a href="#" class="sidebar-submenu__item">Автотека</a>
+                <a href="#" class="sidebar-submenu__item">Недвижимость</a>
+            </div>
+        </li>
+        <li class="sidebar-menu__item">
+            <a href="empty_favorites.html" class="sidebar-menu__link">
+                <span class="size-7 icon icon-sidebar-menu-star"></span>
+                <span class="flex-1 sidebar-menu__title">Избранное</span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="self-start">
+        <a href="#" class="flex items-center gap-1 px-3 rounded-full hover:bg-slate-100 active:bg-slate-175 logout-button">
+            <span class="text-slate-400 font-bold leading-5 tracking-[0.16px] logout-button__title">Выйти</span>
+            <span class="icon icon-logout size-9"></span>
+        </a>
+    </div>
+</aside>
+
+
+    <!-- Main content -->
+    <main class="flex-1 bg-white rounded-2xl shadow-content-block border border-slate-100 overflow-hidden flex flex-col">
+        <!-- Фиксированная верхняя часть -->
+        <div class="px-5 py-6 border-b border-slate-100 flex gap-4">
+            <div class="switcher">
+                <button class="switcher__button switcher__button_active">
+                    <span class="switcher__icon icon icon-list-type-grid"></span>
+                </button>
+                <button class="switcher__button">
+                    <span class="switcher__icon icon icon-list-type-list"></span>
+                </button>
+            </div>
+
+            <form class="relative flex-1" role="search">
+                <input
+                        type="text"
+                        placeholder="Какой проект ищите?"
+                        class="form-control-search"
+                />
+                <button
+                        type="submit"
+                        class="absolute top-1/2 right-[6px] -translate-y-1/2 size-10 flex items-center justify-center cursor-pointer rounded-full bg-blue-600 transition hover:bg-blue-700 active:bg-blue-800"
+                >
+                    <span class="icon icon-search size-4"></span>
+                </button>
+            </form>
+
+            <button id="filters_toggle"
+                    class="flex gap-2 items-center justify-center h-12 border-[1.5px] border-slate-100 bg-white text-blue-900 px-5 rounded-full cursor-pointer text-base font-bold leading-5 tracking-[0.16px] hover:border-slate-150 active:border-slate-200 transition">
+                <span class="inline-block size-5 bg-blue-100 rounded-full text-blue-600 font-ubuntu text-sm font-medium leading-5 tracking-[-0.35px]">1</span>
+                <span>Фильтры</span>
+            </button>
+        </div>
+
+        <!-- Прокручиваемая часть -->
+        <div class="overflow-hidden relative flex-1">
+
+            <!-- Пустой список избранного -->
+            <div class="min-h-full flex flex-col items-center justify-center gap-6 px-5">
+                <div class="size-16 bg-amber-50 rounded-full flex items-center justify-center">
+                    <span class="icon icon-star-active size-7"></span>
+                </div>
+
+                <div class="flex flex-col gap-3 items-center text-center max-w-[490px]">
+                    <h4 class="text-blue-900 text-xl font-medium leading-7 tracking-[0.4px]">Добавляйте проекты в «Избранное»</h4>
+                    <p class="text-slate-500 font-medium leading-5 tracking-[0.32px]"><span>Чтобы добавить проект в избранное нажмите</span><span
+                            class="relative top-2 icon icon-star-empty size-7 mx-1 inline-block"></span><span>в&nbsp;карточке или на&nbsp;странице проекта</span></p>
+                </div>
+            </div>
+
+            <div class="filters filters_collapsed">
+    <div class="flex items-center gap-5 m-6">
+        <span class="flex-1 text-blue-900 font-serif text-2xl font-bold leading-[normal]">Фильтры</span>
+
+        <button id="filters_close" type="button" class="flex items-center justify-center rounded-full cursor-pointer size-12 bg-slate-50 hover:bg-slate-100 active:bg-slate-175">
+            <span class="icon icon-x-mark size-[22px]"></span>
+        </button>
+    </div>
+
+    <div class="filters__scroll at-top">
+        <div class="filters__top"></div>
+
+        <div class="filters__body">
+            <div class="filter">
+                <p class="filter__name">Год</p>
+
+                <div class="filter__items">
+                    <a href="#" class="filter__item filter__item_active">2025</a>
+                    <a href="#" class="filter__item">2024</a>
+                    <a href="#" class="filter__item">2023</a>
+                    <a href="#" class="filter__item">2022</a>
+                    <a href="#" class="filter__item">2021</a>
+                    <a href="#" class="filter__item">2020</a>
+                    <a href="#" class="filter__item">2019</a>
+                    <a href="#" class="filter__item">2018</a>
+                    <a href="#" class="filter__item">2017</a>
+                    <a href="#" class="filter__item">2016</a>
+                    <a href="#" class="filter__item">2015</a>
+                </div>
+            </div>
+
+            <div class="filter">
+                <p class="filter__name">Направление</p>
+
+                <div class="filter__items">
+                    <a href="#" class="filter__item">Web</a>
+                    <a href="#" class="filter__item">DOOH</a>
+                    <a href="#" class="filter__item">OOH</a>
+                    <a href="#" class="filter__item">TF</a>
+                </div>
+            </div>
+
+            <div class="filter">
+                <p class="filter__name">Тип материала</p>
+
+                <div class="filter__items">
+                    <a href="#" class="filter__item">HTML5</a>
+                    <a href="#" class="filter__item">GIF</a>
+                    <a href="#" class="filter__item">Сторис</a>
+                    <a href="#" class="filter__item">Статика</a>
+                    <a href="#" class="filter__item">Видео</a>
+                    <a href="#" class="filter__item">Моушн</a>
+                    <a href="#" class="filter__item">3D</a>
+                    <a href="#" class="filter__item">Обложки</a>
+                    <a href="#" class="filter__item">Посты</a>
+                    <a href="#" class="filter__item">Email</a>
+                    <a href="#" class="filter__item filter__item_expand">+6</a>
+                    <a href="#" class="filter__item hidden">Иллюстрации</a>
+                    <a href="#" class="filter__item hidden">Графический дизайн</a>
+                    <a href="#" class="filter__item hidden">Smm</a>
+                    <a href="#" class="filter__item hidden">Ux/Ui</a>
+                    <a href="#" class="filter__item hidden">Посадочные страницы</a>
+                    <a href="#" class="filter__item filter__item_collapse hidden">
+                        <span class="icon icon-filter-collapse w-[10px] h-[6px]"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="filter">
+                <p class="filter__name">Площадки</p>
+
+                <div class="filter__items">
+                    <a href="#" class="filter__item">Все</a>
+                    <a href="#" class="filter__item">Рамблер</a>
+                    <a href="#" class="filter__item filter__item_active">Яндекс</a>
+                    <a href="#" class="filter__item">Instagram</a>
+                    <a href="#" class="filter__item">Avito</a>
+                    <a href="#" class="filter__item">Twitter</a>
+                    <a href="#" class="filter__item">Google</a>
+                    <a href="#" class="filter__item">VK</a>
+                    <a href="#" class="filter__item">Авиасейлс</a>
+                    <a href="#" class="filter__item">Weborama</a>
+                    <a href="#" class="filter__item">Mail</a>
+                    <a href="#" class="filter__item">Youtube</a>
+                </div>
+            </div>
+
+            <div class="filter">
+                <p class="filter__name">Размеры</p>
+
+                <div class="filter__items">
+                    <a href="#" class="filter__item">300×600</a>
+                    <a href="#" class="filter__item filter__item_active">300×250</a>
+                    <a href="#" class="filter__item">300×250</a>
+                    <a href="#" class="filter__item">160×600</a>
+                    <a href="#" class="filter__item">320×480</a>
+                    <a href="#" class="filter__item">300×500</a>
+                    <a href="#" class="filter__item">300×300</a>
+                    <a href="#" class="filter__item">320×100</a>
+                    <a href="#" class="filter__item">200×300</a>
+                    <a href="#" class="filter__item">250×20</a>
+                    <a href="#" class="filter__item">300×600</a>
+                    <a href="#" class="filter__item">160×600</a>
+                    <a href="#" class="filter__item">320×480</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters__bottom"></div>
+    </div>
+
+    <button type="button" class="filters__reset">Сбросить</button>
+</div>
+
+        </div>
+    </main>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0" aria-hidden="true" id="__SVG_SPRITE_NODE__">
+    <symbol xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" id="logo">
+        <path d="M2.66497 7.75931C0.800049 10.9896 0.800049 15.3265 0.800049 24.0002C0.800049 32.6738 0.800049 37.0107 2.66497 40.241C3.88671 42.3572 5.64394 44.1145 7.76005 45.3363C10.5755 46.962 14.2316 47.1706 20.8674 47.1974V15.406H14.7404C14.72 13.6441 14.72 11.8618 14.72 10.0794H32.816V15.3855H26.6891V47.1989C33.6067 47.1792 37.3624 46.9978 40.24 45.3363C42.3562 44.1145 44.1134 42.3572 45.3351 40.241C47.2 37.0107 47.2 32.6738 47.2 24.0002C47.2 15.3265 47.2 10.9896 45.3351 7.75931C44.1134 5.6431 42.3562 3.88577 40.24 2.66397C37.0099 0.79895 32.6733 0.79895 24 0.79895C15.3268 0.79895 10.9902 0.79895 7.76005 2.66397C5.64394 3.88577 3.88671 5.6431 2.66497 7.75931Z" fill="#2856F6"/>
+    </symbol>
+<!--    <symbol xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 35 34" fill="none">-->
+<!--        <path d="M2.84704 5.49618C1.52605 7.78432 1.52605 10.8562 1.52605 17.0001C1.52605 23.144 1.52605 26.2159 2.84704 28.504C3.71244 30.003 4.95714 31.2478 6.45605 32.1132C8.45036 33.2647 11.0401 33.4125 15.7404 33.4315V10.9126H11.4005C11.3861 9.66458 11.3861 8.40209 11.3861 7.13959H24.2041V10.8981H19.8641V33.4326C24.7641 33.4186 27.4244 33.2901 29.4627 32.1132C30.9616 31.2478 32.2063 30.003 33.0717 28.504C34.3927 26.2159 34.3927 23.144 34.3927 17.0001C34.3927 10.8562 34.3927 7.78432 33.0717 5.49618C32.2063 3.99719 30.9616 2.75242 29.4627 1.88698C27.1747 0.565918 24.1029 0.565918 17.9594 0.565918C11.8158 0.565918 8.74408 0.565918 6.45605 1.88698C4.95714 2.75242 3.71244 3.99719 2.84704 5.49618Z"-->
+<!--              fill="#2856F6"/>-->
+<!--    </symbol>-->
+</svg>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</body>
+</html>
