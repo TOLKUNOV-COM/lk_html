@@ -44,6 +44,10 @@ export default function filters() {
     const el = document.querySelector('.filters__scroll');
     const container = document.querySelector('.filters');
 
+    if (!el) {
+        return;
+    }
+
     // Hide shadow at scroll bottom
     el.addEventListener('scroll', () => {
         const isAtTop = el.scrollTop === 0;

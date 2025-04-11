@@ -1,0 +1,18 @@
+.share-button {
+    @apply relative;
+
+    &:after {
+        content: 'Ссылка скопирована';
+
+        @apply absolute top-full right-0;
+        @apply bg-blue-900 text-white text-xs text-nowrap rounded-md;
+        @apply pb-1 px-2 pt-0.5;
+        @apply transition-all opacity-0;
+    }
+}
+
+.share-button_success {
+    &:after {
+        @apply opacity-95 translate-y-1/2;
+    }
+}

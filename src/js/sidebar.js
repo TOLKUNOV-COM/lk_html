@@ -2,10 +2,10 @@ export default function sidebar() {
     const sidebar = document.querySelector('.sidebar');
     const toggleBtn = document.getElementById('sidebar__toggle');
 
-    let animationDuration = getComputedStyle(sidebar).getPropertyValue('--sidebar-animation-duration').trim();
-    animationDuration = parseInt(animationDuration);
-
     if (sidebar && toggleBtn) {
+        let animationDuration = getComputedStyle(sidebar).getPropertyValue('--sidebar-animation-duration').trim();
+        animationDuration = parseInt(animationDuration);
+
         toggleBtn.addEventListener('click', () => {
             if ($(sidebar).hasClass('sidebar_expanding') || $(sidebar).hasClass('sidebar_collapsing')) {
                 return;
