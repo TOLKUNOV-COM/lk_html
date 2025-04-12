@@ -45,6 +45,10 @@ export default function projects() {
         const container = document.querySelector('.projects-grid');
         const grid = document.querySelector('.projects-grid__items');
 
+        if (!container || !grid) {
+            return;
+        }
+
         pckry = new Packery(grid, {
             itemSelector: '.projects-grid__item',
             gutter: 0,
@@ -72,6 +76,6 @@ export default function projects() {
 
     document.addEventListener('update-catalog', initGrid);
     document.addEventListener('sidebar:collapse:end', () => {
-        pckry.layout();
+        pckry && pckry.layout();
     });
 }
