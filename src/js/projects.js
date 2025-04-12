@@ -39,11 +39,13 @@ export default function projects() {
     });
 
     // Grid packery
+    let pckry;
+
     const initGrid = function () {
         const container = document.querySelector('.projects-grid');
         const grid = document.querySelector('.projects-grid__items');
 
-        let pckry = new Packery(grid, {
+        pckry = new Packery(grid, {
             itemSelector: '.projects-grid__item',
             gutter: 0,
             // fitWidth: false,
@@ -53,7 +55,7 @@ export default function projects() {
             // columnWidth: '.materials-item__width',
             // gutter: '.materials-item__gutter',
             // fitWidth: true,
-            // percentPosition: true
+            percentPosition: true
         });
 
         $(container).addClass('projects-grid_loaded');
@@ -69,4 +71,7 @@ export default function projects() {
     initGrid();
 
     document.addEventListener('update-catalog', initGrid);
+    document.addEventListener('sidebar:collapse:end', () => {
+        pckry.layout();
+    });
 }

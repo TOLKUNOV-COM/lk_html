@@ -13,20 +13,28 @@ export default function sidebar() {
 
             // Переключаем класс у сайдбара
             let isOpened = !$(sidebar).hasClass('sidebar_collapsed');
+            const eventStart = new CustomEvent('sidebar:collapse:start');
+            const eventEnd = new CustomEvent('sidebar:collapse:end');
 
             if (isOpened) {
                 sidebar.classList.add('sidebar_collapsing');
+                document.dispatchEvent(eventStart);
 
                 setTimeout(() => {
                     sidebar.classList.add('sidebar_collapsed');
                     sidebar.classList.remove('sidebar_collapsing');
+
+                    document.dispatchEvent(eventEnd);
                 }, animationDuration);
             } else {
                 sidebar.classList.add('sidebar_expanding');
                 sidebar.classList.remove('sidebar_collapsed');
+                document.dispatchEvent(eventStart);
 
                 setTimeout(() => {
                     sidebar.classList.remove('sidebar_expanding');
+
+                    document.dispatchEvent(eventEnd);
                 }, animationDuration);
             }
 
