@@ -12,6 +12,8 @@ export default function projects() {
             src: src,
             // Тип контента
             type: 'ajax',
+        }], {
+            autoFocus: false,
             dragToClose: false,
             on: {
                 done: (fancybox, slide) => {
@@ -26,7 +28,7 @@ export default function projects() {
                     document.dispatchEvent(event);
                 }
             },
-        }]);
+        });
     });
 
     $(document).on('click', '.projects__link', function (e) {
