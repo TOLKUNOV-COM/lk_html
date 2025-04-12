@@ -6,13 +6,10 @@ import shareButton from "./share-button.js";
 // import $ from 'jquery';
 
 tabs();
+sidebar();
 filters();
 projects();
 shareButton();
-
-window.addEventListener('load', function () {
-    sidebar();
-});
 
 document.addEventListener('fancybox:contentReady', (e) => {
     tabs();

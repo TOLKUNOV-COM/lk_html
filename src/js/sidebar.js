@@ -3,8 +3,8 @@ export default function sidebar() {
     const toggleBtn = document.getElementById('sidebar__toggle');
 
     if (sidebar && toggleBtn) {
-        let animationDuration = getComputedStyle(sidebar).getPropertyValue('--sidebar-animation-duration').trim();
-        animationDuration = parseInt(animationDuration);
+        let animationDuration = 500; //getComputedStyle(sidebar).getPropertyValue('--sidebar-animation-duration').trim();
+        // animationDuration = parseInt(animationDuration);
 
         toggleBtn.addEventListener('click', () => {
             if ($(sidebar).hasClass('sidebar_expanding') || $(sidebar).hasClass('sidebar_collapsing')) {
