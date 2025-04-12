@@ -27,6 +27,8 @@ export default defineConfig({
     root: './src', // Указываем корневую директорию для исходных файлов
     build: {
         outDir: '../dist', // Указываем директорию для сборки
+        emptyOutDir: true,
+        cssCodeSplit: false,
         rollupOptions: {
             input: {
                 index: path.resolve(__dirname, './src/index.html'),
