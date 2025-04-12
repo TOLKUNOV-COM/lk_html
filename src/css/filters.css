@@ -73,6 +73,7 @@
 .filter__item {
     @apply border border-dashed border-slate-170 rounded-lg;
     @apply px-[11px] py-[9px];
+    @apply transition;
 
     @apply text-slate-500 text-xs font-black leading-4;
 }
