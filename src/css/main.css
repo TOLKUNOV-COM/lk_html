@@ -54,6 +54,7 @@
     --breakpoint-screen-1200: 1200px;
     --breakpoint-screen-1366: 1366px;
     --breakpoint-screen-1440: 1440px;
+    --breakpoint-screen-1700: 1700px;
 }
 
 :root {

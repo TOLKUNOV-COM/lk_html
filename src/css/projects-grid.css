@@ -31,8 +31,10 @@
     @apply transition;
     @apply hover:shadow-projects-grid-hover;
 
-    width: calc(25% - 16px);
-    margin: 8px;
+    @apply m-2;
+    @apply w-[calc(100%-16px)] lg:w-[calc(50%-16px)];
+    @apply screen-1440:w-[calc(33.33%-16px)];
+    @apply screen-1700:w-[calc(25%-16px)];
 }
 
 .projects-grid__image {
