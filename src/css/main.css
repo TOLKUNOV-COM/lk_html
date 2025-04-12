@@ -11,8 +11,10 @@
 @import "sidebar.css";
 @import "switcher.css";
 @import "projects-list.css";
+@import "projects-grid.css";
 @import "filters.css";
 @import "share-button.css";
+@import "links-popup.css";
 
 @import "tailwindcss";
 
@@ -25,6 +27,7 @@
     --shadow-form-control-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
     --shadow-sidebar-menu-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
     --shadow-content-block: 0px 2px 14px 0px rgba(80, 113, 246, 0.06);
+    --shadow-projects-grid-hover: 0px 4px 12px 0px rgba(34, 34, 34, 0.04);
 
     --color-amber-50: #FFFBEB;
     --color-blue-100: #E6EFFF;

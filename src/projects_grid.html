@@ -19,10 +19,10 @@
         <!-- Фиксированная верхняя часть -->
         <div class="px-5 py-6 border-b border-slate-100 flex gap-4">
             <div class="switcher">
-                <a class="switcher__button" href="projects_grid.html">
+                <a class="switcher__button switcher__button_active">
                     <span class="switcher__icon icon icon-list-type-grid"></span>
                 </a>
-                <a class="switcher__button switcher__button_active">
+                <a class="switcher__button" href="projects_list.html">
                     <span class="switcher__icon icon icon-list-type-list"></span>
                 </a>
             </div>
@@ -52,8 +52,8 @@
 
         <!-- Прокручиваемая часть -->
         <div class="overflow-hidden relative flex-1">
-            <div class="overflow-y-auto pt-4 h-full">
-                {{> projects_list }}
+            <div class="overflow-y-auto pt-0 h-full">
+                {{> projects_grid }}
             </div>
 
             {{> filters }}

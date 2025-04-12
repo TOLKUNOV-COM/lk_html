@@ -3,6 +3,7 @@ import sidebar from "./sidebar.js";
 import filters from "./filters.js";
 import projects from "./projects.js";
 import shareButton from "./share-button.js";
+import linksPopup from "./links-popup.js";
 // import $ from 'jquery';
 
 tabs();
@@ -10,6 +11,7 @@ sidebar();
 filters();
 projects();
 shareButton();
+linksPopup();
 
 document.addEventListener('fancybox:contentReady', (e) => {
     tabs();

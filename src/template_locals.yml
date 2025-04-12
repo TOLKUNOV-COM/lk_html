@@ -180,11 +180,13 @@ projects:
     category: "Автотека"
     client: "Лев Зайков"
     is_favorite: 1
+    image: "https://dummyimage.com/325x182"
   -
     title: "Сдавайте там, где ищут"
     date: "11 февраля 2025"
     category: "Недвижимость"
     client: "Кристина Лолаева"
+    image: "https://dummyimage.com/325x182/000/fff"
   -
     title: "Машины с кешбеком"
     date: "1 марта 2025"
@@ -206,6 +208,7 @@ projects:
     date: "28 февраля 2025"
     category: "Услуги"
     client: "Антонина Маркова"
+    image: "https://dummyimage.com/325x182/e612e6/ffffff"
   -
     title: "Новые клиенты к вашим услугам"
     date: "5 декабря 2024"
@@ -236,6 +239,7 @@ projects:
     date: "5 декабря 2024"
     category: "Автотека"
     client: "Кристина Лолаева"
+    image: "https://dummyimage.com/325x182"
   -
     title: "Авито рядом"
     date: "5 декабря 2024"

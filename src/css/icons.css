@@ -29,6 +29,13 @@
     background-image: url("../img/star_empty.svg");
 }
 
+.icon-star-empty.outlined {
+    background-image: none;
+    mask-image: url("../img/menu/star.svg");
+
+    @apply bg-slate-400;
+}
+
 .icon-star-active {
     background-image: url("../img/star_active.svg");
 
@@ -94,4 +101,8 @@
 
 .icon-empty-search {
     background-image: url("../img/empty_search.svg");
+}
+
+.icon-attachment {
+    background-image: url("../img/attachment.svg");
 }

@@ -1,4 +1,4 @@
-<table class="projects projects_list w-full">
+<table class="projects projects-list w-full">
     <colgroup>
         <col class="w-[1px]">
         <col>
@@ -7,39 +7,39 @@
         <col>
         <col class="w-[1px]">
     </colgroup>
-    <thead class="projects__header">
+    <thead class="projects-list__header">
     <tr>
         <th></th>
         <th>
-            <button type="button" class="projects__sort">
+            <button type="button" class="projects-list__sort">
                 <span>Проект</span>
                 <span class="icon size-4 icon-sort-down"></span>
             </button>
         </th>
         <th>
-            <button type="button" class="projects__sort">
+            <button type="button" class="projects-list__sort">
                 <span>Дата</span>
                 <span class="icon size-4 icon-sort-up"></span>
             </button>
         </th>
         <th>
-            <button type="button" class="projects__sort">
+            <button type="button" class="projects-list__sort">
                 <span>Категория</span>
                 <span class="icon size-4 icon-sort-down"></span>
             </button>
         </th>
         <th>
-            <button type="button" class="projects__sort">
+            <button type="button" class="projects-list__sort">
                 <span>Заказчик</span>
                 <span class="icon size-4 icon-sort-down"></span>
             </button>
         </th>
         <th>
-            <span class="projects__sort">Результат</span>
+            <span class="projects-list__sort">Результат</span>
         </th>
     </tr>
     </thead>
-    <tbody class="projects__body">
+    <tbody class="projects-list__body">
     {{#each projects}}
     <tr class="projects__item" data-src="view.html">
         <td>
@@ -48,8 +48,8 @@
                 <span class="inline-block size-7 icon icon-star-empty"></span>
             </button>
         </td>
-        <td class="projects__title">
-            <a href="view.html" class="projects__link">{{{title}}}</a>
+        <td class="projects-list__title">
+            <a href="view.html" class="projects-list__link">{{{title}}}</a>
         </td>
 
         <td>{{date}}</td>
