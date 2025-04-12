@@ -37,6 +37,7 @@ export default defineConfig({
                 login: path.resolve(__dirname, './src/login.html'),
                 view: path.resolve(__dirname, './src/view.html'),
                 projects_list: path.resolve(__dirname, './src/projects_list.html'),
+                projects_grid: path.resolve(__dirname, './src/projects_grid.html'),
                 empty_search: path.resolve(__dirname, './src/empty_search.html'),
                 empty_favorites: path.resolve(__dirname, './src/empty_favorites.html'),
 
