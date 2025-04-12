@@ -64,4 +64,9 @@ export default function filters() {
     document.getElementById('filters_close').addEventListener('click', () => {
         $(container).addClass('filters_collapsed');
     });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' || event.keyCode === 27) {
+            $(container).addClass('filters_collapsed');
+        }
+    });
 }
