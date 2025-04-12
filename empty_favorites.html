@@ -66,12 +66,12 @@
         <!-- Фиксированная верхняя часть -->
         <div class="px-5 py-6 border-b border-slate-100 flex gap-4">
             <div class="switcher">
-                <button class="switcher__button switcher__button_active">
+                <a class="switcher__button switcher__button_active" href="projects_grid.html">
                     <span class="switcher__icon icon icon-list-type-grid"></span>
-                </button>
-                <button class="switcher__button">
+                </a>
+                <a class="switcher__button" href="projects_list.html">
                     <span class="switcher__icon icon icon-list-type-list"></span>
-                </button>
+                </a>
             </div>
 
             <form class="relative flex-1" role="search">
@@ -90,7 +90,9 @@
 
             <button id="filters_toggle"
                     class="flex gap-2 items-center justify-center h-12 border-[1.5px] border-slate-100 bg-white text-blue-900 px-5 rounded-full cursor-pointer text-base font-bold leading-5 tracking-[0.16px] hover:border-slate-150 active:border-slate-200 transition">
-                <span class="inline-block size-5 bg-blue-100 rounded-full text-blue-600 font-ubuntu text-sm font-medium leading-5 tracking-[-0.35px]">1</span>
+                <span class="flex items-center justify-center size-5">
+                    <span class="flex items-center justify-center size-5 bg-blue-100 rounded-full text-blue-600 font-ubuntu text-sm font-medium leading-5 tracking-[-0.35px]">1</span>
+                </span>
                 <span>Фильтры</span>
             </button>
         </div>
