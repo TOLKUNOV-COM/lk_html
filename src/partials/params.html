@@ -1,0 +1,22 @@
+{{#each params}}
+<div class="space-y-4">
+    <h3>{{title}}</h3>
+
+    {{#each items}}
+    <div class="flex gap-2">
+        <div class="h-8 flex-1 flex items-end gap-2">
+            <span class="mb-[1px] whitespace-nowrap text-slate-500 text-xs font-black leading-4 tracking-[0.3px] uppercase">{{name}}</span>
+            <div class="flex-1 border-b border-zinc-100 mb-1"></div>
+        </div>
+
+        <div class="w-[439px]">
+            <div class="tags tags_small">
+                {{#each tags}}
+                <div class="tag">{{this}}</div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}

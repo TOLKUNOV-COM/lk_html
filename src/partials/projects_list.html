@@ -1,0 +1,68 @@
+<table class="projects projects_list w-full">
+    <colgroup>
+        <col class="w-[1px]">
+        <col>
+        <col>
+        <col>
+        <col>
+        <col class="w-[1px]">
+    </colgroup>
+    <thead class="projects__header">
+    <tr>
+        <th></th>
+        <th>
+            <button type="button" class="projects__sort">
+                <span>Проект</span>
+                <span class="icon size-4 icon-sort-down"></span>
+            </button>
+        </th>
+        <th>
+            <button type="button" class="projects__sort">
+                <span>Дата</span>
+                <span class="icon size-4 icon-sort-up"></span>
+            </button>
+        </th>
+        <th>
+            <button type="button" class="projects__sort">
+                <span>Категория</span>
+                <span class="icon size-4 icon-sort-down"></span>
+            </button>
+        </th>
+        <th>
+            <button type="button" class="projects__sort">
+                <span>Заказчик</span>
+                <span class="icon size-4 icon-sort-down"></span>
+            </button>
+        </th>
+        <th>
+            <span class="projects__sort">Результат</span>
+        </th>
+    </tr>
+    </thead>
+    <tbody class="projects__body">
+    {{#each projects}}
+    <tr class="projects__item" data-src="view.html">
+        <td>
+            <button class="js-toggle-favorite {{#if is_favorite}}js-toggle-favorite_active{{/if}} cursor-pointer inline-block size-7" type="button">
+                <span class="inline-block size-7 icon icon-star-active"></span>
+                <span class="inline-block size-7 icon icon-star-empty"></span>
+            </button>
+        </td>
+        <td class="projects__title">
+            <a href="view.html" class="projects__link">{{{title}}}</a>
+        </td>
+
+        <td>{{date}}</td>
+        <td>{{category}}</td>
+        <td>{{client}}</td>
+        <td>
+            <div class="flex items-center gap-3">
+                <a href="https://ya.ru" target="_blank" class="size-6 icon icon-docs-yandex-disk"></a>
+                <div class="h-5 w-px bg-[#EEE] opacity-90"></div>
+                <a href="https://ya.ru" target="_blank" class="size-6 icon icon-docs-figma"></a>
+            </div>
+        </td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>

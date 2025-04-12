@@ -12,7 +12,7 @@
 
 <div class="flex gap-6 h-screen bg-slate-50 p-3 pl-5">
     <!-- Sidebar -->
-    <pug src="src/templates/includes/sidebar.pug"></pug>
+    {{> sidebar }}
 
     <!-- Main content -->
     <main class="flex-1 bg-white rounded-2xl shadow-content-block border border-slate-100 overflow-hidden flex flex-col">
@@ -64,12 +64,12 @@
                 </div>
             </div>
 
-            <pug src="src/templates/includes/filters.pug"></pug>
+            {{> filters }}
         </div>
     </main>
 </div>
 
-<pug src="src/templates/includes/sprite.pug"></pug>
+{{> sprite }}
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 

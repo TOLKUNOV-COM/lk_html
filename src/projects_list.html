@@ -12,19 +12,19 @@
 
 <div class="flex gap-6 h-screen bg-slate-50 p-3 pl-5">
     <!-- Sidebar -->
-    <pug src="src/templates/includes/sidebar.pug"></pug>
+    {{> sidebar }}
 
     <!-- Main content -->
     <main class="flex-1 bg-white rounded-2xl shadow-content-block border border-slate-100 overflow-hidden flex flex-col">
         <!-- Фиксированная верхняя часть -->
         <div class="px-5 py-6 border-b border-slate-100 flex gap-4">
             <div class="switcher">
-                <button class="switcher__button switcher__button_active">
+                <a class="switcher__button" href="projects_grid.html">
                     <span class="switcher__icon icon icon-list-type-grid"></span>
-                </button>
-                <button class="switcher__button">
+                </a>
+                <a class="switcher__button switcher__button_active">
                     <span class="switcher__icon icon icon-list-type-list"></span>
-                </button>
+                </a>
             </div>
 
             <form class="relative flex-1" role="search">
@@ -53,15 +53,15 @@
         <!-- Прокручиваемая часть -->
         <div class="overflow-hidden relative flex-1">
             <div class="overflow-y-auto pt-4 max-h-full">
-                <pug src="src/templates/partials/projects_list.pug"></pug>
+                {{> projects_list }}
             </div>
 
-            <pug src="src/templates/includes/filters.pug"></pug>
+            {{> filters }}
         </div>
     </main>
 </div>
 
-<pug src="src/templates/includes/sprite.pug"></pug>
+{{> sprite }}
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 

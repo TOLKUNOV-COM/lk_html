@@ -1,11 +1,12 @@
 import {defineConfig} from 'vite'
-import pugPlugin from 'vite-plugin-pug';
+// import pugPlugin from 'vite-plugin-pug';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
 import chokidar from 'chokidar';
 import {viteStaticCopy} from 'vite-plugin-static-copy';
 // import tailwindcss from '@tailwindcss/vite'
+import handlebars from 'vite-plugin-handlebars';
 
 const pugOptions = { pretty: true } // FIXME: pug pretty is deprecated!
 
@@ -57,7 +58,11 @@ export default defineConfig({
     base: '',
     plugins: [
 		// tailwindcss(),
-        pugPlugin(pugOptions, currentLocals),
+        handlebars({
+            context: currentLocals,
+            partialDirectory: path.resolve(__dirname, 'src/partials'),
+        }),
+        // pugPlugin(pugOptions, currentLocals),
         {
             name: 'watch-yaml',
             configureServer(server) {
