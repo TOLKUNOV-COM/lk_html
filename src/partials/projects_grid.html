@@ -3,14 +3,14 @@
 
     <div class="projects-grid__items">
         {{#each projects}}
-        <div class="projects__item projects-grid__item" data-src="view.html">
+        <div class="projects__item projects-grid__item" data-src="view_modal.html">
             {{#if image}}
             <img src="{{image}}" alt="#" class="projects-grid__image w-full max-w-full">
             {{/if}}
 
             <div class="flex flex-col gap-4 p-4 projects-grid__body">
                 <div class="space-y-2">
-                    <a href="view.html" class="projects-grid__title">{{{title}}}</a>
+                    <a href="view_modal.html" class="projects-grid__title">{{{title}}}</a>
 
                     <div class="flex items-center gap-2">
                         <span>{{category}}</span>
@@ -33,8 +33,6 @@
                                 <a href="https://ya.ru" target="_blank" class="size-6 icon icon-docs-yandex-disk"></a>
                                 <div class="h-5 w-px bg-[#EEE] opacity-90"></div>
                                 <a href="https://ya.ru" target="_blank" class="size-6 icon icon-docs-figma"></a>
-                                <div class="h-5 w-px bg-[#EEE] opacity-90"></div>
-                                <a href="https://ya.ru" target="_blank" class="size-6 icon icon-docs-google-sheets"></a>
                             </div>
                         </div>
                     </div>

@@ -36,6 +36,7 @@ export default defineConfig({
                 components: path.resolve(__dirname, './src/components.html'),
                 login: path.resolve(__dirname, './src/login.html'),
                 view: path.resolve(__dirname, './src/view.html'),
+                view_modal: path.resolve(__dirname, './src/view_modal.html'),
                 projects_list: path.resolve(__dirname, './src/projects_list.html'),
                 projects_grid: path.resolve(__dirname, './src/projects_grid.html'),
                 empty_search: path.resolve(__dirname, './src/empty_search.html'),

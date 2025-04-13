@@ -131,7 +131,7 @@ h3 {
     @apply rounded-t-4xl bg-white;
     @apply w-full;
 
-    @apply py-0;
+    @apply p-0;
 }
 
 .fancybox__slide {
@@ -151,6 +151,21 @@ h3 {
     background-color: #fff;
 
     @apply size-12 -top-12 right-8;
+}
+
+.scroll-inner::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-inner::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 32px; /* смещение от верхнего края */
+    margin-bottom: 0;
+}
+
+.scroll-inner::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 9999px;
 }
 
 /*a {*/

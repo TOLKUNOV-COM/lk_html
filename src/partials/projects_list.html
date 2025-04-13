@@ -41,7 +41,7 @@
     </thead>
     <tbody class="projects-list__body">
     {{#each projects}}
-    <tr class="projects__item" data-src="view.html">
+    <tr class="projects__item" data-src="view_modal.html">
         <td>
             <button class="js-toggle-favorite {{#if is_favorite}}js-toggle-favorite_active{{/if}} cursor-pointer inline-block size-7" type="button">
                 <span class="inline-block size-7 icon icon-star-active"></span>
@@ -49,7 +49,7 @@
             </button>
         </td>
         <td class="projects-list__title">
-            <a href="view.html" class="projects-list__link">{{{title}}}</a>
+            <a href="view_modal.html" class="projects-list__link">{{{title}}}</a>
         </td>
 
         <td>{{date}}</td>
