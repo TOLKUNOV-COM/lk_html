@@ -13,7 +13,21 @@
 }
 
 .filters__scroll {
-    @apply flex-1 overflow-y-auto;
+    @apply flex-1 overflow-y-auto mr-1;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        margin-top: 0; /* смещение от верхнего края */
+        margin-bottom: 24px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @apply bg-slate-100 rounded-full;
+    }
 }
 
 .filters__body {

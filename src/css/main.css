@@ -164,8 +164,7 @@ h3 {
 }
 
 .scroll-inner::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 9999px;
+    @apply bg-slate-200 rounded-full;
 }
 
 /*a {*/
