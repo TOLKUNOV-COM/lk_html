@@ -158,18 +158,20 @@ html.with-fancybox .fancybox__slide {
     overflow-y: hidden !important;
 }
 
-.scroll-inner::-webkit-scrollbar {
-    width: 8px;
-}
+.scroll-inner {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
 
-.scroll-inner::-webkit-scrollbar-track {
-    background: transparent;
-    margin-top: 32px; /* смещение от верхнего края */
-    margin-bottom: 0;
-}
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        margin-top: 32px;
+        margin-bottom: 0;
+    }
 
-.scroll-inner::-webkit-scrollbar-thumb {
-    @apply bg-slate-200 rounded-full;
+    &::-webkit-scrollbar-thumb {
+        @apply bg-slate-200 rounded-full;
+    }
 }
 
 /*a {*/
