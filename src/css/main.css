@@ -153,6 +153,11 @@ h3 {
     @apply size-12 -top-12 right-8;
 }
 
+html.with-fancybox .fancybox__slide {
+    /* as content scrolled inside content block, disable common scroll */
+    overflow-y: hidden !important;
+}
+
 .scroll-inner::-webkit-scrollbar {
     width: 8px;
 }
