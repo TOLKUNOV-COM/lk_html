@@ -1,7 +1,8 @@
 import tabs from "./tabs.js";
 import sidebar from "./sidebar.js";
 import filters from "./filters.js";
-import projects from "./projects.js";
+import projectsModal from "./projects-modal.js";
+import projectsGrid from "./projects-grid.js";
 import shareButton from "./share-button.js";
 import linksPopup from "./links-popup.js";
 // import $ from 'jquery';
@@ -9,7 +10,8 @@ import linksPopup from "./links-popup.js";
 tabs();
 sidebar();
 filters();
-projects();
+projectsModal();
+projectsGrid();
 shareButton();
 linksPopup();
 

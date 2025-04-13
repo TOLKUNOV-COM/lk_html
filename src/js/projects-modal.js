@@ -1,8 +1,6 @@
 import {Fancybox} from "@fancyapps/ui";
-import Packery from 'packery/js/packery';
-import imagesLoaded from 'imagesloaded';
 
-export default function projects() {
+export default function projectsModal() {
     $(document).on('click', '.projects__item', function (e) {
         // Проверка, не был ли клик по кнопке внутри строки
         if (e.target.closest('button, a[target="_blank"], .links-popup')) return;
@@ -36,46 +34,5 @@ export default function projects() {
 
     $(document).on('click', '.projects-list__link', function (e) {
         e.preventDefault();
-    });
-
-    // Grid packery
-    let pckry;
-
-    const initGrid = function () {
-        const container = document.querySelector('.projects-grid');
-        const grid = document.querySelector('.projects-grid__items');
-
-        if (!container || !grid) {
-            return;
-        }
-
-        pckry = new Packery(grid, {
-            itemSelector: '.projects-grid__item',
-            gutter: 0,
-            // fitWidth: false,
-            // stagger: 0,
-            transitionDuration: 0,
-
-            // columnWidth: '.materials-item__width',
-            // gutter: '.materials-item__gutter',
-            // fitWidth: true,
-            percentPosition: true
-        });
-
-        $(container).addClass('projects-grid_loaded');
-
-        imagesLoaded(grid).on('progress', () => {
-            pckry.layout();
-        });
-        // imagesLoaded(grid, () => {
-        //     pckry.layout();
-        // });
-    }
-
-    initGrid();
-
-    document.addEventListener('update-catalog', initGrid);
-    document.addEventListener('sidebar:collapse:end', () => {
-        pckry && pckry.layout();
     });
 }
