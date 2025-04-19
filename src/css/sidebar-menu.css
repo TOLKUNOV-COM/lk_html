@@ -26,14 +26,15 @@
  SUBMENU
  */
 .sidebar-submenu {
-    @apply px-2 py-3;
+    @apply px-2 py-3 flex flex-col gap-2;
 }
 
 .sidebar-submenu__item {
     @apply block px-3 py-[10px] rounded-xl;
     @apply text-lg text-slate-500 font-medium leading-6 tracking-[0.18px];
+    @apply transition;
 
-    @apply hover:bg-slate-170 hover:text-blue-900 active:text-blue-600;
+    @apply hover:bg-slate-100 hover:text-blue-900 active:text-blue-600;
 
     &.sidebar-submenu__item_active {
         @apply bg-slate-170 text-blue-600;

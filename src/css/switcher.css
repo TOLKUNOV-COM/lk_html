@@ -3,9 +3,15 @@
 }
 
 .switcher__button {
-    @apply size-10 rounded-full cursor-pointer p-3 grid place-items-center;
+    @apply size-10 rounded-full cursor-pointer p-3 grid place-items-center transition;
 
-    &:hover, &:active, &:focus, &.switcher__button_active {
+    &:hover, &:active, &:focus-visible, &.switcher__button_active {
+        .switcher__icon {
+            @apply bg-blue-900;
+        }
+    }
+
+    &:active, &.switcher__button_active {
         @apply bg-slate-50;
 
         .switcher__icon {
@@ -15,5 +21,5 @@
 }
 
 .switcher__icon {
-    @apply size-4 bg-slate-500;
+    @apply size-4 bg-slate-500 transition;
 }

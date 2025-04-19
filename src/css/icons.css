@@ -22,18 +22,18 @@
 }
 
 .icon-link-simple {
-    background-image: url("../img/link_simple.svg");
+    mask-image: url("../img/link_simple.svg");
+    background-color: currentColor;
 }
 
 .icon-star-empty {
-    background-image: url("../img/star_empty.svg");
+    mask-image: url("../img/star_empty.svg");
+
+    background-color: currentColor;
 }
 
 .icon-star-empty.outlined {
-    background-image: none;
     mask-image: url("../img/menu/star.svg");
-
-    @apply bg-slate-400;
 }
 
 .icon-star-active {
@@ -47,7 +47,8 @@
 }
 
 .icon-x-mark {
-    background-image: url("../img/x.svg");
+    mask-image: url("../img/x.svg");
+    background-color: currentColor;
 }
 
 .icon-sidebar-toggle {
@@ -66,8 +67,10 @@
 }
 
 .icon-logout {
-    background-image: url("../img/logout.svg");
-    background-size: 20px;
+    mask-image: url("../img/logout.svg");
+    mask-size: 20px;
+
+    background-color: currentColor;
 }
 
 .icon-list-type-grid {
@@ -104,5 +107,6 @@
 }
 
 .icon-attachment {
-    background-image: url("../img/attachment.svg");
+    mask-image: url("../img/attachment.svg");
+    background-color: currentColor;
 }

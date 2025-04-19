@@ -90,6 +90,7 @@
     @apply transition;
 
     @apply text-slate-500 text-xs font-black leading-4;
+    @apply hover:text-blue-900;
 }
 
 .filter__item_expand {
@@ -106,6 +107,6 @@
     display: none;
 }
 
-.filter__item_active {
+.filter__item.filter__item_active {
     @apply border-solid border-blue-600 bg-blue-600 text-white;
 }

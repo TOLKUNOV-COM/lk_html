@@ -8,6 +8,7 @@
         @apply bg-blue-900 text-white text-xs text-nowrap rounded-md;
         @apply pb-1 px-2 pt-0.5;
         @apply transition-all opacity-0;
+        @apply pointer-events-none;
     }
 }
 

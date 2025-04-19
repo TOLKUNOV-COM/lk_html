@@ -3,8 +3,20 @@
         tr {
             @apply cursor-pointer;
 
+            .icon-star-empty {
+                @apply text-star-empty-default;
+            }
+
             &:hover {
                 @apply bg-slate-50;
+
+                .icon-star-empty {
+                    @apply text-star-empty-hover;
+
+                    &:hover {
+                        @apply text-star-empty-active;
+                    }
+                }
             }
         }
     }

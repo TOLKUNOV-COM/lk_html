@@ -35,19 +35,27 @@
     --color-blue-650: #2E55DB;
     --color-blue-700: #2146C4;
     --color-blue-900: #161F6A;
+
     --color-slate-50: #F4F6FA;
     --color-slate-100: #EFF2F7;
-    --color-slate-150: #ECEFF6;
+    --color-slate-140: #ECEFF6; /* old 150 */
+    --color-slate-150: #E5E9F0; /* new 150 */
     --color-slate-170: #E9EDF5;
     --color-slate-175: #E9ECF3;
-    --color-slate-200: #DFE4EC;
+    --color-slate-240: #DFE4EC; /* old 200 */
+    --color-slate-250: #E2E6EE; /* new 200 */
     --color-slate-400: #ABB1C4;
     --color-slate-500: #6E7185;
+
     --color-indigo-50: #E3E8F2;
     --color-indigo-100: #E5EBFF;
     --color-rose-500: #FF4154;
     --color-orange-600: #DF6738;
     --color-zinc-100: #EFEDF0;
+
+    --color-star-empty-default: #EDF0F6;
+    --color-star-empty-hover: #E1E5EC;
+    --color-star-empty-active: #CDD3DF;
 
     --default-transition-duration: 200ms;
 
@@ -170,7 +178,61 @@ html.with-fancybox .fancybox__slide {
     }
 
     &::-webkit-scrollbar-thumb {
-        @apply bg-slate-200 rounded-full;
+        @apply bg-slate-240 rounded-full;
+    }
+}
+
+.button_secondary {
+    .icon {
+        @apply text-slate-400 transition;
+    }
+
+    &:hover {
+        .icon {
+            @apply text-blue-900;
+        }
+    }
+
+    &:active {
+        .icon {
+            @apply text-slate-500;
+        }
+    }
+}
+
+.button_tertiary {
+    .icon {
+        @apply text-slate-500 transition;
+    }
+
+    &:hover {
+        .icon {
+            @apply text-blue-900;
+        }
+    }
+
+    &:active {
+        .icon {
+            @apply text-slate-500;
+        }
+    }
+}
+
+.button_tertiary.js-toggle-favorite {
+    .icon {
+        @apply text-star-empty-default;
+    }
+
+    &:hover {
+        .icon {
+            @apply text-star-empty-hover;
+        }
+    }
+
+    &:active {
+        .icon {
+            @apply text-star-empty-active;
+        }
     }
 }
 
