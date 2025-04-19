@@ -1,5 +1,5 @@
 .sidebar-menu {
-
+    @apply flex flex-col gap-3;
 }
 
 .sidebar-menu__item {
@@ -26,7 +26,7 @@
  SUBMENU
  */
 .sidebar-submenu {
-    @apply px-2 py-3 flex flex-col gap-2;
+    @apply px-2 py-3 pb-0 flex flex-col gap-2;
 }
 
 .sidebar-submenu__item {
