@@ -63,6 +63,7 @@
     @apply absolute bottom-6 inset-x-6;
     @apply px-5 py-[14px];
     @apply text-blue-900 font-bold leading-5 tracking-[0.16px];
+    @apply transition;
 
     @apply rounded-full bg-slate-50 hover:bg-slate-100 active:bg-slate-175;
     @apply cursor-pointer;
