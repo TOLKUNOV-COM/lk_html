@@ -28,7 +28,7 @@ export default defineConfig({
     root: './src', // Указываем корневую директорию для исходных файлов
     build: {
         outDir: '../dist', // Указываем директорию для сборки
-        emptyOutDir: true,
+        emptyOutDir: false,
         cssCodeSplit: false,
         rollupOptions: {
             input: {
@@ -45,11 +45,11 @@ export default defineConfig({
                 test: path.resolve(__dirname, './src/js/test.js'),
             },
             output: {
-                entryFileNames: '[name].js', // Имена файлов без хэша для JS
-                chunkFileNames: '[name].js', // Имена чанков без хэша для JS
+                entryFileNames: 'assets/[name].js', // Имена файлов без хэша для JS
+                chunkFileNames: 'assets/[name].js', // Имена чанков без хэша для JS
                 assetFileNames: (assetInfo) => {
                     if (assetInfo.name.endsWith('.css')) {
-                        return '[name].css'; // Имена файлов без хэша для CSS
+                        return 'assets/[name].css'; // Имена файлов без хэша для CSS
                     }
                     return 'assets/[name].[ext]'; // Имена файлов без хэша для остальных ассетов
                 }

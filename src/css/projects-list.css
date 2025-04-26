@@ -1,4 +1,6 @@
 .projects-list {
+    @apply mt-4;
+
     tbody {
         tr {
             @apply cursor-pointer;

@@ -23,7 +23,7 @@
         @apply text-slate-400 text-sm font-medium leading-4 tracking-[0.28px] text-left;
     }
 
-    .error {
+    .hint.error {
         @apply text-rose-500 text-sm font-medium leading-4 tracking-[0.28px] text-left;
     }
 }
@@ -34,7 +34,7 @@
     &:hover, &:active, &:focus {
         @apply ring-orange-600 shadow-none;
 
-        & + .error {
+        & + .hint.error {
             @apply text-orange-600;
         }
     }
