@@ -52,18 +52,22 @@
 
         <!-- Прокручиваемая часть -->
         <div class="overflow-hidden relative flex-1">
+            <div class="overflow-y-auto h-full">
 
-            <!-- Пустой список избранного -->
-            <div class="min-h-full flex flex-col items-center justify-center gap-6 px-5">
-                <div class="size-16 bg-amber-50 rounded-full flex items-center justify-center">
-                    <span class="icon icon-star-active size-7"></span>
+                <!-- Пустой список избранного -->
+                <div class="min-h-full flex flex-col items-center justify-center gap-6 px-5">
+                    <div class="size-16 bg-amber-50 rounded-full flex items-center justify-center">
+                        <span class="icon icon-star-active size-7"></span>
+                    </div>
+
+                    <div class="flex flex-col gap-3 items-center text-center max-w-[490px]">
+                        <h4 class="text-blue-900 text-xl font-medium leading-7 tracking-[0.4px]">Добавляйте проекты в «Избранное»</h4>
+                        <p class="text-slate-500 font-medium leading-5 tracking-[0.32px]"><span>Чтобы добавить проект в избранное нажмите</span><span
+                                class="relative top-2 icon icon-star-empty text-star-empty-default size-7 mx-1 inline-block"></span><span>в&nbsp;карточке или на&nbsp;странице проекта</span>
+                        </p>
+                    </div>
                 </div>
 
-                <div class="flex flex-col gap-3 items-center text-center max-w-[490px]">
-                    <h4 class="text-blue-900 text-xl font-medium leading-7 tracking-[0.4px]">Добавляйте проекты в «Избранное»</h4>
-                    <p class="text-slate-500 font-medium leading-5 tracking-[0.32px]"><span>Чтобы добавить проект в избранное нажмите</span><span
-                            class="relative top-2 icon icon-star-empty text-star-empty-default size-7 mx-1 inline-block"></span><span>в&nbsp;карточке или на&nbsp;странице проекта</span></p>
-                </div>
             </div>
 
             {{> filters }}
