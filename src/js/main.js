@@ -5,6 +5,7 @@ import projectsModal from "./projects-modal.js";
 import projectsGrid from "./projects-grid.js";
 import shareButton from "./share-button.js";
 import linksPopup from "./links-popup.js";
+import favoriteButton from "./favorite-button.js";
 // import $ from 'jquery';
 
 tabs();
@@ -14,6 +15,7 @@ projectsModal();
 projectsGrid();
 shareButton();
 linksPopup();
+favoriteButton();
 
 document.addEventListener('fancybox:contentReady', (e) => {
     tabs();
