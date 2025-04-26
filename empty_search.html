@@ -99,17 +99,20 @@
 
         <!-- Прокручиваемая часть -->
         <div class="overflow-hidden relative flex-1">
+            <div class="overflow-y-auto h-full">
 
-            <!-- Пустой результат поиска-->
-            <div class="min-h-full flex flex-col items-center justify-center gap-6 px-5">
-                <div class="size-16 bg-slate-50 rounded-full flex items-center justify-center">
-                    <span class="icon icon-empty-search size-8"></span>
+                <!-- Пустой результат поиска-->
+                <div class="min-h-full flex flex-col items-center justify-center gap-6 px-5">
+                    <div class="size-16 bg-slate-50 rounded-full flex items-center justify-center">
+                        <span class="icon icon-empty-search size-8"></span>
+                    </div>
+
+                    <div class="flex flex-col gap-3 items-center text-center max-w-[490px]">
+                        <h4 class="text-blue-900 text-xl font-medium leading-7 tracking-[0.4px]">Проектов по вашему запросу не найдено</h4>
+                        <p class="text-slate-500 font-medium leading-5 tracking-[0.32px]">Попробуйте изменить запрос или параметры фильтров</p>
+                    </div>
                 </div>
 
-                <div class="flex flex-col gap-3 items-center text-center max-w-[490px]">
-                    <h4 class="text-blue-900 text-xl font-medium leading-7 tracking-[0.4px]">Проектов по вашему запросу не найдено</h4>
-                    <p class="text-slate-500 font-medium leading-5 tracking-[0.32px]">Попробуйте изменить запрос или параметры фильтров</p>
-                </div>
             </div>
 
             <div class="filters filters_collapsed">
