@@ -150,34 +150,59 @@
 
             <!-- Контент -->
             <div class="swiper tab-swiper viewer__view">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper" style="height: 212px;">
                     <div class="swiper-slide swiper-no-swiping viewer__slide">
                         <div class="viewer__item">
-                            <img src="https://dummyimage.com/1500x180" alt="#" width="1500" height="180" class="viewer__image">
+                            <div class="js-image"
+                                 data-src="https://dummyimage.com/1500x180"
+                                 data-alt="#"
+                                 data-width="1500"
+                                 data-height="180"
+                                 data-class="viewer__image"
+                                 style="--placeholder-width:1500px;--placeholder-height: 180px"
+                            ></div>
                         </div>
                     </div>
                     <div class="swiper-slide swiper-no-swiping viewer__slide">
                         <div class="viewer__item">
-                            <img src="https://dummyimage.com/325x182" alt="#" class="viewer__image">
+                            <div class="js-image"
+                                 data-src="https://dummyimage.com/325x182"
+                                 data-alt="#"
+                                 data-width="325"
+                                 data-height="182"
+                                 data-class="viewer__image"
+                                 style="--placeholder-width:325px;--placeholder-height: 182px"
+                            ></div>
                         </div>
                     </div>
                     <div class="swiper-slide swiper-no-swiping viewer__slide">
                         <div class="viewer__item">
-                            <video autoplay muted playsinline loop controls class="viewer__video">
-                                <source src="https://tolkunov.com/journal/storage/tolkunov-zurnal-1_5abcc963.mp4" type="video/mp4">
-                            </video>
+                            <div class="js-video"
+                                 data-src="https://tolkunov.com/journal/storage/tolkunov-zurnal-1_5abcc963.mp4"
+                                 data-type="video/mp4"
+                                 data-autoplay="true"
+                                 data-muted="true"
+                                 data-playsinline="true"
+                                 data-loop="true"
+                                 data-controls="true"
+                                 data-width="3840"
+                                 data-height="2160"
+                                 data-class="viewer__video"
+                                 style="--placeholder-width:3840px;--placeholder-ratio:3840/2160"
+                            ></div>
                         </div>
                     </div>
                     <div class="swiper-slide swiper-no-swiping viewer__slide">
                         <div class="viewer__item">
-                            <iframe
-                                    src="https://tolkunov.com/uploads/portfolio/02665d59028254e1be7d345a1de7e7e6/320x480-avito-services-kizzima-p1.html"
-                                    width="320"
-                                    height="480"
-                                    frameborder="0"
-                                    scrolling="no"
-                                    class="viewer__iframe"
-                            ></iframe>
+                            <div class="js-iframe"
+                                 data-src="https://tolkunov.com/uploads/portfolio/02665d59028254e1be7d345a1de7e7e6/320x480-avito-services-kizzima-p1.html"
+                                 data-width="320"
+                                 data-height="480"
+                                 data-frameborder="0"
+                                 data-scrolling="no"
+                                 data-class="viewer__iframe"
+                                 style="--placeholder-width:320px;--placeholder-height: 480px"
+                            ></div>
                         </div>
                     </div>
                 </div>
