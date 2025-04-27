@@ -53,7 +53,7 @@
 .js-iframe {
     @apply flex items-center justify-center bg-slate-100 rounded;
     position: relative;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .js-image,
@@ -77,7 +77,7 @@
     content: "";
     @apply absolute inset-0 bg-no-repeat bg-center opacity-40;
     z-index: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .js-image::before {
@@ -103,14 +103,14 @@
 .js-image img,
 .js-video video,
 .js-iframe iframe {
+    position: relative;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .js-image[data-initialized="true"] img,
 .js-video[data-initialized="true"] video,
 .js-iframe[data-initialized="true"] iframe {
-    position: relative;
     z-index: 2;
     max-width: 100%;
     opacity: 1;

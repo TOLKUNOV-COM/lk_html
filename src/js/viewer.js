@@ -34,6 +34,8 @@ export default function viewer() {
     }
 
     function initializeSlideContent(slide) {
+        deinitializeSlideContent(slide);
+
         // Инициализация изображений
         slide.querySelectorAll('.js-image').forEach(placeholder => {
             if (placeholder.dataset.initialized === 'true') return;
@@ -46,10 +48,9 @@ export default function viewer() {
             img.className = placeholder.dataset.class || 'viewer__image';
 
             // Устанавливаем флаг только после загрузки изображения
+            placeholder.dataset.initialized = 'false';
             img.onload = () => {
-                setTimeout(() => {
-                    placeholder.dataset.initialized = 'true';
-                }, 500);
+                placeholder.dataset.initialized = 'true';
             };
 
             placeholder.appendChild(img);
@@ -61,7 +62,6 @@ export default function viewer() {
 
             const video = document.createElement('video');
             video.className = placeholder.dataset.class || 'viewer__video';
-            // video.autoplay = placeholder.dataset.autoplay !== 'false';
             video.muted = placeholder.dataset.muted !== 'false';
             video.controls = placeholder.dataset.controls !== 'false';
             video.loop = placeholder.dataset.loop !== 'false';
@@ -70,14 +70,13 @@ export default function viewer() {
 
             const source = document.createElement('source');
             source.src = placeholder.dataset.src || '';
-            source.type = placeholder.dataset.type || 'video/mp4';
+            // source.type = placeholder.dataset.type || 'video/mp4';
 
             // Устанавливаем флаг только когда видео готово к воспроизведению
+            placeholder.dataset.initialized = 'false';
             video.addEventListener('canplay', () => {
-                setTimeout(() => {
-                    placeholder.dataset.initialized = 'true';
-                    video.play();
-                }, 500);
+                placeholder.dataset.initialized = 'true';
+                video.play();
             });
 
             video.appendChild(source);
@@ -97,10 +96,9 @@ export default function viewer() {
             iframe.scrolling = placeholder.dataset.scrolling || 'no';
 
             // Устанавливаем флаг после загрузки iframe
+            placeholder.dataset.initialized = 'false';
             iframe.onload = () => {
-                setTimeout(() => {
-                    placeholder.dataset.initialized = 'true';
-                }, 500);
+                placeholder.dataset.initialized = 'true';
             };
 
             placeholder.appendChild(iframe);
@@ -109,7 +107,7 @@ export default function viewer() {
 
     function deinitializeSlideContent(slide) {
         // Очистка инициализированного контента
-        const initialized = slide.querySelectorAll('[data-initialized="true"]');
+        const initialized = slide.querySelectorAll('[data-initialized]');
         initialized.forEach(element => {
             // Сохраняем плейсхолдер, удаляем созданные элементы
             element.dataset.initialized = 'false';
