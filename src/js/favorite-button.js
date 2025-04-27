@@ -7,7 +7,7 @@ export default function favoriteButton() {
             return false;
         }
 
-        const $button = $(this);
+        let $button = $(this);
 
         // Если кнопка уже в процессе обработки, игнорируем повторные клики
         if ($button.hasClass('processing')) {
@@ -22,6 +22,8 @@ export default function favoriteButton() {
             console.error('Project ID not found');
             return false;
         }
+
+        $button = $(`.js-toggle-favorite[data-project-id="${projectId}"]`);
 
         // Устанавливаем флаг, что кнопка в процессе обработки
         $button.addClass('processing');
