@@ -237,6 +237,33 @@ html.with-fancybox .fancybox__slide {
     }
 }
 
+/** project empty block */
+.projects-grid__items:has(.projects__empty) {
+    @apply h-full!;
+}
+
+.projects-list:has(.projects__empty) {
+    @apply mt-0 h-full;
+}
+
+.projects__empty {
+    @apply bg-white cursor-default;
+}
+
+/** loading indication */
+#loading-indicator {
+    @apply absolute top-1/2 left-1/2 -translate-1/2;
+    @apply size-12;
+    @apply border-3 border-slate-400 rounded-full border-t-transparent;
+    @apply animate-spin;
+    @apply pointer-events-none;
+    @apply transition-opacity opacity-0;
+}
+
+#loading-indicator.show {
+    @apply opacity-100;
+}
+
 /*a {*/
 /*  font-weight: 500;*/
 /*  color: #646cff;*/

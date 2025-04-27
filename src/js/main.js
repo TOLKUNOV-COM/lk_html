@@ -31,3 +31,4 @@ function togglePassword() {
 }
 
 window.togglePassword = togglePassword;
+window.projectsGrid = projectsGrid;

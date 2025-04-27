@@ -1,4 +1,17 @@
 .projects-list {
+
+}
+
+.projects-list .projects-list__body {
+    @apply opacity-0 transition pointer-events-none;
+
+}
+
+.projects-list.projects_loaded .projects-list__body {
+    @apply opacity-100 pointer-events-auto;
+}
+
+.projects-list {
     @apply mt-4;
 
     tbody {

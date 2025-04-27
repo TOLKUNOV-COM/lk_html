@@ -6,22 +6,9 @@
     @apply opacity-0 transition-opacity pointer-events-none;
 }
 
-.projects-grid__loader {
-    @apply absolute top-1/2 left-1/2 -translate-1/2;
-    @apply size-12;
-    @apply border-3 border-slate-400 rounded-full border-t-transparent;
-    @apply animate-spin;
-    @apply pointer-events-none;
-    @apply transition-opacity opacity-100;
-}
-
-.projects-grid_loaded {
+.projects_loaded {
     .projects-grid__items {
         @apply opacity-100 pointer-events-auto;
-    }
-
-    .projects-grid__loader {
-        @apply opacity-0;
     }
 }
 

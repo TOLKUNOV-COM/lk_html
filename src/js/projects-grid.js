@@ -20,7 +20,7 @@ export default function projectsGrid() {
             percentPosition: true
         });
 
-        $(container).addClass('projects-grid_loaded');
+        $(container).addClass('projects_loaded');
 
         imagesLoaded(grid).on('progress', () => {
             pckry.layout();
