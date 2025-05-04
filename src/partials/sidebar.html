@@ -1,3 +1,13 @@
+<!-- Инлайн-скрипт для восстановления состояния сайдбара -->
+<script>
+    (function () {
+        const savedState = localStorage.getItem('sidebarCollapsed');
+        if (savedState === 'true') {
+            document.documentElement.classList.add('sidebar-initially-collapsed');
+        }
+    })();
+</script>
+
 <aside class="sidebar py-5 flex flex-col">
     <div class="flex gap-3 justify-between items-center pl-4 pr-2 mb-7 sidebar__header">
         <div class="if-opened">
@@ -16,7 +26,7 @@
     </div>
 
     <ul class="sidebar-menu flex-1">
-        <li class="sidebar-menu__item sidebar-menu__item_active sidebar-menu__item_opened">
+        <li class="sidebar-menu__item sidebar-menu__item_active">
             <a href="projects_list.html" class="sidebar-menu__link">
                 <span class="size-7 icon icon-sidebar-menu-projects"></span>
                 <span class="flex-1 sidebar-menu__title">Проекты</span>

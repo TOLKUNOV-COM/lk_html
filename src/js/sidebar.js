@@ -6,6 +6,14 @@ export default function sidebar() {
         let animationDuration = 500; //getComputedStyle(sidebar).getPropertyValue('--sidebar-animation-duration').trim();
         // animationDuration = parseInt(animationDuration);
 
+        // Восстановление состояния при загрузке страницы
+        const savedState = localStorage.getItem('sidebarCollapsed');
+        if (savedState === 'true' && !sidebar.classList.contains('sidebar_collapsed')) {
+            sidebar.classList.add('sidebar_collapsed');
+            $('.sidebar-submenu').hide();
+        }
+        $('.sidebar-initially-collapsed').removeClass('sidebar-initially-collapsed');
+
         toggleBtn.addEventListener('click', () => {
             if ($(sidebar).hasClass('sidebar_expanding') || $(sidebar).hasClass('sidebar_collapsing')) {
                 return;
@@ -24,6 +32,9 @@ export default function sidebar() {
                     sidebar.classList.add('sidebar_collapsed');
                     sidebar.classList.remove('sidebar_collapsing');
 
+                    // Сохраняем состояние в localStorage
+                    localStorage.setItem('sidebarCollapsed', 'true');
+
                     document.dispatchEvent(eventEnd);
                 }, animationDuration);
             } else {
@@ -33,6 +44,9 @@ export default function sidebar() {
 
                 setTimeout(() => {
                     sidebar.classList.remove('sidebar_expanding');
+
+                    // Сохраняем состояние в localStorage
+                    localStorage.setItem('sidebarCollapsed', 'false');
 
                     document.dispatchEvent(eventEnd);
                 }, animationDuration);

@@ -2,7 +2,7 @@
     --sidebar-animation-duration: 500ms;
 
     @apply w-[338px];
-    transition: width var(--sidebar-animation-duration) ease-in-out;
+    transition: opacity 0.15s ease-in;
 
     .if-opened {
         display: block;
@@ -277,4 +277,10 @@
     .logout-button__title {
         display: none;
     }
+}
+
+/* Предотвращение мигания сайдбара при загрузке */
+html.sidebar-initially-collapsed .sidebar:not(.sidebar_expanding) {
+    width: 60px;
+    opacity: 0;
 }
