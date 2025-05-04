@@ -32,9 +32,6 @@ export default function sidebar() {
                     sidebar.classList.add('sidebar_collapsed');
                     sidebar.classList.remove('sidebar_collapsing');
 
-                    // Сохраняем состояние в localStorage
-                    localStorage.setItem('sidebarCollapsed', 'true');
-
                     document.dispatchEvent(eventEnd);
                 }, animationDuration);
             } else {
@@ -45,15 +42,15 @@ export default function sidebar() {
                 setTimeout(() => {
                     sidebar.classList.remove('sidebar_expanding');
 
-                    // Сохраняем состояние в localStorage
-                    localStorage.setItem('sidebarCollapsed', 'false');
-
                     document.dispatchEvent(eventEnd);
                 }, animationDuration);
             }
 
             // submenu
             $('.sidebar-submenu').slideToggle(animationDuration);
+            
+            // Сохраняем состояние в localStorage
+            localStorage.setItem('sidebarCollapsed', isOpened ? 'true' : 'false');
         });
     }
 }
