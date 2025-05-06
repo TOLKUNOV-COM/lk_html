@@ -32,10 +32,6 @@
     background-color: currentColor;
 }
 
-.icon-star-empty.outlined {
-    mask-image: url("../img/menu/star.svg");
-}
-
 .icon-star-active {
     background-image: url("../img/star_active.svg");
 

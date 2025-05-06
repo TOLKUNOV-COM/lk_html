@@ -16,6 +16,7 @@
 @import "share-button.css";
 @import "links-popup.css";
 @import "viewer.css";
+@import "action-buttons.css";
 
 @import "tailwindcss";
 
@@ -31,6 +32,7 @@
     --shadow-projects-grid-hover: 0px 4px 12px 0px rgba(34, 34, 34, 0.04);
 
     --color-amber-50: #FFFBEB;
+
     --color-blue-100: #E6EFFF;
     --color-blue-600: #2856F6;
     --color-blue-650: #2E55DB;
@@ -50,13 +52,18 @@
 
     --color-indigo-50: #E3E8F2;
     --color-indigo-100: #E5EBFF;
+
     --color-rose-500: #FF4154;
+
     --color-orange-600: #DF6738;
+
     --color-zinc-100: #EFEDF0;
 
-    --color-star-empty-default: #EDF0F6;
-    --color-star-empty-hover: #E1E5EC;
-    --color-star-empty-active: #CDD3DF;
+    --color-gold: #FFCC00;
+
+    --color-star-empty-default: var(--color-slate-500);
+    --color-star-empty-hover: var(--color-gold);
+    --color-star-empty-active: var(--color-gold);
 
     --default-transition-duration: 200ms;
 
@@ -116,7 +123,7 @@ h3 {
 }
 
 .js-toggle-favorite .icon {
-    @apply transition-opacity opacity-0;
+    @apply opacity-0;
     @apply absolute left-1/2 top-1/2 -translate-1/2;
 }
 
@@ -127,7 +134,6 @@ h3 {
 .js-toggle-favorite.js-toggle-favorite_active .icon-star-active {
     @apply opacity-100;
 }
-
 
 .fancybox__backdrop {
     background: rgba(15, 20, 57, 0.50);
@@ -180,60 +186,6 @@ html.with-fancybox .fancybox__slide {
 
     &::-webkit-scrollbar-thumb {
         @apply bg-slate-240 rounded-full;
-    }
-}
-
-.button_secondary {
-    .icon {
-        @apply text-slate-400 transition;
-    }
-
-    &:hover {
-        .icon {
-            @apply text-blue-900;
-        }
-    }
-
-    &:active {
-        .icon {
-            @apply text-slate-500;
-        }
-    }
-}
-
-.button_tertiary {
-    .icon {
-        @apply text-slate-500 transition;
-    }
-
-    &:hover {
-        .icon {
-            @apply text-blue-900;
-        }
-    }
-
-    &:active {
-        .icon {
-            @apply text-slate-500;
-        }
-    }
-}
-
-.button_tertiary.js-toggle-favorite {
-    .icon {
-        @apply text-star-empty-default;
-    }
-
-    &:hover {
-        .icon {
-            @apply text-star-empty-hover;
-        }
-    }
-
-    &:active {
-        .icon {
-            @apply text-star-empty-active;
-        }
     }
 }
 

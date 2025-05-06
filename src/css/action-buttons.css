@@ -1,0 +1,62 @@
+.action-button {
+    @apply flex items-center justify-center;
+    @apply rounded-full cursor-pointer;
+    @apply transition;
+}
+
+.action-button_secondary {
+    @apply bg-slate-50;
+    @apply hover:bg-slate-100;
+    @apply active:bg-slate-175;
+}
+
+.action-button_tertiary {
+    @apply inset-ring-[1.5px] inset-ring-slate-100 bg-white;
+    @apply hover:inset-ring-slate-150;
+    @apply active:inset-ring-slate-250;
+}
+
+/** ICONS */
+.action-button {
+    .icon {
+        @apply text-slate-500 transition-all;
+    }
+
+    &:hover {
+        .icon {
+            @apply text-blue-900;
+        }
+    }
+
+    &:active {
+        .icon {
+            @apply text-slate-500;
+        }
+    }
+}
+
+.action-button_secondary.js-toggle-favorite {
+    &:hover {
+        .icon {
+            @apply text-star-empty-hover;
+        }
+    }
+}
+
+.action-button_tertiary.js-toggle-favorite {
+    .icon {
+        @apply text-star-empty-default;
+    }
+
+    &:hover {
+        .icon {
+            @apply text-star-empty-hover;
+        }
+    }
+
+    &:active {
+        .icon {
+            @apply text-star-empty-active;
+        }
+    }
+}

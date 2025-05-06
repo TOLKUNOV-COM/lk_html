@@ -19,17 +19,17 @@
             @apply cursor-pointer;
 
             .icon-star-empty {
-                @apply text-star-empty-default;
+                @apply text-slate-400 transition;
             }
 
             &:hover {
                 @apply bg-slate-50;
 
                 .icon-star-empty {
-                    @apply text-star-empty-hover;
+                    @apply text-slate-400;
 
                     &:hover {
-                        @apply text-star-empty-active;
+                        @apply text-gold;
                     }
                 }
             }

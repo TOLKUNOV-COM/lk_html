@@ -15,3 +15,8 @@ $(document).on('click', '.filters__reset', function (e) {
 
     $('.filter__item').removeClass('filter__item_active');
 });
+
+// Прячем кнопку закрытия из view при модальной загрузке
+document.addEventListener('fancybox:contentReady', (e) => {
+    $('.fancybox__content a[href="projects_grid.html"]').hide();
+});
