@@ -104,6 +104,7 @@ html:not(.sidebar-initially-collapsed) .sidebar:not(.sidebar_collapsing):not(.si
         padding-left: 0;
         padding-right: 0;
         flex-direction: column;
+        padding-bottom: 0;
     }
 }
 
@@ -178,7 +179,7 @@ html:not(.sidebar-initially-collapsed) .sidebar:not(.sidebar_collapsing):not(.si
         top: 52px;
         left: -28px;
     }
-    60.01% {
+    60% {
         top: 0;
         left: 0;
     }
