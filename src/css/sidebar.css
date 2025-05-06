@@ -49,7 +49,7 @@ html:not(.sidebar-initially-collapsed) .sidebar:not(.sidebar_collapsing):not(.si
     }
 
     .sidebar-submenu {
-        @apply px-3;
+        @apply px-3 gap-1;
     }
 
     .sidebar-submenu__text {
@@ -221,10 +221,12 @@ html:not(.sidebar-initially-collapsed) .sidebar:not(.sidebar_collapsing):not(.si
     0% {
         padding-left: 8px;
         padding-right: 8px;
+        gap: 8px;
     }
     100% {
         padding-left: 12px;
         padding-right: 12px;
+        gap: 4px;
     }
 }
 
@@ -234,12 +236,6 @@ html:not(.sidebar-initially-collapsed) .sidebar:not(.sidebar_collapsing):not(.si
 
 @keyframes collapseSidebarSubMenuItem {
     0% {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        height: 24px;
-        border-radius: 12px;
-    }
-    40% {
         padding-top: 10px;
         padding-bottom: 10px;
         height: 24px;
