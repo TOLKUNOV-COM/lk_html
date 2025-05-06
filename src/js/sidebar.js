@@ -10,7 +10,6 @@ export default function sidebar() {
         const savedState = localStorage.getItem('sidebarCollapsed');
         if (savedState === 'true' && !sidebar.classList.contains('sidebar_collapsed')) {
             sidebar.classList.add('sidebar_collapsed');
-            $('.sidebar-submenu').hide();
         }
         $('.sidebar-initially-collapsed').removeClass('sidebar-initially-collapsed');
 
@@ -46,9 +45,6 @@ export default function sidebar() {
                 }, animationDuration);
             }
 
-            // submenu
-            $('.sidebar-submenu').slideToggle(animationDuration);
-            
             // Сохраняем состояние в localStorage
             localStorage.setItem('sidebarCollapsed', isOpened ? 'true' : 'false');
         });

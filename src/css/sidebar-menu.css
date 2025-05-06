@@ -33,13 +33,38 @@
 }
 
 .sidebar-submenu__item {
-    @apply block px-3 py-[10px] rounded-xl;
+    @apply flex items-center px-3 py-[10px] rounded-xl;
     @apply text-lg text-slate-500 font-medium leading-6 tracking-[0.18px];
     @apply transition;
+    @apply box-content;
 
     @apply hover:bg-slate-100 hover:text-blue-900 active:text-blue-600;
 
     &.sidebar-submenu__item_active {
         @apply bg-slate-170 text-blue-600;
+    }
+}
+
+.sidebar-submenu__text {
+    @apply block truncate;
+    transform-origin: left center;
+}
+
+.sidebar-submenu__dot {
+    @apply size-3 rounded-full transition;
+    @apply bg-slate-300;
+}
+
+.sidebar-submenu__item {
+    &:hover, &:active, &:focus {
+        .sidebar-submenu__dot {
+            @apply bg-slate-400;
+        }
+    }
+
+    &.sidebar-submenu__item_active {
+        .sidebar-submenu__dot {
+            @apply bg-blue-600;
+        }
     }
 }
