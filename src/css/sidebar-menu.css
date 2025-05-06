@@ -21,6 +21,9 @@
     @apply bg-white shadow-sidebar-menu-active;
 }
 
+.sidebar-menu__item:not(.sidebar-menu__item_active) .sidebar-submenu {
+    @apply !hidden;
+}
 
 /*
  SUBMENU
