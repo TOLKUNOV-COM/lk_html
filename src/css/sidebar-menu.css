@@ -37,6 +37,7 @@
     @apply text-lg text-slate-500 font-medium leading-6 tracking-[0.18px];
     @apply transition;
     @apply box-content;
+    @apply relative;
 
     @apply hover:bg-slate-100 hover:text-blue-900 active:text-blue-600;
 
@@ -50,6 +51,7 @@
     transform-origin: left center;
 }
 
+/** DOT **/
 .sidebar-submenu__dot {
     @apply size-3 rounded-full transition;
     @apply bg-slate-300;
@@ -65,6 +67,41 @@
     &.sidebar-submenu__item_active {
         .sidebar-submenu__dot {
             @apply bg-blue-600;
+        }
+    }
+}
+
+/** TOOLTIP **/
+.sidebar_collapsed .sidebar-submenu__text {
+    @apply z-10 block!;
+    @apply opacity-0 transition-opacity;
+
+    @apply absolute top-1/2 -translate-y-1/2 left-full ml-[22px];
+
+    @apply bg-white;
+    @apply p-4 rounded-2xl;
+    @apply text-slate-500 text-sm font-medium leading-[18px] tracking-[0.28px];
+    @apply overflow-visible pointer-events-none;
+
+    filter: drop-shadow(0px 2px 8px rgba(33, 37, 75, 0.11));
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        width: 10px;
+        height: 48px;
+        transform: translateY(-50%);
+
+        background: left top no-repeat url("../img/arrow.svg");
+    }
+}
+
+.sidebar_collapsed .sidebar-submenu__item {
+    &:hover, &:active, &:focus {
+        .sidebar-submenu__text {
+            @apply opacity-100;
         }
     }
 }
