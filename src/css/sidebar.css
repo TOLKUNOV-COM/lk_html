@@ -7,13 +7,13 @@
     .if-opened {
         display: block;
     }
-
-    &:not(.sidebar_collapsing):not(.sidebar_collapsed):not(.sidebar_expanding) .if-closed {
-        display: none;
-    }
 }
 
-.sidebar_collapsed {
+html:not(.sidebar-initially-collapsed) .sidebar:not(.sidebar_collapsing):not(.sidebar_collapsed):not(.sidebar_expanding) .if-closed {
+    display: none;
+}
+
+.sidebar_collapsed, .sidebar-initially-collapsed .sidebar {
     @apply w-[60px];
 
     .if-opened {
@@ -41,6 +41,10 @@
     }
 
     .logout-button__title {
+        display: none;
+    }
+
+    .sidebar-submenu {
         display: none;
     }
 }
@@ -282,5 +286,4 @@
 /* Предотвращение мигания сайдбара при загрузке */
 html.sidebar-initially-collapsed .sidebar:not(.sidebar_expanding) {
     width: 60px;
-    opacity: 0;
 }
