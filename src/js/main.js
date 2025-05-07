@@ -7,7 +7,6 @@ import shareButton from "./share-button.js";
 import linksPopup from "./links-popup.js";
 import favoriteButton from "./favorite-button.js";
 import viewer from "./viewer.js";
-// import $ from 'jquery';
 
 tabs();
 sidebar();
