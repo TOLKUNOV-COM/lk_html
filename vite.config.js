@@ -24,6 +24,13 @@ export default defineConfig({
     server: {
         host: 'localhost',
         port: 3000,
+        // origin: 'http://localhost:3000',
+        cors: true, // включить CORS
+
+        // если нужно доступ с других origin, можно указать более точно
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+        },
     },
     root: './src', // Указываем корневую директорию для исходных файлов
     build: {
@@ -89,7 +96,7 @@ export default defineConfig({
         {
             name: 'lock-file-plugin',
             configureServer(server) {
-                const lockFilePath = path.resolve(__dirname, './dist/vite-dev.lock');
+                const lockFilePath = path.resolve(__dirname, './dist/assets/vite-dev.lock');
 
                 // Создание lock-файла при запуске dev-сервера
                 server.httpServer.once('listening', () => {
