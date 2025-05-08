@@ -11,7 +11,12 @@ export default function projectsModal() {
 
         // Изменяем URL только если нужно добавить в историю
         if (pushState) {
+            // Сохраняем текущий URL перед изменением
+            // window.history.replaceState({ modal: false }, '', window.location.href);
             // Добавляем новый URL с флагом модального окна
+
+            console.log('PUSH', { modal: true }, src);
+
             window.history.pushState({ modal: true }, '', src);
         }
 
@@ -38,10 +43,14 @@ export default function projectsModal() {
                     document.dispatchEvent(event);
                 },
                 closing: (fancybox) => {
-                    console.log('CLOSING');
                     if (!fancybox.userData?.skipHistory) {
+                        // if (window.history.state && window.history.state.modal === true) {
+                        console.log('PUSH BACK');
+                        window.history.back(); // Используем back() вместо pushState
+                        // }
+
                         // Восстанавливаем исходный URL при закрытии
-                        window.history.pushState({}, '', originalUrl);
+                        // window.history.pushState({}, '', originalUrl);
                     }
 
                     isFancyboxOpen = false;
@@ -52,6 +61,8 @@ export default function projectsModal() {
 
     // Обработчик событий навигации браузера (кнопки назад/вперёд)
     window.addEventListener('popstate', function (event) {
+        console.log('POP', event.state, location.href);
+
         const currentUrl = window.location.href;
 
         // Получаем состояние из истории, если оно есть
@@ -69,6 +80,8 @@ export default function projectsModal() {
                 instance.userData = { skipHistory: true };
                 instance.close();
             }
+        } else if (!isFancyboxOpen && (!state.modal || state.modal === false)) {
+            location.reload();
         }
     });
 
