@@ -1,0 +1,38 @@
+.tags {
+    @apply flex gap-2 items-start content-start flex-wrap;
+}
+
+.tag {
+    @apply bg-slate-50 rounded-lg px-3 py-2;
+    @apply relative;
+
+    @apply whitespace-nowrap text-slate-500 text-sm font-medium leading-4 tracking-[0.28px];
+}
+
+.tags_small {
+    @apply gap-3;
+}
+
+.tags_small .tag {
+    @apply px-2;
+}
+
+.tag_multi {
+    @apply flex items-center flex-row flex-nowrap gap-2;
+
+    & > .tag:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -8px;
+
+        width: 8px;
+        height: 24px;
+
+        background-image: url("../img/tag_multi_divider.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 10px 24px;
+    }
+}

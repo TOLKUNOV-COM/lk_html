@@ -70,6 +70,9 @@ export default defineConfig({
         handlebars({
             context: currentLocals,
             partialDirectory: path.resolve(__dirname, 'src/partials'),
+            helpers: {
+                isArray: (value) => Array.isArray(value),
+            }
         }),
         // pugPlugin(pugOptions, currentLocals),
         {

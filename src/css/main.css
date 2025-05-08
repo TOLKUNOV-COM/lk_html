@@ -17,6 +17,7 @@
 @import "links-popup.css";
 @import "viewer.css";
 @import "action-buttons.css";
+@import "tags.css";
 
 @import "tailwindcss";
 
@@ -103,20 +104,6 @@
 
 h3 {
     @apply font-serif text-lg font-bold leading-6 tracking-[0.18px] mb-4 text-blue-900;
-}
-
-.tags {
-    @apply flex gap-2 items-start content-start flex-wrap;
-}
-
-.tag {
-    @apply bg-slate-50 rounded-lg px-3 py-2;
-
-    @apply whitespace-nowrap text-slate-500 text-sm font-medium leading-4 tracking-[0.28px];
-}
-
-.tags_small .tag {
-    @apply px-[9px];
 }
 
 .js-toggle-favorite {

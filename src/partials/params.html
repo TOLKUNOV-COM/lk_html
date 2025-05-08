@@ -2,13 +2,33 @@
 <div class="space-y-6">
     <h3>{{title}}</h3>
 
-    {{#if (lookup (lookup items 0) "items")}}
-        {{#each items}}
-            <h4 class="mb-0.5 whitespace-nowrap text-blue-900 text-xs font-black leading-4 tracking-wide uppercase">{{name}}</h4>
-            {{> params_group items=items }}
-        {{/each}}
-    {{else}}
-        {{> params_group items=items }}
-    {{/if}}
+    {{#each items}}
+    <div class="flex gap-2">
+        <div class="h-8 flex-1 flex items-end gap-2">
+            <span class="mb-[1px] whitespace-nowrap text-slate-500 text-xs font-black leading-4 tracking-wide uppercase">{{name}}</span>
+            <div class="flex-1 border-b border-zinc-100 mb-1"></div>
+        </div>
+
+        <div class="w-[439px]">
+            <div class="tags tags_small">
+                {{#each tags}}
+
+                {{#if (isArray this)}}
+                <div class="tag_multi">
+                    {{#each this}}
+                    <span class="tag">{{this}}</span>
+                    {{/each}}
+                </div>
+
+                {{else}}
+
+                <div class="tag">{{this}}</div>
+                {{/if}}
+
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </div>
 {{/each}}
