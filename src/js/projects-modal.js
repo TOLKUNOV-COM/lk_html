@@ -30,6 +30,7 @@ export default function projectsModal() {
         }], {
             autoFocus: false,
             dragToClose: false,
+            hash: false,
             on: {
                 done: (fancybox, slide) => {
                     const event = new CustomEvent('fancybox:contentReady', {
@@ -46,7 +47,8 @@ export default function projectsModal() {
                     if (!fancybox.userData?.skipHistory) {
                         // if (window.history.state && window.history.state.modal === true) {
                         console.log('PUSH BACK');
-                        window.history.back(); // Используем back() вместо pushState
+                        // window.history.back(); // Используем back() вместо pushState
+                        window.history.pushState({ modal: false }, '', originalUrl);
                         // }
 
                         // Восстанавливаем исходный URL при закрытии
