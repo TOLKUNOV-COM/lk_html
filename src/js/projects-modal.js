@@ -53,7 +53,9 @@ export default function projectsModal() {
                         // window.history.pushState({}, '', originalUrl);
                     }
 
-                    isFancyboxOpen = false;
+                    setTimeout(() => {
+                        isFancyboxOpen = false
+                    }, 1);
                 }
             },
         });
