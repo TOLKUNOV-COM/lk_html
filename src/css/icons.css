@@ -62,6 +62,11 @@
     background-size: 28px;
 }
 
+.icon-sidebar-menu-stat {
+    background-image: url("../img/menu/stat.svg");
+    background-size: 28px;
+}
+
 .icon-logout {
     mask-image: url("../img/logout.svg");
     mask-size: 20px;
