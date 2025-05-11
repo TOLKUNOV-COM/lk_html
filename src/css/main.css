@@ -4,22 +4,26 @@
 /*@import "@fancyapps/ui/dist/fancybox.css";*/
 @import "vendor/fancybox.css";
 
-@import "forms.css";
-@import "icons.css";
-@import "icons_docs.css";
+@import "tailwindcss";
+
+/* Components */
+@import "forms.css" layer(components);
+@import "action-buttons.css" layer(components);
+@import "filters.css" layer(components);
+@import "icons.css" layer(components);
+@import "icons_docs.css" layer(components);
+@import "links-popup.css" layer(components);
+@import "switcher.css" layer(components);
+@import "share-button.css" layer(components);
+@import "tags.css" layer(components);
+@import "material-tabs.css" layer(components);
+
+/* Blocks */
 @import "sidebar-menu.css";
 @import "sidebar.css";
-@import "switcher.css";
 @import "projects-list.css";
 @import "projects-grid.css";
-@import "filters.css";
-@import "share-button.css";
-@import "links-popup.css";
 @import "viewer.css";
-@import "action-buttons.css";
-@import "tags.css";
-
-@import "tailwindcss";
 
 @theme {
     --font-sans: 'Craftwork Sans', 'system-ui', 'Helvetica', 'Arial', 'sans-serif';
@@ -96,10 +100,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-
-.tab-btn.active {
-    @apply text-blue-900;
 }
 
 h3 {

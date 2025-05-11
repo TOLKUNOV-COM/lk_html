@@ -1,0 +1,11 @@
+.material-tabs {
+    @apply flex space-x-4 m-6 mb-0;
+}
+
+.material-tab {
+    @apply p-0 border-none font-serif text-lg font-bold leading-6 tracking-[0.18px] text-slate-400 cursor-pointer;
+
+    &.active {
+        @apply text-blue-900;
+    }
+}
