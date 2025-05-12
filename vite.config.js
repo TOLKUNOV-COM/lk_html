@@ -1,5 +1,4 @@
 import {defineConfig} from 'vite'
-// import pugPlugin from 'vite-plugin-pug';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
@@ -7,8 +6,6 @@ import chokidar from 'chokidar';
 import {viteStaticCopy} from 'vite-plugin-static-copy';
 // import tailwindcss from '@tailwindcss/vite'
 import handlebars from 'vite-plugin-handlebars';
-
-const pugOptions = { pretty: true } // FIXME: pug pretty is deprecated!
 
 // Чтение и парсинг YAML файла
 const pugLocalsFilePath = path.resolve(__dirname, './src/template_locals.yml');
@@ -74,7 +71,6 @@ export default defineConfig({
                 isArray: (value) => Array.isArray(value),
             }
         }),
-        // pugPlugin(pugOptions, currentLocals),
         {
             name: 'watch-yaml',
             configureServer(server) {
