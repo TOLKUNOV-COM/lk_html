@@ -17,6 +17,7 @@
 @import "share-button.css" layer(components);
 @import "tags.css" layer(components);
 @import "material-tabs.css" layer(components);
+@import "stats-overview.css" layer(components);
 
 /* Blocks */
 @import "sidebar-menu.css";
@@ -61,7 +62,14 @@
 
     --color-rose-500: #FF4154;
 
+    --color-lime-300: #B6F187;
+
+    --color-yellow-400: #FDC432;
+
+    --color-orange-500: #FD6832;
     --color-orange-600: #DF6738;
+
+    --color-green-500: #2FC25B;
 
     --color-zinc-100: #EFEDF0;
 
