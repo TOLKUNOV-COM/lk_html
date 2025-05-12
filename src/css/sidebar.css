@@ -310,7 +310,7 @@ html:not(.sidebar-initially-collapsed) .sidebar:not(.sidebar_collapsing):not(.si
     0% {
         margin-left: 0;
     }
-    50% {
+    80% {
         margin-left: 4px;
     }
     100% {

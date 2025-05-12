@@ -1,6 +1,7 @@
 export default function sidebar() {
     const sidebar = document.querySelector('.sidebar');
     const toggleBtn = document.getElementById('sidebar__toggle');
+    const htmlElement = document.documentElement;
 
     if (sidebar && toggleBtn) {
         let animationDuration = 500; //getComputedStyle(sidebar).getPropertyValue('--sidebar-animation-duration').trim();
@@ -10,6 +11,11 @@ export default function sidebar() {
         const savedState = localStorage.getItem('sidebarCollapsed');
         if (savedState === 'true' && !sidebar.classList.contains('sidebar_collapsed')) {
             sidebar.classList.add('sidebar_collapsed');
+            htmlElement.classList.add('with-sidebar-closed');
+            htmlElement.classList.remove('with-sidebar-open');
+        } else {
+            htmlElement.classList.add('with-sidebar-open');
+            htmlElement.classList.remove('with-sidebar-closed');
         }
         $('.sidebar-initially-collapsed').removeClass('sidebar-initially-collapsed');
 
@@ -31,6 +37,9 @@ export default function sidebar() {
                     sidebar.classList.add('sidebar_collapsed');
                     sidebar.classList.remove('sidebar_collapsing');
 
+                    htmlElement.classList.add('with-sidebar-closed');
+                    htmlElement.classList.remove('with-sidebar-open');
+
                     document.dispatchEvent(eventEnd);
                 }, animationDuration);
             } else {
@@ -40,6 +49,9 @@ export default function sidebar() {
 
                 setTimeout(() => {
                     sidebar.classList.remove('sidebar_expanding');
+
+                    htmlElement.classList.add('with-sidebar-open');
+                    htmlElement.classList.remove('with-sidebar-closed');
 
                     document.dispatchEvent(eventEnd);
                 }, animationDuration);

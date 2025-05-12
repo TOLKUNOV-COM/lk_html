@@ -79,6 +79,9 @@
     --breakpoint-screen-1700: 1700px;
 }
 
+@custom-variant sidebar-open (&:where(.with-sidebar-open *));
+@custom-variant sidebar-closed (&:where(.with-sidebar-closed *));
+
 :root {
     /*font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
     /*line-height: 1.5;*/
