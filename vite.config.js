@@ -45,6 +45,7 @@ export default defineConfig({
                 projects_grid: path.resolve(__dirname, './src/projects_grid.html'),
                 empty_search: path.resolve(__dirname, './src/empty_search.html'),
                 empty_favorites: path.resolve(__dirname, './src/empty_favorites.html'),
+                stats: path.resolve(__dirname, './src/stats.html'),
 
                 test: path.resolve(__dirname, './src/js/test.js'),
             },
