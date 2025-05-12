@@ -20,6 +20,9 @@
             const savedState = localStorage.getItem('sidebarCollapsed');
             if (savedState === 'true') {
                 document.documentElement.classList.add('sidebar-initially-collapsed');
+                document.documentElement.classList.add('with-sidebar-closed');
+            } else {
+                document.documentElement.classList.add('with-sidebar-open');
             }
         })();
     </script>
