@@ -73,14 +73,20 @@
 
     --default-transition-duration: 200ms;
 
-    --breakpoint-screen-1200: 1200px;
-    --breakpoint-screen-1366: 1366px;
-    --breakpoint-screen-1440: 1440px;
-    --breakpoint-screen-1700: 1700px;
+    /*--breakpoint-sm: 640px;*/
+    /*--breakpoint-md: 768px;*/
+    /*--breakpoint-lg: 1024px;*/
+    /*--breakpoint-xl: 1280px;*/
+    /*--breakpoint-2xl: 1536px;*/
+    --breakpoint-3xl: 105rem; /* 1680px; */
+    --breakpoint-4xl: 120rem; /* 1920px */
 }
 
-@custom-variant sidebar-open (&:where(.with-sidebar-open *));
-@custom-variant sidebar-closed (&:where(.with-sidebar-closed *));
+@custom-variant sidebar-open (html.with-sidebar-open &);
+@custom-variant sidebar-closed (html.with-sidebar-closed &);
+
+@custom-variant so (html.with-sidebar-open &);
+@custom-variant sc (html.with-sidebar-closed &);
 
 :root {
     /*font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
