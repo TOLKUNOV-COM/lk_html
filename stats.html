@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="./assets/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ЛК TOLKUNOV</title>
+
+  <script type="module" crossorigin src="./assets/main.js"></script>
+  <script type="module" crossorigin src="./assets/test.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/style.css">
+</head>
+<body>
+
+<div class="flex gap-6 h-screen bg-slate-50 p-3 pl-5">
+    <!-- Sidebar -->
+    <!-- Инлайн-скрипт для восстановления состояния сайдбара -->
+    <script>
+        (function () {
+            const savedState = localStorage.getItem('sidebarCollapsed');
+            if (savedState === 'true') {
+                document.documentElement.classList.add('sidebar-initially-collapsed');
+                document.documentElement.classList.add('with-sidebar-closed');
+            } else {
+                document.documentElement.classList.add('with-sidebar-open');
+            }
+        })();
+    </script>
+    
+    <aside class="sidebar py-5 flex flex-col">
+        <div class="flex gap-3 justify-between items-center pl-4 pr-2 mb-7 sidebar__header">
+            <div class="if-opened">
+                <div class="flex gap-3 items-center">
+                    <img src="data:image/svg+xml,%3csvg%20width='48'%20height='48'%20viewBox='0%200%2048%2048'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Type=Icon'%3e%3cpath%20id='Subtract'%20d='M2.66497%207.75931C0.800049%2010.9896%200.800049%2015.3265%200.800049%2024.0002C0.800049%2032.6738%200.800049%2037.0107%202.66497%2040.241C3.88671%2042.3572%205.64394%2044.1145%207.76005%2045.3363C10.5755%2046.962%2014.2316%2047.1706%2020.8674%2047.1974V15.406H14.7404C14.72%2013.6441%2014.72%2011.8618%2014.72%2010.0794H32.816V15.3855H26.6891V47.1989C33.6067%2047.1792%2037.3624%2046.9978%2040.24%2045.3363C42.3562%2044.1145%2044.1134%2042.3572%2045.3351%2040.241C47.2%2037.0107%2047.2%2032.6738%2047.2%2024.0002C47.2%2015.3265%2047.2%2010.9896%2045.3351%207.75931C44.1134%205.6431%2042.3562%203.88577%2040.24%202.66397C37.0099%200.79895%2032.6733%200.79895%2024%200.79895C15.3268%200.79895%2010.9902%200.79895%207.76005%202.66397C5.64394%203.88577%203.88671%205.6431%202.66497%207.75931Z'%20fill='%232856F6'/%3e%3c/g%3e%3c/svg%3e" alt="TOLKUNOV" class="size-12">
+                    <span class="icon icon-x-mark text-slate-400 size-5 bg-[length:18px]"></span>
+                    <img src="data:image/svg+xml,%3csvg%20width='130'%20height='34'%20viewBox='0%200%20130%2034'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Logo'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M49.8771%201.36722L38.7351%2030.4673H44.7207L47.0335%2024.3896H58.8589L61.1593%2030.4673H67.0995L56.0016%201.36722H49.8771ZM49.0644%2019.0475L52.9599%208.80896L56.8348%2019.0475H49.0631H49.0644Z'%20fill='black'/%3e%3cpath%20id='Vector_2'%20d='M119.035%209.65469C113.187%209.65469%20108.444%2014.3972%20108.444%2020.2453C108.444%2026.0934%20113.187%2030.8359%20119.035%2030.8359C124.883%2030.8359%20129.625%2026.048%20129.625%2020.2453C129.625%2014.4426%20124.883%209.65469%20119.035%209.65469ZM119.035%2025.4017C116.18%2025.4017%20113.878%2023.0999%20113.878%2020.2453C113.878%2017.3907%20116.18%2015.0889%20119.035%2015.0889C121.889%2015.0889%20124.191%2017.3907%20124.191%2020.2453C124.191%2023.0999%20121.889%2025.4017%20119.035%2025.4017Z'%20fill='black'/%3e%3cpath%20id='Vector_3'%20d='M74.2351%2022.9617L69.4005%2010.0239H63.6913L71.4727%2030.4681H77.1351L84.779%2010.0239H79.0698L74.2351%2022.9617Z'%20fill='black'/%3e%3cpath%20id='Vector_4'%20d='M102.734%204.58972H97.3016V10.0225H94.1252V14.9026H97.3016V23.6052C97.3016%2028.532%20100.019%2030.6496%20103.84%2030.6496C105.314%2030.6496%20106.557%2030.3732%20107.616%2029.9126V24.8483C107.616%2024.8483%20106.695%2025.2168%20105.59%2025.2168C103.933%2025.2168%20102.736%2024.5719%20102.736%2022.3622V14.9026H107.616V10.0225H102.736V4.58972H102.734Z'%20fill='black'/%3e%3cpath%20id='Vector_5'%20d='M89.2438%208.55087C91.4309%208.55087%2093.2039%206.77786%2093.2039%204.59074C93.2039%202.40363%2091.4309%200.630615%2089.2438%200.630615C87.0567%200.630615%2085.2837%202.40363%2085.2837%204.59074C85.2837%206.77786%2087.0567%208.55087%2089.2438%208.55087Z'%20fill='black'/%3e%3cpath%20id='Vector_6'%20d='M91.9598%2010.0239H86.527V30.4681H91.9598V10.0239Z'%20fill='black'/%3e%3c/g%3e%3cg%20id='Group_2'%3e%3cpath%20id='Vector_7'%20d='M10.9654%2033.3693C16.8144%2033.3693%2021.556%2028.6277%2021.556%2022.7787C21.556%2016.9297%2016.8144%2012.1881%2010.9654%2012.1881C5.11633%2012.1881%200.374756%2016.9297%200.374756%2022.7787C0.374756%2028.6277%205.11633%2033.3693%2010.9654%2033.3693Z'%20fill='%2304E061'/%3e%3cpath%20id='Vector_8'%20d='M29.3356%2032.0325C32.8699%2032.0325%2035.7351%2029.1673%2035.7351%2025.633C35.7351%2022.0987%2032.8699%2019.2336%2029.3356%2019.2336C25.8013%2019.2336%2022.9362%2022.0987%2022.9362%2025.633C22.9362%2029.1673%2025.8013%2032.0325%2029.3356%2032.0325Z'%20fill='%23FF4053'/%3e%3cpath%20id='Vector_9'%20d='M12.9903%2010.8069C15.1774%2010.8069%2016.9504%209.03388%2016.9504%206.84676C16.9504%204.65964%2015.1774%202.88663%2012.9903%202.88663C10.8032%202.88663%209.03015%204.65964%209.03015%206.84676C9.03015%209.03388%2010.8032%2010.8069%2012.9903%2010.8069Z'%20fill='%23965EEB'/%3e%3cpath%20id='Vector_10'%20d='M26.8498%2017.8517C31.6053%2017.8517%2035.4603%2013.9966%2035.4603%209.24115C35.4603%204.48568%2031.6053%200.630615%2026.8498%200.630615C22.0943%200.630615%2018.2393%204.48568%2018.2393%209.24115C18.2393%2013.9966%2022.0943%2017.8517%2026.8498%2017.8517Z'%20fill='%2300AAFF'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Avito" class="max-w-[132px] h-12">
+                </div>
+            </div>
+            <div class="if-closed">
+                <img src="data:image/svg+xml,%3csvg%20width='46'%20height='42'%20viewBox='0%200%2046%2042'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Group'%3e%3cpath%20id='Vector'%20d='M14.0648%2041.6305C21.4365%2041.6305%2027.4123%2035.6547%2027.4123%2028.283C27.4123%2020.9114%2021.4365%2014.9355%2014.0648%2014.9355C6.69318%2014.9355%200.717285%2020.9114%200.717285%2028.283C0.717285%2035.6547%206.69318%2041.6305%2014.0648%2041.6305Z'%20fill='%2304E061'/%3e%3cpath%20id='Vector_2'%20d='M37.2173%2039.946C41.6717%2039.946%2045.2827%2036.335%2045.2827%2031.8806C45.2827%2027.4262%2041.6717%2023.8152%2037.2173%2023.8152C32.763%2023.8152%2029.152%2027.4262%2029.152%2031.8806C29.152%2036.335%2032.763%2039.946%2037.2173%2039.946Z'%20fill='%23FF4053'/%3e%3cpath%20id='Vector_3'%20d='M16.617%2013.1949C19.3735%2013.1949%2021.608%2010.9604%2021.608%208.20392C21.608%205.44745%2019.3735%203.21289%2016.617%203.21289C13.8605%203.21289%2011.626%205.44745%2011.626%208.20392C11.626%2010.9604%2013.8605%2013.1949%2016.617%2013.1949Z'%20fill='%23965EEB'/%3e%3cpath%20id='Vector_4'%20d='M34.0843%2022.0735C40.0777%2022.0735%2044.9363%2017.2149%2044.9363%2011.2215C44.9363%205.22812%2040.0777%200.369507%2034.0843%200.369507C28.0909%200.369507%2023.2323%205.22812%2023.2323%2011.2215C23.2323%2017.2149%2028.0909%2022.0735%2034.0843%2022.0735Z'%20fill='%2300AAFF'/%3e%3c/g%3e%3c/svg%3e" alt="Avito" class="w-12 max-h-12">
+            </div>
+    
+            <button type="button" id="sidebar__toggle"
+                    class="size-9 icon icon-sidebar-toggle cursor-pointer bg-slate-50 hover:bg-slate-100 active:bg-slate-175 rounded-full"></button>
+        </div>
+    
+        <ul class="sidebar-menu flex-1">
+            <li class="sidebar-menu__item sidebar-menu__item_active">
+                <a href="projects_list.html" class="sidebar-menu__link">
+                    <span class="size-7 icon icon-sidebar-menu-projects"></span>
+                    <span class="flex-1 sidebar-menu__title">Проекты</span>
+                </a>
+    
+                <div class="sidebar-submenu">
+                    <a href="#" class="sidebar-submenu__item sidebar-submenu__item_active">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Все</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Услуги</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Автотека</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Недвижимость</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-menu__item">
+                <a href="empty_favorites.html" class="sidebar-menu__link">
+                    <span class="size-7 icon icon-sidebar-menu-star"></span>
+                    <span class="flex-1 sidebar-menu__title">Избранное</span>
+                </a>
+    
+                <div class="sidebar-submenu">
+                    <a href="#" class="sidebar-submenu__item sidebar-submenu__item_active">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Все</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Услуги</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Автотека</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Недвижимость</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-menu__item">
+                <a href="stats.html" class="sidebar-menu__link">
+                    <span class="size-7 icon icon-sidebar-menu-stat"></span>
+                    <span class="flex-1 sidebar-menu__title">Статистика</span>
+                </a>
+    
+                <div class="sidebar-submenu">
+                    <a href="#" class="sidebar-submenu__item sidebar-submenu__item_active">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Все</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Услуги</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Автотека</span>
+                    </a>
+                    <a href="#" class="sidebar-submenu__item">
+                        <span class="sidebar-submenu__dot"></span>
+                        <span class="sidebar-submenu__text">Недвижимость</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    
+        <div class="self-start">
+            <a href="#" class="flex items-center gap-1 px-3 rounded-full text-slate-400 hover:text-blue-900 logout-button transition">
+                <span class="font-bold leading-5 tracking-[0.16px] logout-button__title">Выйти</span>
+                <span class="icon icon-logout size-9"></span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 bg-white rounded-2xl shadow-content-block border border-slate-100 overflow-hidden flex flex-col">
+        <!-- Прокручиваемая часть -->
+        <div class="overflow-hidden overflow-y-auto relative flex-1 p-6">
+
+            <!-- stats-overview -->
+            <div class="flex flex-row flex-wrap gap-4 stats-overview">
+                <div class="stats-overview__item">
+                    <div class="stats-overview__data">
+                        <p class="stats-overview__title">Работаем вместе</p>
+
+                        <div class="flex gap-1.5 flex-col">
+                            <div class="stats-overview__value">
+                                <span class="stat-overview__number">1,5</span>
+                                <span class="stat-overview__unit">года</span>
+                            </div>
+
+                            <div class="stat-overview__meta">
+                                <span>дата старта</span>
+                                <span>12.06.2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-overview__item">
+                    <div class="flex flex-nowrap gap-3">
+                        <div class="w-1.5 flex flex-col gap-1">
+                            <div class="flex-1 rounded-full bg-slate-170"></div>
+                            <div class="flex-1 rounded-full bg-slate-170"></div>
+                            <div class="flex-1 rounded-full bg-slate-170"></div>
+                            <div class="flex-1 rounded-full bg-orange-500"></div>
+                        </div>
+                        <div class="w-1.5 flex flex-col gap-1">
+                            <div class="flex-1 rounded-full bg-slate-170"></div>
+                            <div class="flex-1 rounded-full bg-slate-170"></div>
+                            <div class="flex-1 rounded-full bg-yellow-400"></div>
+                            <div class="flex-1 rounded-full bg-yellow-400"></div>
+                        </div>
+                        <div class="w-1.5 flex flex-col gap-1">
+                            <div class="flex-1 rounded-full bg-slate-170"></div>
+                            <div class="flex-1 rounded-full bg-lime-300"></div>
+                            <div class="flex-1 rounded-full bg-lime-300"></div>
+                            <div class="flex-1 rounded-full bg-lime-300"></div>
+                        </div>
+                        <div class="w-1.5 flex flex-col gap-1">
+                            <div class="flex-1 rounded-full bg-green-500"></div>
+                            <div class="flex-1 rounded-full bg-green-500"></div>
+                            <div class="flex-1 rounded-full bg-green-500"></div>
+                            <div class="flex-1 rounded-full bg-green-500"></div>
+                        </div>
+
+                        <div class="stats-overview__data">
+                            <p class="stats-overview__title">Проекты</p>
+
+                            <div class="flex gap-1.5 flex-col">
+                                <div class="stats-overview__value">
+                                    <span class="stat-overview__number">132</span>
+                                </div>
+
+                                <div class="stat-overview__meta">
+                                    <span>последний</span>
+                                    <span>12.06.2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-overview__item">
+                    <div class="flex-1 flex flex-nowrap justify-around gap-6">
+                        <div class="stats-overview__data">
+                            <p class="stats-overview__title">Площадки</p>
+
+                            <div class="flex gap-1.5 flex-col">
+                                <div class="stats-overview__value">
+                                    <span class="stat-overview__number">26</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-zinc-100 w-px"></div>
+                        <div class="stats-overview__data">
+                            <p class="stats-overview__title">Топ-3</p>
+
+                            <div class="flex flex-row pl-3">
+                                <div class="bg-slate-50 rounded-xl ring-2 ring-white p-3 z-[3] -ml-3">
+                                    <img class="size-4 object-contain" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%3e%3cg%20clip-path='url(%23clip0_24638_627)'%3e%3cpath%20d='M0%207.68C0%204.0596%200%202.24942%201.12471%201.12471C2.24942%200%204.0596%200%207.68%200H8.32C11.9404%200%2013.7506%200%2014.8753%201.12471C16%202.24942%2016%204.0596%2016%207.68V8.32C16%2011.9404%2016%2013.7506%2014.8753%2014.8753C13.7506%2016%2011.9404%2016%208.32%2016H7.68C4.0596%2016%202.24942%2016%201.12471%2014.8753C0%2013.7506%200%2011.9404%200%208.32V7.68Z'%20fill='%230077FF'/%3e%3cpath%20d='M8.51325%2011.5264C4.86659%2011.5264%202.78662%209.02641%202.69995%204.86641H4.52662C4.58662%207.91974%205.93325%209.21308%206.99992%209.47974V4.86641H8.71999V7.49974C9.77332%207.38641%2010.8799%206.18641%2011.2532%204.86641H12.9732C12.6866%206.49308%2011.4866%207.69308%2010.6332%208.18641C11.4866%208.58641%2012.8533%209.63308%2013.3733%2011.5264H11.4799C11.0732%2010.2597%2010.06%209.27974%208.71999%209.14641V11.5264H8.51325Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_24638_627'%3e%3crect%20width='16'%20height='16'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="#">
+                                </div>
+                                <div class="bg-slate-50 rounded-xl ring-2 ring-white p-3 z-[2] -ml-3">
+                                    <img class="size-4 object-contain" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%3e%3cg%20clip-path='url(%23clip0_24638_627)'%3e%3cpath%20d='M0%207.68C0%204.0596%200%202.24942%201.12471%201.12471C2.24942%200%204.0596%200%207.68%200H8.32C11.9404%200%2013.7506%200%2014.8753%201.12471C16%202.24942%2016%204.0596%2016%207.68V8.32C16%2011.9404%2016%2013.7506%2014.8753%2014.8753C13.7506%2016%2011.9404%2016%208.32%2016H7.68C4.0596%2016%202.24942%2016%201.12471%2014.8753C0%2013.7506%200%2011.9404%200%208.32V7.68Z'%20fill='%230077FF'/%3e%3cpath%20d='M8.51325%2011.5264C4.86659%2011.5264%202.78662%209.02641%202.69995%204.86641H4.52662C4.58662%207.91974%205.93325%209.21308%206.99992%209.47974V4.86641H8.71999V7.49974C9.77332%207.38641%2010.8799%206.18641%2011.2532%204.86641H12.9732C12.6866%206.49308%2011.4866%207.69308%2010.6332%208.18641C11.4866%208.58641%2012.8533%209.63308%2013.3733%2011.5264H11.4799C11.0732%2010.2597%2010.06%209.27974%208.71999%209.14641V11.5264H8.51325Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_24638_627'%3e%3crect%20width='16'%20height='16'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="#">
+                                </div>
+                                <div class="bg-slate-50 rounded-xl ring-2 ring-white p-3 z-[1] -ml-3">
+                                    <img class="size-4 object-contain" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='17'%20height='16'%20viewBox='0%200%2017%2016'%20fill='none'%3e%3cpath%20d='M15.98%208.16602C15.98%207.64602%2015.9304%207.14602%2015.8383%206.66602H8.5V9.50602H12.6933C12.5092%2010.4193%2011.9567%2011.1927%2011.1279%2011.7127V13.5594H13.6567C15.13%2012.2793%2015.98%2010.3993%2015.98%208.16602Z'%20fill='%234285F4'/%3e%3cpath%20d='M8.49978%2015.3327C10.6035%2015.3327%2012.3673%2014.6794%2013.6564%2013.5594L11.1277%2011.7127C10.4335%2012.1527%209.54811%2012.4194%208.49978%2012.4194C6.47395%2012.4194%204.7527%2011.1327%204.13645%209.39938H1.54395V11.2927C2.82603%2013.686%205.45394%2015.3327%208.49978%2015.3327Z'%20fill='%2334A853'/%3e%3cpath%20d='M4.13634%209.39289C3.98051%208.95289%203.88842%208.48622%203.88842%207.99956C3.88842%207.51289%203.98051%207.04622%204.13634%206.60622V4.71289H1.54384C1.01259%205.69956%200.708008%206.81289%200.708008%207.99956C0.708008%209.18622%201.01259%2010.2996%201.54384%2011.2862L3.56259%209.80622L4.13634%209.39289Z'%20fill='%23FBBC05'/%3e%3cpath%20d='M8.49978%203.58602C9.64728%203.58602%2010.6673%203.95935%2011.4819%204.67935L13.7131%202.57935C12.3602%201.39268%2010.6035%200.666016%208.49978%200.666016C5.45394%200.666016%202.82603%202.31268%201.54395%204.71268L4.13645%206.60602C4.7527%204.87268%206.47394%203.58602%208.49978%203.58602Z'%20fill='%23EA4335'/%3e%3c/svg%3e" alt="#">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-overview__item">
+                    <div class="flex-1 flex flex-nowrap justify-around gap-6">
+                        <div class="stats-overview__data">
+                            <p class="stats-overview__title">Ресайзы</p>
+
+                            <div class="flex gap-1.5 flex-col">
+                                <div class="stats-overview__value">
+                                    <span class="stat-overview__number">468</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-zinc-100 w-px"></div>
+                        <div class="stats-overview__data">
+                            <p class="stats-overview__title">Наружка</p>
+
+                            <div class="flex gap-1.5 flex-col">
+                                <div class="stats-overview__value">
+                                    <span class="stat-overview__number">40</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- stats-overview -->
+
+            <!-- main stat layout -->
+            <div class="grid grid-cols-3 gap-6 my-6">
+                <div class="sc:col-span-2 so:col-span-3 3xl:sc:col-span-2 3xl:so:col-span-2 row-span-1 flex items-center justify-center rounded-lg bg-blue-600 text-white p-10 h-40">График</div>
+                <div class="sc:col-span-1 so:col-span-3 3xl:sc:col-span-1 3xl:so:col-span-1 row-span-2 3xl:row-span-4 relative">
+                    <div class="flex flex-col so:max-3xl:flex-row 3xl:flex-col flex-nowrap gap-6 sticky top-0">
+                        <div class="flex-1 so:max-3xl:flex-2/3 3xl:flex-none">
+                            <div class="min-h-full flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Топ площадок</div>
+                        </div>
+                        <div class="flex-1 so:max-3xl:flex-1/3 3xl:flex-none">
+                            <div class="min-h-full flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10 h-60">факты</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 so:max-3xl:col-span-3 row-span-1 flex flex-row flex-nowrap gap-6">
+                    <div class="flex-1">
+                        <div class="min-h-full h-60 flex items-center justify-center rounded-lg bg-green-500 text-red-900 p-10">Популярные ресайзы</div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="min-h-full h-60 flex items-center justify-center rounded-lg bg-yellow-500 text-red-900 p-10">Типы материалов</div>
+                    </div>
+                </div>
+                <div class="col-span-3 3xl:col-span-2 h-40 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Направления</div>
+                <div class="col-span-3 3xl:col-span-2 h-80 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Карта</div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0" aria-hidden="true" id="__SVG_SPRITE_NODE__">
+    <symbol xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" id="logo">
+        <path d="M2.66497 7.75931C0.800049 10.9896 0.800049 15.3265 0.800049 24.0002C0.800049 32.6738 0.800049 37.0107 2.66497 40.241C3.88671 42.3572 5.64394 44.1145 7.76005 45.3363C10.5755 46.962 14.2316 47.1706 20.8674 47.1974V15.406H14.7404C14.72 13.6441 14.72 11.8618 14.72 10.0794H32.816V15.3855H26.6891V47.1989C33.6067 47.1792 37.3624 46.9978 40.24 45.3363C42.3562 44.1145 44.1134 42.3572 45.3351 40.241C47.2 37.0107 47.2 32.6738 47.2 24.0002C47.2 15.3265 47.2 10.9896 45.3351 7.75931C44.1134 5.6431 42.3562 3.88577 40.24 2.66397C37.0099 0.79895 32.6733 0.79895 24 0.79895C15.3268 0.79895 10.9902 0.79895 7.76005 2.66397C5.64394 3.88577 3.88671 5.6431 2.66497 7.75931Z" fill="#2856F6"/>
+    </symbol>
+<!--    <symbol xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 35 34" fill="none">-->
+<!--        <path d="M2.84704 5.49618C1.52605 7.78432 1.52605 10.8562 1.52605 17.0001C1.52605 23.144 1.52605 26.2159 2.84704 28.504C3.71244 30.003 4.95714 31.2478 6.45605 32.1132C8.45036 33.2647 11.0401 33.4125 15.7404 33.4315V10.9126H11.4005C11.3861 9.66458 11.3861 8.40209 11.3861 7.13959H24.2041V10.8981H19.8641V33.4326C24.7641 33.4186 27.4244 33.2901 29.4627 32.1132C30.9616 31.2478 32.2063 30.003 33.0717 28.504C34.3927 26.2159 34.3927 23.144 34.3927 17.0001C34.3927 10.8562 34.3927 7.78432 33.0717 5.49618C32.2063 3.99719 30.9616 2.75242 29.4627 1.88698C27.1747 0.565918 24.1029 0.565918 17.9594 0.565918C11.8158 0.565918 8.74408 0.565918 6.45605 1.88698C4.95714 2.75242 3.71244 3.99719 2.84704 5.49618Z"-->
+<!--              fill="#2856F6"/>-->
+<!--    </symbol>-->
+</svg>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</body>
+</html>
