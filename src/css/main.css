@@ -63,9 +63,11 @@
     --color-rose-500: #FF4154;
 
     --color-lime-300: #B6F187;
+    --color-lime-400: #A4EE62;
 
     --color-yellow-400: #FDC432;
 
+    --color-orange-400: #F68128;
     --color-orange-500: #FD6832;
     --color-orange-600: #DF6738;
 
@@ -121,6 +123,27 @@
 
 h3 {
     @apply font-serif text-lg font-bold leading-6 tracking-[0.18px] mb-4 text-blue-900;
+}
+
+.card {
+    @apply inset-ring-[1.5px] inset-ring-slate-100 rounded-3xl bg-white;
+}
+
+.progress {
+    --progress: 0%;
+
+    @apply h-2 min-w-12 bg-slate-50 rounded-full relative;
+    @apply overflow-hidden;
+
+    &:after {
+        content: '';
+
+        @apply absolute inset-0;
+        @apply rounded-full bg-current;
+        transition: right 0.3s ease;
+        left: -100%;
+        right: calc(100% - var(--progress));
+    }
 }
 
 .js-toggle-favorite {

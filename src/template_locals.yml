@@ -353,3 +353,35 @@ projects:
     date: "5 декабря 2024"
     category: "Услуги"
     client: "Антонина Маркова"
+stats:
+  platform_top:
+    -
+      name: Яндекс
+      count: 340
+      percent: 100%
+      progressColor: "text-green-500"
+    -
+      name: Google
+      count: 156
+      percent: 80%
+      progressColor: "text-lime-400"
+    -
+      name: VK
+      count: 156
+      percent: 60%
+      progressColor: "text-gold"
+    -
+      name: Авиасейлс
+      count: 122
+      percent: 40%
+      progressColor: "text-orange-400"
+    -
+      name: Gismeteo
+      count: 50
+      percent: 20%
+      progressColor: "text-orange-500"
+    -
+      name: Google
+      count: 20
+      percent: 5%
+      progressColor: "text-orange-500"
