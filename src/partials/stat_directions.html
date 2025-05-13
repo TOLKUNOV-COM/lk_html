@@ -1,0 +1,24 @@
+<div class="card__title">Направления</div>
+
+<div class="flex h-7 rounded-lg overflow-hidden">
+    {{#each stats.directions}}
+    <div
+            class="segment-color bg-current"
+            style="width: {{percent}}"
+            title="{{name}} — {{percent}}"
+    ></div>
+    {{/each}}
+</div>
+
+<div class="flex flex-wrap gap-4">
+    {{#each stats.directions}}
+    <div class="flex items-center gap-2 segment-color">
+        <div class="bg-current size-4 rounded-md"></div>
+
+        <div class="font-medium leading-5 tracking-[0.32px]">
+            <span class="text-blue-900">{{name}}</span>
+            <span class="text-slate-400">(40,2%)</span>
+        </div>
+    </div>
+    {{/each}}
+</div>

@@ -18,6 +18,7 @@
 @import "tags.css" layer(components);
 @import "material-tabs.css" layer(components);
 @import "stats-overview.css" layer(components);
+@import "card.css" layer(components);
 
 /* Blocks */
 @import "sidebar-menu.css";
@@ -40,10 +41,16 @@
     --color-amber-50: #FFFBEB;
 
     --color-blue-100: #E6EFFF;
+    --color-blue-500: #4A71F7;
     --color-blue-600: #2856F6;
     --color-blue-650: #2E55DB;
     --color-blue-700: #2146C4;
     --color-blue-900: #161F6A;
+
+    --color-purple-400: #BC85FE;
+
+    --color-pink-50: #FEECEC;
+    --color-pink-300: #FF96EB;
 
     --color-slate-50: #F4F6FA;
     --color-slate-100: #EFF2F7;
@@ -60,6 +67,7 @@
     --color-indigo-50: #E3E8F2;
     --color-indigo-100: #E5EBFF;
 
+    --color-rose-100: #FED9DA;
     --color-rose-500: #FF4154;
 
     --color-lime-300: #B6F187;
@@ -125,10 +133,6 @@ h3 {
     @apply font-serif text-lg font-bold leading-6 tracking-[0.18px] mb-4 text-blue-900;
 }
 
-.card {
-    @apply inset-ring-[1.5px] inset-ring-slate-100 rounded-3xl bg-white;
-}
-
 .progress {
     --progress: 0%;
 
@@ -144,6 +148,17 @@ h3 {
         left: -100%;
         right: calc(100% - var(--progress));
     }
+}
+
+.segment-color {
+    @apply text-white;
+
+    @apply nth-[1]:text-blue-600;
+    @apply nth-[2]:text-blue-500;
+    @apply nth-[3]:text-purple-400;
+    @apply nth-[4]:text-pink-300;
+    @apply nth-[5]:text-rose-100;
+    @apply nth-[6]:text-pink-50;
 }
 
 .js-toggle-favorite {

@@ -385,3 +385,22 @@ stats:
       count: 20
       percent: 5%
       progressColor: "text-orange-500"
+  directions:
+    -
+      name: HTML5
+      percent: 60.2%
+    -
+      name: Видео
+      percent: 40.2%
+    -
+      name: Статика
+      percent: 5.1%
+    -
+      name: OOH
+      percent: 2.5%
+    -
+      name: DOOH
+      percent: 1.7%
+    -
+      name: Медиафасады
+      percent: 10.7%

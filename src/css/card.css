@@ -1,0 +1,7 @@
+.card {
+    @apply inset-ring-[1.5px] inset-ring-slate-100 rounded-3xl bg-white;
+}
+
+.card__title {
+    @apply text-blue-900 font-serif text-xl font-bold leading-7;
+}
