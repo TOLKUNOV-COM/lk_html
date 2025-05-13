@@ -20,6 +20,9 @@
 @import "stats-overview.css" layer(components);
 @import "card.css" layer(components);
 
+/** Utilities */
+@import "utilities.css" layer(utilities);
+
 /* Blocks */
 @import "sidebar-menu.css";
 @import "sidebar.css";

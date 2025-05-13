@@ -1,5 +1,6 @@
 .card {
     @apply inset-ring-[1.5px] inset-ring-slate-100 rounded-3xl bg-white;
+    @apply p-6;
 }
 
 .card__title {
