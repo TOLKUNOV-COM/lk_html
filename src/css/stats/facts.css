@@ -1,0 +1,36 @@
+.facts__list {
+    @apply list-none flex flex-col gap-4;
+    @apply text-blue-900 font-medium leading-5 tracking-[0.32px];
+}
+
+.facts__item {
+    @apply relative;
+    @apply list-image-none list-outside pl-7;
+
+    &::before {
+        content: '';
+        @apply absolute top-[7px] left-0 w-4 h-1.5 rounded-full bg-slate-100;
+    }
+}
+
+.facts__arrow {
+    background: left top no-repeat url("../../img/facts_arrow.svg");
+    width: 89px;
+    height: 28px;
+}
+
+.facts__love {
+    background-image: url("../../img/colorful/love.webp");
+    background-position: 12.5px center;
+    background-size: 47px 44px;
+    background-repeat: no-repeat;
+}
+
+.facts__sticker {
+    @apply size-[185px] pointer-events-none;
+    @apply absolute top-[-63px] right-[-43px];
+
+    background-image: url("../../img/colorful/facts.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
