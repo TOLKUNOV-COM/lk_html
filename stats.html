@@ -252,92 +252,94 @@
             </div>
             <!-- stats-overview -->
 
-            <div class="flex gap-6 my-6">
+            <div class="flex flex-col items-start gap-6 my-6">
 
                 <!-- top platforms -->
-                <div class="card pt-4 pb-2 px-4">
-                    <div class="flex items-center flex-nowrap gap-6 p-2 mb-2">
-                        <h4 class="w-[236px] text-blue-900 font-serif text-xl font-bold leading-7">Топ площадок</h4>
+                <div class="card p-6 pb-4">
+                    <div class="flex items-center flex-nowrap gap-6 mb-6">
+                        <h4 class="w-[236px] card__title">Топ площадок</h4>
                         <div class="h-6 w-[1.5px] bg-slate-100"></div>
                         <p class="text-slate-400 font-bold leading-5 tracking-[0.16px]">Ресайзы</p>
                     </div>
 
-                    <div class="flex items-center flex-nowrap gap-6 p-2 text-blue-900 font-medium leading-5 tracking-[0.32px]">
-                        <div class="flex items-center gap-3 w-[236px]">
-                            <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
-                                <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center flex-nowrap gap-6 text-blue-900 font-medium leading-5 tracking-[0.32px]">
+                            <div class="flex items-center gap-3 w-[236px]">
+                                <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
+                                    <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                                </div>
+                                <p class="flex-1 line-clamp-2">Яндекс</p>
                             </div>
-                            <p class="flex-1 line-clamp-2">Яндекс</p>
-                        </div>
-                        <div class="w-px h-6 bg-zinc-100"></div>
-                        <div class="flex-1 flex items-center gap-3">
-                            <span>340</span>
-                            <div class="progress flex-1 w-[271px] text-green-500" style="--progress: 100%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center flex-nowrap gap-6 p-2 text-blue-900 font-medium leading-5 tracking-[0.32px]">
-                        <div class="flex items-center gap-3 w-[236px]">
-                            <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
-                                <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            <div class="w-px h-6 bg-zinc-100"></div>
+                            <div class="flex-1 flex items-center gap-3">
+                                <span>340</span>
+                                <div class="progress flex-1 w-[271px] text-green-500" style="--progress: 100%"></div>
                             </div>
-                            <p class="flex-1 line-clamp-2">Google</p>
                         </div>
-                        <div class="w-px h-6 bg-zinc-100"></div>
-                        <div class="flex-1 flex items-center gap-3">
-                            <span>156</span>
-                            <div class="progress flex-1 w-[271px] text-lime-400" style="--progress: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center flex-nowrap gap-6 p-2 text-blue-900 font-medium leading-5 tracking-[0.32px]">
-                        <div class="flex items-center gap-3 w-[236px]">
-                            <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
-                                <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                        <div class="flex items-center flex-nowrap gap-6 text-blue-900 font-medium leading-5 tracking-[0.32px]">
+                            <div class="flex items-center gap-3 w-[236px]">
+                                <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
+                                    <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                                </div>
+                                <p class="flex-1 line-clamp-2">Google</p>
                             </div>
-                            <p class="flex-1 line-clamp-2">VK</p>
-                        </div>
-                        <div class="w-px h-6 bg-zinc-100"></div>
-                        <div class="flex-1 flex items-center gap-3">
-                            <span>156</span>
-                            <div class="progress flex-1 w-[271px] text-gold" style="--progress: 60%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center flex-nowrap gap-6 p-2 text-blue-900 font-medium leading-5 tracking-[0.32px]">
-                        <div class="flex items-center gap-3 w-[236px]">
-                            <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
-                                <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            <div class="w-px h-6 bg-zinc-100"></div>
+                            <div class="flex-1 flex items-center gap-3">
+                                <span>156</span>
+                                <div class="progress flex-1 w-[271px] text-lime-400" style="--progress: 80%"></div>
                             </div>
-                            <p class="flex-1 line-clamp-2">Авиасейлс</p>
                         </div>
-                        <div class="w-px h-6 bg-zinc-100"></div>
-                        <div class="flex-1 flex items-center gap-3">
-                            <span>122</span>
-                            <div class="progress flex-1 w-[271px] text-orange-400" style="--progress: 40%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center flex-nowrap gap-6 p-2 text-blue-900 font-medium leading-5 tracking-[0.32px]">
-                        <div class="flex items-center gap-3 w-[236px]">
-                            <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
-                                <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                        <div class="flex items-center flex-nowrap gap-6 text-blue-900 font-medium leading-5 tracking-[0.32px]">
+                            <div class="flex items-center gap-3 w-[236px]">
+                                <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
+                                    <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                                </div>
+                                <p class="flex-1 line-clamp-2">VK</p>
                             </div>
-                            <p class="flex-1 line-clamp-2">Gismeteo</p>
-                        </div>
-                        <div class="w-px h-6 bg-zinc-100"></div>
-                        <div class="flex-1 flex items-center gap-3">
-                            <span>50</span>
-                            <div class="progress flex-1 w-[271px] text-orange-500" style="--progress: 20%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center flex-nowrap gap-6 p-2 text-blue-900 font-medium leading-5 tracking-[0.32px]">
-                        <div class="flex items-center gap-3 w-[236px]">
-                            <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
-                                <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            <div class="w-px h-6 bg-zinc-100"></div>
+                            <div class="flex-1 flex items-center gap-3">
+                                <span>156</span>
+                                <div class="progress flex-1 w-[271px] text-gold" style="--progress: 60%"></div>
                             </div>
-                            <p class="flex-1 line-clamp-2">Google</p>
                         </div>
-                        <div class="w-px h-6 bg-zinc-100"></div>
-                        <div class="flex-1 flex items-center gap-3">
-                            <span>20</span>
-                            <div class="progress flex-1 w-[271px] text-orange-500" style="--progress: 5%"></div>
+                        <div class="flex items-center flex-nowrap gap-6 text-blue-900 font-medium leading-5 tracking-[0.32px]">
+                            <div class="flex items-center gap-3 w-[236px]">
+                                <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
+                                    <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                                </div>
+                                <p class="flex-1 line-clamp-2">Авиасейлс</p>
+                            </div>
+                            <div class="w-px h-6 bg-zinc-100"></div>
+                            <div class="flex-1 flex items-center gap-3">
+                                <span>122</span>
+                                <div class="progress flex-1 w-[271px] text-orange-400" style="--progress: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center flex-nowrap gap-6 text-blue-900 font-medium leading-5 tracking-[0.32px]">
+                            <div class="flex items-center gap-3 w-[236px]">
+                                <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
+                                    <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                                </div>
+                                <p class="flex-1 line-clamp-2">Gismeteo</p>
+                            </div>
+                            <div class="w-px h-6 bg-zinc-100"></div>
+                            <div class="flex-1 flex items-center gap-3">
+                                <span>50</span>
+                                <div class="progress flex-1 w-[271px] text-orange-500" style="--progress: 20%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center flex-nowrap gap-6 text-blue-900 font-medium leading-5 tracking-[0.32px]">
+                            <div class="flex items-center gap-3 w-[236px]">
+                                <div class="flex items-center justify-center size-14 border border-slate-100 rounded-2xl">
+                                    <img class="size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                                </div>
+                                <p class="flex-1 line-clamp-2">Google</p>
+                            </div>
+                            <div class="w-px h-6 bg-zinc-100"></div>
+                            <div class="flex-1 flex items-center gap-3">
+                                <span>20</span>
+                                <div class="progress flex-1 w-[271px] text-orange-500" style="--progress: 5%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -351,14 +353,102 @@
                 <div class="sc:col-span-1 so:col-span-3 3xl:sc:col-span-1 3xl:so:col-span-1 row-span-2 3xl:row-span-4 relative">
                     <div class="flex flex-col so:max-3xl:flex-row 3xl:flex-col flex-nowrap gap-6 sticky top-0">
                         <div class="flex-1 so:max-3xl:flex-2/3 3xl:flex-none  flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Топ площадок</div>
-                        <div class="flex-1 so:max-3xl:flex-1/3 3xl:flex-none  flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10 h-60">факты</div>
+                        <div class="flex-1 so:max-3xl:flex-1/3 3xl:flex-none  flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10 h-100">факты</div>
                     </div>
                 </div>
                 <div class="col-span-2 so:max-3xl:col-span-3 row-span-1 flex flex-row flex-nowrap gap-6">
                     <div class="flex-1  h-60 flex items-center justify-center rounded-lg bg-green-500 text-red-900 p-10">Популярные ресайзы</div>
                     <div class="flex-1  h-60 flex items-center justify-center rounded-lg bg-yellow-500 text-red-900 p-10">Типы материалов</div>
                 </div>
-                <div class="col-span-3 3xl:col-span-2 h-40 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Направления</div>
+                <!-- directions -->
+                <div class="col-span-3 3xl:col-span-2   card p-6 flex flex-col gap-5">
+                    <div class="card__title">Направления</div>
+                    
+                    <div class="flex h-7 rounded-lg overflow-hidden">
+                        <div
+                                class="segment-color bg-current"
+                                style="width: 60.2%"
+                                title="HTML5 — 60.2%"
+                        ></div>
+                        <div
+                                class="segment-color bg-current"
+                                style="width: 40.2%"
+                                title="Видео — 40.2%"
+                        ></div>
+                        <div
+                                class="segment-color bg-current"
+                                style="width: 5.1%"
+                                title="Статика — 5.1%"
+                        ></div>
+                        <div
+                                class="segment-color bg-current"
+                                style="width: 2.5%"
+                                title="OOH — 2.5%"
+                        ></div>
+                        <div
+                                class="segment-color bg-current"
+                                style="width: 1.7%"
+                                title="DOOH — 1.7%"
+                        ></div>
+                        <div
+                                class="segment-color bg-current"
+                                style="width: 10.7%"
+                                title="Медиафасады — 10.7%"
+                        ></div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2 segment-color">
+                            <div class="bg-current size-4 rounded-md"></div>
+                    
+                            <div class="font-medium leading-5 tracking-[0.32px]">
+                                <span class="text-blue-900">HTML5</span>
+                                <span class="text-slate-400">(40,2%)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 segment-color">
+                            <div class="bg-current size-4 rounded-md"></div>
+                    
+                            <div class="font-medium leading-5 tracking-[0.32px]">
+                                <span class="text-blue-900">Видео</span>
+                                <span class="text-slate-400">(40,2%)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 segment-color">
+                            <div class="bg-current size-4 rounded-md"></div>
+                    
+                            <div class="font-medium leading-5 tracking-[0.32px]">
+                                <span class="text-blue-900">Статика</span>
+                                <span class="text-slate-400">(40,2%)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 segment-color">
+                            <div class="bg-current size-4 rounded-md"></div>
+                    
+                            <div class="font-medium leading-5 tracking-[0.32px]">
+                                <span class="text-blue-900">OOH</span>
+                                <span class="text-slate-400">(40,2%)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 segment-color">
+                            <div class="bg-current size-4 rounded-md"></div>
+                    
+                            <div class="font-medium leading-5 tracking-[0.32px]">
+                                <span class="text-blue-900">DOOH</span>
+                                <span class="text-slate-400">(40,2%)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 segment-color">
+                            <div class="bg-current size-4 rounded-md"></div>
+                    
+                            <div class="font-medium leading-5 tracking-[0.32px]">
+                                <span class="text-blue-900">Медиафасады</span>
+                                <span class="text-slate-400">(40,2%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- directions -->
                 <div class="col-span-3 3xl:col-span-2 h-80 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Карта</div>
             </div>
 
