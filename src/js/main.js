@@ -7,6 +7,7 @@ import shareButton from "./share-button.js";
 import linksPopup from "./links-popup.js";
 import favoriteButton from "./favorite-button.js";
 import viewer from "./viewer.js";
+import {lineChart} from "./charts/index.js";
 
 tabs();
 sidebar();
@@ -17,6 +18,7 @@ shareButton();
 linksPopup();
 favoriteButton();
 viewer();
+lineChart();
 
 // when fancybox content open
 document.addEventListener('fancybox:contentReady', (e) => {
