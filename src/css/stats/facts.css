@@ -28,7 +28,7 @@
 
 .facts__sticker {
     @apply size-[185px] pointer-events-none;
-    @apply absolute top-[-63px] right-[-43px];
+    @apply top-[-63px] right-[-43px];
 
     background-image: url("../../img/colorful/facts.webp");
     background-size: cover;

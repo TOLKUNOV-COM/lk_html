@@ -1,0 +1,21 @@
+<div class="flex flex-wrap items-center justify-between gap-5">
+    <div class="card__title flex-1">Проекты и&nbsp;ресайзы</div>
+    <div class="flex items-center gap-4 text-slate-500 text-sm font-medium leading-5 tracking-[0.28px]">
+        <div class="flex items-center gap-2">
+            <div class="w-6 h-1 rounded-full bg-blue-600"></div>
+            <p>Проекты</p>
+        </div>
+        <div class="flex items-center gap-2">
+            <div class="w-6 h-1 rounded-full bg-purple-470"></div>
+            <p>Ресайзы</p>
+        </div>
+    </div>
+</div>
+
+<div id="lineChart"
+     class="flex-1 card__stick_right"
+     data-module="lineChart"
+     data-categories='{{{json lineChart.categories}}}'
+     data-data-a='{{{json lineChart.dataA}}}'
+     data-data-b='{{{json lineChart.dataB}}}'
+></div>

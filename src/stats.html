@@ -162,58 +162,31 @@
 
             <!-- bar chart -->
             <article class="card flex flex-col gap-5 h-120">
-                <div class="card__title">Популярные размещения</div>
-                <div class="flex-1 chart-scroll-container scrollbar scrollbar-x touch-scroll pb-1.5 -mb-3 card__stick_full card__padding_full" data-scroll-direction="horizontal">
-                    <div id="barChart"
-                         class="h-full"
-                         data-module="barChart"
-                         data-chart='{{{json barChart}}}'
-                    ></div>
-                </div>
+                {{> stats/bar_chart }}
             </article>
             <!-- bar chart -->
 
             <!-- pie chart -->
             <article class="card">
-                {{> stat_types }}
+                {{> stats/pie_chart }}
             </article>
             <!-- pie chart -->
 
             <!-- line chart -->
-            <div class="card flex flex-col gap-5 h-100">
-                <div class="flex flex-wrap items-center justify-between gap-5">
-                    <div class="card__title flex-1">Проекты и&nbsp;ресайзы</div>
-                    <div class="flex items-center gap-4 text-slate-500 text-sm font-medium leading-5 tracking-[0.28px]">
-                        <div class="flex items-center gap-2">
-                            <div class="w-6 h-1 rounded-full bg-blue-600"></div>
-                            <p>Проекты</p>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-6 h-1 rounded-full bg-purple-470"></div>
-                            <p>Ресайзы</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="lineChart"
-                     class="flex-1 card__stick_right"
-                     data-module="lineChart"
-                     data-categories='{{{json lineChart.categories}}}'
-                     data-data-a='{{{json lineChart.dataA}}}'
-                     data-data-b='{{{json lineChart.dataB}}}'
-                ></div>
-            </div>
+            <article class="card flex flex-col gap-5 h-100">
+                {{> stats/line_chart }}
+            </article>
             <!-- line chart -->
 
             <!-- demo -->
             <div class="flex flex-col items-start gap-6 my-6">
 
                 <!-- facts -->
-                <div class="card w-[326px] relative">
+                <article class="card w-[326px] flex flex-col relative">
                     <div class="card__title mb-5">Посчитали <br>ещё кое-что</div>
-                    <div class="facts__sticker"></div>
+                    <div class="facts__sticker absolute"></div>
 
-                    <ul class="facts__list mb-6">
+                    <ul class="facts__list flex-1 mb-6">
                         <li class="facts__item"><span class="text-blue-600">На 23% выросла</span> активность за последние 3 месяца. Стабильный апгрейд!</li>
                         <li class="facts__item"><span class="text-blue-600">4 проекта в месяц</span> в среднем делаем. Можем и больше!</li>
                         <li class="facts__item"><span class="text-blue-600"><span class="text-blue-600">+3 уникальные площадки</span> за год. Так держать!</li>
@@ -233,11 +206,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
                 <!-- facts -->
 
                 <!-- top platforms -->
-                <div class="card pb-4">
+                <article class="card pb-4">
                     <div class="flex items-center flex-nowrap gap-6 mb-6">
                         <h4 class="w-[236px] card__title">Топ площадок</h4>
                         <div class="h-6 w-[1.5px] bg-slate-100"></div>
@@ -261,7 +234,7 @@
                         </div>
                         {{/each}}
                     </div>
-                </div>
+                </article>
                 <!-- top platforms -->
 
             </div>
