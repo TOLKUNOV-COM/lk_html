@@ -1,10 +1,5 @@
 import * as echarts from 'echarts';
-
-// Функция для склонения слов в русском языке
-function declension(number, titles) {
-    const cases = [2, 0, 1, 1, 1, 2];
-    return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
-}
+import { declension } from "../utils.js";
 
 export default function lineCharts() {
     document.querySelectorAll('[data-module="lineChart"]').forEach((el) => {
@@ -12,7 +7,7 @@ export default function lineCharts() {
         const dataA = JSON.parse(el.dataset.dataA || '[]');
         const dataB = JSON.parse(el.dataset.dataB || '[]');
 
-        initLineChart(el, categories, dataA, dataB);
+        lineChart(el, categories, dataA, dataB);
     });
 }
 
@@ -27,7 +22,7 @@ export default function lineCharts() {
  * @param dataA
  * @param dataB
  */
-export function initLineChart(container = 'lineChart', categories = [], dataA = [], dataB = []) {
+export function lineChart(container = 'lineChart', categories = [], dataA = [], dataB = []) {
     // Получаем DOM-элемент
     const chartDom = typeof container === 'string'
         ? document.getElementById(container)

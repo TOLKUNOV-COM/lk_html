@@ -408,3 +408,35 @@ lineChart:
   categories: ["ЯНВ", "ФЕВ", "МАР", "АПР", "МАЙ", "ИЮН", "ИЮЛ", ""]
   dataA: [21, 32, 50, 40, 60, 80, 50, 80]
   dataB: [10, 20, 40, 30, 50, 70, 60, 80]
+pieChart:
+  - value: 21
+    name: Баннеры
+    itemStyle:
+      color: '#2856F6'
+
+  - value: 8
+    name: Анимация
+    itemStyle:
+      color: '#4C6FFF'
+
+  - value: 3
+    name: Видео
+    itemStyle:
+      color: '#AB67FE'
+
+  - value: 3
+    name: 3D
+    itemStyle:
+      color: 'rgba(224, 199, 254, 0.4)'
+
+  - value: 9
+    name: Другое
+    itemStyle:
+      color: 'rgba(237, 172, 172, 0.4)'
+    list:
+      - label: Инфографика
+        value: 2
+      - label: 3D
+        value: 3
+      - label: Видео
+        value: 4
