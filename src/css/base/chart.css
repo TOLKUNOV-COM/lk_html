@@ -15,36 +15,8 @@
 
 /* Стилизация скролл-бара */
 .chart-scroll-container {
-    &::-webkit-scrollbar {
-        @apply h-1.5;
-    }
-
     &::-webkit-scrollbar-track {
-        @apply bg-transparent;
-        @apply rounded-sm;
-
         margin-left: var(--card-padding, 1.5rem);
         margin-right: var(--card-padding, 1.5rem);
-    }
-
-    &::-webkit-scrollbar-thumb {
-        @apply bg-transparent;
-        @apply rounded-sm;
-    }
-
-    &:hover, &:active, &:focus {
-        &::-webkit-scrollbar-thumb {
-            @apply bg-slate-170;
-        }
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-        @apply bg-slate-170;
-    }
-
-    /* Отключение обводки при фокусе для лучшего UX */
-
-    &:focus {
-        outline: none;
     }
 }

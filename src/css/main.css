@@ -9,6 +9,7 @@
 /* Components */
 @import "base/chart.css" layer(components);
 @import "base/touch-scroll.css" layer(components);
+@import "base/scrollbar.css" layer(components);
 @import "forms.css" layer(components);
 @import "action-buttons.css" layer(components);
 @import "filters.css" layer(components);

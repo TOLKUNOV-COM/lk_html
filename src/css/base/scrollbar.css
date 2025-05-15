@@ -1,0 +1,38 @@
+.scrollbar {
+    -webkit-overflow-scrolling: touch; /* улучшенная инерция скролла на iOS */
+
+    &::-webkit-scrollbar-track {
+        @apply bg-transparent;
+        @apply rounded-sm;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @apply bg-transparent;
+        @apply rounded-sm;
+        @apply cursor-pointer;
+    }
+
+    &:hover, &:active, &:focus {
+        &::-webkit-scrollbar-thumb {
+            @apply bg-slate-170;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        @apply bg-[#DFE3EB];
+    }
+
+    /* Отключение обводки при фокусе для лучшего UX */
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.scrollbar-x::-webkit-scrollbar {
+    @apply h-1.5;
+}
+
+.scrollbar-y::-webkit-scrollbar {
+    @apply w-1.5;
+}
