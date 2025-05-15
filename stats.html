@@ -276,6 +276,62 @@
             </div>
             <!-- filter -->
 
+            <!-- pie chart -->
+            <article class="card">
+                <h2 class="card__title mb-6">Типы материалов</h2>
+                
+                <div id="pieChart"
+                     class="mx-auto mt-7 mb-8"
+                     data-module="pieChart"
+                     data-chart='[{"value":21,"percent":"61%","name":"Баннеры","itemStyle":{"color":"#2856F6"}},{"value":8,"percent":"24%","name":"Анимация","itemStyle":{"color":"#4C6FFF"}},{"value":3,"percent":"8%","name":"Видео","itemStyle":{"color":"#AB67FE"}},{"value":3,"percent":"8%","name":"3D","itemStyle":{"color":"rgba(224, 199, 254, 0.4)"}},{"value":9,"percent":"30%","name":"Другое","itemStyle":{"color":"rgba(237, 172, 172, 0.4)"},"list":[{"label":"Инфографика","value":2},{"label":"3D","value":3},{"label":"Видео","value":4}]}]'
+                     style="width: 260px; height: 260px;">
+                </div>
+                
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center gap-2 segment-color">
+                        <div class="bg-current size-4 rounded-md"></div>
+                
+                        <div class="font-medium leading-5 tracking-[0.32px]">
+                            <span class="text-blue-900">Баннеры</span>
+                            <span class="text-slate-400">(61%)</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 segment-color">
+                        <div class="bg-current size-4 rounded-md"></div>
+                
+                        <div class="font-medium leading-5 tracking-[0.32px]">
+                            <span class="text-blue-900">Анимация</span>
+                            <span class="text-slate-400">(24%)</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 segment-color">
+                        <div class="bg-current size-4 rounded-md"></div>
+                
+                        <div class="font-medium leading-5 tracking-[0.32px]">
+                            <span class="text-blue-900">Видео</span>
+                            <span class="text-slate-400">(8%)</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 segment-color">
+                        <div class="bg-current size-4 rounded-md"></div>
+                
+                        <div class="font-medium leading-5 tracking-[0.32px]">
+                            <span class="text-blue-900">3D</span>
+                            <span class="text-slate-400">(8%)</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 segment-color">
+                        <div class="bg-current size-4 rounded-md"></div>
+                
+                        <div class="font-medium leading-5 tracking-[0.32px]">
+                            <span class="text-blue-900">Другое</span>
+                            <span class="text-slate-400">(30%)</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- pie chart -->
+
             <!-- line chart -->
             <div class="card flex flex-col gap-5 h-100">
                 <div class="flex flex-wrap items-center justify-between gap-5">
@@ -293,12 +349,12 @@
                 </div>
 
                 <div id="lineChart"
-                     class="flex-1"
+                     class="flex-1 card__stick_right"
                      data-module="lineChart"
                      data-categories='["ЯНВ","ФЕВ","МАР","АПР","МАЙ","ИЮН","ИЮЛ",""]'
                      data-data-a='[21,32,50,40,60,80,50,80]'
                      data-data-b='[10,20,40,30,50,70,60,80]'
-                     style="width: 100%; height: 400px;"></div>
+                ></div>
             </div>
             <!-- line chart -->
 
