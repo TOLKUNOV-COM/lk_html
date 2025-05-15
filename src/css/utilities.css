@@ -1,12 +1,1 @@
-.card__stick_left {
-    @apply ml-[calc(-1.5rem+1.5px)];
-}
-
-.card__stick_right {
-    @apply mr-[calc(-1.5rem+1.5px)];
-}
-
-.card__stick_full {
-    @apply ml-[calc(-1.5rem+1.5px)];
-    @apply mr-[calc(-1.5rem+1.5px)];
-}
+/** Utilities **/

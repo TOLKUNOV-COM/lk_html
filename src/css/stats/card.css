@@ -1,5 +1,6 @@
 :root {
     --card-padding: 1.5rem;
+    --card-border-offset: 1.5px;
 }
 
 .card {
@@ -12,14 +13,26 @@
     @apply text-blue-900 font-serif text-xl font-bold leading-7;
 }
 
+.card__stick_left {
+    margin-left: calc(var(--card-border-offset) - var(--card-padding));
+}
+
+.card__stick_right {
+    margin-right: calc(var(--card-border-offset) - var(--card-padding));
+}
+
+.card__stick_full {
+    margin-inline: calc(var(--card-border-offset) - var(--card-padding));
+}
+
 .card__padding_left {
-    @apply pl-6;
+    padding-left: var(--card-padding);
 }
 
 .card__padding_right {
-    @apply pr-6;
+    padding-right: var(--card-padding);
 }
 
 .card__padding_full {
-    @apply px-6;
+    padding-inline: var(--card-padding);
 }
