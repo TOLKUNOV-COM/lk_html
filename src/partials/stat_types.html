@@ -1,0 +1,21 @@
+<h2 class="card__title mb-6">Типы материалов</h2>
+
+<div id="pieChart"
+     class="mx-auto mt-7 mb-8"
+     data-module="pieChart"
+     data-chart='{{{json pieChart}}}'
+     style="width: 260px; height: 260px;">
+</div>
+
+<div class="flex flex-wrap gap-4">
+    {{#each pieChart}}
+    <div class="flex items-center gap-2 segment-color">
+        <div class="bg-current size-4 rounded-md"></div>
+
+        <div class="font-medium leading-5 tracking-[0.32px]">
+            <span class="text-blue-900">{{name}}</span>
+            <span class="text-slate-400">({{percent}})</span>
+        </div>
+    </div>
+    {{/each}}
+</div>

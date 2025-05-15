@@ -114,7 +114,7 @@ export function pieChart(container = 'pieChart', data = []) {
         series: [
             {
                 type: 'pie',
-                radius: ['75px', '125px'],
+                radius: ['75px', '125px'], // 60%-100%
                 avoidLabelOverlap: false,
                 silent: false,
                 label: { show: false },

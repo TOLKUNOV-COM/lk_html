@@ -160,6 +160,12 @@
             </div>
             <!-- filter -->
 
+            <!-- pie chart -->
+            <article class="card">
+                {{> stat_types }}
+            </article>
+            <!-- pie chart -->
+
             <!-- line chart -->
             <div class="card flex flex-col gap-5 h-100">
                 <div class="flex flex-wrap items-center justify-between gap-5">
@@ -177,12 +183,12 @@
                 </div>
 
                 <div id="lineChart"
-                     class="flex-1"
+                     class="flex-1 card__stick_right"
                      data-module="lineChart"
                      data-categories='{{{json lineChart.categories}}}'
                      data-data-a='{{{json lineChart.dataA}}}'
                      data-data-b='{{{json lineChart.dataB}}}'
-                     style="width: 100%; height: 400px;"></div>
+                ></div>
             </div>
             <!-- line chart -->
 
