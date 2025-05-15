@@ -70,6 +70,7 @@ export default defineConfig({
             partialDirectory: path.resolve(__dirname, 'src/partials'),
             helpers: {
                 isArray: (value) => Array.isArray(value),
+                json: (context) => JSON.stringify(context),
             }
         }),
         {

@@ -6,6 +6,16 @@ function declension(number, titles) {
     return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
 }
 
+export default function lineCharts() {
+    document.querySelectorAll('[data-module="lineChart"]').forEach((el) => {
+        const categories = JSON.parse(el.dataset.categories || '[]');
+        const dataA = JSON.parse(el.dataset.dataA || '[]');
+        const dataB = JSON.parse(el.dataset.dataB || '[]');
+
+        initLineChart(el, categories, dataA, dataB);
+    });
+}
+
 /**
  * Инициализирует и рисует линейный график в заданном контейнере.
  * Линия и градиентная заливка разделены на разные серии,
@@ -13,8 +23,11 @@ function declension(number, titles) {
  * axisPointer настроен шириной 10px и чёрным цветом,
  * а точки всегда выше всех слоёв.
  * @param {string|HTMLElement} container — ID контейнера или сам элемент.
+ * @param categories
+ * @param dataA
+ * @param dataB
  */
-export default function lineChart(container = 'lineChart') {
+export function initLineChart(container = 'lineChart', categories = [], dataA = [], dataB = []) {
     // Получаем DOM-элемент
     const chartDom = typeof container === 'string'
         ? document.getElementById(container)
@@ -26,11 +39,6 @@ export default function lineChart(container = 'lineChart') {
 
     // 3) инициализируем инстанс
     const myChart = echarts.init(chartDom);
-
-    const dataA = [21, 32, 50, 40, 60, 80, 50, 80];
-    const dataB = [10, 20, 40, 30, 50, 70, 60, 80];
-
-    const categories = ['ЯНВ', 'ФЕВ', 'МАР', 'АПР', 'МАЙ', 'ИЮН', 'ИЮЛ', /*'АВГ', 'СЕН', 'ОКТ', 'НОЯ', 'ДЕК',*/ ''];
 
     // 4) опции графика (простой пример)
     const option = {
