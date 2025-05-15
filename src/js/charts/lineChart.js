@@ -6,10 +6,24 @@ function declension(number, titles) {
     return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
 }
 
-// 1) дождёмся, пока DOM загрузится
-export default function lineChart() {
-    // 2) найдём контейнер
-    const chartDom = document.getElementById('lineChart');
+/**
+ * Инициализирует и рисует линейный график в заданном контейнере.
+ * Линия и градиентная заливка разделены на разные серии,
+ * чтобы линия рисовалась поверх заливки.
+ * axisPointer настроен шириной 10px и чёрным цветом,
+ * а точки всегда выше всех слоёв.
+ * @param {string|HTMLElement} container — ID контейнера или сам элемент.
+ */
+export default function lineChart(container = 'lineChart') {
+    // Получаем DOM-элемент
+    const chartDom = typeof container === 'string'
+        ? document.getElementById(container)
+        : container;
+
+    if (!chartDom) {
+        return;
+    }
+
     // 3) инициализируем инстанс
     const myChart = echarts.init(chartDom);
 
@@ -107,16 +121,16 @@ export default function lineChart() {
                 // Генерируем HTML тултипа
                 return `
           <div style="display:flex;flex-direction:column;gap:12px;">
-            <div style="color:#161F6A;font-family:'Craftwork Grotesk';font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${fullMonth}</div>
+            <div style="color:#161F6A;font-family:'Craftwork Grotesk',serif;font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${fullMonth}</div>
             <div style="width:100%;height:1px;background:#EFEDF0;"></div>
             <div style="display:flex;flex-wrap:nowrap;gap:12px;">
               <div style="display:flex;align-items:center;gap:4px;">
-                <div style="color:#161F6A;font-family:'Craftwork Grotesk';font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${valA}</div>
-                <div style="color:#6E7185;font-family:'Craftwork Sans';font-size:16px;font-weight:500;line-height:20px;letter-spacing:0.32px;">${textA}</div>
+                <div style="color:#161F6A;font-family:'Craftwork Grotesk',serif;font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${valA}</div>
+                <div style="color:#6E7185;font-family:'Craftwork Sans',serif;font-size:16px;font-weight:500;line-height:20px;letter-spacing:0.32px;">${textA}</div>
               </div>
               <div style="display:flex;align-items:center;gap:4px;">
-                <div style="color:#161F6A;font-family:'Craftwork Grotesk';font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${valB}</div>
-                <div style="color:#6E7185;font-family:'Craftwork Sans';font-size:16px;font-weight:500;line-height:20px;letter-spacing:0.32px;">${textB}</div>
+                <div style="color:#161F6A;font-family:'Craftwork Grotesk',serif;font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${valB}</div>
+                <div style="color:#6E7185;font-family:'Craftwork Sans',serif;font-size:16px;font-weight:500;line-height:20px;letter-spacing:0.32px;">${textB}</div>
               </div>
             </div>
           </div>
@@ -223,11 +237,11 @@ export default function lineChart() {
     myChart.setOption(option);
 
     // Скрывать axisPointer и тултип на последней точке
-    myChart.on('showTip', params => {
-        if (params.dataIndex === lastIdx) {
-            myChart.dispatchAction({ type: 'hideTip' });
-        }
-    });
+    // myChart.on('showTip', params => {
+    //     if (params.dataIndex === lastIdx) {
+    //         myChart.dispatchAction({ type: 'hideTip' });
+    //     }
+    // });
 
     // 6) реакция на ресайз окна
     window.addEventListener('resize', () => {
