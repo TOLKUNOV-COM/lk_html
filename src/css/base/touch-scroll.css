@@ -1,0 +1,32 @@
+/* Классы для тач-скролла */
+.touch-scroll {
+    cursor: grab;
+    user-select: none;
+    -webkit-overflow-scrolling: touch; /* улучшенная инерция скролла на iOS */
+
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.touch-scroll-active {
+    cursor: grabbing !important;
+}
+
+.touch-scroll-active * {
+    cursor: grabbing !important;
+    user-select: none;
+}
+
+/* Canvas с возможностью перетаскивания */
+.touch-scroll canvas {
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.touch-scroll-active canvas {
+    cursor: grabbing;
+}

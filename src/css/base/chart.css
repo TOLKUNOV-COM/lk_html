@@ -1,0 +1,41 @@
+/* Стили для контейнера графиков */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Контейнер с горизонтальной прокруткой */
+.chart-scroll-container {
+    position: relative;
+    -webkit-overflow-scrolling: touch; /* улучшенная инерция скролла на iOS */
+}
+
+/* Стилизация скролл-бара */
+.chart-scroll-container {
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgba(239, 237, 240, 0.5);
+        border-radius: 4px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(40, 86, 246, 0.15);
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(40, 86, 246, 0.3);
+    }
+
+    /* Отключение обводки при фокусе для лучшего UX */
+
+    &:focus {
+        outline: none;
+    }
+}

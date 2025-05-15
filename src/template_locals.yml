@@ -486,6 +486,14 @@ barChart:
       - label: Mail.ru
         value: 4
 
+  - name: 320×320
+    value: 10
+    list:
+      - label: OK
+        value: 6
+      - label: Mail.ru
+        value: 4
+
   - name: 240×400
     value: 4
     list:

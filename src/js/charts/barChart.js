@@ -42,8 +42,8 @@ export function barChart(container = 'barChart', data = []) {
     // Опции графика
     const option = {
         grid: {
-            left: 0,
-            right: 0,
+            left: -4,
+            right: -4,
             top: 20,
             bottom: 0,
             containLabel: true
@@ -74,6 +74,8 @@ export function barChart(container = 'barChart', data = []) {
         },
         tooltip: {
             trigger: 'item',
+            appendToBody: true,
+            // confine: true,
             backgroundColor: '#fff',
             borderRadius: 16,
             borderWidth: 0,

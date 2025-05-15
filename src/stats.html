@@ -160,6 +160,16 @@
             </div>
             <!-- filter -->
 
+            <article class="card flex flex-col gap-5 h-120">
+                <div class="card__title">Популярные размещения</div>
+                <div class="flex-1 chart-scroll-container overflow-hidden overflow-x-auto touch-scroll pb-2 -mb-2 card__stick_full card__padding_full" data-scroll-direction="horizontal">
+                    <div id="barChart"
+                         class="h-full"
+                         data-module="barChart"
+                         data-chart='{{{json barChart}}}'
+                    ></div>
+                </div>
+            </article>
             <!-- pie chart -->
             <article class="card">
                 {{> stat_types }}
