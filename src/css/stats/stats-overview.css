@@ -23,7 +23,7 @@
 }
 
 .stat-overview__unit {
-    @apply text-[18px] leading-6 tracking-[0.18px];
+    @apply text-lg leading-6 tracking-[0.18px];
 }
 
 .stat-overview__meta {

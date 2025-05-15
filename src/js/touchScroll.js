@@ -14,20 +14,20 @@ export function initTouchScroll(element, options = {}) {
     };
 
     const settings = { ...defaults, ...options };
-    
+
     try {
         const hammer = new Hammer(element);
-        
+
         // Выбор направления в зависимости от настроек
-        const panDirection = settings.direction === 'vertical' 
-            ? Hammer.DIRECTION_VERTICAL 
+        const panDirection = settings.direction === 'vertical'
+            ? Hammer.DIRECTION_VERTICAL
             : Hammer.DIRECTION_HORIZONTAL;
-        
+
         // Настройка распознавания жестов
         hammer.get('pan').set({ direction: panDirection });
-        
+
         let startPosition = 0;
-        
+
         hammer.on('panstart', (e) => {
             // Сохраняем стартовую позицию в зависимости от направления
             if (settings.direction === 'vertical') {
@@ -35,11 +35,11 @@ export function initTouchScroll(element, options = {}) {
             } else {
                 startPosition = element.scrollLeft;
             }
-            
+
             // Добавляем класс активного перетаскивания
             element.classList.add('touch-scroll-active');
         });
-        
+
         hammer.on('panmove', (e) => {
             // Обновляем скролл в зависимости от направления
             if (settings.direction === 'vertical') {
@@ -47,10 +47,10 @@ export function initTouchScroll(element, options = {}) {
             } else {
                 element.scrollLeft = startPosition - e.deltaX;
             }
-            
+
             e.preventDefault(); // Предотвращаем стандартное поведение
         });
-        
+
         hammer.on('panend', () => {
             // Удаляем класс активного перетаскивания
             element.classList.remove('touch-scroll-active');
@@ -58,7 +58,7 @@ export function initTouchScroll(element, options = {}) {
 
         // Добавляем метку, что скролл инициализирован
         element.setAttribute('data-touch-scroll-initialized', 'true');
-        
+
         return hammer;
     } catch (error) {
         console.warn('Ошибка при инициализации touch-scroll:', error);
@@ -74,4 +74,4 @@ export default function initAllTouchScroll() {
         const direction = el.getAttribute('data-scroll-direction') || 'horizontal';
         initTouchScroll(el, { direction });
     });
-} 
+}

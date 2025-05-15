@@ -33,7 +33,7 @@
 }
 
 .sidebar-submenu__item {
-    @apply flex items-center px-3 py-[10px] rounded-xl;
+    @apply flex items-center px-3 py-2.5 rounded-xl;
     @apply text-lg text-slate-500 font-medium leading-6 tracking-[0.18px];
     @apply transition;
     @apply box-content;
@@ -80,7 +80,7 @@
 
     @apply bg-white;
     @apply p-4 rounded-2xl;
-    @apply text-slate-500 text-sm font-medium leading-[18px] tracking-[0.28px];
+    @apply text-slate-500 text-sm font-medium leading-4.5 tracking-[0.28px];
     @apply overflow-visible pointer-events-none;
 
     filter: drop-shadow(0px 2px 8px rgba(33, 37, 75, 0.11));

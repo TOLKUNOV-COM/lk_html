@@ -31,7 +31,7 @@
 .projects-grid__body {
     @apply rounded-3xl bg-white border border-slate-100;
 
-    @apply text-slate-500 text-sm font-medium leading-[18px] tracking-[0.28px];
+    @apply text-slate-500 text-sm font-medium leading-4.5 tracking-[0.28px];
 }
 
 .projects-grid__image + .projects-grid__body {

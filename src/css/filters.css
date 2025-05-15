@@ -61,7 +61,7 @@
 
 .filters__reset {
     @apply absolute bottom-6 inset-x-6;
-    @apply px-5 py-[14px];
+    @apply px-5 py-3.5;
     @apply text-blue-900 font-bold leading-5 tracking-[0.16px];
     @apply transition;
 
@@ -77,7 +77,7 @@
 }
 
 .filter__name {
-    @apply text-slate-400 text-sm font-bold leading-[18px] tracking-[0.14px];
+    @apply text-slate-400 text-sm font-bold leading-4.5 tracking-[0.14px];
     @apply mb-3;
 }
 
@@ -100,7 +100,7 @@
 
 .filter__item_collapse {
     @apply bg-slate-50 border-slate-50 hover:bg-slate-100 hover:border-slate-100 active:bg-slate-175 active:border-slate-175;
-    @apply w-[16px] h-[16px] box-content text-center;
+    @apply size-4 box-content text-center;
     @apply flex items-center justify-center;
 }
 
