@@ -8,29 +8,38 @@
 /* Контейнер с горизонтальной прокруткой */
 .chart-scroll-container {
     position: relative;
+    overflow: hidden;
+    overflow-x: scroll;
     -webkit-overflow-scrolling: touch; /* улучшенная инерция скролла на iOS */
 }
 
 /* Стилизация скролл-бара */
 .chart-scroll-container {
     &::-webkit-scrollbar {
-        height: 8px;
+        @apply h-1.5;
     }
 
     &::-webkit-scrollbar-track {
-        background-color: rgba(239, 237, 240, 0.5);
-        border-radius: 4px;
-        margin-left: 24px;
-        margin-right: 24px;
+        @apply bg-transparent;
+        @apply rounded-sm;
+
+        margin-left: var(--card-padding, 1.5rem);
+        margin-right: var(--card-padding, 1.5rem);
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: rgba(40, 86, 246, 0.15);
-        border-radius: 4px;
+        @apply bg-transparent;
+        @apply rounded-sm;
+    }
+
+    &:hover, &:active, &:focus {
+        &::-webkit-scrollbar-thumb {
+            @apply bg-slate-170;
+        }
     }
 
     &::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(40, 86, 246, 0.3);
+        @apply bg-slate-170;
     }
 
     /* Отключение обводки при фокусе для лучшего UX */
