@@ -65,7 +65,7 @@ export function pieChart(container = 'pieChart', data = []) {
       display: flex; 
       flex-direction: row; 
       align-items: center; 
-      gap: 8px; 
+      gap: 12px; 
       font-family: 'Craftwork Sans',sans-serif; 
       font-weight: 700; 
       line-height: 20px; 
@@ -82,7 +82,7 @@ export function pieChart(container = 'pieChart', data = []) {
       display: flex; 
       flex-direction: row; 
       align-items: center; 
-      gap: 8px; 
+      gap: 12px; 
       line-height: 20px;
       letter-spacing: 0.32px;
       font-family: 'Craftwork Sans',sans-serif;
@@ -102,7 +102,7 @@ export function pieChart(container = 'pieChart', data = []) {
       display: flex; 
       flex-direction: column; 
       gap: 12px;
-      min-width: 160px;
+      min-width: 168px;
     ">
       ${header}
       ${rows}

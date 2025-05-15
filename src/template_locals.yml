@@ -445,3 +445,51 @@ pieChart:
         value: 3
       - label: Видео
         value: 4
+barChart:
+  - name: 300×250
+    value: 50
+    list:
+      - label: Яндекс
+        value: 30
+      - label: Google
+        value: 20
+
+  - name: 728×250
+    value: 40
+    list:
+      - label: VK
+        value: 25
+      - label: Facebook
+        value: 15
+
+  - name: 160×600
+    value: 24
+    list:
+      - label: Instagram
+        value: 14
+      - label: TikTok
+        value: 10
+
+  - name: 320×100
+    value: 20
+    list:
+      - label: MyTarget
+        value: 12
+      - label: Telegram
+        value: 8
+
+  - name: 320×480
+    value: 12
+    list:
+      - label: OK
+        value: 8
+      - label: Mail.ru
+        value: 4
+
+  - name: 240×400
+    value: 4
+    list:
+      - label: AdWords
+        value: 2
+      - label: Другие
+        value: 2
