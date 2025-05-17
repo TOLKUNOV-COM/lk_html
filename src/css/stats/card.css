@@ -24,7 +24,7 @@
     margin-bottom: calc(var(--card-border-offset) - var(--card-padding));
 }
 
-.card__stick_full {
+.card__stick_x {
     margin-inline: calc(var(--card-border-offset) - var(--card-padding));
 }
 
@@ -40,6 +40,6 @@
     padding-bottom: var(--card-padding);
 }
 
-.card__padding_full {
+.card__padding_x {
     padding-inline: var(--card-padding);
 }
