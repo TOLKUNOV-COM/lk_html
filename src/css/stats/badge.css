@@ -1,0 +1,39 @@
+.badge {
+    @apply flex items-center justify-center relative;
+
+    /* Text */
+    @apply text-slate-400 font-serif font-bold leading-3.5 tracking-[0.117px];
+    font-size: 11.667px;
+
+    /* Background */
+    mask-image: url("../img/top_badge.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    @apply bg-slate-50;
+}
+
+.badge_1, .badge_2, .badge_3 {
+    color: white;
+}
+
+.badge_3 {
+    background-image: linear-gradient(180deg, #D8937C 0%, #95553D 100%);
+    box-shadow: 0px 4px 18px 0px rgba(255, 255, 255, 0.25) inset;
+    filter: drop-shadow(0px 4px 18px rgba(0, 0, 0, 0.11));
+}
+
+.badge_2 {
+    background-image: linear-gradient(180deg, #DCDDE0 0%, #919396 100%);
+    box-shadow: 0px 4px 18px 0px rgba(255, 255, 255, 0.25) inset;
+    filter: drop-shadow(0px 4px 18px rgba(0, 0, 0, 0.11));
+}
+
+.badge_1 {
+    background-image: linear-gradient(0deg, #DC9915 9.82%, #FFD993 100%);
+    box-shadow: 0px 2.333px 10.5px 0px rgba(255, 255, 255, 0.25) inset;
+    filter: drop-shadow(0px 2.333px 10.5px rgba(223, 180, 99, 0.20));
+
+    @apply pr-px;
+}

@@ -71,6 +71,7 @@ export default defineConfig({
             helpers: {
                 isArray: (value) => Array.isArray(value),
                 json: (context) => JSON.stringify(context),
+                inc: (value) => parseInt(value) + 1,
             }
         }),
         {

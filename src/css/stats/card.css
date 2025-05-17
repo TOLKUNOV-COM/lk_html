@@ -1,5 +1,4 @@
 :root {
-    --card-padding: 1.5rem;
     --card-border-offset: 1.5px;
 }
 
@@ -21,6 +20,10 @@
     margin-right: calc(var(--card-border-offset) - var(--card-padding));
 }
 
+.card__stick_bottom {
+    margin-bottom: calc(var(--card-border-offset) - var(--card-padding));
+}
+
 .card__stick_full {
     margin-inline: calc(var(--card-border-offset) - var(--card-padding));
 }
@@ -31,6 +34,10 @@
 
 .card__padding_right {
     padding-right: var(--card-padding);
+}
+
+.card__padding_bottom {
+    padding-bottom: var(--card-padding);
 }
 
 .card__padding_full {

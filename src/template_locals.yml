@@ -371,7 +371,7 @@ stats:
       percent: 60%
       progressColor: "text-gold"
     -
-      name: Авиасейлс
+      name: Yandex Mediaproducts
       count: 122
       percent: 40%
       progressColor: "text-orange-400"

@@ -23,6 +23,7 @@
 @import "stats/stats-overview.css" layer(components);
 @import "stats/card.css" layer(components);
 @import "stats/facts.css" layer(components);
+@import "stats/badge.css" layer(components);
 
 /** Utilities */
 @import "utilities.css" layer(utilities);
@@ -103,7 +104,7 @@
     /*--breakpoint-md: 768px;*/
     /*--breakpoint-lg: 1024px;*/
     /*--breakpoint-xl: 1280px;*/
-    /*--breakpoint-2xl: 1536px;*/
+    --breakpoint-2xl: 90rem;  /* 1440px, оригинал - 1536px */
     --breakpoint-3xl: 105rem; /* 1680px; */
     --breakpoint-4xl: 120rem; /* 1920px */
 }
@@ -113,6 +114,18 @@
 
 @custom-variant so (html.with-sidebar-open &);
 @custom-variant sc (html.with-sidebar-closed &);
+
+@layer base {
+    :root {
+        --card-padding: 1.25rem;
+    }
+
+    @media (min-width: 90rem) { /* 2xl в Tailwind */
+        :root {
+            --card-padding: 1.5rem;
+        }
+    }
+}
 
 :root {
     /*font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;*/
@@ -149,7 +162,7 @@ h3 {
 .progress {
     --progress: 0%;
 
-    @apply h-2 min-w-12 bg-slate-50 rounded-full relative;
+    @apply h-2 min-w-11.5 bg-slate-50 rounded-full relative;
     @apply overflow-hidden;
 
     &:after {
