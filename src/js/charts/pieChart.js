@@ -148,4 +148,6 @@ export function pieChart(container = 'pieChart', data = []) {
 
     myChart.setOption(option);
     window.addEventListener('resize', () => myChart.resize());
+
+    document.addEventListener('sidebar:collapse:end', () => myChart.resize());
 }

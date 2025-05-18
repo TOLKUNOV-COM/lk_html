@@ -204,4 +204,6 @@ export function barChart(container = 'barChart', data = []) {
     window.addEventListener('resize', () => {
         myChart.resize();
     });
+
+    document.addEventListener('sidebar:collapse:end', () => myChart.resize());
 }

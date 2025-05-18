@@ -6,7 +6,8 @@
 }
 
 .card__title {
-    @apply text-blue-900 font-serif text-xl font-bold leading-7;
+    @apply text-blue-900 font-serif font-bold;
+    @apply text-base leading-normal 2xl:text-xl 2xl:leading-7;
 }
 
 .card__stick_left {

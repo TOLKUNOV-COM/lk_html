@@ -86,6 +86,8 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
         },
         tooltip: {
             trigger: 'axis',
+            appendToBody: true,
+            confine: true,
             axisPointer: {
                 type: 'line',
                 snap: true,
@@ -250,4 +252,10 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
     window.addEventListener('resize', () => {
         myChart.resize();
     });
+
+    let resizeCycle = null;
+
+    document.addEventListener('sidebar:collapse:start', () => resizeCycle = setInterval(() => myChart.resize(), 1));
+
+    document.addEventListener('sidebar:collapse:end', () => clearInterval(resizeCycle) && myChart.resize());
 }
