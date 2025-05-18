@@ -3,7 +3,6 @@
 
     &::-webkit-scrollbar-track {
         @apply bg-transparent;
-        @apply rounded-sm;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -35,4 +34,13 @@
 
 .scrollbar-y::-webkit-scrollbar {
     @apply w-1.5;
+}
+
+/* Custom utilities */
+.scrollbar-track-mt-2::-webkit-scrollbar-track {
+    @apply mt-2;
+}
+
+.scrollbar-track-mb-4::-webkit-scrollbar-track {
+    @apply mb-4;
 }

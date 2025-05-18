@@ -117,12 +117,17 @@
 
 @layer base {
     :root {
-        --card-padding: 1.25rem;
+        --card-padding: 1.25rem; /* 20px */
+        --card-rounded: 1rem; /* 16px */
+
+        --card-border-offset: 1.5px;
     }
 
-    @media (min-width: 90rem) { /* 2xl в Tailwind */
+    /* 2xl в Tailwind */
+    @media (min-width: 90rem) {
         :root {
-            --card-padding: 1.5rem;
+            --card-padding: 1.5rem; /* 24px */
+            --card-rounded: 1.5rem; /* 16px */
         }
     }
 }

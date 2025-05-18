@@ -1,11 +1,8 @@
-:root {
-    --card-border-offset: 1.5px;
-}
-
 .card {
-    @apply inset-ring-[1.5px] inset-ring-slate-100 rounded-3xl bg-white;
+    @apply inset-ring-[1.5px] inset-ring-slate-100 bg-white;
 
     padding: var(--card-padding, 1.5rem);
+    border-radius: var(--card-rounded, 1.5rem);
 }
 
 .card__title {
