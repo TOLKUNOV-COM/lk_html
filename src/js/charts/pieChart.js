@@ -29,6 +29,26 @@ export function pieChart(container = 'pieChart', data = []) {
 
     const total = data.reduce((sum, item) => sum + item.value, 0);
 
+    // Функция для определения радиуса в зависимости от ширины экрана
+    const getChartRadius = () => {
+        return window.matchMedia('(min-width: 90rem)').matches
+            ? ['75px', '125px']
+            : ['53px', '91px'];
+    };
+    
+    // Функция для получения стилей текста в зависимости от ширины экрана
+    const getTextStyles = () => {
+        return window.matchMedia('(min-width: 90rem)').matches
+            ? {
+                value: { fontFamily: 'Craftwork Grotesk', fontSize: 32, fontWeight: 700, color: '#161F6A', lineHeight: 40 },
+                name: { fontFamily: 'Craftwork Sans', fontSize: 16, fontWeight: 700, color: '#ABB1C4', lineHeight: 20, letterSpacing: 0.16 }
+              }
+            : {
+                value: { fontFamily: 'Craftwork Grotesk', fontSize: 23.296, fontWeight: 700, color: '#161F6A', lineHeight: 29.12 },
+                name: { fontFamily: 'Craftwork Sans', fontSize: 11.648, fontWeight: 700, color: '#ABB1C4', lineHeight: 14.56, letterSpacing: 0.116 }
+              };
+    };
+
     const option = {
         tooltip: {
             trigger: 'item',
@@ -114,7 +134,7 @@ export function pieChart(container = 'pieChart', data = []) {
         series: [
             {
                 type: 'pie',
-                radius: ['75px', '125px'], // 60%-100%
+                radius: getChartRadius(),
                 avoidLabelOverlap: false,
                 silent: false,
                 label: { show: false },
@@ -135,10 +155,7 @@ export function pieChart(container = 'pieChart', data = []) {
                     show: true,
                     position: 'center',
                     formatter: [`{value|${total}}`, `{name|${declension(total, ['тип', 'типа', 'типов'])}}`].join('\n'),
-                    rich: {
-                        value: { fontFamily: 'Craftwork Grotesk', fontSize: 32, fontWeight: 700, color: '#161F6A', lineHeight: 40 },
-                        name: { fontFamily: 'Craftwork Sans', fontSize: 16, fontWeight: 700, color: '#ABB1C4', lineHeight: 20, letterSpacing: 0.16 }
-                    }
+                    rich: getTextStyles()
                 },
                 tooltip: { show: false },
                 data: [{ value: 1, name: '' }]
@@ -147,7 +164,27 @@ export function pieChart(container = 'pieChart', data = []) {
     };
 
     myChart.setOption(option);
-    window.addEventListener('resize', () => myChart.resize());
+    
+    // Функция для обновления размера и радиуса графика
+    const updateChart = () => {
+        myChart.resize();
+        myChart.setOption({
+            series: [
+                {
+                    radius: getChartRadius()
+                },
+                {
+                    label: {
+                        rich: getTextStyles()
+                    }
+                }
+            ]
+        });
+    };
+    
+    // Обработчик изменения размера окна
+    window.addEventListener('resize', updateChart);
 
-    document.addEventListener('sidebar:collapse:end', () => myChart.resize());
+    // Обработчик события сворачивания боковой панели
+    document.addEventListener('sidebar:collapse:end', updateChart);
 }
