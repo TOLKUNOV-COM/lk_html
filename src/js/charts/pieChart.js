@@ -167,7 +167,6 @@ export function pieChart(container = 'pieChart', data = []) {
     
     // Функция для обновления размера и радиуса графика
     const updateChart = () => {
-        myChart.resize();
         myChart.setOption({
             series: [
                 {
@@ -180,6 +179,7 @@ export function pieChart(container = 'pieChart', data = []) {
                 }
             ]
         });
+        myChart.resize();
     };
     
     // Обработчик изменения размера окна
