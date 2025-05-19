@@ -17,7 +17,7 @@
 }
 
 .facts__arrow {
-    background: left top no-repeat url("../../img/facts_arrow.svg");
+    background: left top no-repeat url("@/img/facts_arrow.svg");
     background-size: cover;
 
     @apply w-[66.3px] h-[18.26px];
@@ -25,7 +25,7 @@
 }
 
 .facts__love {
-    background-image: url("../../img/colorful/love.webp");
+    background-image: url("@/img/colorful/love.webp");
     background-repeat: no-repeat;
 
     @apply bg-[position:8px_center] bg-[length:38px_36px];
@@ -39,7 +39,7 @@
     @apply 2xl:size-[185px];
     @apply 2xl:top-[-63px] 2xl:right-[-43px];
 
-    background-image: url("../../img/colorful/facts.webp");
+    background-image: url("@/img/colorful/facts.webp");
     background-size: cover;
     background-repeat: no-repeat;
 }

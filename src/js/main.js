@@ -1,3 +1,5 @@
+import '../css/main.css';
+
 import tabs from "./tabs.js";
 import sidebar from "./sidebar.js";
 import filters from "./filters.js";
@@ -7,7 +9,6 @@ import shareButton from "./share-button.js";
 import linksPopup from "./links-popup.js";
 import favoriteButton from "./favorite-button.js";
 import viewer from "./viewer.js";
-import { lineCharts, pieCharts, barCharts } from "./charts/index.js";
 import initAllTouchScroll from "./touchScroll.js";
 
 tabs();
@@ -19,9 +20,6 @@ shareButton();
 linksPopup();
 favoriteButton();
 viewer();
-lineCharts();
-pieCharts();
-barCharts();
 initAllTouchScroll();
 
 // when fancybox content open

@@ -30,6 +30,11 @@ export default defineConfig({
         },
     },
     root: './src', // Указываем корневую директорию для исходных файлов
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        },
+    },
     build: {
         outDir: '../dist', // Указываем директорию для сборки
         emptyOutDir: false,
