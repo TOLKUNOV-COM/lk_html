@@ -94,6 +94,10 @@
     @apply hover:text-blue-900;
 }
 
+.filter__item_alt {
+    @apply text-sm font-medium leading-4.5 tracking-[0.28px];
+}
+
 .filter__item_expand {
     @apply bg-slate-50;
 }
