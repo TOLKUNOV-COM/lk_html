@@ -136,7 +136,7 @@
         <div class="overflow-hidden overflow-y-auto relative flex-1 p-6">
 
             <!-- stats-overview -->
-            <section class="mb-8 flex flex-row flex-wrap gap-4 stats-overview">
+            <section class="mb-6 2xl:mb-8 flex flex-row flex-wrap gap-4 stats-overview">
                 <div class="stats-overview__item">
                     <div class="stats-overview__data">
                         <p class="stats-overview__title">Работаем вместе</p>
@@ -265,7 +265,7 @@
             <!-- stats-overview -->
 
             <!-- filter -->
-            <section class="my-6 flex flex-wrap items-center justify-between gap-6">
+            <section class="my-5 2xl:my-6 flex flex-wrap items-center justify-between gap-6">
                 <h2 class="text-blue-900 font-serif text-xl 2xl:text-2xl font-bold leading-[normal]">Обзор</h2>
 
                 <div class="filter">
@@ -288,79 +288,11 @@
             </section>
             <!-- filter -->
 
-            <!-- demo -->
-            <div class="space-y-5 2xl:space-y-6 my-5 2xl:my-6">
-                <!-- bar chart -->
-                <article class="card flex flex-col gap-5 h-120">
-                    <div class="card__title">Популярные ресайзы</div>
-                    <div class="flex-1 chart-scroll-container scrollbar scrollbar-x touch-scroll pb-1.5 -mb-3 card__stick_x card__padding_x" data-scroll-direction="horizontal">
-                        <div id="barChart"
-                             class="h-full"
-                             data-module="barChart"
-                             data-chart='[{"name":"300×250","value":50,"list":[{"label":"Яндекс","value":30},{"label":"Google","value":20}]},{"name":"728×250","value":40,"list":[{"label":"VK","value":25},{"label":"Facebook","value":15}]},{"name":"160×600","value":24,"list":[{"label":"Instagram","value":14},{"label":"TikTok","value":10}]},{"name":"320×100","value":20,"list":[{"label":"MyTarget","value":12},{"label":"Telegram","value":8}]},{"name":"320×480","value":12,"list":[{"label":"OK","value":8},{"label":"Mail.ru","value":4}]},{"name":"320×320","value":10,"list":[{"label":"OK","value":6},{"label":"Mail.ru","value":4}]},{"name":"240×400","value":4,"list":[{"label":"AdWords","value":2},{"label":"Другие","value":2}]}]'
-                        ></div>
-                    </div>
-                </article>
-                <!-- bar chart -->
-
-                <!-- pie chart -->
-                <article class="card">
-                    <h2 class="card__title mb-6">Типы материалов</h2>
-                    
-                    <div id="pieChart"
-                         class="mx-auto my-9 2xl:mt-7 2xl:mb-8 size-[192px] 2xl:size-[260px]"
-                         data-module="pieChart"
-                         data-chart='[{"value":21,"percent":"61%","name":"Баннеры","itemStyle":{"color":"#2856F6"}},{"value":8,"percent":"24%","name":"Анимация","itemStyle":{"color":"#4C6FFF"}},{"value":3,"percent":"8%","name":"Видео","itemStyle":{"color":"#AB67FE"}},{"value":3,"percent":"8%","name":"3D","itemStyle":{"color":"rgba(224, 199, 254, 0.4)"}},{"value":9,"percent":"30%","name":"Другое","itemStyle":{"color":"rgba(237, 172, 172, 0.4)"},"list":[{"label":"Инфографика","value":2},{"label":"3D","value":3},{"label":"Видео","value":4}]}]'
-                    >
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-2 2xl:gap-4">
-                        <div class="flex items-center gap-2 segment-color">
-                            <div class="bg-current size-4 rounded-md"></div>
-                    
-                            <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
-                                <span class="text-blue-900">Баннеры</span>
-                                <span class="text-slate-400">(61%)</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 segment-color">
-                            <div class="bg-current size-4 rounded-md"></div>
-                    
-                            <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
-                                <span class="text-blue-900">Анимация</span>
-                                <span class="text-slate-400">(24%)</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 segment-color">
-                            <div class="bg-current size-4 rounded-md"></div>
-                    
-                            <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
-                                <span class="text-blue-900">Видео</span>
-                                <span class="text-slate-400">(8%)</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 segment-color">
-                            <div class="bg-current size-4 rounded-md"></div>
-                    
-                            <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
-                                <span class="text-blue-900">3D</span>
-                                <span class="text-slate-400">(8%)</span>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 segment-color">
-                            <div class="bg-current size-4 rounded-md"></div>
-                    
-                            <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
-                                <span class="text-blue-900">Другое</span>
-                                <span class="text-slate-400">(30%)</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- pie chart -->
-
+            <!-- main stats layout -->
+            <section
+                    class="grid grid-cols-[1fr_1fr_276px] 2xl:grid-cols-[1fr_1fr_326px] 3xl:so:grid-cols-[1fr_1fr_364px] 4xl:grid-cols-[1fr_1fr_350px] items-stretch [grid-template-rows:1fr_auto] gap-5 2xl:gap-6 my-5 2xl:my-6">
                 <!-- line chart -->
-                <article class="card flex flex-col gap-5 h-100">
+                <article class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
                     <div class="flex flex-wrap items-center justify-between gap-5">
                         <div class="card__title flex-1">Проекты и&nbsp;ресайзы</div>
                         <div class="flex items-center gap-4 text-slate-500 text-sm font-medium leading-5 tracking-[0.28px]">
@@ -376,7 +308,7 @@
                     </div>
                     
                     <div id="lineChart"
-                         class="flex-1 card__stick_right"
+                         class="flex-1 card__stick_right min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
                          data-module="lineChart"
                          data-categories='["ЯНВ","ФЕВ","МАР","АПР","МАЙ","ИЮН","ИЮЛ",""]'
                          data-data-a='[21,32,50,40,60,80,50,80]'
@@ -385,174 +317,247 @@
                 </article>
                 <!-- line chart -->
 
-                <!-- facts -->
-                <article class="card flex flex-col relative max-2xl:pb-4  w-[326px]">
-                    <div class="card__title mb-4 2xl:mb-5">Посчитали <br>ещё кое-что</div>
-                    <div class="facts__sticker absolute"></div>
-                    
-                    <ul class="facts__list flex-1 mb-4 2xl:mb-6">
-                        <li class="facts__item"><span class="text-blue-600">На 23% выросла</span> активность за последние 3 месяца. Стабильный апгрейд!</li>
-                        <li class="facts__item"><span class="text-blue-600">4 проекта в месяц</span> в среднем делаем. Можем и больше!</li>
-                        <li class="facts__item"><span class="text-blue-600"><span class="text-blue-600">+3 уникальные площадки</span> за год. Так держать!</li>
-                        <li class="facts__item"><span class="text-blue-600">9 дней</span> занял самый длинный проект. Остальные куда быстрее :)</li>
-                        <li class="facts__item"><span class="text-blue-600">В январе 2020</span> мы сделали первый проект</li>
-                    </ul>
-                    
-                    <div class="flex items-center justify-between relative overflow-hidden group card__stick_x card__padding_left">
-                        <div class="text-blue-900 font-medium text-sm leading-4.5 tracking-[0.14px] 2xl:text-base 2xl:leading-5 2xl:tracking-[0.16px]">Самый <br>классный факт</div>
-                        <div class="facts__arrow"></div>
-                        <div class="w-13 h-13.5 2xl:w-18 2xl:h-16"></div>
-                    
-                        <div class="bg-white absolute inset-0 w-[150%] left-[calc(100%-3.25rem)] 2xl:left-[calc(100%-4.5rem)] group-hover:left-(--card-padding) cursor-pointer transition-[left] duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]">
-                            <div class="facts__love absolute inset-0 p-2.25 2xl:p-3 pl-13 2xl:pl-18 bg-slate-50 rounded-l-full text-blue-900 font-bold text-sm leading-4.5 tracking-[0.14px] 2xl:text-base 2xl:leading-5 2xl:tracking-[0.16px]">
-                                Спасибо,
-                                что вы с нами.<br>Дальше — больше!
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- facts -->
-
-                <!-- top platforms -->
-                <article class="card w-full grid grid-rows-[auto_1fr] pr-[calc(var(--card-padding)+1.5*0.25rem)] @container">
-                    <div class="grid grid-cols-[1fr_auto] @min-sm:grid-cols-[214px_auto_1fr] @min-xl:grid-cols-[258px_auto_1fr] @min-3xl:grid-cols-[280px_auto_1fr] items-center gap-x-5 text-blue-900  text-sm font-medium leading-4.5 tracking-[0.28px]  2xl:text-base 2xl:leading-5 2xl:tracking-[0.32px] card__stick_x card__padding_x mb-2 2xl:mb-4">
-                        <h4 class="card__title @max-sm:col-span-2">Топ площадок</h4>
-                        <div class="h-6 w-[1.5px] bg-slate-100 @max-sm:hidden"></div>
-                        <p class="text-slate-400 font-bold leading-5 tracking-[0.16px] @max-sm:hidden">Ресайзы</p>
-                    </div>
-                    
-                    <div class="overflow-hidden overflow-y-auto scrollbar scrollbar-y scrollbar-track-mt-2 scrollbar-track-mb-4 touch-scroll card__stick_x card__padding_x card__stick_bottom pr-[calc(var(--card-padding)-3*0.25rem)] h-[300px] 2xl:h-[360px] @max-sm:h-[382px] box-content snap-y snap-proximity pb-2"
-                         data-scroll-direction="vertical">
-                        <div class="grid grid-cols-[1fr_auto] @min-sm:grid-cols-[214px_auto_1fr] @min-xl:grid-cols-[258px_auto_1fr] @min-3xl:grid-cols-[280px_auto_1fr] items-center gap-x-5 @max-sm:gap-y-2 text-blue-900  text-sm font-medium leading-4.5 tracking-[0.28px]  2xl:text-base 2xl:leading-5 2xl:tracking-[0.32px]">
-                            <div class="flex items-center gap-3 snap-start py-2">
-                                <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
-                                    <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
-                    
-                                    <span class="badge size-7 badge_1 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">1</span>
-                                </div>
-                                <p class="flex-1 line-clamp-2">Яндекс</p>
-                            </div>
-                            <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
-                            <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
-                                <span class="@max-sm:flex-1 @max-sm:text-right">340</span>
-                                <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-green-500" style="--progress: 100%"></div>
-                            </div>
-                            <div class="flex items-center gap-3 snap-start py-2">
-                                <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
-                                    <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
-                    
-                                    <span class="badge size-7 badge_2 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">2</span>
-                                </div>
-                                <p class="flex-1 line-clamp-2">Google</p>
-                            </div>
-                            <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
-                            <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
-                                <span class="@max-sm:flex-1 @max-sm:text-right">156</span>
-                                <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-lime-400" style="--progress: 80%"></div>
-                            </div>
-                            <div class="flex items-center gap-3 snap-start py-2">
-                                <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
-                                    <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
-                    
-                                    <span class="badge size-7 badge_3 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">3</span>
-                                </div>
-                                <p class="flex-1 line-clamp-2">VK</p>
-                            </div>
-                            <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
-                            <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
-                                <span class="@max-sm:flex-1 @max-sm:text-right">156</span>
-                                <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-gold" style="--progress: 60%"></div>
-                            </div>
-                            <div class="flex items-center gap-3 snap-start py-2">
-                                <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
-                                    <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
-                    
-                                    <span class="badge size-7 badge_4 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">4</span>
-                                </div>
-                                <p class="flex-1 line-clamp-2">Yandex Mediaproducts</p>
-                            </div>
-                            <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
-                            <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
-                                <span class="@max-sm:flex-1 @max-sm:text-right">122</span>
-                                <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-400" style="--progress: 40%"></div>
-                            </div>
-                            <div class="flex items-center gap-3 snap-start py-2">
-                                <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
-                                    <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
-                    
-                                    <span class="badge size-7 badge_5 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">5</span>
-                                </div>
-                                <p class="flex-1 line-clamp-2">Gismeteo</p>
-                            </div>
-                            <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
-                            <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
-                                <span class="@max-sm:flex-1 @max-sm:text-right">50</span>
-                                <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-500" style="--progress: 20%"></div>
-                            </div>
-                            <div class="flex items-center gap-3 snap-start py-2">
-                                <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
-                                    <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
-                    
-                                    <span class="badge size-7 badge_6 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">6</span>
-                                </div>
-                                <p class="flex-1 line-clamp-2">Google</p>
-                            </div>
-                            <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
-                            <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
-                                <span class="@max-sm:flex-1 @max-sm:text-right">20</span>
-                                <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-500" style="--progress: 5%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- top platforms -->
-            </div>
-            <!-- demo -->
-
-            <!-- main stats layout -->
-            <section
-                    class="grid grid-cols-[1fr_1fr_276px] 2xl:grid-cols-[1fr_1fr_326px] 3xl:so:grid-cols-[1fr_1fr_364px] 4xl:grid-cols-[1fr_1fr_350px] items-stretch [grid-template-rows:1fr_auto] gap-5 2xl:gap-6 my-5 2xl:my-6">
-                <article class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   flex items-center justify-center rounded-lg bg-blue-600 text-white min-h-90">
-                    График
-                </article>
                 <div class="col-span-3 2xl:sc:col-span-1 3xl:sc:col-span-1 4xl:col-span-1 2xl:sc:row-span-2 3xl:sc:row-span-4 4xl:row-span-4 relative">
                     <div class="flex h-full 3xl:sc:h-auto 4xl:h-auto flex-row 2xl:sc:flex-col 3xl:sc:flex-col 4xl:flex-col flex-nowrap gap-5 2xl:gap-6 3xl:sc:sticky 4xl:sticky 3xl:sc:top-0 4xl:top-0">
-                        <article class="flex-1 2xl:sc:flex-none 3xl:sc:flex-none 4xl:flex-none   flex flex-col items-center justify-center rounded-lg bg-yellow-50 text-red-900 min-h-100">
-                            <p>Топ площадок</p>
+
+                        <!-- top platforms -->
+                        <article class="flex-1 2xl:sc:flex-none 3xl:sc:flex-none 4xl:flex-none   card grid grid-rows-[auto_1fr] pr-[calc(var(--card-padding)+1.5*0.25rem)] @container">
+                            <div class="grid grid-cols-[1fr_auto] @min-sm:grid-cols-[214px_auto_1fr] @min-xl:grid-cols-[258px_auto_1fr] @min-3xl:grid-cols-[280px_auto_1fr] items-center gap-x-5 text-blue-900  text-sm font-medium leading-4.5 tracking-[0.28px]  2xl:text-base 2xl:leading-5 2xl:tracking-[0.32px] card__stick_x card__padding_x mb-2 2xl:mb-4">
+                                <h4 class="card__title @max-sm:col-span-2">Топ площадок</h4>
+                                <div class="h-6 w-[1.5px] bg-slate-100 @max-sm:hidden"></div>
+                                <p class="text-slate-400 font-bold leading-5 tracking-[0.16px] @max-sm:hidden">Ресайзы</p>
+                            </div>
+                            
+                            <div class="overflow-hidden overflow-y-scroll scrollbar scrollbar-y scrollbar-track-mt-2 scrollbar-track-mb-4 touch-scroll card__stick_x card__padding_x card__stick_bottom pr-[calc(var(--card-padding)-2*0.25rem)] min-h-[360px] 2xl:h-[432px] @max-sm:h-[382px] box-content snap-y snap-proximity pb-[calc(var(--card-padding)-0.5rem)]"
+                                 data-scroll-direction="vertical">
+                                <div class="grid grid-cols-[1fr_auto] @min-sm:grid-cols-[214px_auto_1fr] @min-xl:grid-cols-[258px_auto_1fr] @min-3xl:grid-cols-[280px_auto_1fr] items-center gap-x-5 @max-sm:gap-y-2 text-blue-900  text-sm font-medium leading-4.5 tracking-[0.28px]  2xl:text-base 2xl:leading-5 2xl:tracking-[0.32px]">
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_1 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">1</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Яндекс</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">340</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-green-500" style="--progress: 100%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_2 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">2</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Google</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">156</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-lime-400" style="--progress: 80%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_3 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">3</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">VK</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">156</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-gold" style="--progress: 60%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_4 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">4</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Yandex Mediaproducts</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">122</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-400" style="--progress: 40%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_5 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">5</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Gismeteo</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">50</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-500" style="--progress: 20%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_6 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">6</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Google</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">20</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-500" style="--progress: 5%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_7 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">7</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Yandex Mediaproducts</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">122</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-400" style="--progress: 40%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_8 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">8</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Gismeteo</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">50</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-500" style="--progress: 20%"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
+                                        <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
+                                            <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
+                            
+                                            <span class="badge size-7 badge_9 absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">9</span>
+                                        </div>
+                                        <p class="flex-1 line-clamp-2 break-words">Google</p>
+                                    </div>
+                                    <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
+                                    <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">
+                                        <span class="@max-sm:flex-1 @max-sm:text-right">20</span>
+                                        <div class="progress flex-1 @max-sm:w-11.5 @max-sm:flex-none text-orange-500" style="--progress: 5%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
-                        <article class="w-[276px] 2xl:w-[326px] 3xl:so:w-[364px] 4xl:w-[350px] box-content   flex flex-col items-center justify-center rounded-lg bg-yellow-50 text-red-900">
-                            <p>факты</p>
-                            <p>факты</p>
-                            <p>факты</p>
+                        <!-- top platforms -->
+
+                        <!-- facts -->
+                        <article class="w-[276px] 2xl:w-[326px] 3xl:so:w-[364px] 4xl:w-[350px]   card flex flex-col relative max-2xl:pb-4">
+                            <div class="card__title mb-4 2xl:mb-5">Посчитали <br>ещё кое-что</div>
+                            <div class="facts__sticker absolute"></div>
+                            
+                            <ul class="facts__list flex-1 mb-4 2xl:mb-6">
+                                <li class="facts__item"><span class="text-blue-600">На 23% выросла</span> активность за последние 3 месяца. Стабильный апгрейд!</li>
+                                <li class="facts__item"><span class="text-blue-600">4 проекта в месяц</span> в среднем делаем. Можем и больше!</li>
+                                <li class="facts__item"><span class="text-blue-600"><span class="text-blue-600">+3 уникальные площадки</span> за год. Так держать!</li>
+                                <li class="facts__item"><span class="text-blue-600">9 дней</span> занял самый длинный проект. Остальные куда быстрее :)</li>
+                                <li class="facts__item"><span class="text-blue-600">В январе 2020</span> мы сделали первый проект</li>
+                            </ul>
+                            
+                            <div class="flex items-center justify-between relative overflow-hidden group card__stick_x card__padding_left">
+                                <div class="text-blue-900 font-medium text-sm leading-4.5 tracking-[0.14px] 2xl:text-base 2xl:leading-5 2xl:tracking-[0.16px]">Самый <br>классный факт</div>
+                                <div class="facts__arrow"></div>
+                                <div class="w-13 h-13.5 2xl:w-18 2xl:h-16"></div>
+                            
+                                <div class="bg-white absolute inset-0 w-[150%] left-[calc(100%-3.25rem)] 2xl:left-[calc(100%-4.5rem)] group-hover:left-(--card-padding) cursor-pointer transition-[left] duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]">
+                                    <div class="facts__love absolute inset-0 p-2.25 2xl:p-3 pl-13 2xl:pl-18 bg-slate-50 rounded-l-full text-blue-900 font-bold text-sm leading-4.5 tracking-[0.14px] 2xl:text-base 2xl:leading-5 2xl:tracking-[0.16px]">
+                                        Спасибо,
+                                        что вы с нами.<br>Дальше — больше!
+                                    </div>
+                                </div>
+                            </div>
                         </article>
+                        <!-- facts -->
+
                     </div>
                 </div>
 
-                <div class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   flex flex-row flex-nowrap gap-5 2xl:gap-6     min-h-60">
-                    <article class="flex-1   flex flex-col items-center justify-center rounded-lg bg-green-500 text-red-900">
-                        <p>Популярные ресайзы</p>
-                        <p>Популярные ресайзы</p>
+                <div class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   flex flex-row flex-nowrap gap-5 2xl:gap-6">
+
+                    <!-- bar chart -->
+                    <article class="flex-1   card flex flex-col gap-5 overflow-hidden">
+                        <div class="card__title">Популярные ресайзы</div>
+                        <div class="flex-1 chart-scroll-container scrollbar scrollbar-x touch-scroll pb-1.5 -mb-3 card__stick_x card__padding_x" data-scroll-direction="horizontal">
+                            <div id="barChart"
+                                 class="h-full"
+                                 data-module="barChart"
+                                 data-chart='[{"name":"300×250","value":50,"list":[{"label":"Яндекс","value":30},{"label":"Google","value":20}]},{"name":"728×250","value":40,"list":[{"label":"VK","value":25},{"label":"Facebook","value":15}]},{"name":"160×600","value":24,"list":[{"label":"Instagram","value":14},{"label":"TikTok","value":10}]},{"name":"320×100","value":20,"list":[{"label":"MyTarget","value":12},{"label":"Telegram","value":8}]},{"name":"320×480","value":12,"list":[{"label":"OK","value":8},{"label":"Mail.ru","value":4}]},{"name":"320×320","value":10,"list":[{"label":"OK","value":6},{"label":"Mail.ru","value":4}]},{"name":"240×400","value":4,"list":[{"label":"AdWords","value":2},{"label":"Другие","value":2}]}]'
+                            ></div>
+                        </div>
                     </article>
-                    <article class="w-[276px] flex-none 2xl:w-auto 2xl:flex-1 box-content   flex flex-col items-center justify-center rounded-lg bg-yellow-500 text-red-900">
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
+                    <!-- bar chart -->
+
+                    <!-- pie chart -->
+                    <article class="w-[276px] flex-none 2xl:w-auto 2xl:flex-1   card">
+                        <h2 class="card__title mb-6">Типы материалов</h2>
+                        
+                        <div id="pieChart"
+                             class="mx-auto my-9 2xl:mt-7 2xl:mb-8 size-[192px] 2xl:size-[260px]"
+                             data-module="pieChart"
+                             data-chart='[{"value":21,"percent":"61%","name":"Баннеры","itemStyle":{"color":"#2856F6"}},{"value":8,"percent":"24%","name":"Анимация","itemStyle":{"color":"#4C6FFF"}},{"value":3,"percent":"8%","name":"Видео","itemStyle":{"color":"#AB67FE"}},{"value":3,"percent":"8%","name":"3D","itemStyle":{"color":"rgba(224, 199, 254, 0.4)"}},{"value":9,"percent":"30%","name":"Другое","itemStyle":{"color":"rgba(237, 172, 172, 0.4)"},"list":[{"label":"Инфографика","value":2},{"label":"3D","value":3},{"label":"Видео","value":4}]}]'
+                        >
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 2xl:gap-4">
+                            <div class="flex items-center gap-2 segment-color">
+                                <div class="bg-current size-4 rounded-md"></div>
+                        
+                                <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
+                                    <span class="text-blue-900">Баннеры</span>
+                                    <span class="text-slate-400">(61%)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 segment-color">
+                                <div class="bg-current size-4 rounded-md"></div>
+                        
+                                <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
+                                    <span class="text-blue-900">Анимация</span>
+                                    <span class="text-slate-400">(24%)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 segment-color">
+                                <div class="bg-current size-4 rounded-md"></div>
+                        
+                                <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
+                                    <span class="text-blue-900">Видео</span>
+                                    <span class="text-slate-400">(8%)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 segment-color">
+                                <div class="bg-current size-4 rounded-md"></div>
+                        
+                                <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
+                                    <span class="text-blue-900">3D</span>
+                                    <span class="text-slate-400">(8%)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 segment-color">
+                                <div class="bg-current size-4 rounded-md"></div>
+                        
+                                <div class="text-sm 2xl:text-base leading-4.5 2xl:leading-5 font-medium tracking-[0.28px] 2xl:tracking-[0.32px]">
+                                    <span class="text-blue-900">Другое</span>
+                                    <span class="text-slate-400">(30%)</span>
+                                </div>
+                            </div>
+                        </div>
                     </article>
+                    <!-- pie chart -->
+
                 </div>
                 <!-- directions -->
-                <article class="col-span-3 4xl:col-span-2   card flex flex-col gap-5">
+                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
                     <div class="card__title">Направления</div>
                     
                     <div class="flex h-7 rounded-lg overflow-hidden">
@@ -640,7 +645,7 @@
                     </div>
                 </article>
                 <!-- directions -->
-                <article class="col-span-3 4xl:col-span-2   h-80 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Карта</article>
+                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   h-80 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Карта</article>
             </section>
             <!-- main stats layout -->
         </div>
