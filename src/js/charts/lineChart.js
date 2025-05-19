@@ -58,7 +58,7 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
                 fontWeight: 900,
                 lineHeight: 16,
                 letterSpacing: 0.3,
-                textStyle: { textTransform: 'uppercase' }
+                textTransform: 'uppercase',
             },
             splitLine: {
                 show: true,
@@ -77,7 +77,7 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
                 fontWeight: 900,
                 lineHeight: 16,
                 letterSpacing: 0.3,
-                textStyle: { textTransform: 'uppercase' }
+                textTransform: 'uppercase',
             },
             splitLine: {
                 show: true,

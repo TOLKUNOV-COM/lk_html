@@ -61,7 +61,7 @@ export function barChart(container = 'barChart', data = []) {
                 fontWeight: 900,
                 lineHeight: 16,
                 letterSpacing: 0.3,
-                textStyle: { textTransform: 'uppercase' }
+                textTransform: 'uppercase',
             },
             splitLine: { show: false }
         },
@@ -172,9 +172,7 @@ export function barChart(container = 'barChart', data = []) {
                     fontWeight: 900,
                     lineHeight: 16,
                     letterSpacing: 0.3,
-                    textStyle: {
-                        textTransform: 'uppercase'
-                    }
+                    textTransform: 'uppercase',
                 },
                 itemStyle: {
                     color: 'rgba(40, 86, 246, 0.10)',
