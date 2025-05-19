@@ -198,6 +198,12 @@ export function barChart(container = 'barChart', data = []) {
     // Отрисуем
     myChart.setOption(option);
 
+    document.fonts.ready.then(() => {
+        // тут безопасно рендерить графики
+        myChart.setOption(option);
+        myChart.resize();
+    });
+
     // Реакция на ресайз окна
     window.addEventListener('resize', () => {
         myChart.resize();

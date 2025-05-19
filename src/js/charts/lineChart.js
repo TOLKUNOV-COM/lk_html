@@ -38,7 +38,7 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
     // 4) опции графика (простой пример)
     const option = {
         grid: {
-            left: 0,
+            left: 5,
             right: -30,
             top: 15,
             bottom: 9,
@@ -240,6 +240,12 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
 
     // 5) отрисуем
     myChart.setOption(option);
+
+    document.fonts.ready.then(() => {
+        // тут безопасно рендерить графики
+        myChart.setOption(option);
+        myChart.resize();
+    });
 
     // Скрывать axisPointer и тултип на последней точке
     // myChart.on('showTip', params => {
