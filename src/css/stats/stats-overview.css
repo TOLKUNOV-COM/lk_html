@@ -2,8 +2,11 @@
 }
 
 .stats-overview__item {
-    @apply flex flex-1 justify-start inset-ring-[1.5px] inset-ring-slate-100 bg-white p-5 rounded-[20px];
-    @apply h-[136px];
+    @apply flex flex-1 justify-start inset-ring-[1.5px] inset-ring-slate-100 bg-white;
+
+    @apply p-4 rounded-2xl;
+    @apply 2xl:p-5 2xl:rounded-[20px];
+    @apply h-[126px] 2xl:h-[136px];
 }
 
 .stats-overview__data {
@@ -11,7 +14,10 @@
 }
 
 .stats-overview__title {
-    @apply text-blue-900 font-medium leading-5 tracking-[0.32px];
+    @apply text-blue-900 font-medium;
+
+    @apply text-sm leading-4.5 tracking-[0.28px];
+    @apply 2xl:text-base 2xl:leading-5 2xl:tracking-[0.32px];
 }
 
 .stats-overview__value {
@@ -19,11 +25,11 @@
 }
 
 .stat-overview__number {
-    @apply text-[28px] leading-8;
+    @apply text-xl leading-normal 2xl:text-[1.75rem] 2xl:leading-8;
 }
 
 .stat-overview__unit {
-    @apply text-lg leading-6 tracking-[0.18px];
+    @apply text-balance 2xl:text-lg leading-6 tracking-[0.16px] 2xl:tracking-[0.18px];
 }
 
 .stat-overview__meta {
