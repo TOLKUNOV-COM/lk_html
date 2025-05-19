@@ -4,17 +4,17 @@
     <p class="text-slate-400 font-bold leading-5 tracking-[0.16px] @max-sm:hidden">Ресайзы</p>
 </div>
 
-<div class="overflow-hidden overflow-y-auto scrollbar scrollbar-y scrollbar-track-mt-2 scrollbar-track-mb-4 touch-scroll card__stick_x card__padding_x card__stick_bottom pr-[calc(var(--card-padding)-3*0.25rem)] h-[300px] 2xl:h-[360px] @max-sm:h-[382px] box-content snap-y snap-proximity pb-2"
+<div class="overflow-hidden overflow-y-scroll scrollbar scrollbar-y scrollbar-track-mt-2 scrollbar-track-mb-4 touch-scroll card__stick_x card__padding_x card__stick_bottom pr-[calc(var(--card-padding)-2*0.25rem)] min-h-[360px] 2xl:h-[432px] @max-sm:h-[382px] box-content snap-y snap-proximity pb-[calc(var(--card-padding)-0.5rem)]"
      data-scroll-direction="vertical">
     <div class="grid grid-cols-[1fr_auto] @min-sm:grid-cols-[214px_auto_1fr] @min-xl:grid-cols-[258px_auto_1fr] @min-3xl:grid-cols-[280px_auto_1fr] items-center gap-x-5 @max-sm:gap-y-2 text-blue-900  text-sm font-medium leading-4.5 tracking-[0.28px]  2xl:text-base 2xl:leading-5 2xl:tracking-[0.32px]">
         {{#each stats.platform_top}}
-        <div class="flex items-center gap-3 snap-start py-2">
+        <div class="flex items-center gap-3 snap-start py-2 overflow-hidden card__stick_left card__padding_left">
             <div class="flex items-center justify-center size-11 2xl:size-14 @max-sm:size-13.5 border border-slate-100 rounded-xl 2xl:rounded-2xl relative ml-10 2xl:ml-11 @max-sm:ml-0">
                 <img class="size-7 2xl:size-9 @max-sm:size-9 object-contain" src="https://dummyimage.com/36x36" alt="#">
 
                 <span class="badge size-7 badge_{{inc @index}} absolute -left-10 top-2 2xl:-left-11 2xl:top-3.5 @max-sm:-left-1.5 @max-sm:-top-1.5">{{inc @index}}</span>
             </div>
-            <p class="flex-1 line-clamp-2">{{name}}</p>
+            <p class="flex-1 line-clamp-2 break-words">{{name}}</p>
         </div>
         <div class="w-px h-6 bg-zinc-100 @max-sm:hidden"></div>
         <div class="flex-1 flex items-center gap-3 @max-sm:flex-row-reverse">

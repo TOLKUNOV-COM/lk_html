@@ -40,6 +40,8 @@
     --font-serif: 'Craftwork Grotesk', serif;
     --font-ubuntu: Ubuntu, 'system-ui', 'Helvetica', 'Arial', 'sans-serif';
 
+    --leading-normal: 1.1875;
+
     --shadow-login: 0px 2px 14px 0px rgba(23, 31, 64, 0.05);
     --shadow-form-control-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
     --shadow-sidebar-menu-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);

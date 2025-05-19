@@ -385,6 +385,21 @@ stats:
       count: 20
       percent: 5%
       progressColor: "text-orange-500"
+    -
+      name: Yandex Mediaproducts
+      count: 122
+      percent: 40%
+      progressColor: "text-orange-400"
+    -
+      name: Gismeteo
+      count: 50
+      percent: 20%
+      progressColor: "text-orange-500"
+    -
+      name: Google
+      count: 20
+      percent: 5%
+      progressColor: "text-orange-500"
   directions:
     -
       name: HTML5

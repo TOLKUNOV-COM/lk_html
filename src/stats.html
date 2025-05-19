@@ -18,7 +18,7 @@
         <div class="overflow-hidden overflow-y-auto relative flex-1 p-6">
 
             <!-- stats-overview -->
-            <section class="mb-8 flex flex-row flex-wrap gap-4 stats-overview">
+            <section class="mb-6 2xl:mb-8 flex flex-row flex-wrap gap-4 stats-overview">
                 <div class="stats-overview__item">
                     <div class="stats-overview__data">
                         <p class="stats-overview__title">Работаем вместе</p>
@@ -147,7 +147,7 @@
             <!-- stats-overview -->
 
             <!-- filter -->
-            <section class="my-6 flex flex-wrap items-center justify-between gap-6">
+            <section class="my-5 2xl:my-6 flex flex-wrap items-center justify-between gap-6">
                 <h2 class="text-blue-900 font-serif text-xl 2xl:text-2xl font-bold leading-[normal]">Обзор</h2>
 
                 <div class="filter">
@@ -170,88 +170,54 @@
             </section>
             <!-- filter -->
 
-            <!-- demo -->
-            <div class="space-y-5 2xl:space-y-6 my-5 2xl:my-6">
-                <!-- bar chart -->
-                <article class="card flex flex-col gap-5 h-120">
-                    {{> stats/bar_chart }}
-                </article>
-                <!-- bar chart -->
-
-                <!-- pie chart -->
-                <article class="card">
-                    {{> stats/pie_chart }}
-                </article>
-                <!-- pie chart -->
-
+            <!-- main stats layout -->
+            <section
+                    class="grid grid-cols-[1fr_1fr_276px] 2xl:grid-cols-[1fr_1fr_326px] 3xl:so:grid-cols-[1fr_1fr_364px] 4xl:grid-cols-[1fr_1fr_350px] items-stretch [grid-template-rows:1fr_auto] gap-5 2xl:gap-6 my-5 2xl:my-6">
                 <!-- line chart -->
-                <article class="card flex flex-col gap-5 h-100">
+                <article class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
                     {{> stats/line_chart }}
                 </article>
                 <!-- line chart -->
 
-                <!-- facts -->
-                <article class="card flex flex-col relative max-2xl:pb-4  w-[326px]">
-                    {{> stats/facts }}
-                </article>
-                <!-- facts -->
-
-                <!-- top platforms -->
-                <article class="card w-full grid grid-rows-[auto_1fr] pr-[calc(var(--card-padding)+1.5*0.25rem)] @container">
-                    {{> stats/top_platforms }}
-                </article>
-                <!-- top platforms -->
-            </div>
-            <!-- demo -->
-
-            <!-- main stats layout -->
-            <section
-                    class="grid grid-cols-[1fr_1fr_276px] 2xl:grid-cols-[1fr_1fr_326px] 3xl:so:grid-cols-[1fr_1fr_364px] 4xl:grid-cols-[1fr_1fr_350px] items-stretch [grid-template-rows:1fr_auto] gap-5 2xl:gap-6 my-5 2xl:my-6">
-                <article class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   flex items-center justify-center rounded-lg bg-blue-600 text-white min-h-90">
-                    График
-                </article>
                 <div class="col-span-3 2xl:sc:col-span-1 3xl:sc:col-span-1 4xl:col-span-1 2xl:sc:row-span-2 3xl:sc:row-span-4 4xl:row-span-4 relative">
                     <div class="flex h-full 3xl:sc:h-auto 4xl:h-auto flex-row 2xl:sc:flex-col 3xl:sc:flex-col 4xl:flex-col flex-nowrap gap-5 2xl:gap-6 3xl:sc:sticky 4xl:sticky 3xl:sc:top-0 4xl:top-0">
-                        <article class="flex-1 2xl:sc:flex-none 3xl:sc:flex-none 4xl:flex-none   flex flex-col items-center justify-center rounded-lg bg-yellow-50 text-red-900 min-h-100">
-                            <p>Топ площадок</p>
+
+                        <!-- top platforms -->
+                        <article class="flex-1 2xl:sc:flex-none 3xl:sc:flex-none 4xl:flex-none   card grid grid-rows-[auto_1fr] pr-[calc(var(--card-padding)+1.5*0.25rem)] @container">
+                            {{> stats/top_platforms }}
                         </article>
-                        <article class="w-[276px] 2xl:w-[326px] 3xl:so:w-[364px] 4xl:w-[350px] box-content   flex flex-col items-center justify-center rounded-lg bg-yellow-50 text-red-900">
-                            <p>факты</p>
-                            <p>факты</p>
-                            <p>факты</p>
+                        <!-- top platforms -->
+
+                        <!-- facts -->
+                        <article class="w-[276px] 2xl:w-[326px] 3xl:so:w-[364px] 4xl:w-[350px]   card flex flex-col relative max-2xl:pb-4">
+                            {{> stats/facts }}
                         </article>
+                        <!-- facts -->
+
                     </div>
                 </div>
 
-                <div class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   flex flex-row flex-nowrap gap-5 2xl:gap-6     min-h-60">
-                    <article class="flex-1   flex flex-col items-center justify-center rounded-lg bg-green-500 text-red-900">
-                        <p>Популярные ресайзы</p>
-                        <p>Популярные ресайзы</p>
+                <div class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   flex flex-row flex-nowrap gap-5 2xl:gap-6">
+
+                    <!-- bar chart -->
+                    <article class="flex-1   card flex flex-col gap-5 overflow-hidden">
+                        {{> stats/bar_chart }}
                     </article>
-                    <article class="w-[276px] flex-none 2xl:w-auto 2xl:flex-1 box-content   flex flex-col items-center justify-center rounded-lg bg-yellow-500 text-red-900">
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
-                        <p>Типы материалов</p>
+                    <!-- bar chart -->
+
+                    <!-- pie chart -->
+                    <article class="w-[276px] flex-none 2xl:w-auto 2xl:flex-1   card">
+                        {{> stats/pie_chart }}
                     </article>
+                    <!-- pie chart -->
+
                 </div>
                 <!-- directions -->
-                <article class="col-span-3 4xl:col-span-2   card flex flex-col gap-5">
+                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
                     {{> stats/directions }}
                 </article>
                 <!-- directions -->
-                <article class="col-span-3 4xl:col-span-2   h-80 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Карта</article>
+                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   h-80 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Карта</article>
             </section>
             <!-- main stats layout -->
         </div>
