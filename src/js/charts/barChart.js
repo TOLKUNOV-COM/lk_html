@@ -180,7 +180,7 @@ export function barChart(container = 'barChart', data = []) {
                     color: 'rgba(40, 86, 246, 0.10)',
                     borderColor: 'rgba(40, 86, 246, 0.06)',
                     borderWidth: 1,
-                    barBorderRadius: [8, 8, 8, 8],
+                    borderRadius: [8, 8, 8, 8],
                 },
                 emphasis: {
                     itemStyle: {
