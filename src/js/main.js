@@ -10,7 +10,6 @@ import linksPopup from "./links-popup.js";
 import favoriteButton from "./favorite-button.js";
 import viewer from "./viewer.js";
 import initAllTouchScroll from "./touchScroll.js";
-import factsSlidingBlock from "./stats/facts.js";
 
 tabs();
 sidebar();
@@ -22,7 +21,6 @@ linksPopup();
 favoriteButton();
 viewer();
 initAllTouchScroll();
-factsSlidingBlock();
 
 // when fancybox content open
 document.addEventListener('fancybox:contentReady', (e) => {

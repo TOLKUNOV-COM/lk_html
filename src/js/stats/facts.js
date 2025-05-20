@@ -1,4 +1,4 @@
-export default function factsSlidingBlock() {
+export default function initFacts() {
     const factsSlider = document.getElementById('stats-facts-love');
     if (!factsSlider) return;
 
