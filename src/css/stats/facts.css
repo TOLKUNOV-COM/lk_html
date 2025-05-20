@@ -43,3 +43,16 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+/* Стили для блока с фактами */
+.stats-facts__love {
+    @apply absolute inset-0 w-[150%] bg-white;
+    @apply cursor-pointer;
+    @apply transition-[left] duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)];
+    @apply left-[calc(100%-3.25rem)] 2xl:left-[calc(100%-4.5rem)];
+    will-change: left;
+}
+
+.stats-facts__love.stats-facts__love_active {
+    @apply left-(--card-padding);
+}

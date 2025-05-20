@@ -1,0 +1,18 @@
+export default function factsSlidingBlock() {
+    const factsSlider = document.getElementById('stats-facts-love');
+    if (!factsSlider) return;
+
+    let isAnimating = false;
+
+    factsSlider.addEventListener('click', function () {
+        if (isAnimating) return;
+
+        isAnimating = true;
+        this.classList.toggle('stats-facts__love_active');
+
+        // Разблокировать повторные клики после завершения анимации
+        setTimeout(() => {
+            isAnimating = false;
+        }, 600); // 500ms (длительность анимации) + 100ms (запас)
+    });
+}
