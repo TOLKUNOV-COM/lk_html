@@ -22,6 +22,13 @@
     @apply w-[calc(100%-16px)] lg:w-[calc(50%-16px)];
     @apply 2xl:w-[calc(33.33%-16px)];
     @apply 3xl:w-[calc(25%-16px)];
+
+    &::after {
+        @apply content-[''];
+        @apply absolute inset-0;
+        @apply rounded-3xl inset-ring inset-ring-[rgba(22,31,106,0.10)];
+        @apply pointer-events-none;
+    }
 }
 
 .projects-grid__image {
@@ -29,8 +36,7 @@
 }
 
 .projects-grid__body {
-    @apply rounded-3xl bg-white border border-slate-100;
-
+    @apply rounded-3xl;
     @apply text-slate-500 text-sm font-medium leading-4.5 tracking-[0.28px];
 }
 
