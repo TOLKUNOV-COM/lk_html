@@ -149,11 +149,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-    /* только из-за тултипа в echarts pie */
-    overflow: hidden;
-}
-
 .bg-login {
     background-color: #0C3CE7;
     background-image: url("../img/cover.jpg");

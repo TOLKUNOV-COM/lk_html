@@ -89,11 +89,11 @@ export function barChart(container = 'barChart', data = []) {
                 let left = x + 10;
                 let top = y + 10;
 
-                if (chartDom.getBoundingClientRect().x + left + size.contentSize[0] > viewWidth) {
-                    left -= chartDom.getBoundingClientRect().x + left + size.contentSize[0] - viewWidth + 12 + 10;
+                if (chartDom.getBoundingClientRect().x + left + size.contentSize[0] > viewWidth - 30) {
+                    left -= chartDom.getBoundingClientRect().x + left + size.contentSize[0] - viewWidth + 12 + 12 + 6;
                 }
-                if (chartDom.getBoundingClientRect().y + top + size.contentSize[1] > viewHeight) {
-                    top -= chartDom.getBoundingClientRect().y + top + size.contentSize[1] - viewHeight + 12 + 10;
+                if (chartDom.getBoundingClientRect().y + top + size.contentSize[1] > viewHeight - 18) {
+                    top -= chartDom.getBoundingClientRect().y + top + size.contentSize[1] - viewHeight + 12 + 6;
                 }
 
                 return [left, top];
