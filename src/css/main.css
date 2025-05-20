@@ -292,6 +292,16 @@ html.with-fancybox .fancybox__slide {
     @apply opacity-100;
 }
 
+#lineChart > div {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#lineChart > div > canvas {
+    min-width: 100%;
+    max-width: 100%;
+}
+
 /*a {*/
 /*  font-weight: 500;*/
 /*  color: #646cff;*/
