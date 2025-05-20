@@ -28,8 +28,17 @@
     background-image: url("@/img/colorful/love.webp");
     background-repeat: no-repeat;
 
-    @apply bg-[position:8px_center] bg-[length:38px_36px];
-    @apply 2xl:bg-[position:12.5px_center] 2xl:bg-[length:47px_44px];
+    @apply bg-[position:8px_center];
+    @apply 2xl:bg-[position:12.5px_center];
+
+    transition: background-size 500ms ease-out;
+    @apply bg-[length:38px_36px];
+    @apply 2xl:bg-[length:47px_44px];
+}
+
+.stats-facts__love:not(.stats-facts__love_active):hover .facts__love {
+    @apply bg-[length:42px_40px];
+    @apply 2xl:bg-[length:52px_49px];
 }
 
 .facts__sticker {
