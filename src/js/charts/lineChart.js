@@ -44,27 +44,45 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
             bottom: 9,
             containLabel: true
         },
-        xAxis: {
-            type: 'category',
-            boundaryGap: false,
-            data: categories,
-            axisLine: { show: false },
-            axisTick: { show: false },
-            axisLabel: {
-                margin: 16,
-                color: '#ABB1C4',
-                fontFamily: 'Craftwork Sans',
-                fontSize: 12,
-                fontWeight: 900,
-                lineHeight: 16,
-                letterSpacing: 0.3,
-                textTransform: 'uppercase',
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: categories,
+                axisLine: { show: false },
+                axisTick: { show: false },
+                axisLabel: {
+                    margin: 16,
+                    color: '#ABB1C4',
+                    fontFamily: 'Craftwork Sans',
+                    fontSize: 12,
+                    fontWeight: 900,
+                    lineHeight: 16,
+                    letterSpacing: 0.3,
+                    textTransform: 'uppercase',
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: { color: '#EFEDF0' }
+                }
             },
-            splitLine: {
-                show: true,
-                lineStyle: { color: '#EFEDF0' }
+            {
+                type: 'category',
+                boundaryGap: false,
+                position: 'top',
+                data: categories,
+                axisLine: { show: false },
+                axisLabel: { show: false },
+                axisTick: {
+                    show: true,
+                    length: 8,
+                    lineStyle: {
+                        color: '#EFEDF0'
+                    }
+                },
+                splitLine: { show: false }
             }
-        },
+        ],
         yAxis: {
             type: 'value',
             axisLine: { show: false },
@@ -94,7 +112,7 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
                 lineStyle: {
                     type: 'solid',
                     color: '#2856F6',
-                    width: 1.5
+                    width: 3
                 },
             },
             backgroundColor: '#ffffff',      // белый фон
