@@ -4,7 +4,7 @@ $(document).on('click', '.js-toggle-favorite', function (e) {
     $(this).toggleClass('js-toggle-favorite_active');
 });
 
-$(document).on('click', '.filter__item:not(.filter__item_expand):not(.filter__item_collapse)', function (e) {
+$(document).on('click', '#project-filter-form .filter__item:not(.filter__item_expand):not(.filter__item_collapse)', function (e) {
     e.preventDefault();
 
     $(this).toggleClass('filter__item_active');
