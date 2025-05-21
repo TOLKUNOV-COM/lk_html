@@ -98,13 +98,13 @@
     @apply text-blue-900;
 }
 
-.filter__item_alt {
-    @apply text-sm font-medium leading-4.5 tracking-[0.28px];
-}
-
 .filter__item[disabled], .filter__item.disabled {
     @apply cursor-not-allowed pointer-events-none;
     @apply text-slate-400;
+}
+
+.filter__item_alt {
+    @apply text-sm font-medium leading-4.5 tracking-[0.28px];
 }
 
 .filter__item_expand {
