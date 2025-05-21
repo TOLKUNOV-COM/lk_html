@@ -24,6 +24,7 @@
 @import "stats/card.css" layer(components);
 @import "stats/facts.css" layer(components);
 @import "stats/badge.css" layer(components);
+@import "stats/map-platform.css" layer(components);
 
 /** Utilities */
 @import "utilities.css" layer(utilities);

@@ -1,4 +1,5 @@
 import placemarkImage from '../../img/placemark.webp';
+import initPlatformFilter from './map-platform.js';
 
 /**
  * Инициализирует все карты на странице
@@ -8,7 +9,8 @@ export default function initMap() {
         try {
             const points = JSON.parse(el.dataset.points || '[]');
             const directions = JSON.parse(el.dataset.directions || '[]');
-            createMap(el, points, directions);
+            const platforms = JSON.parse(el.dataset.platforms || '[]');
+            createMap(el, points, directions, platforms);
         } catch (error) {
             console.error('Ошибка при парсинге данных карты:', error);
         }
@@ -21,10 +23,11 @@ export default function initMap() {
  * для отображения всех точек.
  *
  * @param {HTMLElement|string} container - DOM-элемент или id элемента для карты
- * @param {Array} points - Массив точек [{lat, lon, name, value, direction_id}]
+ * @param {Array} points - Массив точек [{lat, lon, name, value, direction_id, platform_id}]
  * @param {Array} directions - Массив направлений [{id, name}]
+ * @param {Array} platforms - Массив платформ [{id, name}]
  */
-function createMap(container, points = [], directions = []) {
+function createMap(container, points = [], directions = [], platforms = []) {
     // Получаем DOM-элемент
     const chartDom = typeof container === 'string'
         ? document.getElementById(container)
@@ -38,8 +41,13 @@ function createMap(container, points = [], directions = []) {
     const filterContainer = chartDom.closest('.card').querySelector('.filter');
     const filterItems = filterContainer ? filterContainer.querySelectorAll('.filter__item') : [];
 
+    // Находим фильтр платформ
+    const platformFilterContainer = chartDom.closest('.card').querySelector('#mapPlatformFilter');
+
     // Текущие отфильтрованные точки
     let filteredPoints = [...points];
+    let currentDirectionId = null;
+    let currentPlatformId = null;
     let map, clusterer, geoObjects = [];
 
     // Загружаем API Яндекс Карт, если не загружен
@@ -97,10 +105,30 @@ function createMap(container, points = [], directions = []) {
                     clusterBalloonPanelMaxMapArea: 0,
                 });
 
-                // Инициализация маркеров
-                updateMapPoints(points);
+                // Инициализация фильтра по платформам
+                if (platformFilterContainer) {
+                    const platformFilter = initPlatformFilter({
+                        container: platformFilterContainer,
+                        platforms: platforms,
+                        onChange: (platformId) => {
+                            currentPlatformId = platformId;
+                            updateMapPoints();
+                        }
+                    });
 
-                // Устанавливаем обработчики для фильтра
+                    // Автоматически выбираем первый город при инициализации
+                    if (platforms.length > 0) {
+                        platformFilter.setPlatform(platforms[0].id);
+                    } else {
+                        // Инициализация маркеров
+                        updateMapPoints();
+                    }
+                } else {
+                    // Инициализация маркеров
+                    updateMapPoints();
+                }
+
+                // Устанавливаем обработчики для фильтра направлений
                 filterItems.forEach(item => {
                     item.addEventListener('click', function (e) {
                         e.preventDefault();
@@ -112,17 +140,15 @@ function createMap(container, points = [], directions = []) {
                         this.classList.add('filter__item_active');
 
                         // Получаем ID направления
-                        const directionId = this.dataset.directionId === "null" || !this.dataset.directionId ? null : parseInt(this.dataset.directionId, 10);
+                        const directionId = this.dataset.directionId === "null" || !this.dataset.directionId
+                            ? null
+                            : parseInt(this.dataset.directionId, 10);
 
-                        // Фильтруем точки
-                        if (directionId === null) { // "Все"
-                            filteredPoints = [...points];
-                        } else {
-                            filteredPoints = points.filter(point => point.direction_id === directionId);
-                        }
+                        // Обновляем текущее направление
+                        currentDirectionId = directionId;
 
                         // Обновляем отображение
-                        updateMapPoints(filteredPoints);
+                        updateMapPoints();
                     });
                 });
 
@@ -133,21 +159,33 @@ function createMap(container, points = [], directions = []) {
     });
 
     /**
-     * Обновляет точки на карте
-     * @param {Array} pointsToShow - Массив точек для отображения
+     * Обновляет точки на карте с учетом текущих фильтров
      */
-    function updateMapPoints(pointsToShow) {
+    function updateMapPoints() {
         if (!map || !clusterer) return;
+
+        // Фильтруем точки по направлению и платформе
+        filteredPoints = points.filter(point => {
+            // Проверка по направлению
+            const matchesDirection = currentDirectionId === null || point.direction_id === currentDirectionId;
+
+            // Проверка по платформе
+            const matchesPlatform = currentPlatformId === null || point.platform_id === currentPlatformId;
+
+            // Точка должна соответствовать обоим фильтрам
+            return matchesDirection && matchesPlatform;
+        });
 
         // Очищаем карту
         clusterer.removeAll();
 
         // Создаем гео-объекты для каждой точки
-        geoObjects = pointsToShow.map(point => {
+        geoObjects = filteredPoints.map(point => {
             const directionName = directions.find(d => d.id === point.direction_id)?.name || '';
+            const platformName = platforms.find(p => p.id === point.platform_id)?.name || '';
 
             const placemark = new ymaps.Placemark([point.lat, point.lon], {
-                balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}<br>Направление: ${directionName}`,
+                balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}<br>Направление: ${directionName}<br>Город: ${platformName}`,
                 // Добавляем дополнительные свойства для использования в шаблонах кластеров
                 clusterCaption: point.name,
                 value: point.value,

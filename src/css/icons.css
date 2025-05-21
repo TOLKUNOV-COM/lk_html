@@ -111,3 +111,13 @@
     mask-image: url("../img/attachment.svg");
     background-color: currentColor;
 }
+
+.icon-dropdown-arrow {
+    mask-image: url("../img/dropdown-arrow.svg");
+    background-color: currentColor;
+}
+
+.icon-check {
+    mask-image: url("../img/check.svg");
+    background-color: currentColor;
+}
