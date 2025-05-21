@@ -39,7 +39,7 @@ function createMap(container, points = [], directions = [], platforms = []) {
     }
 
     // Находим контейнеры фильтров
-    const directionFilterContainer = chartDom.closest('.card').querySelector('.filter');
+    const directionFilterContainer = chartDom.closest('.card').querySelector('#mapDirectionFilter');
     const platformFilterContainer = chartDom.closest('.card').querySelector('#mapPlatformFilter');
 
     // Текущие отфильтрованные точки и фильтры
