@@ -41,12 +41,14 @@ function createMap(container, points = [], directions = [], platforms = []) {
     // Находим контейнеры фильтров
     const directionFilterContainer = chartDom.closest('.card').querySelector('.filter');
     const platformFilterContainer = chartDom.closest('.card').querySelector('#mapPlatformFilter');
-    
+
     // Текущие отфильтрованные точки и фильтры
     let filteredPoints = [...points];
     let currentDirectionId = null;
     let currentPlatformId = null;
     let map, clusterer, geoObjects = [];
+    let directionFilter = null;
+    let platformFilter = null;
 
     // Загружаем API Яндекс Карт, если не загружен
     loadYandexMapsApi().then(() => {
@@ -105,12 +107,30 @@ function createMap(container, points = [], directions = [], platforms = []) {
 
                 // Инициализация фильтра по платформам
                 if (platformFilterContainer) {
-                    const platformFilter = initPlatformFilter({
+                    platformFilter = initPlatformFilter({
                         container: platformFilterContainer,
                         platforms: platforms,
                         onChange: (platformId) => {
                             currentPlatformId = platformId;
-                            updateMapPoints();
+
+                            // Проверяем, есть ли точки с текущим направлением в выбранном городе
+                            if (currentDirectionId !== null) {
+                                const hasPointsWithCurrentDirection = points.some(point =>
+                                    point.platform_id === platformId &&
+                                    point.direction_id === currentDirectionId
+                                );
+
+                                // Если точек с текущим направлением нет, сбрасываем фильтр направлений
+                                if (!hasPointsWithCurrentDirection && directionFilter) {
+                                    directionFilter.setDirection(null);
+                                } else {
+                                    // Иначе обновляем точки с текущими фильтрами
+                                    updateMapPoints();
+                                }
+                            } else {
+                                // Если направление не выбрано, просто обновляем точки
+                                updateMapPoints();
+                            }
                         }
                     });
 
@@ -125,10 +145,10 @@ function createMap(container, points = [], directions = [], platforms = []) {
                     // Инициализация маркеров
                     updateMapPoints();
                 }
-                
+
                 // Инициализация фильтра по направлениям
                 if (directionFilterContainer) {
-                    const directionFilter = initDirectionFilter({
+                    directionFilter = initDirectionFilter({
                         container: directionFilterContainer,
                         directions: directions,
                         onChange: (directionId) => {
