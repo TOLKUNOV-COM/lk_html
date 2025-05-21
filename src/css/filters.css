@@ -89,6 +89,7 @@
     @apply border border-dashed border-slate-170 rounded-lg;
     @apply px-[11px] py-[9px];
     @apply transition;
+    @apply cursor-pointer;
 
     @apply text-slate-500 text-xs font-black leading-4;
     @apply hover:text-blue-900;

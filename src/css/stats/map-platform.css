@@ -4,26 +4,35 @@
 
     display: inline-flex;
     align-items: center;
-    cursor: pointer;
-
-    padding-right: 18px;
 }
 
 .map__platform-current {
     @apply text-blue-600;
+    @apply cursor-pointer;
+    @apply relative;
+
+    @apply py-1;
+    padding-right: 18px;
+
+    &::after {
+        content: '';
+        @apply absolute right-0 top-1/2;
+        @apply text-slate-400;
+
+        transform: translateY(-50%) rotate(0deg);
+        transition: transform 0.3s ease;
+        width: 12px;
+        @apply h-full;
+
+        mask-image: url("@/img/dropdown-arrow.svg");
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+        background-color: currentColor;
+    }
 }
 
-.map__platform-arrow {
-    @apply absolute right-0 top-1/2;
-    @apply text-slate-400;
-
-    transform: translateY(-50%) rotate(0deg);
-    transition: transform 0.3s ease;
-    width: 12px;
-    height: 8px;
-}
-
-.map__platform_open .map__platform-arrow {
+.map__platform_open .map__platform-current::after {
     transform: translateY(-50%) rotate(180deg);
     @apply text-blue-900;
 }

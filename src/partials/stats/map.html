@@ -2,11 +2,7 @@
     <div class="card__title flex-1 flex items-center gap-0">
         <span>Наружка в&nbsp;</span>
         <div class="map__platform" id="mapPlatformFilter">
-            <div class="map__platform-current">Санкт-Петербург</div>
-            <i class="icon icon-dropdown-arrow map__platform-arrow"></i>
-            <!-- <svg class="map__platform-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#ABB1C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg> -->
+            <button class="map__platform-current">Санкт-Петербург</button>
             <div class="map__platform-dropdown">
                 <ul class="map__platform-list">
                     {{#each map.platforms}}
@@ -23,9 +19,9 @@
     <div class="filter">
         <div class="filter__items">
             {{#each map.directions}}
-            <a href="#"
+            <button
                class="filter__item {{#if @first}} filter__item_active{{/if}}"
-               data-direction-id="{{this.id}}">{{this.name}}</a>
+               data-direction-id="{{this.id}}">{{this.name}}</button>
             {{/each}}
         </div>
     </div>

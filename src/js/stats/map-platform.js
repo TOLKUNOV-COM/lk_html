@@ -31,7 +31,7 @@ export default function initPlatformFilter(options) {
     // Инициализируем обработчики событий
     
     // 1. Открытие/закрытие выпадающего списка
-    filterEl.addEventListener('click', function(e) {
+    currentEl.addEventListener('click', function(e) {
         e.preventDefault();
         toggleDropdown();
     });
