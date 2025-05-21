@@ -521,12 +521,16 @@ map:
   platforms:
     - id: 1
       name: "Санкт-Петербург"
+      local_name: "Санкт-Петербурге"
     - id: 2
       name: "Москва"
+      local_name: "Москве"
     - id: 3
       name: "Екатеринбург"
+      local_name: "Екатеринбурге"
     - id: 4
       name: "Новосибирск"
+      local_name: "Новосибирске"
   directions:
     - id:
       name: "Все"

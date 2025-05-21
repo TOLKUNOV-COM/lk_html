@@ -61,7 +61,7 @@ export default function initPlatformFilter(options) {
             currentPlatformId = platformId;
             
             // Находим платформу в массиве по ID и устанавливаем её имя
-            const platformName = getPlatformName(platformId);
+            const platformName = getPlatformName(platformId, true);
             currentEl.textContent = platformName;
             
             // Закрываем выпадающий список
@@ -77,16 +77,19 @@ export default function initPlatformFilter(options) {
     // Вспомогательные функции
     
     // Получает имя платформы по её ID
-    function getPlatformName(platformId) {
+    function getPlatformName(platformId, useLocalName = false) {
         if (platformId === null) {
             // Находим платформу с ID null
             const platform = platforms.find(p => p.id === null || p.id === undefined || p.id === '');
-            return platform ? platform.name : 'Все города';
+            return platform ? (useLocalName && platform.local_name ? platform.local_name : platform.name) : 'Все города';
         }
         
         // Находим платформу по ID
         const platform = platforms.find(p => p.id === platformId);
-        return platform ? platform.name : 'Неизвестная платформа';
+        if (!platform) return 'Неизвестная платформа';
+        
+        // Возвращаем локальное имя (склонение) или обычное название
+        return useLocalName && platform.local_name ? platform.local_name : platform.name;
     }
     
     // Открывает/закрывает выпадающий список
@@ -125,7 +128,7 @@ export default function initPlatformFilter(options) {
         } else {
             // Если элемент не найден, просто обновляем текст
             currentPlatformId = platformId;
-            const platformName = getPlatformName(platformId);
+            const platformName = getPlatformName(platformId, true);
             currentEl.textContent = platformName;
         }
     }
