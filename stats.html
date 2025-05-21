@@ -292,13 +292,31 @@
             <article class="card flex flex-col gap-5 2xl:gap-6">
                 <div class="flex flex-wrap items-center justify-between gap-5">
                     <div class="card__title flex-1">География проектов</div>
+                
+                    <div class="filter">
+                        <div class="filter__items">
+                            <a href="#"
+                               class="filter__item  filter__item_active"
+                               data-direction-id="">Все</a>
+                            <a href="#"
+                               class="filter__item "
+                               data-direction-id="2">DOOH</a>
+                            <a href="#"
+                               class="filter__item "
+                               data-direction-id="3">OOH</a>
+                            <a href="#"
+                               class="filter__item "
+                               data-direction-id="4">Медиафасады</a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="map-container">
+                <div class="map-container card__stick_x card__stick_bottom card__rounded overflow-hidden">
                     <div id="mapChart"
-                         class="card__stick_x card__stick_bottom card__rounded overflow-hidden h-[350px] xl:h-[440px] 2xl:h-[468px] 3xl:h-[620px]"
+                         class="w-full h-[350px] xl:h-[440px] 2xl:h-[468px] 3xl:h-[620px]"
                          data-module="map"
-                         data-points='[{"lat":59.9342,"lon":30.3351,"name":"Эрмитаж","value":7},{"lat":59.9502,"lon":30.3168,"name":"Петропавловская крепость","value":35},{"lat":59.9343,"lon":30.3248,"name":"Казанский собор","value":8},{"lat":59.9402,"lon":30.329,"name":"Спас на Крови","value":3},{"lat":59.9257,"lon":30.2982,"name":"Мариинский театр","value":15},{"lat":59.938,"lon":30.3082,"name":"Адмиралтейство","value":4},{"lat":59.9416,"lon":30.3054,"name":"Кунсткамера","value":9},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 301","value":7},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 302","value":5},{"lat":59.934,"lon":30.306,"name":"Исаакиевский собор","value":28}]'
+                         data-points='[{"lat":59.9342,"lon":30.3351,"name":"Эрмитаж","value":7,"direction_id":2},{"lat":59.9502,"lon":30.3168,"name":"Петропавловская крепость","value":35,"direction_id":3},{"lat":59.933789,"lon":30.324633,"name":"Казанский собор","value":8,"direction_id":2},{"lat":59.9402,"lon":30.329,"name":"Спас на Крови","value":3,"direction_id":4},{"lat":59.9257,"lon":30.2982,"name":"Мариинский театр","value":15,"direction_id":3},{"lat":59.938,"lon":30.3082,"name":"Адмиралтейство","value":4,"direction_id":2},{"lat":59.9416,"lon":30.3054,"name":"Кунсткамера","value":9,"direction_id":3},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 301","value":7,"direction_id":4},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 302","value":5,"direction_id":4},{"lat":59.934,"lon":30.306,"name":"Исаакиевский собор","value":28,"direction_id":3}]'
+                         data-directions='[{"id":null,"name":"Все"},{"id":2,"name":"DOOH"},{"id":3,"name":"OOH"},{"id":4,"name":"Медиафасады"}]'
                     ></div>
                 </div>
             </article>
