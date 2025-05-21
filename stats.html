@@ -288,70 +288,6 @@
             </section>
             <!-- filter -->
 
-            <!-- map -->
-            <article class="card flex flex-col gap-5 2xl:gap-6">
-                <div class="flex flex-wrap items-center justify-between gap-5">
-                    <div class="card__title flex-1 flex items-center gap-0">
-                        <span>Наружка в&nbsp;</span>
-                        <div class="map__platform" id="mapPlatformFilter">
-                            <div class="map__platform-current">Санкт-Петербург</div>
-                            <i class="icon icon-dropdown-arrow map__platform-arrow"></i>
-                            <!-- <svg class="map__platform-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#ABB1C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg> -->
-                            <div class="map__platform-dropdown">
-                                <ul class="map__platform-list">
-                                    <li class="map__platform-item map__platform-item_active" data-platform-id="1">
-                                        <span class="flex-1">Санкт-Петербург</span>
-                                        <i class="icon icon-check text-blue-600 size-5"></i>
-                                    </li>
-                                    <li class="map__platform-item " data-platform-id="2">
-                                        <span class="flex-1">Москва</span>
-                                        <i class="icon icon-check text-blue-600 size-5"></i>
-                                    </li>
-                                    <li class="map__platform-item " data-platform-id="3">
-                                        <span class="flex-1">Екатеринбург</span>
-                                        <i class="icon icon-check text-blue-600 size-5"></i>
-                                    </li>
-                                    <li class="map__platform-item " data-platform-id="4">
-                                        <span class="flex-1">Новосибирск</span>
-                                        <i class="icon icon-check text-blue-600 size-5"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="filter">
-                        <div class="filter__items">
-                            <a href="#"
-                               class="filter__item  filter__item_active"
-                               data-direction-id="">Все</a>
-                            <a href="#"
-                               class="filter__item "
-                               data-direction-id="2">DOOH</a>
-                            <a href="#"
-                               class="filter__item "
-                               data-direction-id="3">OOH</a>
-                            <a href="#"
-                               class="filter__item "
-                               data-direction-id="4">Медиафасады</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="map-container card__stick_x card__stick_bottom card__rounded overflow-hidden">
-                    <div id="mapChart"
-                         class="w-full h-[350px] xl:h-[440px] 2xl:h-[468px] 3xl:h-[620px]"
-                         data-module="map"
-                         data-points='[{"lat":59.9342,"lon":30.3351,"name":"Эрмитаж","value":7,"direction_id":2,"platform_id":1},{"lat":59.9502,"lon":30.3168,"name":"Петропавловская крепость","value":35,"direction_id":3,"platform_id":1},{"lat":59.933789,"lon":30.324633,"name":"Казанский собор","value":8,"direction_id":2,"platform_id":1},{"lat":59.9402,"lon":30.329,"name":"Спас на Крови","value":3,"direction_id":4,"platform_id":1},{"lat":59.9257,"lon":30.2982,"name":"Мариинский театр","value":15,"direction_id":3,"platform_id":1},{"lat":59.938,"lon":30.3082,"name":"Адмиралтейство","value":4,"direction_id":2,"platform_id":1},{"lat":59.9416,"lon":30.3054,"name":"Кунсткамера","value":9,"direction_id":3,"platform_id":1},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 301","value":7,"direction_id":4,"platform_id":1},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 302","value":5,"direction_id":4,"platform_id":1},{"lat":59.934,"lon":30.306,"name":"Исаакиевский собор","value":28,"direction_id":3,"platform_id":1},{"lat":55.7539,"lon":37.6208,"name":"Кремль","value":15,"direction_id":3,"platform_id":2},{"lat":55.7522,"lon":37.6156,"name":"Храм Христа Спасителя","value":12,"direction_id":2,"platform_id":2},{"lat":55.7614,"lon":37.6236,"name":"Большой театр","value":9,"direction_id":4,"platform_id":2},{"lat":56.8389,"lon":60.6057,"name":"Площадь 1905 года","value":8,"direction_id":3,"platform_id":3},{"lat":54.9833,"lon":82.8964,"name":"Площадь Ленина","value":6,"direction_id":2,"platform_id":4}]'
-                         data-directions='[{"id":null,"name":"Все"},{"id":2,"name":"DOOH"},{"id":3,"name":"OOH"},{"id":4,"name":"Медиафасады"}]'
-                         data-platforms='[{"id":1,"name":"Санкт-Петербург"},{"id":2,"name":"Москва"},{"id":3,"name":"Екатеринбург"},{"id":4,"name":"Новосибирск"}]'
-                    ></div>
-                </div>
-            </article>
-            <!-- map -->
-
             <!-- main stats layout -->
             <section
                     class="grid grid-cols-[1fr_1fr_276px] 2xl:grid-cols-[1fr_1fr_326px] 3xl:so:grid-cols-[1fr_1fr_364px] 4xl:grid-cols-[1fr_1fr_350px] items-stretch [grid-template-rows:1fr_auto] gap-5 2xl:gap-6 mt-5 2xl:mt-6">
@@ -620,6 +556,7 @@
                     <!-- pie chart -->
 
                 </div>
+
                 <!-- directions -->
                 <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
                     <div class="card__title">Направления</div>
@@ -709,8 +646,66 @@
                     </div>
                 </article>
                 <!-- directions -->
-                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
+
+                <!-- map -->
+                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5 2xl:gap-6">
+                    <div class="flex flex-wrap items-center justify-between gap-5">
+                        <div class="card__title flex-1 flex items-center gap-0">
+                            <span>Наружка в&nbsp;</span>
+                            <div class="map__platform" id="mapPlatformFilter">
+                                <button class="map__platform-current">Санкт-Петербург</button>
+                                <div class="map__platform-dropdown">
+                                    <ul class="map__platform-list">
+                                        <li class="map__platform-item map__platform-item_active" data-platform-id="1">
+                                            <span class="flex-1">Санкт-Петербург</span>
+                                            <i class="icon icon-check text-blue-600 size-5"></i>
+                                        </li>
+                                        <li class="map__platform-item " data-platform-id="2">
+                                            <span class="flex-1">Москва</span>
+                                            <i class="icon icon-check text-blue-600 size-5"></i>
+                                        </li>
+                                        <li class="map__platform-item " data-platform-id="3">
+                                            <span class="flex-1">Екатеринбург</span>
+                                            <i class="icon icon-check text-blue-600 size-5"></i>
+                                        </li>
+                                        <li class="map__platform-item " data-platform-id="4">
+                                            <span class="flex-1">Новосибирск</span>
+                                            <i class="icon icon-check text-blue-600 size-5"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="filter">
+                            <div class="filter__items">
+                                <button
+                                   class="filter__item  filter__item_active"
+                                   data-direction-id="">Все</button>
+                                <button
+                                   class="filter__item "
+                                   data-direction-id="2">DOOH</button>
+                                <button
+                                   class="filter__item "
+                                   data-direction-id="3">OOH</button>
+                                <button
+                                   class="filter__item "
+                                   data-direction-id="4">Медиафасады</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container card__stick_x card__stick_bottom card__rounded overflow-hidden">
+                        <div id="mapChart"
+                             class="w-full h-[350px] xl:h-[440px] 2xl:h-[468px] 3xl:h-[620px]"
+                             data-module="map"
+                             data-points='[{"lat":59.9342,"lon":30.3351,"name":"Эрмитаж","value":7,"direction_id":2,"platform_id":1},{"lat":59.9502,"lon":30.3168,"name":"Петропавловская крепость","value":35,"direction_id":3,"platform_id":1},{"lat":59.933789,"lon":30.324633,"name":"Казанский собор","value":8,"direction_id":2,"platform_id":1},{"lat":59.9402,"lon":30.329,"name":"Спас на Крови","value":3,"direction_id":4,"platform_id":1},{"lat":59.9257,"lon":30.2982,"name":"Мариинский театр","value":15,"direction_id":3,"platform_id":1},{"lat":59.938,"lon":30.3082,"name":"Адмиралтейство","value":4,"direction_id":2,"platform_id":1},{"lat":59.9416,"lon":30.3054,"name":"Кунсткамера","value":9,"direction_id":3,"platform_id":1},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 301","value":7,"direction_id":4,"platform_id":1},{"lat":59.9279,"lon":30.3621,"name":"БЦ Московский, офис 302","value":5,"direction_id":4,"platform_id":1},{"lat":59.934,"lon":30.306,"name":"Исаакиевский собор","value":28,"direction_id":3,"platform_id":1},{"lat":55.7539,"lon":37.6208,"name":"Кремль","value":15,"direction_id":3,"platform_id":2},{"lat":55.7522,"lon":37.6156,"name":"Храм Христа Спасителя","value":12,"direction_id":2,"platform_id":2},{"lat":55.7614,"lon":37.6236,"name":"Большой театр","value":9,"direction_id":4,"platform_id":2},{"lat":56.8389,"lon":60.6057,"name":"Площадь 1905 года","value":8,"direction_id":3,"platform_id":3},{"lat":54.9833,"lon":82.8964,"name":"Площадь Ленина","value":6,"direction_id":2,"platform_id":4}]'
+                             data-directions='[{"id":null,"name":"Все"},{"id":2,"name":"DOOH"},{"id":3,"name":"OOH"},{"id":4,"name":"Медиафасады"}]'
+                             data-platforms='[{"id":1,"name":"Санкт-Петербург"},{"id":2,"name":"Москва"},{"id":3,"name":"Екатеринбург"},{"id":4,"name":"Новосибирск"}]'
+                        ></div>
+                    </div>
                 </article>
+                <!-- map -->
             </section>
             <!-- main stats layout -->
         </div>
