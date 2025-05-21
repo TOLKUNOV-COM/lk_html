@@ -242,7 +242,7 @@ function createMap(container, points = [], directions = []) {
         if (bounds) {
             map.setBounds(bounds, {
                 checkZoomRange: true,
-                zoomMargin: 40,
+                zoomMargin: 60,
                 // Добавляем плавную анимацию
                 duration: 300
             });
