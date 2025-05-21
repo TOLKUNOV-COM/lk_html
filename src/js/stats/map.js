@@ -1,0 +1,202 @@
+import placemarkImage from '../../img/placemark.webp';
+
+/**
+ * Инициализирует все карты на странице
+ */
+export default function initMap() {
+    document.querySelectorAll('[data-module="map"]').forEach((el) => {
+        try {
+            const points = JSON.parse(el.dataset.points || '[]');
+            createMap(el, points);
+        } catch (error) {
+            console.error('Ошибка при парсинге данных карты:', error);
+        }
+    });
+}
+
+/**
+ * Инициализирует и отображает карту Яндекс с заданными точками.
+ * Точки отображаются с указанными значениями, автоматически масштабируется
+ * для отображения всех точек.
+ *
+ * @param {HTMLElement|string} container - DOM-элемент или id элемента для карты
+ * @param {Array} points - Массив точек [{lat, lon, name, value}]
+ */
+function createMap(container, points = []) {
+    // Получаем DOM-элемент
+    const chartDom = typeof container === 'string'
+        ? document.getElementById(container)
+        : container;
+
+    if (!chartDom || points.length === 0) {
+        return;
+    }
+
+    // Загружаем API Яндекс Карт, если не загружен
+    loadYandexMapsApi().then(() => {
+        ymaps.ready(() => {
+            try {
+                // Создаем карту
+                const map = new ymaps.Map(chartDom.id, {
+                    center: [55.76, 37.64], // Временный центр
+                    zoom: 5,
+                    controls: ['zoomControl', 'geolocationControl', 'typeSelector', 'fullscreenControl']
+                });
+
+                // Отключаем scroll zoom по умолчанию
+                map.behaviors.disable('scrollZoom');
+
+                const container = document.querySelector('.map-container');
+
+                let isScrollEnabled = false;
+
+                container.addEventListener('click', () => {
+                    if (!isScrollEnabled) {
+                        map.behaviors.enable('scrollZoom');
+                        isScrollEnabled = true;
+                    }
+                });
+
+                container.addEventListener('mouseleave', () => {
+                    if (isScrollEnabled) {
+                        map.behaviors.disable('scrollZoom');
+                        isScrollEnabled = false;
+                    }
+                });
+
+                // Создаем кластеризатор
+                const clusterer = new ymaps.Clusterer({
+                    preset: 'islands#blueClusterIcons',
+                    groupByCoordinates: false,
+                    clusterDisableClickZoom: false,
+                    clusterHideIconOnBalloonOpen: false,
+                    geoObjectHideIconOnBalloonOpen: false,
+                    // Шаблон для балуна кластера
+                    clusterBalloonContentLayout: ymaps.templateLayoutFactory.createClass(
+                        '<div class="cluster-balloon" style="padding: 10px; max-height: 300px; overflow-y: auto;">' +
+                        '<h3 style="font-weight: bold; margin-bottom: 10px; font-size: 14px;">Точки в кластере: $[properties.geoObjects.length]</h3>' +
+                        '<ul style="list-style: none; margin: 0; padding: 0;">' +
+                        '{% for geoObject in properties.geoObjects %}' +
+                        '<li style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #eee;">' +
+                        '<div style="font-weight: bold; margin-bottom: 5px;">{{ geoObject.properties.balloonContent|raw }}</div>' +
+                        '</li>' +
+                        '{% endfor %}' +
+                        '</ul>' +
+                        '</div>'
+                    ),
+                    clusterBalloonPanelMaxMapArea: 0,
+                });
+
+                // Создаем гео-объекты для каждой точки
+                const geoObjects = points.map(point => {
+                    const placemark = new ymaps.Placemark([point.lat, point.lon], {
+                        balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}`,
+                        // Добавляем дополнительные свойства для использования в шаблонах кластеров
+                        clusterCaption: point.name,
+                        value: point.value,
+                        iconContent: point.value,
+                        // Настраиваем внешний вид при наведении и нажатии
+                        hintContent: point.name
+
+                    }, {
+                        // стиль метки
+                        // preset: 'islands#circleIcon',
+                        // iconColor: '#ff0000', // цвет круга
+
+                        // Создаем круглую метку с числом внутри
+                        iconLayout: 'default#imageWithContent',
+                        iconImageHref: placemarkImage,
+                        iconImageSize: [60, 60],
+                        iconImageOffset: [-30, -30],
+                        iconContentOffset: [30, -2],
+                        iconContentLayout: ymaps.templateLayoutFactory.createClass(`
+    <div class="size-5 rounded-full flex items-center justify-center bg-white inset-ring inset-ring-[#F1F1EC] font-sans text-blue-900 font-black text-[0.5rem] leading-2.5">
+        $[properties.iconContent]
+    </div>
+`),
+                    });
+
+                    // Добавляем обработчики событий для метки
+                    // placemark.events
+                    //     .add('mouseenter', function () {
+                    //         // Можно изменить размер метки при наведении
+                    //         placemark.options.set('iconImageSize', [48, 48]);
+                    //         placemark.options.set('iconImageOffset', [-24, -24]);
+                    //     })
+                    //     .add('mouseleave', function () {
+                    //         // Возвращаем оригинальный размер
+                    //         placemark.options.set('iconImageSize', [44, 44]);
+                    //         placemark.options.set('iconImageOffset', [-22, -22]);
+                    //     });
+
+                    return placemark;
+                });
+
+                // Добавляем метки в кластеризатор
+                clusterer.add(geoObjects);
+                map.geoObjects.add(clusterer);
+
+                // Создаем функцию для центрирования карты
+                const centerMapByPoints = () => {
+                    // var bounds = ymaps.geoQuery(geoObjects).getBounds();
+                    var bounds = clusterer.getBounds();
+
+                    if (bounds) {
+                        map.setBounds(bounds, {
+                            checkZoomRange: true,
+                            zoomMargin: 0,
+                            // Добавляем плавную анимацию
+                            duration: 0
+                        });
+                    }
+                };
+
+                // Выполняем начальное центрирование
+                centerMapByPoints();
+
+                // Функция для обновления размера карты
+                const updateMapSize = () => {
+                    map.container.fitToViewport();
+                    // После подгонки размера, пересчитываем центр и масштаб
+                    centerMapByPoints();
+                };
+
+                // Обработчики событий
+                window.addEventListener('resize', updateMapSize);
+                document.addEventListener('sidebar:collapse:end', updateMapSize);
+
+                // Добавляем кнопку для центрирования карты
+                const centerButton = new ymaps.control.Button({
+                    data: {
+                        image: 'data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8C0 12.4 3.6 16 8 16C12.4 16 16 12.4 16 8C16 3.6 12.4 0 8 0ZM8 14C4.7 14 2 11.3 2 8C2 4.7 4.7 2 8 2C11.3 2 14 4.7 14 8C14 11.3 11.3 14 8 14Z" fill="%232856F6"/><circle cx="8" cy="8" r="4" fill="%232856F6"/></svg>',
+                        title: 'Показать все точки'
+                    }
+                }, { float: 'right' });
+
+                // centerButton.events.add('click', centerMapByPoints);
+                // map.controls.add(centerButton);
+
+            } catch (error) {
+                console.error('Ошибка инициализации карты:', error);
+            }
+        });
+    });
+}
+
+/**
+ * Загружает API Яндекс Карт, если он еще не был загружен
+ * @returns {Promise} Promise, который разрешается, когда API загружен
+ */
+function loadYandexMapsApi() {
+    return new Promise((resolve) => {
+        if (window.ymaps) {
+            resolve();
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://api-maps.yandex.ru/2.1/?apikey=ваш_API_ключ&lang=ru_RU';
+        script.onload = resolve;
+        document.head.appendChild(script);
+    });
+}

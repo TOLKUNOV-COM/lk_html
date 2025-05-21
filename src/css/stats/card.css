@@ -10,6 +10,10 @@
     @apply text-base leading-normal 2xl:text-xl 2xl:leading-7;
 }
 
+.card__rounded {
+    border-radius: var(--card-rounded, 1.5rem);
+}
+
 .card__stick_left {
     margin-left: calc(var(--card-border-offset) - var(--card-padding));
 }

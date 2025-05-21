@@ -170,6 +170,12 @@
             </section>
             <!-- filter -->
 
+            <!-- map -->
+            <article class="card flex flex-col gap-5 2xl:gap-6">
+                {{> stats/map }}
+            </article>
+            <!-- map -->
+
             <!-- main stats layout -->
             <section
                     class="grid grid-cols-[1fr_1fr_276px] 2xl:grid-cols-[1fr_1fr_326px] 3xl:so:grid-cols-[1fr_1fr_364px] 4xl:grid-cols-[1fr_1fr_350px] items-stretch [grid-template-rows:1fr_auto] gap-5 2xl:gap-6 mt-5 2xl:mt-6">
@@ -217,7 +223,8 @@
                     {{> stats/directions }}
                 </article>
                 <!-- directions -->
-                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   h-80 row-span-1 flex items-center justify-center rounded-lg bg-yellow-50 text-red-900 p-10">Карта</article>
+                <article class="col-span-3 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
+                </article>
             </section>
             <!-- main stats layout -->
         </div>
