@@ -1,5 +1,24 @@
 <div class="flex flex-wrap items-center justify-between gap-5">
-    <div class="card__title flex-1">География проектов</div>
+    <div class="card__title flex-1 flex items-center gap-0">
+        <span>Наружка в&nbsp;</span>
+        <div class="map__platform" id="mapPlatformFilter">
+            <div class="map__platform-current">Санкт-Петербург</div>
+            <i class="icon icon-dropdown-arrow map__platform-arrow"></i>
+            <!-- <svg class="map__platform-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#ABB1C4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> -->
+            <div class="map__platform-dropdown">
+                <ul class="map__platform-list">
+                    {{#each map.platforms}}
+                    <li class="map__platform-item {{#if @first}}map__platform-item_active{{/if}}" data-platform-id="{{this.id}}">
+                        <span class="flex-1">{{this.name}}</span>
+                        <i class="icon icon-check text-blue-600 size-5"></i>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <div class="filter">
         <div class="filter__items">
@@ -18,5 +37,6 @@
          data-module="map"
          data-points='{{{json map.points}}}'
          data-directions='{{{json map.directions}}}'
+         data-platforms='{{{json map.platforms}}}'
     ></div>
 </div>

@@ -1,5 +1,6 @@
 import placemarkImage from '../../img/placemark.webp';
 import initPlatformFilter from './map-platform.js';
+import initDirectionFilter from './map-direction.js';
 
 /**
  * Инициализирует все карты на странице
@@ -37,14 +38,11 @@ function createMap(container, points = [], directions = [], platforms = []) {
         return;
     }
 
-    // Находим фильтр для этой карты
-    const filterContainer = chartDom.closest('.card').querySelector('.filter');
-    const filterItems = filterContainer ? filterContainer.querySelectorAll('.filter__item') : [];
-
-    // Находим фильтр платформ
+    // Находим контейнеры фильтров
+    const directionFilterContainer = chartDom.closest('.card').querySelector('.filter');
     const platformFilterContainer = chartDom.closest('.card').querySelector('#mapPlatformFilter');
-
-    // Текущие отфильтрованные точки
+    
+    // Текущие отфильтрованные точки и фильтры
     let filteredPoints = [...points];
     let currentDirectionId = null;
     let currentPlatformId = null;
@@ -127,30 +125,18 @@ function createMap(container, points = [], directions = [], platforms = []) {
                     // Инициализация маркеров
                     updateMapPoints();
                 }
-
-                // Устанавливаем обработчики для фильтра направлений
-                filterItems.forEach(item => {
-                    item.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        // Удаляем активный класс у всех фильтров
-                        filterItems.forEach(el => el.classList.remove('filter__item_active'));
-
-                        // Добавляем активный класс текущему фильтру
-                        this.classList.add('filter__item_active');
-
-                        // Получаем ID направления
-                        const directionId = this.dataset.directionId === "null" || !this.dataset.directionId
-                            ? null
-                            : parseInt(this.dataset.directionId, 10);
-
-                        // Обновляем текущее направление
-                        currentDirectionId = directionId;
-
-                        // Обновляем отображение
-                        updateMapPoints();
+                
+                // Инициализация фильтра по направлениям
+                if (directionFilterContainer) {
+                    const directionFilter = initDirectionFilter({
+                        container: directionFilterContainer,
+                        directions: directions,
+                        onChange: (directionId) => {
+                            currentDirectionId = directionId;
+                            updateMapPoints();
+                        }
                     });
-                });
+                }
 
             } catch (error) {
                 console.error('Ошибка инициализации карты:', error);
