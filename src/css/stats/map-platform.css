@@ -71,7 +71,7 @@
     cursor: pointer;
     transition: background-color 0.2s;
 
-    @apply text-blue-900 text-base font-medium leading-5 tracking-[0.32px];
+    @apply text-blue-900 text-base font-sans font-medium leading-5 tracking-[0.32px];
     @apply rounded-xl;
     white-space: nowrap;
 
