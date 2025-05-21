@@ -518,54 +518,73 @@ barChart:
         value: 2
 
 map:
+  directions:
+    - id: null
+      name: "Все"
+    - id: 2
+      name: "DOOH"
+    - id: 3
+      name: "OOH"
+    - id: 4
+      name: "Медиафасады"
   points:
     - 
       lat: 59.9342
       lon: 30.3351
       name: "Эрмитаж"
       value: 7
+      direction_id: 2
     - 
       lat: 59.9502
       lon: 30.3168
       name: "Петропавловская крепость"
       value: 35
+      direction_id: 3
     -
-      lat: 59.9343
-      lon: 30.3248
+      lat: 59.933789
+      lon: 30.324633
       name: "Казанский собор"
       value: 8
+      direction_id: 2
     - 
       lat: 59.9402
       lon: 30.3290
       name: "Спас на Крови"
       value: 3
+      direction_id: 4
     - 
       lat: 59.9257
       lon: 30.2982
       name: "Мариинский театр"
       value: 15
+      direction_id: 3
     - 
       lat: 59.9380
       lon: 30.3082
       name: "Адмиралтейство"
       value: 4
+      direction_id: 2
     - 
       lat: 59.9416
       lon: 30.3054
       name: "Кунсткамера"
       value: 9
+      direction_id: 3
     - 
       lat: 59.9279
       lon: 30.3621
       name: "БЦ Московский, офис 301"
       value: 7
+      direction_id: 4
     - 
       lat: 59.9279
       lon: 30.3621
       name: "БЦ Московский, офис 302"
       value: 5
+      direction_id: 4
     -
       lat: 59.9340
       lon: 30.3060
       name: "Исаакиевский собор"
       value: 28
+      direction_id: 3

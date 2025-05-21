@@ -7,7 +7,8 @@ export default function initMap() {
     document.querySelectorAll('[data-module="map"]').forEach((el) => {
         try {
             const points = JSON.parse(el.dataset.points || '[]');
-            createMap(el, points);
+            const directions = JSON.parse(el.dataset.directions || '[]');
+            createMap(el, points, directions);
         } catch (error) {
             console.error('Ошибка при парсинге данных карты:', error);
         }
@@ -20,9 +21,10 @@ export default function initMap() {
  * для отображения всех точек.
  *
  * @param {HTMLElement|string} container - DOM-элемент или id элемента для карты
- * @param {Array} points - Массив точек [{lat, lon, name, value}]
+ * @param {Array} points - Массив точек [{lat, lon, name, value, direction_id}]
+ * @param {Array} directions - Массив направлений [{id, name}]
  */
-function createMap(container, points = []) {
+function createMap(container, points = [], directions = []) {
     // Получаем DOM-элемент
     const chartDom = typeof container === 'string'
         ? document.getElementById(container)
@@ -32,15 +34,23 @@ function createMap(container, points = []) {
         return;
     }
 
+    // Находим фильтр для этой карты
+    const filterContainer = chartDom.closest('.card').querySelector('.filter'); // @TODO use ID
+    const filterItems = filterContainer ? filterContainer.querySelectorAll('.filter__item') : [];
+
+    // Текущие отфильтрованные точки
+    let filteredPoints = [...points];
+    let map, clusterer, geoObjects = [];
+
     // Загружаем API Яндекс Карт, если не загружен
     loadYandexMapsApi().then(() => {
         ymaps.ready(() => {
             try {
                 // Создаем карту
-                const map = new ymaps.Map(chartDom.id, {
+                map = new ymaps.Map(chartDom.id, {
                     center: [55.76, 37.64], // Временный центр
                     zoom: 5,
-                    controls: ['zoomControl', 'geolocationControl', 'typeSelector', 'fullscreenControl']
+                    controls: ['zoomControl', /* 'geolocationControl', */ 'typeSelector', 'fullscreenControl']
                 });
 
                 // Отключаем scroll zoom по умолчанию
@@ -65,7 +75,7 @@ function createMap(container, points = []) {
                 });
 
                 // Создаем кластеризатор
-                const clusterer = new ymaps.Clusterer({
+                clusterer = new ymaps.Clusterer({
                     preset: 'islands#blueClusterIcons',
                     groupByCoordinates: false,
                     clusterDisableClickZoom: false,
@@ -87,100 +97,164 @@ function createMap(container, points = []) {
                     clusterBalloonPanelMaxMapArea: 0,
                 });
 
-                // Создаем гео-объекты для каждой точки
-                const geoObjects = points.map(point => {
-                    const placemark = new ymaps.Placemark([point.lat, point.lon], {
-                        balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}`,
-                        // Добавляем дополнительные свойства для использования в шаблонах кластеров
-                        clusterCaption: point.name,
-                        value: point.value,
-                        iconContent: point.value,
-                        // Настраиваем внешний вид при наведении и нажатии
-                        hintContent: point.name
+                // Инициализация маркеров
+                updateMapPoints(points);
 
-                    }, {
-                        // стиль метки
-                        // preset: 'islands#circleIcon',
-                        // iconColor: '#ff0000', // цвет круга
+                // Устанавливаем обработчики для фильтра
+                filterItems.forEach(item => {
+                    item.addEventListener('click', function (e) {
+                        e.preventDefault();
 
-                        // Создаем круглую метку с числом внутри
-                        iconLayout: 'default#imageWithContent',
-                        iconImageHref: placemarkImage,
-                        iconImageSize: [60, 60],
-                        iconImageOffset: [-30, -30],
-                        iconContentOffset: [30, -2],
-                        iconContentLayout: ymaps.templateLayoutFactory.createClass(`
-    <div class="size-5 rounded-full flex items-center justify-center bg-white inset-ring inset-ring-[#F1F1EC] font-sans text-blue-900 font-black text-[0.5rem] leading-2.5">
-        $[properties.iconContent]
-    </div>
-`),
+                        // Удаляем активный класс у всех фильтров
+                        filterItems.forEach(el => el.classList.remove('filter__item_active'));
+
+                        // Добавляем активный класс текущему фильтру
+                        this.classList.add('filter__item_active');
+
+                        // Получаем ID направления
+                        const directionId = this.dataset.directionId === "null" ? null : parseInt(this.dataset.directionId, 10);
+                        
+                        // Фильтруем точки
+                        if (directionId === null) { // "Все"
+                            filteredPoints = [...points];
+                        } else {
+                            filteredPoints = points.filter(point => point.direction_id === directionId);
+                        }
+
+                        // Обновляем отображение
+                        updateMapPoints(filteredPoints);
                     });
-
-                    // Добавляем обработчики событий для метки
-                    // placemark.events
-                    //     .add('mouseenter', function () {
-                    //         // Можно изменить размер метки при наведении
-                    //         placemark.options.set('iconImageSize', [48, 48]);
-                    //         placemark.options.set('iconImageOffset', [-24, -24]);
-                    //     })
-                    //     .add('mouseleave', function () {
-                    //         // Возвращаем оригинальный размер
-                    //         placemark.options.set('iconImageSize', [44, 44]);
-                    //         placemark.options.set('iconImageOffset', [-22, -22]);
-                    //     });
-
-                    return placemark;
                 });
-
-                // Добавляем метки в кластеризатор
-                clusterer.add(geoObjects);
-                map.geoObjects.add(clusterer);
-
-                // Создаем функцию для центрирования карты
-                const centerMapByPoints = () => {
-                    // var bounds = ymaps.geoQuery(geoObjects).getBounds();
-                    var bounds = clusterer.getBounds();
-
-                    if (bounds) {
-                        map.setBounds(bounds, {
-                            checkZoomRange: true,
-                            zoomMargin: 0,
-                            // Добавляем плавную анимацию
-                            duration: 0
-                        });
-                    }
-                };
-
-                // Выполняем начальное центрирование
-                centerMapByPoints();
-
-                // Функция для обновления размера карты
-                const updateMapSize = () => {
-                    map.container.fitToViewport();
-                    // После подгонки размера, пересчитываем центр и масштаб
-                    centerMapByPoints();
-                };
-
-                // Обработчики событий
-                window.addEventListener('resize', updateMapSize);
-                document.addEventListener('sidebar:collapse:end', updateMapSize);
-
-                // Добавляем кнопку для центрирования карты
-                const centerButton = new ymaps.control.Button({
-                    data: {
-                        image: 'data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8C0 12.4 3.6 16 8 16C12.4 16 16 12.4 16 8C16 3.6 12.4 0 8 0ZM8 14C4.7 14 2 11.3 2 8C2 4.7 4.7 2 8 2C11.3 2 14 4.7 14 8C14 11.3 11.3 14 8 14Z" fill="%232856F6"/><circle cx="8" cy="8" r="4" fill="%232856F6"/></svg>',
-                        title: 'Показать все точки'
-                    }
-                }, { float: 'right' });
-
-                // centerButton.events.add('click', centerMapByPoints);
-                // map.controls.add(centerButton);
 
             } catch (error) {
                 console.error('Ошибка инициализации карты:', error);
             }
         });
     });
+
+    /**
+     * Обновляет точки на карте
+     * @param {Array} pointsToShow - Массив точек для отображения
+     */
+    function updateMapPoints(pointsToShow) {
+        if (!map || !clusterer) return;
+
+        // Очищаем карту
+        clusterer.removeAll();
+
+        // Создаем гео-объекты для каждой точки
+        geoObjects = pointsToShow.map(point => {
+            const directionName = directions.find(d => d.id === point.direction_id)?.name || '';
+
+            const placemark = new ymaps.Placemark([point.lat, point.lon], {
+                balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}<br>Направление: ${directionName}`,
+                // Добавляем дополнительные свойства для использования в шаблонах кластеров
+                clusterCaption: point.name,
+                value: point.value,
+                iconContent: point.value,
+                // Настраиваем внешний вид при наведении и нажатии
+                hintContent: point.name
+
+            }, {
+                // стиль метки
+                // preset: 'islands#circleIcon',
+                // iconColor: '#ff0000', // цвет круга
+
+                // Создаем круглую метку с числом внутри
+                iconLayout: 'default#imageWithContent',
+                iconImageHref: placemarkImage,
+                iconImageSize: [60, 60],
+                iconImageOffset: [-30, -52],
+                iconContentOffset: [30, -2],
+                iconContentLayout: ymaps.templateLayoutFactory.createClass(`
+    <div class="size-5 rounded-full flex items-center justify-center bg-white inset-ring inset-ring-[#F1F1EC] font-sans text-blue-900 font-black text-[0.5rem] leading-2.5">
+        $[properties.iconContent]
+    </div>
+`),
+            });
+
+            // Добавляем обработчики событий для метки
+            // placemark.events
+            //     .add('mouseenter', function () {
+            //         // Можно изменить размер метки при наведении
+            //         placemark.options.set('iconImageSize', [48, 48]);
+            //         placemark.options.set('iconImageOffset', [-24, -24]);
+            //     })
+            //     .add('mouseleave', function () {
+            //         // Возвращаем оригинальный размер
+            //         placemark.options.set('iconImageSize', [44, 44]);
+            //         placemark.options.set('iconImageOffset', [-22, -22]);
+            //     });
+
+            return placemark;
+        });
+
+        // Добавляем метки в кластеризатор
+        clusterer.add(geoObjects);
+        map.geoObjects.add(clusterer);
+
+        // Центрируем карту
+        centerMapByPoints();
+
+        // Обработчики событий
+        window.addEventListener('resize', updateMapSize);
+        document.addEventListener('sidebar:collapse:end', updateMapSize);
+
+        // Добавляем кнопку для центрирования карты
+        const centerButton = new ymaps.control.Button({
+            data: {
+                image: 'data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8C0 12.4 3.6 16 8 16C12.4 16 16 12.4 16 8C16 3.6 12.4 0 8 0ZM8 14C4.7 14 2 11.3 2 8C2 4.7 4.7 2 8 2C11.3 2 14 4.7 14 8C14 11.3 11.3 14 8 14Z" fill="%232856F6"/><circle cx="8" cy="8" r="4" fill="%232856F6"/></svg>',
+                title: 'Показать все точки'
+            }
+        }, { float: 'right' });
+
+        // centerButton.events.add('click', centerMapByPoints);
+        // map.controls.add(centerButton);
+    }
+
+    /**
+     * Возвращает цвет метки в зависимости от direction_id
+     * @param {number} directionId - ID направления
+     * @returns {string} - Цвет в формате hex
+     */
+    function getColorByDirectionId(directionId) {
+        switch (directionId) {
+            case 2: // DOOH
+                return '#2856F6';
+            case 3: // OOH
+                return '#28AF51';
+            case 4: // Медиафасады
+                return '#FFA500';
+            default:
+                return '#2856F6';
+        }
+    }
+
+    /**
+     * Центрирует карту по текущим точкам
+     */
+    function centerMapByPoints() {
+        if (!map || !clusterer || geoObjects.length === 0) return;
+
+        // Получаем границы кластеризатора
+        var bounds = clusterer.getBounds();
+
+        if (bounds) {
+            map.setBounds(bounds, {
+                checkZoomRange: true,
+                zoomMargin: 0,
+                // Добавляем плавную анимацию
+                duration: 300
+            });
+        }
+    }
+
+    // Функция для обновления размера карты
+    const updateMapSize = () => {
+        map.container.fitToViewport();
+        // После подгонки размера, пересчитываем центр и масштаб
+        centerMapByPoints();
+    };
 }
 
 /**
