@@ -35,7 +35,7 @@ function createMap(container, points = [], directions = []) {
     }
 
     // Находим фильтр для этой карты
-    const filterContainer = chartDom.closest('.card').querySelector('.filter'); // @TODO use ID
+    const filterContainer = chartDom.closest('.card').querySelector('.filter');
     const filterItems = filterContainer ? filterContainer.querySelectorAll('.filter__item') : [];
 
     // Текущие отфильтрованные точки
@@ -112,8 +112,8 @@ function createMap(container, points = [], directions = []) {
                         this.classList.add('filter__item_active');
 
                         // Получаем ID направления
-                        const directionId = this.dataset.directionId === "null" ? null : parseInt(this.dataset.directionId, 10);
-                        
+                        const directionId = this.dataset.directionId === "null" || !this.dataset.directionId ? null : parseInt(this.dataset.directionId, 10);
+
                         // Фильтруем точки
                         if (directionId === null) { // "Все"
                             filteredPoints = [...points];
@@ -194,7 +194,7 @@ function createMap(container, points = [], directions = []) {
         map.geoObjects.add(clusterer);
 
         // Центрируем карту
-        centerMapByPoints();
+        updateMapSize();
 
         // Обработчики событий
         window.addEventListener('resize', updateMapSize);
@@ -242,7 +242,7 @@ function createMap(container, points = [], directions = []) {
         if (bounds) {
             map.setBounds(bounds, {
                 checkZoomRange: true,
-                zoomMargin: 0,
+                zoomMargin: 40,
                 // Добавляем плавную анимацию
                 duration: 300
             });

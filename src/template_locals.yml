@@ -519,7 +519,7 @@ barChart:
 
 map:
   directions:
-    - id: null
+    - id:
       name: "Все"
     - id: 2
       name: "DOOH"
