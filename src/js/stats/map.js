@@ -113,6 +113,14 @@ function createMap(container, points = [], directions = [], platforms = []) {
                         onChange: (platformId) => {
                             currentPlatformId = platformId;
 
+                            // Получаем доступные направления для выбранного города
+                            const availableDirectionIds = getAvailableDirectionsForPlatform(platformId);
+
+                            // Устанавливаем enabled-состояние для доступных направлений
+                            if (directionFilter) {
+                                directionFilter.setAvailableDirections(availableDirectionIds);
+                            }
+
                             // Проверяем, есть ли точки с текущим направлением в выбранном городе
                             if (currentDirectionId !== null) {
                                 const hasPointsWithCurrentDirection = points.some(point =>
@@ -163,6 +171,29 @@ function createMap(container, points = [], directions = [], platforms = []) {
             }
         });
     });
+
+    /**
+     * Возвращает массив доступных ID направлений для выбранной платформы
+     * @param {number|null} platformId - ID платформы
+     * @returns {Array} - Массив доступных ID направлений
+     */
+    function getAvailableDirectionsForPlatform(platformId) {
+        // Если платформа не выбрана, возвращаем все направления
+        if (platformId === null) {
+            return directions.filter(d => d.id !== null && d.id !== undefined).map(d => d.id);
+        }
+
+        // Получаем уникальные ID направлений для выбранной платформы
+        const directionIds = new Set();
+
+        points.forEach(point => {
+            if (point.platform_id === platformId && point.direction_id !== null) {
+                directionIds.add(point.direction_id);
+            }
+        });
+
+        return Array.from(directionIds);
+    }
 
     /**
      * Обновляет точки на карте с учетом текущих фильтров
