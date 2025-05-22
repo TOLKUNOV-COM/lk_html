@@ -3,11 +3,17 @@ import { declension } from "../utils.js";
 
 export default function lineCharts() {
     document.querySelectorAll('[data-module="lineChart"]').forEach((el) => {
-        const categories = JSON.parse(el.dataset.categories || '[]');
-        const dataA = JSON.parse(el.dataset.dataA || '[]');
-        const dataB = JSON.parse(el.dataset.dataB || '[]');
+        let categories, dataA, dataB;
 
-        lineChart(el, categories, dataA, dataB);
+        try {
+            categories = JSON.parse(el.dataset.categories || '[]');
+            dataA = JSON.parse(el.dataset.dataA || '[]');
+            dataB = JSON.parse(el.dataset.dataB || '[]');
+        } catch (e) {
+            console.error(e);
+        } finally {
+            lineChart(el, categories, dataA, dataB);
+        }
     });
 }
 

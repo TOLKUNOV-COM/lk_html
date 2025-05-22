@@ -2,8 +2,15 @@ import * as echarts from 'echarts';
 
 export default function barCharts() {
     document.querySelectorAll('[data-module="barChart"]').forEach((el) => {
-        const data = JSON.parse(el.dataset.chart || '[]');
-        barChart(el, data);
+        let data;
+
+        try {
+            data = JSON.parse(el.dataset.chart || '[]');
+        } catch (e) {
+            console.error(e);
+        } finally {
+            barChart(el, data);
+        }
     });
 }
 

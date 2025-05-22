@@ -3,9 +3,15 @@ import { declension } from '../utils.js';
 
 export default function pieCharts() {
     document.querySelectorAll('[data-module="pieChart"]').forEach((el) => {
-        const data = JSON.parse(el.dataset.chart || '[]');
+        let data;
 
-        pieChart(el, data);
+        try {
+            data = JSON.parse(el.dataset.chart || '[]');
+        } catch (e) {
+            console.error(e);
+        } finally {
+            pieChart(el, data);
+        }
     });
 }
 
@@ -35,7 +41,7 @@ export function pieChart(container = 'pieChart', data = []) {
             ? ['75px', '125px']
             : ['53px', '91px'];
     };
-    
+
     // Функция для получения стилей текста в зависимости от ширины экрана
     const getTextStyles = () => {
         return window.matchMedia('(min-width: 90rem)').matches
@@ -164,7 +170,7 @@ export function pieChart(container = 'pieChart', data = []) {
     };
 
     myChart.setOption(option);
-    
+
     // Функция для обновления размера и радиуса графика
     const updateChart = () => {
         myChart.setOption({
@@ -181,7 +187,7 @@ export function pieChart(container = 'pieChart', data = []) {
         });
         myChart.resize();
     };
-    
+
     // Обработчик изменения размера окна
     window.addEventListener('resize', updateChart);
 

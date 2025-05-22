@@ -411,6 +411,12 @@ stats:
       name: Статика
       percent: 5.1%
     -
+      name: Вокзалы
+      percent: 2.5%
+    -
+      name: Аэропорты
+      percent: 5.1%
+    -
       name: OOH
       percent: 2.5%
     -
@@ -434,25 +440,25 @@ pieChart:
     percent: 24%
     name: Анимация
     itemStyle:
-      color: '#4C6FFF'
+      color: '#4A71F7'
 
   - value: 3
     percent: 8%
     name: Видео
     itemStyle:
-      color: '#AB67FE'
+      color: '#BC85FE'
 
   - value: 3
     percent: 8%
     name: 3D
     itemStyle:
-      color: 'rgba(224, 199, 254, 0.4)'
+      color: '#FED9DA'
 
   - value: 9
     percent: 30%
     name: Другое
     itemStyle:
-      color: 'rgba(237, 172, 172, 0.4)'
+      color: '#FEECEC'
     list:
       - label: Инфографика
         value: 2
