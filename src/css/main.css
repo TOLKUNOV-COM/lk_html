@@ -182,16 +182,16 @@ h3 {
 .segment-color {
     @apply text-white;
 
-    @apply nth-[1]:text-[#2856F6];
-    @apply nth-[2]:text-[#4A71F7];
-    @apply nth-[3]:text-[#BC85FE];
-    @apply nth-[4]:text-[#FF96EB];
-
     @apply nth-[5]:text-[#FC0];
     @apply nth-[6]:text-[#FD6832];
 
     @apply nth-last-[2]:text-[#FED9DA];
     @apply nth-last-[1]:text-[#FEECEC];
+
+    @apply nth-[1]:text-[#2856F6];
+    @apply nth-[2]:text-[#4A71F7];
+    @apply nth-[3]:text-[#BC85FE];
+    @apply nth-[4]:text-[#FF96EB];
 }
 
 .js-toggle-favorite {
