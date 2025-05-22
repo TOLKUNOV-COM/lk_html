@@ -99,7 +99,7 @@
 }
 
 .filter__item[disabled], .filter__item.disabled {
-    @apply cursor-not-allowed pointer-events-none;
+    @apply cursor-not-allowed;
     @apply text-slate-400;
 }
 
