@@ -431,31 +431,31 @@ lineChart:
   dataB: [10, 20, 40, 30, 50, 70, 60, 80]
 pieChart:
   - value: 21
-    percent: 61%
+    percent: 61
     name: Баннеры
     itemStyle:
       color: '#2856F6'
 
   - value: 8
-    percent: 24%
+    percent: 24
     name: Анимация
     itemStyle:
       color: '#4A71F7'
 
   - value: 3
-    percent: 8%
+    percent: 8
     name: Видео
     itemStyle:
       color: '#BC85FE'
 
   - value: 3
-    percent: 8%
+    percent: 8
     name: 3D
     itemStyle:
       color: '#FED9DA'
 
   - value: 9
-    percent: 30%
+    percent: 30
     name: Другое
     itemStyle:
       color: '#FEECEC'
