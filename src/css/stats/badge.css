@@ -2,8 +2,7 @@
     @apply flex items-center justify-center relative;
 
     /* Text */
-    @apply text-slate-400 font-serif font-bold leading-3.5 tracking-[0.117px];
-    font-size: 11.667px;
+    @apply text-slate-400 font-serif font-bold text-xs leading-7 tracking-[0.117px];
 
     /* Background */
     mask-image: url("../img/top_badge.svg");
