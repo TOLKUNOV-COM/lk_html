@@ -403,28 +403,28 @@ stats:
   directions:
     -
       name: HTML5
-      percent: 60.2%
+      percent: 60.2
     -
       name: Видео
-      percent: 40.2%
+      percent: 40.2
     -
       name: Статика
-      percent: 5.1%
+      percent: 5.1
     -
       name: Вокзалы
-      percent: 2.5%
+      percent: 2.5
     -
       name: Аэропорты
-      percent: 5.1%
+      percent: 5.1
     -
       name: OOH
-      percent: 2.5%
+      percent: 2.5
     -
       name: DOOH
-      percent: 1.7%
+      percent: 1.7
     -
       name: Медиафасады
-      percent: 10.7%
+      percent: 10.7
 lineChart:
   categories: ["ЯНВ", "ФЕВР", "МАРТ", "АПР", "МАЙ", "ИЮНЬ", "ИЮЛЬ", ""]
   dataA: [21, 32, 50, 40, 60, 80, 50, 80]
