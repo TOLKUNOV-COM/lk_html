@@ -1,5 +1,6 @@
 import '../css/main.css';
 
+import scroller from "@/js/scroller.js";
 import tabs from "./tabs.js";
 import sidebar from "./sidebar.js";
 import filters from "./filters.js";
@@ -11,6 +12,7 @@ import favoriteButton from "./favorite-button.js";
 import viewer from "./viewer.js";
 import initAllTouchScroll from "./touchScroll.js";
 
+scroller();
 tabs();
 sidebar();
 filters();
