@@ -187,8 +187,19 @@ function createMap(container, points = [], directions = [], platforms = []) {
         const directionIds = new Set();
 
         points.forEach(point => {
-            if (point.platform_id === platformId && point.direction_id !== null) {
-                directionIds.add(point.direction_id);
+            if (point.platform_id === platformId) {
+                // Проверяем, является ли direction_id массивом
+                if (Array.isArray(point.direction_id)) {
+                    // Добавляем каждый ID из массива
+                    point.direction_id.forEach(dirId => {
+                        if (dirId !== null) {
+                            directionIds.add(dirId);
+                        }
+                    });
+                } else if (point.direction_id !== null) {
+                    // Если direction_id не массив, добавляем его как обычно
+                    directionIds.add(point.direction_id);
+                }
             }
         });
 
@@ -203,11 +214,22 @@ function createMap(container, points = [], directions = [], platforms = []) {
 
         // Фильтруем точки по направлению и платформе
         filteredPoints = points.filter(point => {
-            // Проверка по направлению
-            const matchesDirection = currentDirectionId === null || point.direction_id === currentDirectionId;
-
             // Проверка по платформе
             const matchesPlatform = currentPlatformId === null || point.platform_id === currentPlatformId;
+            
+            // Проверка по направлению
+            let matchesDirection = false;
+            
+            if (currentDirectionId === null) {
+                // Если направление не выбрано, показываем все точки
+                matchesDirection = true;
+            } else if (Array.isArray(point.direction_id)) {
+                // Если direction_id - массив, проверяем наличие currentDirectionId в этом массиве
+                matchesDirection = point.direction_id.includes(currentDirectionId);
+            } else {
+                // Если direction_id - одиночное значение, сравниваем как раньше
+                matchesDirection = point.direction_id === currentDirectionId;
+            }
 
             // Точка должна соответствовать обоим фильтрам
             return matchesDirection && matchesPlatform;
