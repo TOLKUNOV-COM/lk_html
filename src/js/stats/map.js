@@ -240,12 +240,26 @@ function createMap(container, points = [], directions = [], platforms = []) {
 
         // Создаем гео-объекты для каждой точки
         geoObjects = filteredPoints.map(point => {
-            const directionName = directions.find(d => d.id === point.direction_id)?.name || '';
+            // Получаем имена направлений
+            let directionNames = '';
+            if (Array.isArray(point.direction_id)) {
+                // Если direction_id - массив, получаем имена всех направлений
+                directionNames = point.direction_id.map(dirId => {
+                    const dir = directions.find(d => d.id === dirId);
+                    return dir ? dir.name : '';
+                }).filter(Boolean).join(', ');
+            } else {
+                // Если direction_id - одиночное значение
+                const dir = directions.find(d => d.id === point.direction_id);
+                directionNames = dir ? dir.name : '';
+            }
+
             const platformName = platforms.find(p => p.id === point.platform_id)?.name || '';
 
             const placemark = new ymaps.Placemark([point.lat, point.lon], {
-                balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}<br>Направление: ${directionName}<br>Город: ${platformName}`,
-                // Добавляем дополнительные свойства для использования в шаблонах кластеров
+                // Полное содержимое для баллона кластера
+                balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}<br>Направление: ${directionNames}<br>Город: ${platformName}`,
+                // Добавляем дополнительные свойства для использования в шаблонах кластеров и балуна
                 clusterCaption: point.name,
                 value: point.value,
                 iconContent: point.value,
