@@ -384,4 +384,19 @@ html.with-fancybox .fancybox__slide {
 /*  }*/
 /*}*/
 
+.custom-balloon {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.ymaps-b-cluster-balloon__layout,
+.ymaps-b-balloon__layout,
+.ymaps-b-balloon {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
 @config "../../tailwind.config.js";
