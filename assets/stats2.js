@@ -1,4 +1,4 @@
-import"./main.js";import"./test.js";/*! *****************************************************************************
+/*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
 Permission to use, copy, modify, and/or distribute this software for any
