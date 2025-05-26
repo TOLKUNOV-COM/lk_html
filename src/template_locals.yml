@@ -554,30 +554,30 @@ map:
       value: 7
       direction_id: 2
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 12
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 18
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 25
-        - month: "АПР"
+        - label: "АПР"
           count: 15
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 30
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 35
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 40
-        - month: "АВГ"
+        - label: "АВГ"
           count: 28
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 22
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 20
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 16
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 14
     - 
       lat: 59.9502
@@ -586,30 +586,30 @@ map:
       value: 35
       direction_id: 3
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 45
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 52
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 60
-        - month: "АПР"
+        - label: "АПР"
           count: 48
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 65
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 70
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 80
-        - month: "АВГ"
+        - label: "АВГ"
           count: 75
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 55
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 42
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 38
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 35
     -
       lat: 59.933789
@@ -618,30 +618,30 @@ map:
       value: 8
       direction_id: 2
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 8
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 12
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 16
-        - month: "АПР"
+        - label: "АПР"
           count: 10
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 20
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 24
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 28
-        - month: "АВГ"
+        - label: "АВГ"
           count: 22
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 18
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 14
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 10
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 8
     - 
       lat: 59.9402
@@ -650,30 +650,30 @@ map:
       value: 3
       direction_id: 4
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 5
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 8
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 12
-        - month: "АПР"
+        - label: "АПР"
           count: 6
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 15
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 18
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 22
-        - month: "АВГ"
+        - label: "АВГ"
           count: 16
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 12
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 8
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 6
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 4
     - 
       lat: 59.9257
@@ -682,30 +682,30 @@ map:
       value: 15
       direction_id: 3
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 20
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 25
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 32
-        - month: "АПР"
+        - label: "АПР"
           count: 22
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 38
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 42
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 48
-        - month: "АВГ"
+        - label: "АВГ"
           count: 35
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 28
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 24
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 20
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 18
     - 
       lat: 59.9380
@@ -714,30 +714,30 @@ map:
       value: 4
       direction_id: 2
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 6
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 9
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 13
-        - month: "АПР"
+        - label: "АПР"
           count: 8
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 16
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 19
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 23
-        - month: "АВГ"
+        - label: "АВГ"
           count: 17
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 13
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 9
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 7
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 5
     - 
       lat: 59.9416
@@ -746,30 +746,30 @@ map:
       value: 9
       direction_id: 3
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 14
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 18
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 24
-        - month: "АПР"
+        - label: "АПР"
           count: 16
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 28
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 32
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 36
-        - month: "АВГ"
+        - label: "АВГ"
           count: 26
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 20
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 16
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 12
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 10
     - 
       lat: 59.9279
@@ -778,30 +778,30 @@ map:
       value: 7
       direction_id: 4
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 10
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 14
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 18
-        - month: "АПР"
+        - label: "АПР"
           count: 12
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 22
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 26
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 30
-        - month: "АВГ"
+        - label: "АВГ"
           count: 24
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 18
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 14
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 10
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 8
     - 
       lat: 59.9279
@@ -810,30 +810,30 @@ map:
       value: 5
       direction_id: 4
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 8
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 11
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 15
-        - month: "АПР"
+        - label: "АПР"
           count: 9
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 18
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 21
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 25
-        - month: "АВГ"
+        - label: "АВГ"
           count: 19
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 14
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 11
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 8
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 6
     -
       lat: 59.9340
@@ -842,30 +842,30 @@ map:
       value: 28
       direction_id: 3
       platform_id: 1
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 38
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 45
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 55
-        - month: "АПР"
+        - label: "АПР"
           count: 42
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 62
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 68
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 75
-        - month: "АВГ"
+        - label: "АВГ"
           count: 58
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 48
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 38
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 32
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 28
     -
       lat: 55.7539
@@ -874,30 +874,30 @@ map:
       value: 15
       direction_id: 3
       platform_id: 2
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 22
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 28
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 35
-        - month: "АПР"
+        - label: "АПР"
           count: 25
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 42
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 48
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 55
-        - month: "АВГ"
+        - label: "АВГ"
           count: 38
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 32
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 28
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 22
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 18
     -
       lat: 55.7522
@@ -906,30 +906,30 @@ map:
       value: 12
       direction_id: 2
       platform_id: 2
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 16
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 20
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 26
-        - month: "АПР"
+        - label: "АПР"
           count: 18
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 30
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 34
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 38
-        - month: "АВГ"
+        - label: "АВГ"
           count: 28
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 22
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 18
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 14
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 12
     -
       lat: 55.7614
@@ -938,30 +938,30 @@ map:
       value: 9
       direction_id: 4
       platform_id: 2
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 12
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 16
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 21
-        - month: "АПР"
+        - label: "АПР"
           count: 14
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 25
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 29
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 33
-        - month: "АВГ"
+        - label: "АВГ"
           count: 24
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 19
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 15
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 11
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 9
     -
       lat: 56.8389
@@ -970,30 +970,30 @@ map:
       value: 8
       direction_id: [3, 2]
       platform_id: 3
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 10
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 14
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 18
-        - month: "АПР"
+        - label: "АПР"
           count: 12
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 22
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 26
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 30
-        - month: "АВГ"
+        - label: "АВГ"
           count: 20
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 16
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 12
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 8
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 6
     -
       lat: 54.9833
@@ -1002,28 +1002,28 @@ map:
       value: 6
       direction_id: 2
       platform_id: 4
-      monthly_placements:
-        - month: "ЯНВ"
+      placements:
+        - label: "ЯНВ"
           count: 8
-        - month: "ФЕВР"
+        - label: "ФЕВР"
           count: 11
-        - month: "МАРТ"
+        - label: "МАРТ"
           count: 15
-        - month: "АПР"
+        - label: "АПР"
           count: 9
-        - month: "МАЙ"
+        - label: "МАЙ"
           count: 18
-        - month: "ИЮНЬ"
+        - label: "ИЮНЬ"
           count: 21
-        - month: "ИЮЛЬ"
+        - label: "ИЮЛЬ"
           count: 25
-        - month: "АВГ"
+        - label: "АВГ"
           count: 16
-        - month: "СЕНТ"
+        - label: "СЕНТ"
           count: 12
-        - month: "ОКТ"
+        - label: "ОКТ"
           count: 9
-        - month: "НОЯБ"
+        - label: "НОЯБ"
           count: 6
-        - month: "ДЕК"
+        - label: "ДЕК"
           count: 4

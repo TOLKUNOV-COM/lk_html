@@ -239,14 +239,14 @@ function createMap(container, points = [], directions = [], platforms = []) {
         balloonTitle.textContent = point.name;
 
         // Получаем максимальное значение для расчета ширины полосок
-        const maxCount = Math.max(...(point.monthly_placements || []).map(item => item.count));
+        const maxCount = Math.max(...(point.placements || []).map(item => item.count));
 
         // Генерируем HTML для месячных данных
-        const monthlyHTML = (point.monthly_placements || []).map(item => {
+        const monthlyHTML = (point.placements || []).map(item => {
             let widthPercent = maxCount > 0 ? (item.count / maxCount) * 100 : 0;
 
             return `
-                <div>${item.month}</div>
+                <div>${item.label}</div>
                 <div class="h-full rounded-lg border border-map-bar/4 bg-map-bar/10 snap-start" style="width: ${widthPercent.toFixed(2)}%;"></div>
                 <div class="text-blue-900">${item.count}</div>
             `;
