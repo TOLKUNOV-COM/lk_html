@@ -238,6 +238,7 @@ function createMap(container, points = [], directions = [], platforms = []) {
         // Устанавливаем заголовок с обработкой вертикальной черты
         const titleWithBreaks = point.name.replace(/ \| /g, '<br>');
         balloonTitle.innerHTML = titleWithBreaks;
+        balloonTitle.title = point.name;
 
         // Получаем максимальное значение для расчета ширины полосок
         const maxCount = Math.max(...(point.placements || []).map(item => item.count));
