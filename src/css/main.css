@@ -48,6 +48,7 @@
     --shadow-sidebar-menu-active: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
     --shadow-content-block: 0px 2px 14px 0px rgba(80, 113, 246, 0.06);
     --shadow-projects-grid-hover: 0px 4px 12px 0px rgba(34, 34, 34, 0.04);
+    --shadow-map: 0px 2px 8px 0px rgba(33, 37, 75, 0.11);
 
     --color-amber-50: #FFFBEB;
 
@@ -100,6 +101,8 @@
     --color-star-empty-default: var(--color-slate-500);
     --color-star-empty-hover: var(--color-gold);
     --color-star-empty-active: var(--color-gold);
+
+    --color-map-bar: rgb(40, 86, 246);
 
     --default-transition-duration: 200ms;
 

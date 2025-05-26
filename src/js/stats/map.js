@@ -50,6 +50,19 @@ function createMap(container, points = [], directions = [], platforms = []) {
     let directionFilter = null;
     let platformFilter = null;
 
+    // Элементы балуна
+    const mapBalloon = chartDom.closest('.map-container').querySelector('#mapBalloon');
+    const balloonTitle = mapBalloon?.querySelector('#balloonTitle');
+    const monthlyDataContainer = mapBalloon?.querySelector('#monthlyData');
+    const closeBalloonButton = mapBalloon?.querySelector('#closeBalloon');
+
+    // Обработчик закрытия балуна
+    if (closeBalloonButton && mapBalloon) {
+        closeBalloonButton.addEventListener('click', () => {
+            hideBalloon();
+        });
+    }
+
     // Загружаем API Яндекс Карт, если не загружен
     loadYandexMapsApi().then(() => {
         ymaps.ready(() => {
@@ -79,6 +92,15 @@ function createMap(container, points = [], directions = [], platforms = []) {
                     if (isScrollEnabled) {
                         map.behaviors.disable('scrollZoom');
                         isScrollEnabled = false;
+                    }
+                });
+
+                // Закрываем балун при клике на карту
+                map.events.add('click', (e) => {
+                    // Проверяем, что клик был именно на карте, а не на объекте
+                    const target = e.get('target');
+                    if (target === map && mapBalloon) {
+                        hideBalloon();
                     }
                 });
 
@@ -207,6 +229,49 @@ function createMap(container, points = [], directions = [], platforms = []) {
     }
 
     /**
+     * Показывает балун с данными о размещениях по месяцам
+     * @param {Object} point - Данные точки
+     */
+    function showBalloon(point) {
+        if (!mapBalloon || !balloonTitle || !monthlyDataContainer) return;
+
+        // Устанавливаем заголовок
+        balloonTitle.textContent = point.name;
+
+        // Получаем максимальное значение для расчета ширины полосок
+        const maxCount = Math.max(...(point.monthly_placements || []).map(item => item.count));
+
+        // Генерируем HTML для месячных данных
+        const monthlyHTML = (point.monthly_placements || []).map(item => {
+            let widthPercent = maxCount > 0 ? (item.count / maxCount) * 100 : 0;
+
+            return `
+                <div>${item.month}</div>
+                <div class="h-full rounded-lg border border-map-bar/4 bg-map-bar/10 snap-start" style="width: ${widthPercent.toFixed(2)}%;"></div>
+                <div class="text-blue-900">${item.count}</div>
+            `;
+        }).join('');
+
+        monthlyDataContainer.innerHTML = monthlyHTML;
+
+        // Показываем балун с анимацией
+        mapBalloon.dataset.state = 'visible';
+        mapBalloon.classList.remove('opacity-0', '-translate-x-8', 'scale-95', 'pointer-events-none');
+        mapBalloon.classList.add('opacity-100', 'translate-x-0', 'scale-100', 'pointer-events-auto');
+    }
+
+    /**
+     * Скрывает балун с анимацией
+     */
+    function hideBalloon() {
+        if (!mapBalloon) return;
+
+        mapBalloon.dataset.state = 'hidden';
+        mapBalloon.classList.remove('opacity-100', 'translate-x-0', 'scale-100', 'pointer-events-auto');
+        mapBalloon.classList.add('opacity-0', '-translate-x-8', 'scale-95', 'pointer-events-none');
+    }
+
+    /**
      * Обновляет точки на карте с учетом текущих фильтров
      */
     function updateMapPoints() {
@@ -216,10 +281,10 @@ function createMap(container, points = [], directions = [], platforms = []) {
         filteredPoints = points.filter(point => {
             // Проверка по платформе
             const matchesPlatform = currentPlatformId === null || point.platform_id === currentPlatformId;
-            
+
             // Проверка по направлению
             let matchesDirection = false;
-            
+
             if (currentDirectionId === null) {
                 // Если направление не выбрано, показываем все точки
                 matchesDirection = true;
@@ -241,36 +306,36 @@ function createMap(container, points = [], directions = [], platforms = []) {
         // Создаем гео-объекты для каждой точки
         geoObjects = filteredPoints.map(point => {
             // Получаем имена направлений
-            let directionNames = '';
-            if (Array.isArray(point.direction_id)) {
-                // Если direction_id - массив, получаем имена всех направлений
-                directionNames = point.direction_id.map(dirId => {
-                    const dir = directions.find(d => d.id === dirId);
-                    return dir ? dir.name : '';
-                }).filter(Boolean).join(', ');
-            } else {
-                // Если direction_id - одиночное значение
-                const dir = directions.find(d => d.id === point.direction_id);
-                directionNames = dir ? dir.name : '';
-            }
+            // let directionNames = '';
+            // if (Array.isArray(point.direction_id)) {
+            //     // Если direction_id - массив, получаем имена всех направлений
+            //     directionNames = point.direction_id.map(dirId => {
+            //         const dir = directions.find(d => d.id === dirId);
+            //         return dir ? dir.name : '';
+            //     }).filter(Boolean).join(', ');
+            // } else {
+            //     // Если direction_id - одиночное значение
+            //     const dir = directions.find(d => d.id === point.direction_id);
+            //     directionNames = dir ? dir.name : '';
+            // }
 
             const platformName = platforms.find(p => p.id === point.platform_id)?.name || '';
 
             const placemark = new ymaps.Placemark([point.lat, point.lon], {
                 // Полное содержимое для баллона кластера
-                balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}<br>Направление: ${directionNames}<br>Город: ${platformName}`,
+                // balloonContent: `<strong>${point.name}</strong><br>Количество: ${point.value}<br>Направление: ${directionNames}<br>Город: ${platformName}`,
                 // Добавляем дополнительные свойства для использования в шаблонах кластеров и балуна
                 clusterCaption: point.name,
                 value: point.value,
                 iconContent: point.value,
+                // Для кастомного балуна
+                // pointName: point.name,
+                // pointValue: point.value,
+                // directionNames: directionNames,
+                // platformName: platformName,
                 // Настраиваем внешний вид при наведении и нажатии
                 hintContent: point.name
-
             }, {
-                // стиль метки
-                // preset: 'islands#circleIcon',
-                // iconColor: '#ff0000', // цвет круга
-
                 // Создаем круглую метку с числом внутри
                 iconLayout: 'default#imageWithContent',
                 iconImageHref: placemarkImage,
@@ -282,6 +347,9 @@ function createMap(container, points = [], directions = [], platforms = []) {
         $[properties.iconContent]
     </div>
 `),
+                // Отключаем стандартный балун
+                balloonPanelMaxMapArea: 0,
+                hideIconOnBalloonOpen: false
             });
 
             // Добавляем обработчики событий для метки
@@ -296,6 +364,11 @@ function createMap(container, points = [], directions = [], platforms = []) {
             //         placemark.options.set('iconImageSize', [44, 44]);
             //         placemark.options.set('iconImageOffset', [-22, -22]);
             //     });
+
+            // Добавляем обработчик клика для показа балуна
+            placemark.events.add('click', function () {
+                showBalloon(point);
+            });
 
             return placemark;
         });

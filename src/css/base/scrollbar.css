@@ -45,6 +45,10 @@
     @apply mb-4;
 }
 
+.scrollbar-track-mb-3::-webkit-scrollbar-track {
+    @apply mb-3;
+}
+
 .scrollbar-track-main::-webkit-scrollbar-track {
     will-change: scroll-position;
 

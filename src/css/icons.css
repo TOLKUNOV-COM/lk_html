@@ -121,3 +121,11 @@
     mask-image: url("../img/check.svg");
     background-color: currentColor;
 }
+
+.icon-placemark {
+    background-image: url("../img/placemark.webp");
+}
+
+.icon-close-small {
+    background-image: url("../img/close_small.svg");
+}
