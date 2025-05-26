@@ -235,8 +235,9 @@ function createMap(container, points = [], directions = [], platforms = []) {
     function showBalloon(point) {
         if (!mapBalloon || !balloonTitle || !monthlyDataContainer) return;
 
-        // Устанавливаем заголовок
-        balloonTitle.textContent = point.name;
+        // Устанавливаем заголовок с обработкой вертикальной черты
+        const titleWithBreaks = point.name.replace(/ \| /g, '<br>');
+        balloonTitle.innerHTML = titleWithBreaks;
 
         // Получаем максимальное значение для расчета ширины полосок
         const maxCount = Math.max(...(point.placements || []).map(item => item.count));

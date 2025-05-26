@@ -51,12 +51,16 @@
     transform: translateY(-20px);
     transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
     z-index: 20;
+
+    @apply pointer-events-none;
 }
 
 .map__platform_open .map__platform-dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+
+    @apply pointer-events-auto;
 }
 
 .map__platform-list {

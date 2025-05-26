@@ -774,7 +774,7 @@ map:
     - 
       lat: 59.9279
       lon: 30.3621
-      name: "БЦ Московский, офис 301"
+      name: "БЦ Московский | офис 301"
       value: 7
       direction_id: 4
       platform_id: 1
@@ -806,7 +806,7 @@ map:
     - 
       lat: 59.9279
       lon: 30.3621
-      name: "БЦ Московский, офис 302"
+      name: "БЦ Московский | офис 302"
       value: 5
       direction_id: 4
       platform_id: 1
