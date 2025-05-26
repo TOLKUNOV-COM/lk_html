@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/img/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ЛК TOLKUNOV</title>
+</head>
+<body class="overflow-hidden">
+
+<div class="flex gap-6 h-screen bg-slate-50 p-3 pl-5">
+    <!-- Sidebar -->
+    {{> sidebar }}
+
+    <!-- Main content -->
+    <main class="flex-1 bg-white rounded-[1.25rem] 2xl:rounded-3xl shadow-content-block border border-slate-100 overflow-hidden flex flex-col pr-1.5">
+        <!-- Прокручиваемая часть -->
+        <div class="overflow-hidden overflow-y-auto relative flex-1 scrollbar scrollbar-y scrollbar-track-main p-5 2xl:p-6 pr-2 2xl:pr-3" data-scroll-id="stats">
+
+            <!-- CTA -->
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Небольшой срок</p>
+
+            <!-- Может выводиться, когда меньше 1 года сотрудничества -->
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-img-points"></div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Начало положено!</p>
+                    <p class="text-slate-500 text-xs font-medium leading-4 tracking-wide">Посмотрим, сколько всего классного мы сделаем вместе</p>
+                </div>
+
+                <a href="#" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-projects-solid size-4 text-white"></i>
+                    <span>К проектам</span>
+                </a>
+            </div>
+
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Когда есть какой-либо срок (думаю от года)</p>
+
+            <!-- Плашка, когда больше 1 года сотрудничества -->
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number">
+                        <div class="cta-number__value">>1</div>
+                        <div class="cta-number__unit">года</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Уже больше года вместе — это ли не любовь? Спасибо, что вы с нами!</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number">
+                        <div class="cta-number__value">>5</div>
+                        <div class="cta-number__unit">лет</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">5 лет счастливы вместе. Ценим ваше доверие!</p>
+                </div>
+            </div>
+
+            <!-- Плашка, когда больше 5 лет сотрудничества -->
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number">
+                        <div class="cta-number__value">5</div>
+                        <div class="cta-number__unit">лет</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">5 лет вместе. Нам нравится с вами работать. Надеемся, это взаимно.</p>
+                </div>
+            </div>
+
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Рекордные месяцы/много проектов</p>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number">
+                        <div class="cta-number__unit z-[2] bottom-[30px] left-[45%]">реко-</div>
+                        <div class="cta-number__unit z-[1] bottom-[15px] left-[60%]">о-о-рд!</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">В январе поставили рекорд по проектам. Повторим? ;)</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Мало проектов/низкая активность</p>
+
+            <!-- Должен выводиться, когда не было проектов последние 2 месяца -->
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-img-founder"></div>
+
+                    <div class="size-6 cta-icon cta-icon-face-sad absolute bottom-0 -right-1"></div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Ой-ой-ой, у нас давно не было проектов...</p>
+                    <p class="text-slate-500 text-xs font-medium leading-4 tracking-wide">Поработаем вместе снова?</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+            <!-- Может выводиться когда есть проекты за последние 2 месяца -->
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-img-founder"></div>
+
+                    <div class="size-6 cta-icon cta-icon-face-happy absolute bottom-0 -right-1"></div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Псс... Как насчёт баннеров?</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number">
+                        <div class="cta-img-cube absolute top-0 left-0 w-[61px] h-[56px]"></div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Если вдруг хочется что-то обновить — мы уже готовы!</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number">
+                        <div class="cta-img-cube absolute top-0 left-0 w-[61px] h-[56px]"></div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Обновим что-нибудь? Мы всегда готовы!</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number">
+                        <div class="cta-img-cube absolute top-0 left-0 w-[61px] h-[56px]"></div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Попробуем другие площадки? </p>
+                    <p class="text-slate-500 text-xs font-medium leading-4 tracking-wide">Без проблем адаптируем баннеры под любой формат</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Много ресайзов</p>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 cta-icon cta-icon-face-surprised"></div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Ничего себе! Такой поток — это уже дизайн-конвейер. Мы справляемся :)</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number cta-number_small">
+                        <div class="cta-number__value">400</div>
+                        <div class="cta-number__unit">ресайзов</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Сделали уже x00 ресайзов. И это не предел!</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Сделать еще</span>
+                </a>
+            </div>
+
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Мало ресайзов</p>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 cta-icon cta-icon-face-happy"></div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Если что, мы тут и готовы помочь!</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Круглые цифры</p>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number cta-number_small">
+                        <div class="cta-number__value">100</div>
+                        <div class="cta-number__unit">проектов</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Сделали вместе 100 проектов. Это круто!</p>
+                    <p class="text-slate-500 text-xs font-medium leading-4 tracking-wide">Спасибо за доверие 💙</p>
+                </div>
+            </div>
+
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Много площадок</p>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number cta-number_small">
+                        <div class="cta-number__value">>30</div>
+                        <div class="cta-number__unit">площадок</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Ого! Больше 30 площадок — это настоящая медийная экспансия 💪</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number cta-number_small">
+                        <div class="cta-number__value">>30</div>
+                        <div class="cta-number__unit">площадок</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Ваша реклама почти на каждом шагу, круто!</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 rounded-full cta-number cta-number_small">
+                        <div class="cta-number__value">>30</div>
+                        <div class="cta-number__unit">площадок</div>
+                    </div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">На каких площадках вас только нет! Так держать</p>
+                </div>
+            </div>
+
+
+            <p class="text-blue-900 font-medium leading-5 tracking-[0.32px] mb-2">Мало площадок</p>
+
+            <div class="flex items-center gap-4 p-2 pr-4 bg-slate-50 rounded-full box-content min-h-14 mb-5 2xl:mb-6 cta">
+                <div class="size-14 relative">
+                    <div class="size-14 cta-icon cta-icon-face-surprised"></div>
+                </div>
+
+                <div class="flex-1 space-y-1">
+                    <p class="text-blue-900 text-base font-medium leading-5 tracking-[0.32px]">Площадок пока маловато. Но всегда можно расшириться. Обращайтесь!</p>
+                </div>
+
+                <a href="https://t.me/tolkunovdb" target="_blank"
+                   class="h-10 bg-blue-600 hover:bg-blue-650 active:bg-blue-700 rounded-full px-4 flex items-center gap-2 text-slate-50 text-sm font-bold leading-4.5 tracking-[0.14px]">
+                    <i class="icon icon-telegram size-4.5 text-white"></i>
+                    <span>Обсудить проект</span>
+                </a>
+            </div>
+
+            <!-- CTA -->
+        </div>
+    </main>
+</div>
+
+{{> sprite }}
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script type="module" src="/js/test.js"></script>
+<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/stats.js"></script>
+</body>
+</html>

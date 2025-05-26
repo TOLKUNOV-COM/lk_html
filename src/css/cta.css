@@ -1,0 +1,48 @@
+.cta {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 76px;
+        height: 10px;
+        background-image: url("../img/cta/cta_arrow.svg");
+        background-size: cover;
+    }
+}
+.cta-img-points {
+    background-image: url("../img/cta/points.webp");
+    background-size: contain;
+}
+
+.cta-img-founder {
+    background-image: url("../img/cta/TOLKUNOV.webp");
+    background-size: contain;
+}
+
+.cta-icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cta-icon-face-sad {
+    background-image: url("../img/cta/icons/face_sad.svg");
+}
+
+.cta-icon-face-happy {
+    background-image: url("../img/cta/icons/face_happy.svg");
+}
+
+.cta-icon-face-surprised {
+    background-image: url("../img/cta/icons/face_surprised.svg");
+}
+
+.cta-img-cube {
+    background-image: url("../img/cta/cube.webp");
+    background-size: contain;
+    width: 122px;
+    height: 112px;
+}

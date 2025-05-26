@@ -10,7 +10,8 @@
 
 
 .icon-telegram {
-    background-image: url("../img/telegram.svg");
+    mask-image: url("../img/telegram.svg");
+    background-color: currentColor;
 }
 
 .icon-logo {
@@ -128,4 +129,9 @@
 
 .icon-close-small {
     background-image: url("../img/close_small.svg");
+}
+
+.icon-projects-solid {
+    mask-image: url("../img/projects_solid.svg");
+    background-color: currentColor;
 }

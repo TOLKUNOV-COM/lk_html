@@ -51,6 +51,7 @@ export default defineConfig({
                 empty_search: path.resolve(__dirname, './src/empty_search.html'),
                 empty_favorites: path.resolve(__dirname, './src/empty_favorites.html'),
                 stats: path.resolve(__dirname, './src/stats.html'),
+                stats_cta: path.resolve(__dirname, './src/stats_cta.html'),
 
                 test: path.resolve(__dirname, './src/js/test.js'),
             },
