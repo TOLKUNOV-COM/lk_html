@@ -4,7 +4,7 @@
         <div class="map__platform" id="mapPlatformFilter">
             <button class="map__platform-current">Санкт-Петербург</button>
             <div class="map__platform-dropdown">
-                <ul class="map__platform-list">
+                <ul class="map__platform-list scrollbar scrollbar-y">
                     {{#each map.platforms}}
                     <li class="map__platform-item {{#if @first}}map__platform-item_active{{/if}}" data-platform-id="{{this.id}}">
                         <span class="flex-1">{{this.name}}</span>

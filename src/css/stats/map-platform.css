@@ -44,8 +44,7 @@
 
     @apply bg-white rounded-2xl shadow-map;
 
-    padding: 8px;
-    /*min-width: 180px;*/
+    @apply p-2 pr-1;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
@@ -66,6 +65,9 @@
 .map__platform-list {
     @apply list-none m-0 p-0;
     @apply flex flex-col gap-2;
+
+    @apply max-h-[calc(44px*6+8px*5)] overflow-y-auto pr-1;
+    @apply snap-y snap-always;
 }
 
 .map__platform-item {
@@ -78,6 +80,7 @@
     white-space: nowrap;
 
     @apply flex flex-nowrap gap-3;
+    @apply snap-start;
 }
 
 .map__platform-item .icon {
