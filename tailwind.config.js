@@ -8,6 +8,7 @@ module.exports = {
         'text-gold',
         'text-orange-400',
         'text-orange-500',
+        'invisible',
     ],
     theme: {
         fontFamily: {
