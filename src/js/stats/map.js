@@ -135,6 +135,9 @@ function createMap(container, points = [], directions = [], platforms = []) {
                         onChange: (platformId) => {
                             currentPlatformId = platformId;
 
+                            // Закрываем балун при изменении платформы
+                            hideBalloon();
+
                             // Получаем доступные направления для выбранного города
                             const availableDirectionIds = getAvailableDirectionsForPlatform(platformId);
 
@@ -183,6 +186,10 @@ function createMap(container, points = [], directions = [], platforms = []) {
                         directions: directions,
                         onChange: (directionId) => {
                             currentDirectionId = directionId;
+                            
+                            // Закрываем балун при изменении направления
+                            hideBalloon();
+                            
                             updateMapPoints();
                         }
                     });
