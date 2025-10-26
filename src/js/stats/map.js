@@ -235,31 +235,47 @@ function createMap(container, points = [], directions = [], platforms = []) {
     function showBalloon(point) {
         if (!mapBalloon || !balloonTitle || !monthlyDataContainer) return;
 
-        // Устанавливаем заголовок с обработкой вертикальной черты
-        const titleWithBreaks = point.name.replace(/ \| /g, '<br>');
-        balloonTitle.innerHTML = titleWithBreaks;
-        balloonTitle.title = point.name;
+        // Проверяем, открыт ли уже балун
+        const isVisible = mapBalloon.dataset.state === 'visible';
 
-        // Получаем максимальное значение для расчета ширины полосок
-        const maxCount = Math.max(...(point.placements || []).map(item => item.count));
+        // Функция для установки контента и показа балуна
+        const displayBalloon = () => {
+            // Устанавливаем заголовок с обработкой вертикальной черты
+            const titleWithBreaks = point.name.replace(/ \| /g, '<br>');
+            balloonTitle.innerHTML = titleWithBreaks;
+            balloonTitle.title = point.name;
 
-        // Генерируем HTML для месячных данных
-        const monthlyHTML = (point.placements || []).map(item => {
-            let widthPercent = maxCount > 0 ? (item.count / maxCount) * 100 : 0;
+            // Получаем максимальное значение для расчета ширины полосок
+            const maxCount = Math.max(...(point.placements || []).map(item => item.count));
 
-            return `
-                <div>${item.label}</div>
-                <div class="h-full rounded-lg border border-map-bar/4 bg-map-bar/10 snap-start" style="width: ${widthPercent.toFixed(2)}%;"></div>
-                <div class="text-blue-900">${item.count}</div>
-            `;
-        }).join('');
+            // Генерируем HTML для месячных данных
+            const monthlyHTML = (point.placements || []).map(item => {
+                let widthPercent = maxCount > 0 ? (item.count / maxCount) * 100 : 0;
 
-        monthlyDataContainer.innerHTML = monthlyHTML;
+                return `
+                    <div>${item.label}</div>
+                    <div class="h-full rounded-lg border border-map-bar/4 bg-map-bar/10 snap-start" style="width: ${widthPercent.toFixed(2)}%;"></div>
+                    <div class="text-blue-900">${item.count}</div>
+                `;
+            }).join('');
 
-        // Показываем балун с анимацией
-        mapBalloon.dataset.state = 'visible';
-        mapBalloon.classList.remove('opacity-0', '-translate-x-8', 'scale-95', 'pointer-events-none');
-        mapBalloon.classList.add('opacity-100', 'translate-x-0', 'scale-100', 'pointer-events-auto');
+            monthlyDataContainer.innerHTML = monthlyHTML;
+
+            // Показываем балун с анимацией
+            mapBalloon.dataset.state = 'visible';
+            mapBalloon.classList.remove('opacity-0', '-translate-x-8', 'scale-95', 'pointer-events-none');
+            mapBalloon.classList.add('opacity-100', 'translate-x-0', 'scale-100', 'pointer-events-auto');
+        };
+
+        if (isVisible) {
+            // Если балун уже открыт, сначала закрываем его
+            hideBalloon();
+            // Ждем завершения анимации закрытия (300ms) перед открытием с новым контентом
+            setTimeout(displayBalloon, 150);
+        } else {
+            // Если балун закрыт, просто показываем его
+            displayBalloon();
+        }
     }
 
     /**
