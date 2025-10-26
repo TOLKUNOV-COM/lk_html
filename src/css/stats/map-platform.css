@@ -68,6 +68,11 @@
 
     @apply max-h-[calc(44px*6+8px*5)] overflow-y-auto pr-1;
     @apply snap-y snap-always;
+
+    &::-webkit-scrollbar-track {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
 }
 
 .map__platform-item {
