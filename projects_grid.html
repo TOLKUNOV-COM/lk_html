@@ -152,7 +152,7 @@
                         type="submit"
                         class="absolute top-1/2 right-[6px] -translate-y-1/2 size-10 flex items-center justify-center cursor-pointer rounded-full bg-blue-600 transition hover:bg-blue-650 active:bg-blue-700"
                 >
-                    <span class="icon icon-search size-4"></span>
+                    <span class="icon icon-search text-white size-4"></span>
                 </button>
             </form>
 
@@ -920,7 +920,7 @@
                 </div>
             </div>
 
-            <div class="filters filters_collapsed">
+            <div class="filters <!--filters_collapsed-->">
                 <div class="flex items-center gap-5 m-6">
                     <span class="flex-1 text-blue-900 font-serif text-2xl font-bold leading-[normal]">Фильтры</span>
             
@@ -934,7 +934,9 @@
             
                     <div class="filters__body">
                         <div class="filter">
-                            <p class="filter__name">Год</p>
+                            <div class="filter__header">
+                                <p class="filter__name">Год</p>
+                            </div>
             
                             <div class="filter__items">
                                 <a href="#" class="filter__item filter__item_active">2025</a>
@@ -952,7 +954,9 @@
                         </div>
             
                         <div class="filter">
-                            <p class="filter__name">Направление</p>
+                            <div class="filter__header">
+                                <p class="filter__name">Направление</p>
+                            </div>
             
                             <div class="filter__items">
                                 <a href="#" class="filter__item">Web</a>
@@ -963,7 +967,19 @@
                         </div>
             
                         <div class="filter">
-                            <p class="filter__name">Тип материала</p>
+                            <div class="filter__header">
+                                <p class="filter__name">Тип материала</p>
+            
+                                <div class="filter-search">
+                                    <!-- Лупа слева -->
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none filter-search__icon">
+                                        <i class="icon icon-search size-3.5 text-slate-400 m-[3px] transition-colors"></i>
+                                    </span>
+            
+                                    <!-- Поле -->
+                                    <input type="search" placeholder="Поиск" class="filter-search__input" aria-label="Поиск"/>
+                                </div>
+                            </div>
             
                             <div class="filter__items">
                                 <a href="#" class="filter__item">HTML5</a>
@@ -978,8 +994,13 @@
                                 <a href="#" class="filter__item">Email</a>
                                 <a href="#" class="filter__item filter__item_expand">+6</a>
                                 <a href="#" class="filter__item hidden">Иллюстрации</a>
+                                <a href="#" class="filter__item hidden">Посты1</a>
+                                <a href="#" class="filter__item hidden">Посты2</a>
+                                <a href="#" class="filter__item hidden">Посты3</a>
+                                <a href="#" class="filter__item hidden">Посты4</a>
+                                <a href="#" class="filter__item hidden">Посты5</a>
                                 <a href="#" class="filter__item hidden">Графический дизайн</a>
-                                <a href="#" class="filter__item hidden">Smm</a>
+                                <a href="#" class="filter__item hidden">SMM</a>
                                 <a href="#" class="filter__item hidden">Ux/Ui</a>
                                 <a href="#" class="filter__item hidden">Посадочные страницы</a>
                                 <a href="#" class="filter__item filter__item_collapse hidden">
@@ -989,7 +1010,19 @@
                         </div>
             
                         <div class="filter">
-                            <p class="filter__name">Площадки</p>
+                            <div class="filter__header">
+                                <p class="filter__name">Площадки</p>
+            
+                                <div class="filter-search">
+                                    <!-- Лупа слева -->
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none filter-search__icon">
+                                        <i class="icon icon-search size-3.5 text-slate-400 m-[3px] transition-colors"></i>
+                                    </span>
+            
+                                    <!-- Поле -->
+                                    <input type="search" placeholder="Поиск" class="filter-search__input" aria-label="Поиск"/>
+                                </div>
+                            </div>
             
                             <div class="filter__items">
                                 <a href="#" class="filter__item">Все</a>
@@ -1008,7 +1041,19 @@
                         </div>
             
                         <div class="filter">
-                            <p class="filter__name">Размеры</p>
+                            <div class="filter__header">
+                                <p class="filter__name">Размеры</p>
+            
+                                <div class="filter-search">
+                                    <!-- Лупа слева -->
+                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none filter-search__icon">
+                                        <i class="icon icon-search size-3.5 text-slate-400 m-[3px] transition-colors"></i>
+                                    </span>
+            
+                                    <!-- Поле -->
+                                    <input type="search" placeholder="Поиск" class="filter-search__input" aria-label="Поиск"/>
+                                </div>
+                            </div>
             
                             <div class="filter__items">
                                 <a href="#" class="filter__item">300×600</a>
