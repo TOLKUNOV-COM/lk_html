@@ -13,6 +13,7 @@
 @import "forms.css" layer(components);
 @import "action-buttons.css" layer(components);
 @import "filters.css" layer(components);
+@import "filter-search.css" layer(components);
 @import "icons.css" layer(components);
 @import "icons_docs.css" layer(components);
 @import "links-popup.css" layer(components);
@@ -67,6 +68,7 @@
     --color-pink-50: #FEECEC;
     --color-pink-300: #FF96EB;
 
+    --color-slate-40: #F8F9FC;
     --color-slate-50: #F4F6FA;
     --color-slate-100: #EFF2F7;
     --color-slate-140: #ECEFF6; /* old 150 */
@@ -75,6 +77,8 @@
     --color-slate-175: #E9ECF3;
     --color-slate-240: #DFE4EC; /* old 200 */
     --color-slate-250: #E2E6EE; /* new 200 */
+    --color-slate-260: #D2D9E7;
+    --color-slate-270: #D9E0ED;
     --color-slate-300: #C7CDE0;
     --color-slate-400: #ABB1C4;
     --color-slate-500: #6E7185;
@@ -107,6 +111,8 @@
     --color-map-bar: rgb(40, 86, 246);
 
     --default-transition-duration: 200ms;
+
+    --radius-20: 20px;
 
     /*--breakpoint-sm: 640px;*/
     /*--breakpoint-md: 768px;*/

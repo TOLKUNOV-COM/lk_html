@@ -31,7 +31,7 @@
 }
 
 .filters__body {
-    @apply flex flex-col gap-6 p-6 pt-0;
+    @apply flex flex-col gap-6 p-6 pt-0 pr-4;
 }
 
 .filters__top, .filters__bottom {
@@ -74,11 +74,15 @@
 }
 
 .filter {
+    @apply p-5;
+    @apply rounded-20;
+    @apply bg-slate-40;
+
+    @apply flex flex-col gap-4;
 }
 
 .filter__name {
-    @apply text-slate-400 text-sm font-bold leading-4.5 tracking-[0.14px];
-    @apply mb-3;
+    @apply text-blue-900 font-sans text-base font-bold leading-5 tracking-[0.16px];
 }
 
 .filter__items {
@@ -86,7 +90,7 @@
 }
 
 .filter__item {
-    @apply border border-dashed border-slate-170 rounded-lg;
+    @apply border border-dashed border-slate-270 rounded-lg;
     @apply px-[11px] py-[9px];
     @apply transition;
     @apply cursor-pointer;
@@ -108,19 +112,19 @@
 }
 
 .filter__item_expand {
-    @apply bg-slate-50;
+    @apply bg-slate-170 border-solid border-slate-170;
 }
 
 .filter__item_collapse {
-    @apply bg-slate-50 border-slate-50 hover:bg-slate-100 hover:border-slate-100 active:bg-slate-175 active:border-slate-175;
+    @apply bg-slate-170 border-solid border-slate-170 hover:bg-slate-100 hover:border-slate-100 active:bg-slate-175 active:border-slate-175;
     @apply size-4 box-content text-center;
     @apply flex items-center justify-center;
 }
 
-.filter__item_collapse.hidden {
-    display: none;
-}
-
 .filter__item.filter__item_active {
     @apply border-solid border-blue-600 bg-blue-600 text-white;
+}
+
+.filter__header {
+    @apply flex flex-row flex-nowrap gap-4 items-center justify-between;
 }

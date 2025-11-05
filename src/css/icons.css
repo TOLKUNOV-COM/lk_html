@@ -84,7 +84,8 @@
 }
 
 .icon-search {
-    background-image: url("../img/search.svg");
+    mask-image: url("../img/search.svg");
+    background-color: currentColor;
 }
 
 .icon-filters {
