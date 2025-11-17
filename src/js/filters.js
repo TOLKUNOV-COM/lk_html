@@ -54,13 +54,15 @@ export default function filters() {
                     const isActive = item.classList.contains("filter__item_active");
 
                     if (wasActive && !isActive) {
-                        // Элемент стал неактивным - возвращаем на исходную позицию
+                        // Элемент стал неактивным - возвращаем на исходную позицию сразу
                         restoreItemPosition(item);
                         // После восстановления перемещаем оставшиеся активные наверх
                         moveActiveItemsToTop();
                     } else if (!wasActive && isActive) {
-                        // Элемент стал активным - перемещаем наверх
-                        moveActiveItemsToTop();
+                        // Элемент стал активным - перемещаем наверх с задержкой 600мс
+                        setTimeout(() => {
+                            moveActiveItemsToTop();
+                        }, 300);
                     }
                 }, 10);
             });
