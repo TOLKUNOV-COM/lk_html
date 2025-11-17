@@ -1,4 +1,69 @@
 export default function filters() {
+    // Функция для управления позициями элементов с учётом active состояния
+    function setupItemPositions(container) {
+        const allItems = Array.from(container.querySelectorAll(".filter__item")).filter(
+            (item) => !item.classList.contains("filter__item_expand") && !item.classList.contains("filter__item_collapse")
+        );
+
+        // Сохраняем исходные позиции всех элементов
+        const originalPositions = new Map();
+        allItems.forEach((item) => {
+            originalPositions.set(item, {
+                parent: item.parentElement,
+                nextSibling: item.nextSibling
+            });
+        });
+
+        // Функция для перемещения активных элементов наверх
+        function moveActiveItemsToTop() {
+            const activeItems = allItems.filter(item => item.classList.contains("filter__item_active"));
+            if (activeItems.length > 0) {
+                activeItems.reverse().forEach((item) => {
+                    container.insertBefore(item, container.firstChild);
+                });
+            }
+        }
+
+        // Функция для восстановления позиции элемента
+        function restoreItemPosition(item) {
+            const position = originalPositions.get(item);
+            if (position) {
+                if (position.nextSibling) {
+                    position.parent.insertBefore(item, position.nextSibling);
+                } else {
+                    position.parent.appendChild(item);
+                }
+            }
+        }
+
+        // Перемещаем активные элементы наверх при инициализации
+        moveActiveItemsToTop();
+
+        // Добавляем обработчик клика на элементы
+        allItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                // Сохраняем состояние ДО обработки клика
+                const wasActive = item.classList.contains("filter__item_active");
+
+                setTimeout(() => {
+                    const isActive = item.classList.contains("filter__item_active");
+
+                    if (wasActive && !isActive) {
+                        // Элемент стал неактивным - возвращаем на исходную позицию
+                        restoreItemPosition(item);
+                        // После восстановления перемещаем оставшиеся активные наверх
+                        moveActiveItemsToTop();
+                    } else if (!wasActive && isActive) {
+                        // Элемент стал активным - перемещаем наверх
+                        moveActiveItemsToTop();
+                    }
+                }, 10);
+            });
+        });
+
+        return { moveActiveItemsToTop, restoreItemPosition, originalPositions };
+    }
+
     // Expand / Collapse handler
     document.addEventListener("DOMContentLoaded", () => {
         const filterBlocks = document.querySelectorAll(".filter__items");
@@ -7,6 +72,9 @@ export default function filters() {
             const expandBtn = block.querySelector(".filter__item_expand");
             const collapseBtn = block.querySelector(".filter__item_collapse");
             const filterItems = block.querySelectorAll(".filter__item");
+
+            // Настраиваем управление позициями элементов
+            setupItemPositions(block);
 
             expandBtn?.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -51,20 +119,14 @@ export default function filters() {
                 return;
             }
 
+            // Настраиваем управление позициями элементов
+            const { moveActiveItemsToTop } = setupItemPositions(itemsContainer);
+
             const expandBtn = itemsContainer.querySelector(".filter__item_expand");
             const collapseBtn = itemsContainer.querySelector(".filter__item_collapse");
             const allItems = Array.from(itemsContainer.querySelectorAll(".filter__item")).filter(
                 (item) => !item.classList.contains("filter__item_expand") && !item.classList.contains("filter__item_collapse")
             );
-
-            // Сохраняем исходные позиции всех элементов в DOM
-            const originalPositions = new Map();
-            allItems.forEach((item) => {
-                originalPositions.set(item, {
-                    parent: item.parentElement,
-                    nextSibling: item.nextSibling
-                });
-            });
 
             // Сохраняем исходную позицию и текст кнопки expand
             let originalExpandPosition = null;
@@ -101,18 +163,8 @@ export default function filters() {
                 previousSearchTerm = searchTerm;
 
                 if (searchTerm === "") {
-                    // Восстанавливаем позиции элементов
+                    // Восстанавливаем видимость из сохраненного состояния
                     allItems.forEach((item) => {
-                        const position = originalPositions.get(item);
-                        if (position) {
-                            if (position.nextSibling) {
-                                position.parent.insertBefore(item, position.nextSibling);
-                            } else {
-                                position.parent.appendChild(item);
-                            }
-                        }
-
-                        // Восстанавливаем видимость из сохраненного состояния
                         if (stateBeforeFilter) {
                             if (stateBeforeFilter.visibility.get(item)) {
                                 item.classList.add("hidden");
@@ -121,6 +173,9 @@ export default function filters() {
                             }
                         }
                     });
+
+                    // Перемещаем активные элементы наверх
+                    moveActiveItemsToTop();
 
                     // Восстанавливаем кнопки expand/collapse
                     if (expandBtn) {
