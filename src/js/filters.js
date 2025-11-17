@@ -1,11 +1,16 @@
 export default function filters() {
     // Функция для управления позициями элементов с учётом active состояния
     function setupItemPositions(container) {
+        // Проверяем, не был ли уже вызван setupItemPositions для этого контейнера
+        if (container._positionsInitialized) {
+            return container._positionsData;
+        }
+
         const allItems = Array.from(container.querySelectorAll(".filter__item")).filter(
             (item) => !item.classList.contains("filter__item_expand") && !item.classList.contains("filter__item_collapse")
         );
 
-        // Сохраняем исходные позиции всех элементов
+        // Сохраняем исходные позиции всех элементов ДО любых перемещений
         const originalPositions = new Map();
         allItems.forEach((item) => {
             originalPositions.set(item, {
@@ -61,7 +66,13 @@ export default function filters() {
             });
         });
 
-        return { moveActiveItemsToTop, restoreItemPosition, originalPositions };
+        const result = { moveActiveItemsToTop, restoreItemPosition, originalPositions };
+
+        // Помечаем контейнер как инициализированный и сохраняем данные
+        container._positionsInitialized = true;
+        container._positionsData = result;
+
+        return result;
     }
 
     // Expand / Collapse handler
