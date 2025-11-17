@@ -1,11 +1,23 @@
 .material-tabs {
-    @apply flex space-x-4 m-6 mb-0;
+    @apply flex gap-x-4 p-6 pb-0;
+    @apply border-b border-b-slate-100;
 }
 
 .material-tab {
-    @apply p-0 border-none font-serif text-lg font-bold leading-6 tracking-[0.18px] text-slate-400 cursor-pointer;
+    @apply border-none font-serif text-lg font-bold leading-6 tracking-[0.18px] text-slate-400 cursor-pointer;
+    @apply p-0 pb-3;
+    @apply transition-all;
+
+    @apply relative;
 
     &.active {
         @apply text-blue-900;
+
+        &:after {
+            content: '';
+            @apply absolute -bottom-px left-0 right-0 h-0.5;
+            @apply bg-blue-600;
+            @apply rounded-t-3xl;
+        }
     }
 }
