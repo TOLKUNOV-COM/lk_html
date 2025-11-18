@@ -21,6 +21,7 @@
 @import "share-button.css" layer(components);
 @import "tags.css" layer(components);
 @import "material-tabs.css" layer(components);
+@import "simple-tabs.css" layer(components);
 @import "cta.css" layer(components);
 @import "cta-number.css" layer(components);
 @import "stats/stats-overview.css" layer(components);

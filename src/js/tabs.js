@@ -3,7 +3,11 @@ import Swiper from 'swiper/bundle';
 
 export default function tabs() {
     document.querySelectorAll('.tab-group').forEach((groupEl) => {
-        const swiperEl = groupEl.querySelector('.tab-swiper');
+        const swiperEl = groupEl.querySelector(':scope > .tab-swiper');
+
+        if (!swiperEl) {
+            return;
+        }
 
         const swiper = new Swiper(swiperEl, {
             autoHeight: true,
@@ -15,7 +19,7 @@ export default function tabs() {
             noSwipingClass: 'swiper-no-swiping',
         });
 
-        const tabButtons = groupEl.querySelectorAll('.tab-btn');
+        const tabButtons = groupEl.querySelectorAll(':scope > .tab-buttons > .tab-btn');
 
         tabButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
@@ -26,6 +30,8 @@ export default function tabs() {
         });
 
         // начальная активная таба
-        tabButtons[0]?.classList.add('active');
+        if (tabButtons[0]) {
+            tabButtons[0].classList.add('active');
+        }
     });
 }

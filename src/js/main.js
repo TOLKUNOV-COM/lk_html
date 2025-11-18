@@ -2,6 +2,7 @@ import '../css/main.css';
 
 import scroller from "@/js/scroller.js";
 import tabs from "./tabs.js";
+import simpleTabs from "./simple-tabs.js";
 import sidebar from "./sidebar.js";
 import filters from "./filters.js";
 import projectsModal from "./projects-modal.js";
@@ -14,6 +15,7 @@ import initAllTouchScroll from "./touchScroll.js";
 
 scroller();
 tabs();
+simpleTabs();
 sidebar();
 filters();
 projectsModal();
@@ -27,6 +29,7 @@ initAllTouchScroll();
 // when fancybox content open
 document.addEventListener('fancybox:contentReady', (e) => {
     tabs();
+    simpleTabs();
     viewer();
     initAllTouchScroll();
 });

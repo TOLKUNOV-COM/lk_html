@@ -1,0 +1,152 @@
+# Правила разработки проекта
+
+## CSS-селекторы
+
+### Выборка прямых потомков
+
+**Описание**: При работе с компонентами, поддерживающими вложенность (например, табы, аккордеоны), всегда используйте `:scope >` для выборки прямых потомков вместо сложных фильтраций через JavaScript.
+
+**Примеры**:
+
+```javascript
+// ✅ Правильно: используем :scope для прямых потомков
+const swiperEl = groupEl.querySelector(':scope > .tab-swiper');
+const tabButtons = groupEl.querySelectorAll(':scope > .tab-buttons > .tab-btn');
+
+// ❌ Неправильно: сложная фильтрация через JavaScript
+function getDirectChildren(parent, selector) {
+    const allElements = parent.querySelectorAll(selector);
+    return Array.from(allElements).filter(element => {
+        // сложная логика...
+    });
+}
+```
+
+**Исключения**: Нет. Всегда предпочитайте нативные CSS-селекторы.
+
+---
+
+## Работа с вложенными компонентами
+
+### Выбор типа табов
+
+**Описание**: Для родительских табов используйте простые табы (`simple-tabs.js`), для дочерних табов с autoHeight - swiper-табы (`tabs.js`). Это избегает проблем синхронизации высоты между уровнями.
+
+**Примеры**:
+
+```html
+<!-- ✅ Правильно: родительские - простые табы, дочерние - swiper -->
+<div class="simple-tab-group">
+    <div class="simple-tab-buttons material-tabs">
+        <button class="simple-tab-btn material-tab active">Пак 1</button>
+    </div>
+    <div class="simple-tab-content">
+        <div class="tab-group viewer">
+            <div class="tab-buttons viewer__tabs">
+                <button class="tab-btn viewer__tab active">240×400</button>
+            </div>
+            <div class="swiper tab-swiper">
+                <!-- Swiper контент -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ❌ Неправильно: Swiper внутри Swiper с autoHeight -->
+<div class="tab-group">
+    <div class="swiper tab-swiper">
+        <div class="swiper-slide">
+            <div class="tab-group">
+                <div class="swiper tab-swiper">
+                    <!-- Проблемы синхронизации высоты -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+**Почему так?**
+- Простые табы мгновенно переключаются без анимации
+- Не требуется синхронизация высоты между уровнями
+- Swiper с autoHeight работает корректно только на одном уровне
+- Избегаем сложной логики с событиями `*TransitionEnd`
+
+**Исключения**: Нет. Всегда используйте простые табы для родительского уровня при вложенности.
+
+---
+
+## JavaScript
+
+### Пустые строки
+
+**Описание**: Пустые строки не должны содержать пробелов или табуляции.
+
+**Исключения**: Нет.
+
+---
+
+## Комментарии и типизация
+
+### Явная типизация вместо комментариев
+
+**Описание**: Используйте строгую декларацию типов в сигнатуре методов/функций вместо комментариев. PHPDoc `@return` допустим только для уточнения сложных типов, которые невозможно выразить в синтаксисе языка.
+
+**Примеры**:
+
+```javascript
+// ✅ Правильно: явная типизация в TypeScript
+function getUser(id: number): User | null {
+    return users.find(u => u.id === id) || null;
+}
+
+// ❌ Неправильно: комментарий вместо типизации
+/**
+ * @param {number} id
+ * @return {User|null}
+ */
+function getUser(id) {
+    return users.find(u => u.id === id) || null;
+}
+```
+
+---
+
+## Возвращаемые значения
+
+### Null вместо пустых строк
+
+**Описание**: В случаях отсутствия результата метод должен возвращать `null`, а не пустую строку.
+
+**Примеры**:
+
+```javascript
+// ✅ Правильно
+function findUser(id) {
+    const user = users.find(u => u.id === id);
+    return user || null;
+}
+
+// ❌ Неправильно
+function findUser(id) {
+    const user = users.find(u => u.id === id);
+    return user || '';
+}
+```
+
+**Исключения**: Если метод явно предназначен для работы со строками и возвращает `string` (не `string | null`).
+
+---
+
+## Принципы проектирования
+
+### Обязательные принципы
+
+Всегда следуй принципам:
+- **SOLID**: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
+- **DRY**: Don't Repeat Yourself
+- **KISS**: Keep It Simple, Stupid
+- **YAGNI**: You Aren't Gonna Need It
+
+**Исключения**: Нет. Эти принципы должны соблюдаться всегда.
+
