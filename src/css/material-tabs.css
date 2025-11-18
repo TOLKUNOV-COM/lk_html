@@ -6,7 +6,6 @@
 .material-tab {
     @apply border-none font-serif text-lg font-bold leading-6 tracking-[0.18px] text-slate-400 cursor-pointer;
     @apply p-0 pb-3;
-    @apply transition-all;
 
     @apply relative;
 
