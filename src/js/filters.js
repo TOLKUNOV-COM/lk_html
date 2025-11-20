@@ -79,7 +79,8 @@ export default function filters() {
 
     // Expand / Collapse handler
     document.addEventListener("DOMContentLoaded", () => {
-        const filterBlocks = document.querySelectorAll(".filter__items");
+        // Работаем только с фильтрами внутри #project-filter-form
+        const filterBlocks = document.querySelectorAll("#project-filter-form .filter__items");
 
         filterBlocks.forEach((block) => {
             const expandBtn = block.querySelector(".filter__item_expand");
@@ -121,8 +122,8 @@ export default function filters() {
             });
         });
 
-        // Search handler
-        const searchInputs = document.querySelectorAll(".filter-search__input");
+        // Search handler - только для фильтров внутри #project-filter-form
+        const searchInputs = document.querySelectorAll("#project-filter-form .filter-search__input");
 
         searchInputs.forEach((searchInput) => {
             const filterBlock = searchInput.closest(".filter");
