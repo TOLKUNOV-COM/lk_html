@@ -30,7 +30,7 @@
     @apply !text-blue-900;
 }
 
-.icon-search {
+.filter-search .icon-search {
     @apply opacity-0 transition-opacity;
     display: block;
 }
