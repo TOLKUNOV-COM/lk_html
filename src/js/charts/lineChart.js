@@ -2,46 +2,68 @@ import * as echarts from 'echarts';
 import { declension } from "../utils.js";
 
 export default function lineCharts() {
-    document.querySelectorAll('[data-module="lineChart"]').forEach((el) => {
-        let categories, dataA, dataB;
+    document.querySelectorAll('[data-line-chart]').forEach((el) => {
+        let categories, chartData, type;
 
         try {
             categories = JSON.parse(el.dataset.categories || '[]');
-            dataA = JSON.parse(el.dataset.dataA || '[]');
-            dataB = JSON.parse(el.dataset.dataB || '[]');
+            chartData = JSON.parse(el.dataset.chartData || '[]');
+            type = el.dataset.lineChart;
         } catch (e) {
             console.error(e);
-        } finally {
-            lineChart(el, categories, dataA, dataB);
+        }
+
+        if (categories && chartData && type) {
+            createSingleLineChart(el, categories, chartData, type);
         }
     });
 }
 
-/**
- * Инициализирует и рисует линейный график в заданном контейнере.
- * Линия и градиентная заливка разделены на разные серии,
- * чтобы линия рисовалась поверх заливки.
- * axisPointer настроен шириной 10px и чёрным цветом,
- * а точки всегда выше всех слоёв.
- * @param {string|HTMLElement} container — ID контейнера или сам элемент.
- * @param categories
- * @param dataA
- * @param dataB
- */
-export function lineChart(container = 'lineChart', categories = [], dataA = [], dataB = []) {
-    // Получаем DOM-элемент
-    const chartDom = typeof container === 'string'
-        ? document.getElementById(container)
-        : container;
-
+function createSingleLineChart(chartDom, categories, chartData, type) {
     if (!chartDom) {
-        return;
+        return null;
     }
 
-    // 3) инициализируем инстанс
     const myChart = echarts.init(chartDom);
 
-    // 4) опции графика (простой пример)
+    const data = chartData;
+    const values = data.map(d => d?.value ?? null);
+
+    const config = {
+        projects: {
+            name: 'Проекты',
+            lineColor: '#2856F6',
+            areaGradient: [
+                { offset: 0.0801, color: 'rgba(175, 193, 255, 0.80)' },
+                { offset: 1, color: 'rgba(202, 213, 255, 0.00)' }
+            ],
+            declensionWords: ['проект', 'проекта', 'проектов']
+        },
+        resizes: {
+            name: 'Ресайзы',
+            lineColor: '#AB67FE',
+            areaGradient: [
+                { offset: 0.1089, color: 'rgba(224, 199, 254, 0.80)' },
+                { offset: 1.0, color: 'rgba(224, 199, 254, 0.00)' }
+            ],
+            declensionWords: ['ресайз', 'ресайза', 'ресайзов']
+        },
+        platforms: {
+            name: 'Площадки',
+            lineColor: '#FD6832',
+            areaGradient: [
+                { offset: 0.1352, color: 'rgba(255, 179, 151, 0.80)' },
+                { offset: 1, color: 'rgba(255, 179, 151, 0.00)' }
+            ],
+            declensionWords: ['площадка', 'площадки', 'площадок']
+        }
+    };
+
+    const chartConfig = config[type];
+    if (!chartConfig) {
+        return null;
+    }
+
     const option = {
         grid: {
             left: 5,
@@ -117,102 +139,88 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
                 snap: true,
                 lineStyle: {
                     type: 'solid',
-                    color: '#2856F6',
+                    color: chartConfig.lineColor,
                     width: 3
                 },
             },
-            backgroundColor: '#ffffff',      // белый фон
-            borderRadius: 16,
-            padding: 16,
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            borderRadius: 12,
+            padding: 0,
             extraCssText: 'box-shadow: 0px 2px 8px 0px rgba(33, 37, 75, 0.11);',
             formatter: function (params) {
-                // Предполагаем, что длина всех серий одинаковая (как в твоем случае)
-                const lastIdx = dataA.length - 1;
-                // Фильтруем реальные серии без областей
+                const lastIdx = values.length - 1;
                 const filtered = params.filter(p => !/ area$/.test(p.seriesName));
                 if (!filtered.length) return '';
                 const idx = filtered[0].dataIndex;
-                // Не показываем на последней точке
+
                 if (idx === lastIdx) return '';
-                // Маппинг месяца
-                const monthMap = {
-                    'ЯНВ': 'Январь', 'ФЕВР': 'Февраль', 'МАРТ': 'Март', 'АПР': 'Апрель',
-                    'МАЙ': 'Май', 'ИЮНЬ': 'Июнь', 'ИЮЛЬ': 'Июль', 'АВГ': 'Август',
-                    'СЕНТ': 'Сентябрь', 'ОКТ': 'Октябрь', 'НОЯБ': 'Ноябрь', 'ДЕК': 'Декабрь'
-                };
-                const short = filtered[0].axisValue;
-                const fullMonth = monthMap[short] || short;
-                // Значения серий
-                const valA = filtered.find(p => p.seriesName === 'Серия A')?.value || 0;
-                const valB = filtered.find(p => p.seriesName === 'Серия B')?.value || 0;
-                // Склоняем
-                const textA = declension(valA, ['проект', 'проекта', 'проектов']);
-                const textB = declension(valB, ['ресайз', 'ресайза', 'ресайзов']);
-                // Генерируем HTML тултипа
+
+                const currentData = data[idx];
+                if (!currentData || currentData.value === null) return '';
+
+                const value = currentData.value;
+                const text = declension(value, chartConfig.declensionWords);
+
+                let percentChange = '';
+                let percentSign = '';
+
+                if (currentData.diff !== null && currentData.diff?.value !== null && currentData.diff?.sign !== null && currentData.diff?.prevMonth) {
+                    percentSign = currentData.diff.sign;
+                    percentChange = `${currentData.diff.value}% к ${currentData.diff.prevMonth}`;
+                }
+
+                const currentDetails = currentData.details || [];
+                let detailsHtml = '';
+                if (currentDetails.length > 0) {
+                    detailsHtml = currentDetails.map(item => `
+                        <div class="flex justify-between items-center gap-1">
+                            <div class="font-sans text-slate-500 text-xs font-semibold leading-4">${item.label}</div>
+                            <div class="font-sans text-blue-900 text-xs font-semibold leading-4">${item.value}</div>
+                        </div>
+                    `).join('');
+                }
+
                 return `
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div style="color:#161F6A;font-family:'Craftwork Grotesk',serif;font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${fullMonth}</div>
-            <div style="width:100%;height:1px;background:#EFEDF0;"></div>
-            <div style="display:flex;flex-wrap:nowrap;gap:12px;">
-              <div style="display:flex;align-items:center;gap:4px;">
-                <div style="color:#161F6A;font-family:'Craftwork Grotesk',serif;font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${valA}</div>
-                <div style="color:#6E7185;font-family:'Craftwork Sans',serif;font-size:16px;font-weight:500;line-height:20px;letter-spacing:0.32px;">${textA}</div>
+          <div class="rounded-xl overflow-hidden">
+            <div style="background:${chartConfig.lineColor};" class="flex flex-col items-start gap-2 p-3">
+              <div class="flex items-baseline gap-1">
+                <div class="font-serif text-white text-[32px] font-bold leading-10">${value}</div>
+                <div class="font-sans text-white/60 text-sm font-semibold leading-4">${text}</div>
               </div>
-              <div style="display:flex;align-items:center;gap:4px;">
-                <div style="color:#161F6A;font-family:'Craftwork Grotesk',serif;font-size:18px;font-weight:700;line-height:24px;letter-spacing:0.18px;">${valB}</div>
-                <div style="color:#6E7185;font-family:'Craftwork Sans',serif;font-size:16px;font-weight:500;line-height:20px;letter-spacing:0.32px;">${textB}</div>
-              </div>
+              ${percentChange ? `<div class="rounded-lg bg-white/10 px-2 py-1 text-white"><div class="font-sans text-xs font-semibold leading-4 flex gap-1 items-center"><span class="text-lg/4 relative -top-px">${percentSign}</span><span class="text-white">${percentChange}</span></div></div>` : ''}
             </div>
+            ${detailsHtml ? `<div class="bg-white p-3 flex flex-col gap-2">${detailsHtml}</div>` : ''}
           </div>
         `;
             },
         },
         series: [
             {
-                name: 'area Серия B',
+                name: `area ${chartConfig.name}`,
                 type: 'line',
                 smooth: true,
                 connectNulls: true,
                 symbol: 'none',
                 lineStyle: { opacity: 0 },
                 areaStyle: {
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0.1089, color: 'rgba(224, 199, 254, 0.80)' },
-                        { offset: 1.0, color: 'rgba(224, 199, 254, 0.00)' }
-                    ])
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, chartConfig.areaGradient)
                 },
-                data: dataB,
+                data: values,
                 zlevel: 0
             },
             {
-                name: 'area Серия A',
-                type: 'line',
-                smooth: true,
-                connectNulls: true,
-                symbol: 'none',
-                lineStyle: { opacity: 0 },
-                areaStyle: {
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0.0801, color: 'rgba(175, 193, 255, 0.80)' },
-                        { offset: 1, color: 'rgba(202, 213, 255, 0.00)' }
-                    ])
-                },
-                data: dataA,
-                zlevel: 0
-            },
-
-            {
-                name: 'Серия B',
+                name: chartConfig.name,
                 type: 'line',
                 smooth: true,
                 connectNulls: true,
                 showSymbol: false,
                 symbol: function (value, params) {
-                    return params.dataIndex === dataA.length - 1 ? 'none' : 'circle';
+                    return params.dataIndex === values.length - 1 ? 'none' : 'circle';
                 },
                 symbolSize: 15,
                 itemStyle: {
-                    color: '#AB67FE',
+                    color: chartConfig.lineColor,
                     borderColor: '#ffffff',
                     borderWidth: 5,
                     shadowBlur: 6,
@@ -225,64 +233,26 @@ export function lineChart(container = 'lineChart', categories = [], dataA = [], 
                 },
                 lineStyle: {
                     width: 4,
-                    color: '#AB67FE'
+                    color: chartConfig.lineColor
                 },
-                data: dataB,
+                data: values,
                 zlevel: 1
             },
-            {
-                name: 'Серия A',
-                type: 'line',
-                smooth: true,
-                connectNulls: true,
-                showSymbol: false,
-                symbol: function (value, params) {
-                    return params.dataIndex === dataA.length - 1 ? 'none' : 'circle';
-                },
-                symbolSize: 15,
-                itemStyle: {
-                    color: '#2856F6',
-                    borderColor: '#ffffff',
-                    borderWidth: 5,
-                    shadowBlur: 6,
-                    shadowColor: 'rgba(19, 15, 43, 0.10)',
-                    shadowOffsetX: 0,
-                    shadowOffsetY: 1
-                },
-                emphasis: {
-                    showSymbol: true,
-                },
-                lineStyle: {
-                    width: 4,
-                    color: '#2856F6'
-                },
-                data: dataA,
-                zlevel: 1
-            },
-
         ]
     };
 
-    // 5) отрисуем
     myChart.setOption(option);
 
     document.fonts.ready.then(() => {
-        // тут безопасно рендерить графики
         myChart.setOption(option);
         myChart.resize();
     });
 
-    // Скрывать axisPointer и тултип на последней точке
-    // myChart.on('showTip', params => {
-    //     if (params.dataIndex === lastIdx) {
-    //         myChart.dispatchAction({ type: 'hideTip' });
-    //     }
-    // });
-
-    // 6) реакция на ресайз окна
     window.addEventListener('resize', () => {
         myChart.resize();
     });
 
     document.addEventListener('sidebar:collapse:end', () => myChart.resize());
+
+    return myChart;
 }

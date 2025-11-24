@@ -31,7 +31,7 @@
     @apply bg-[position:8px_center];
     @apply 2xl:bg-[position:12.5px_center];
 
-    transition: background-size 500ms ease-out;
+    transition: background-size 200ms ease-out;
     @apply bg-[length:38px_36px];
     @apply 2xl:bg-[length:47px_44px];
 }

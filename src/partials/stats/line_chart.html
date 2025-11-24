@@ -1,21 +1,35 @@
-<div class="flex flex-wrap items-center justify-between gap-5">
-    <div class="card__title flex-1">Проекты и&nbsp;ресайзы</div>
-    <div class="flex items-center gap-4 text-slate-500 text-sm font-medium leading-5 tracking-[0.28px]">
-        <div class="flex items-center gap-2">
-            <div class="w-6 h-1 rounded-full bg-blue-600"></div>
-            <p>Проекты</p>
-        </div>
-        <div class="flex items-center gap-2">
-            <div class="w-6 h-1 rounded-full bg-purple-470"></div>
-            <p>Ресайзы</p>
+<div class="tab-group flex-1 flex flex-col" data-line-chart-tabs>
+    <!-- Табы -->
+    <div class="tab-buttons material-tabs card__padding_left card__padding_left mb-7">
+        <button class="tab-btn material-tab active" data-index="0">Проекты</button>
+        <button class="tab-btn material-tab" data-index="1">Ресайзы</button>
+        <button class="tab-btn material-tab" data-index="2">Площадки</button>
+    </div>
+
+    <!-- Контент -->
+    <div class="swiper tab-swiper flex-1 w-full">
+        <div class="swiper-wrapper h-full!">
+            <div class="swiper-slide swiper-no-swiping overflow-hidden h-full!">
+                <div class="h-full card__padding_left min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
+                     data-line-chart="projects"
+                     data-categories='{{{json lineChart.categories}}}'
+                     data-chart-data='{{{json lineChart.dataA}}}'
+                ></div>
+            </div>
+            <div class="swiper-slide swiper-no-swiping overflow-hidden h-full!">
+                <div class="h-full card__padding_left min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
+                     data-line-chart="resizes"
+                     data-categories='{{{json lineChart.categories}}}'
+                     data-chart-data='{{{json lineChart.dataB}}}'
+                ></div>
+            </div>
+            <div class="swiper-slide swiper-no-swiping overflow-hidden h-full!">
+                <div class="h-full card__padding_left min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
+                     data-line-chart="platforms"
+                     data-categories='{{{json lineChart.categories}}}'
+                     data-chart-data='{{{json lineChart.dataC}}}'
+                ></div>
+            </div>
         </div>
     </div>
 </div>
-
-<div id="lineChart"
-     class="flex-1 card__stick_right min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
-     data-module="lineChart"
-     data-categories='{{{json lineChart.categories}}}'
-     data-data-a='{{{json lineChart.dataA}}}'
-     data-data-b='{{{json lineChart.dataB}}}'
-></div>
