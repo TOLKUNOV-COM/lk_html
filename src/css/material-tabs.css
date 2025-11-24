@@ -12,11 +12,25 @@
     &.active {
         @apply text-blue-900;
 
-        &:after {
+        &::after {
             content: '';
             @apply absolute -bottom-px left-0 right-0 h-0.5;
             @apply bg-blue-600;
             @apply rounded-t-3xl;
         }
+    }
+}
+
+.material-tabs_charts {
+    .material-tab_1.active::after {
+        @apply bg-[#2856F6];
+    }
+
+    .material-tab_2.active::after {
+        @apply bg-[#AB67FE];
+    }
+
+    .material-tab_3.active::after {
+        @apply bg-[#FD6832];
     }
 }

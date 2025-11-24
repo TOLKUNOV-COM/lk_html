@@ -249,7 +249,7 @@ function createSingleLineChart(chartDom, categories, chartData, type) {
     });
 
     window.addEventListener('resize', () => {
-        myChart.resize();
+        setTimeout(() => myChart.resize(), 1);
     });
 
     document.addEventListener('sidebar:collapse:end', () => myChart.resize());
