@@ -312,28 +312,42 @@
             <section
                     class="grid grid-cols-[1fr_1fr_276px] 2xl:grid-cols-[1fr_1fr_326px] 3xl:so:grid-cols-[1fr_1fr_364px] 4xl:grid-cols-[1fr_1fr_350px] items-stretch [grid-template-rows:1fr_auto] gap-5 2xl:gap-6 mt-5 2xl:mt-6">
                 <!-- line chart -->
-                <article class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   card flex flex-col gap-5">
-                    <div class="flex flex-wrap items-center justify-between gap-5">
-                        <div class="card__title flex-1">Проекты и&nbsp;ресайзы</div>
-                        <div class="flex items-center gap-4 text-slate-500 text-sm font-medium leading-5 tracking-[0.28px]">
-                            <div class="flex items-center gap-2">
-                                <div class="w-6 h-1 rounded-full bg-blue-600"></div>
-                                <p>Проекты</p>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-6 h-1 rounded-full bg-purple-470"></div>
-                                <p>Ресайзы</p>
+                <article class="col-span-3 2xl:sc:col-span-2 3xl:sc:col-span-2 4xl:col-span-2   card px-0 flex flex-col gap-5">
+                    <div class="tab-group flex-1 flex flex-col" data-line-chart-tabs>
+                        <!-- Табы -->
+                        <div class="tab-buttons material-tabs card__padding_left card__padding_left mb-7">
+                            <button class="tab-btn material-tab active" data-index="0">Проекты</button>
+                            <button class="tab-btn material-tab" data-index="1">Ресайзы</button>
+                            <button class="tab-btn material-tab" data-index="2">Площадки</button>
+                        </div>
+                    
+                        <!-- Контент -->
+                        <div class="swiper tab-swiper flex-1 w-full">
+                            <div class="swiper-wrapper h-full!">
+                                <div class="swiper-slide swiper-no-swiping overflow-hidden h-full!">
+                                    <div class="h-full card__padding_left min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
+                                         data-line-chart="projects"
+                                         data-categories='["ЯНВ","ФЕВР","МАРТ","АПР","МАЙ","ИЮНЬ","ИЮЛЬ",""]'
+                                         data-chart-data='[{"value":21,"diff":{"value":15,"sign":"+","prevMonth":"декабрю"},"details":[{"label":"HTML5","value":12},{"label":"Видео","value":6},{"label":"Статика","value":3}]},{"value":32,"diff":{"value":20,"sign":"+","prevMonth":"январю"},"details":[{"label":"HTML5","value":18},{"label":"DOOH","value":9},{"label":"Статика","value":5}]},{"value":50,"diff":{"value":56,"sign":"+","prevMonth":"февралю"},"details":[{"label":"HTML5","value":28},{"label":"DOOH","value":15},{"label":"Статика","value":7}]},{"value":40,"diff":{"value":20,"sign":"-","prevMonth":"марту"},"details":[{"label":"HTML5","value":22},{"label":"DOOH","value":12},{"label":"Статика","value":6}]},{"value":60,"diff":{"value":50,"sign":"+","prevMonth":"апрелю"},"details":[{"label":"HTML5","value":35},{"label":"DOOH","value":18},{"label":"Статика","value":7}]},{"value":80,"diff":{"value":33,"sign":"+","prevMonth":"маю"},"details":[{"label":"HTML5","value":45},{"label":"DOOH","value":25},{"label":"Статика","value":10}]},{"value":50,"diff":{"value":38,"sign":"-","prevMonth":"июню"},"details":[{"label":"HTML5","value":28},{"label":"DOOH","value":15},{"label":"Статика","value":7}]},{"value":70,"diff":null,"details":[]}]'
+                                    ></div>
+                                </div>
+                                <div class="swiper-slide swiper-no-swiping overflow-hidden h-full!">
+                                    <div class="h-full card__padding_left min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
+                                         data-line-chart="resizes"
+                                         data-categories='["ЯНВ","ФЕВР","МАРТ","АПР","МАЙ","ИЮНЬ","ИЮЛЬ",""]'
+                                         data-chart-data='[{"value":10,"diff":{"value":25,"sign":"+","prevMonth":"декабрю"},"details":[{"label":"Яндекс","value":4},{"label":"VK","value":3},{"label":"МТС","value":2},{"label":"Авиасейлс","value":1}]},{"value":20,"diff":{"value":100,"sign":"+","prevMonth":"январю"},"details":[{"label":"Яндекс","value":8},{"label":"VK","value":6},{"label":"МТС","value":4},{"label":"Авиасейлс","value":2}]},{"value":40,"diff":{"value":100,"sign":"+","prevMonth":"февралю"},"details":[{"label":"Яндекс","value":20},{"label":"VK","value":12},{"label":"МТС","value":4},{"label":"Авиасейлс","value":2},{"label":"myTarget","value":2}]},{"value":31,"diff":{"value":23,"sign":"-","prevMonth":"марту"},"details":[{"label":"Яндекс","value":15},{"label":"VK","value":9},{"label":"МТС","value":3},{"label":"Авиасейлс","value":2},{"label":"myTarget","value":2}]},{"value":50,"diff":{"value":61,"sign":"+","prevMonth":"апрелю"},"details":[{"label":"Яндекс","value":25},{"label":"VK","value":15},{"label":"МТС","value":6},{"label":"Авиасейлс","value":2},{"label":"myTarget","value":2}]},{"value":70,"diff":{"value":40,"sign":"+","prevMonth":"маю"},"details":[{"label":"Яндекс","value":35},{"label":"VK","value":20},{"label":"МТС","value":8},{"label":"Авиасейлс","value":4},{"label":"myTarget","value":3}]},{"value":60,"diff":{"value":14,"sign":"-","prevMonth":"июню"},"details":[{"label":"Яндекс","value":30},{"label":"VK","value":18},{"label":"МТС","value":7},{"label":"Авиасейлс","value":3},{"label":"myTarget","value":2}]},{"value":40,"diff":null,"details":[]}]'
+                                    ></div>
+                                </div>
+                                <div class="swiper-slide swiper-no-swiping overflow-hidden h-full!">
+                                    <div class="h-full card__padding_left min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
+                                         data-line-chart="platforms"
+                                         data-categories='["ЯНВ","ФЕВР","МАРТ","АПР","МАЙ","ИЮНЬ","ИЮЛЬ",""]'
+                                         data-chart-data='[{"value":5,"diff":{"value":20,"sign":"+","prevMonth":"декабрю"},"details":[{"label":"300×250","value":2},{"label":"300×600","value":1},{"label":"728×250","value":1},{"label":"320×100","value":1}]},{"value":15,"diff":{"value":200,"sign":"+","prevMonth":"январю"},"details":[{"label":"300×250","value":6},{"label":"300×600","value":4},{"label":"728×250","value":3},{"label":"320×100","value":2}]},{"value":25,"diff":{"value":67,"sign":"+","prevMonth":"февралю"},"details":[{"label":"300×250","value":10},{"label":"300×600","value":6},{"label":"728×250","value":5},{"label":"320×100","value":2},{"label":"320×50","value":2}]},{"value":20,"diff":{"value":20,"sign":"-","prevMonth":"марту"},"details":[{"label":"300×250","value":8},{"label":"300×600","value":5},{"label":"728×250","value":4},{"label":"320×100","value":2},{"label":"320×50","value":1}]},{"value":30,"diff":{"value":50,"sign":"+","prevMonth":"апрелю"},"details":[{"label":"300×250","value":12},{"label":"300×600","value":7},{"label":"728×250","value":6},{"label":"320×100","value":3},{"label":"320×50","value":2}]},{"value":40,"diff":{"value":33,"sign":"+","prevMonth":"маю"},"details":[{"label":"300×250","value":16},{"label":"300×600","value":10},{"label":"728×250","value":8},{"label":"320×100","value":4},{"label":"320×50","value":2}]},{"value":35,"diff":{"value":13,"sign":"-","prevMonth":"июню"},"details":[{"label":"300×250","value":14},{"label":"300×600","value":9},{"label":"728×250","value":7},{"label":"320×100","value":3},{"label":"320×50","value":2}]},{"value":40,"diff":null,"details":[]}]'
+                                    ></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div id="lineChart"
-                         class="flex-1 card__stick_right min-h-[420px] 3xl:sc:min-h-[532px] 2xl:sc:min-h-[380px]"
-                         data-module="lineChart"
-                         data-categories='["ЯНВ","ФЕВР","МАРТ","АПР","МАЙ","ИЮНЬ","ИЮЛЬ",""]'
-                         data-data-a='[21,32,50,40,60,80,50,80]'
-                         data-data-b='[10,20,40,30,50,70,60,80]'
-                    ></div>
                 </article>
                 <!-- line chart -->
 
