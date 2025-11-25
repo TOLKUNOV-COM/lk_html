@@ -38,7 +38,7 @@ function createSingleLineChart(chartDom, categories, chartData, type) {
                 { offset: 1, color: 'rgba(202, 213, 255, 0.00)' }
             ],
             declensionWords: ['проект', 'проекта', 'проектов'],
-            tooltipBackground: 'radial-gradient(129.82% 88.59% at 8.22% 31.77%, rgba(0, 255, 255, 0.40) 0%, rgba(0, 255, 255, 0.00) 100%), linear-gradient(132deg, rgba(0, 41, 255, 0.00) 26.1%, rgba(0, 41, 255, 0.40) 97.88%), #2856F6',
+            tooltipBackground: 'radial-gradient(129.82% 88.59% at 8.22% 31.77%, rgba(0, 255, 255, 0.30) 0%, rgba(0, 255, 255, 0.00) 100%), linear-gradient(132deg, rgba(0, 41, 255, 0.00) 26.1%, rgba(0, 41, 255, 0.40) 97.88%), #2856F6',
             tooltipBackgroundBlendMode: 'screen, overlay, normal'
         },
         resizes: {
@@ -49,7 +49,7 @@ function createSingleLineChart(chartDom, categories, chartData, type) {
                 { offset: 1.0, color: 'rgba(224, 199, 254, 0.00)' }
             ],
             declensionWords: ['ресайз', 'ресайза', 'ресайзов'],
-            tooltipBackground: 'radial-gradient(112.38% 73.15% at 7.09% 19.27%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(132deg, rgba(64, 0, 255, 0.00) 26.1%, rgba(64, 0, 255, 0.40) 97.88%), #AB67FE',
+            tooltipBackground: 'radial-gradient(112.38% 73.15% at 7.09% 19.27%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(132deg, rgba(64, 0, 255, 0.00) 26.1%, rgba(64, 0, 255, 0.40) 97.88%), #AB67FE',
             tooltipBackgroundBlendMode: 'screen, overlay, normal'
         },
         platforms: {
@@ -60,7 +60,7 @@ function createSingleLineChart(chartDom, categories, chartData, type) {
                 { offset: 1, color: 'rgba(255, 179, 151, 0.00)' }
             ],
             declensionWords: ['площадка', 'площадки', 'площадок'],
-            tooltipBackground: 'radial-gradient(109.44% 78.95% at 6.9% 28.65%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(132deg, rgba(255, 140, 0, 0.00) 26.1%, rgba(255, 140, 0, 0.40) 97.88%), #FD6832',
+            tooltipBackground: 'radial-gradient(109.44% 78.95% at 6.9% 28.65%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(132deg, rgba(255, 140, 0, 0.00) 26.1%, rgba(255, 140, 0, 0.40) 97.88%), #FD6832',
             tooltipBackgroundBlendMode: 'screen, overlay, normal'
         }
     };
