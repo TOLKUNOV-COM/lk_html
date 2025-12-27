@@ -127,7 +127,23 @@ function createMap(container, points = [], directions = [], platforms = []) {
                     clusterBalloonPanelMaxMapArea: 0,
                 });
 
-                // Инициализация фильтра по платформам
+                // Инициализация фильтра по направлениям (сначала инициализируем направления)
+                if (directionFilterContainer) {
+                    directionFilter = initDirectionFilter({
+                        container: directionFilterContainer,
+                        directions: directions,
+                        onChange: (directionId) => {
+                            currentDirectionId = directionId;
+                            
+                            // Закрываем балун при изменении направления
+                            hideBalloon();
+                            
+                            updateMapPoints();
+                        }
+                    });
+                }
+
+                // Инициализация фильтра по платформам (после инициализации направлений)
                 if (platformFilterContainer) {
                     platformFilter = initPlatformFilter({
                         container: platformFilterContainer,
@@ -177,22 +193,6 @@ function createMap(container, points = [], directions = [], platforms = []) {
                 } else {
                     // Инициализация маркеров
                     updateMapPoints();
-                }
-
-                // Инициализация фильтра по направлениям
-                if (directionFilterContainer) {
-                    directionFilter = initDirectionFilter({
-                        container: directionFilterContainer,
-                        directions: directions,
-                        onChange: (directionId) => {
-                            currentDirectionId = directionId;
-                            
-                            // Закрываем балун при изменении направления
-                            hideBalloon();
-                            
-                            updateMapPoints();
-                        }
-                    });
                 }
 
             } catch (error) {
