@@ -87,12 +87,36 @@ export default function simpleTabs() {
         const wrapper = swiperEl.parentElement;
         const prevButton = wrapper?.querySelector('.simple-tab-swiper-button-prev');
         const nextButton = wrapper?.querySelector('.simple-tab-swiper-button-next');
+        const gradientLeft = wrapper?.querySelector('.simple-tab-swiper-gradient-left');
+        const gradientRight = wrapper?.querySelector('.simple-tab-swiper-gradient-right');
 
         // Функция проверки необходимости центрирования
         const shouldCenter = () => {
             const containerWidth = swiperEl.offsetWidth;
             const wrapperWidth = swiperEl.querySelector('.swiper-wrapper')?.scrollWidth || 0;
             return wrapperWidth > containerWidth;
+        };
+
+        // Функция обновления видимости градиентов
+        const updateGradients = (swiperInstance) => {
+            if (!gradientLeft || !gradientRight) return;
+
+            const isBeginning = swiperInstance.isBeginning;
+            const isEnd = swiperInstance.isEnd;
+
+            // Показываем левый градиент если не в начале
+            if (!isBeginning) {
+                gradientLeft.classList.add('visible');
+            } else {
+                gradientLeft.classList.remove('visible');
+            }
+
+            // Показываем правый градиент если не в конце
+            if (!isEnd) {
+                gradientRight.classList.add('visible');
+            } else {
+                gradientRight.classList.remove('visible');
+            }
         };
 
         // Определяем настройки центрирования
@@ -119,6 +143,9 @@ export default function simpleTabs() {
             preventClicksPropagation: false,
             allowTouchMove: true,
             on: {
+                init: function() {
+                    updateGradients(this);
+                },
                 resize: function() {
                     // Пересчитываем при изменении размера окна
                     const needsCenter = shouldCenter();
@@ -127,6 +154,7 @@ export default function simpleTabs() {
                     this.params.centerInsufficientSlides = needsCenter;
                     this.params.slideToClickedSlide = needsCenter;
                     this.update();
+                    updateGradients(this);
                 },
                 touchStart: function() {
                     // Скрываем тултип при начале прокрутки
@@ -135,11 +163,23 @@ export default function simpleTabs() {
                 slideChangeTransitionStart: function() {
                     // Скрываем тултип при смене слайда
                     hideTooltip();
+                },
+                slideChange: function() {
+                    updateGradients(this);
+                },
+                transitionEnd: function() {
+                    updateGradients(this);
+                },
+                setTranslate: function() {
+                    updateGradients(this);
                 }
             }
         });
 
-        setTimeout(() => swiper.update(), 500);
+        setTimeout(() => {
+            swiper.update();
+            updateGradients(swiper);
+        }, 500);
 
         // Добавляем обработчики для показа тултипов
         setTimeout(() => {

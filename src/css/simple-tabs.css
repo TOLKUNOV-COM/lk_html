@@ -103,3 +103,31 @@
 .simple-tab-swiper-button-next {
     @apply -right-0 translate-x-1/2;
 }
+
+/* Градиентные затенения */
+.simple-tab-swiper-gradient-left,
+.simple-tab-swiper-gradient-right {
+    @apply absolute top-0 bottom-0 z-[5];
+    @apply pointer-events-none;
+    @apply opacity-0 transition-opacity duration-300;
+    width: 80px;
+}
+
+.simple-tab-swiper-gradient-left {
+    @apply left-0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 2.857%, rgba(255, 255, 255, 0) 60.185%);
+}
+
+.simple-tab-swiper-gradient-right {
+    @apply right-0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 2.857%, rgba(255, 255, 255, 0) 60.185%);
+}
+
+/* Показываем затенения когда они нужны */
+.simple-tab-swiper-gradient-left.visible {
+    @apply opacity-100;
+}
+
+.simple-tab-swiper-gradient-right.visible {
+    @apply opacity-100;
+}
