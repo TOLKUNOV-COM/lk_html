@@ -101,7 +101,7 @@ export default function simpleTabs() {
         let swiper = new Swiper(swiperEl, {
             slidesPerView: 'auto',
             slideToClickedSlide: needsCentering,
-            spaceBetween: 20,
+            spaceBetween: 0,
             centeredSlides: needsCentering,
             centeredSlidesBounds: needsCentering,
             centerInsufficientSlides: needsCentering,

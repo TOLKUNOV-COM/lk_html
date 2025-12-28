@@ -23,6 +23,7 @@
         user-select: none;
         -webkit-user-drag: none;
         touch-action: pan-y;
+        @apply overflow-hidden text-ellipsis whitespace-nowrap;
     }
 
     .simple-tab-btn-text {
