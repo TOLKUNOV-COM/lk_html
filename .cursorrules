@@ -32,7 +32,7 @@ function getDirectChildren(parent, selector) {
 
 ### Выбор типа табов
 
-**Описание**: Для родительских табов используйте простые табы (`simple-tabs.js`), для дочерних табов с autoHeight - swiper-табы (`tabs.js`). Это избегает проблем синхронизации высоты между уровнями.
+**Описание**: Для родительских табов используйте простые табы (`simple-tabs.js`), для дочерних табов с autoHeight - swiper-табы (`tabs.js`). Это избегает проблем синхронизации высоты между уровнями. Если табов много и они не помещаются в строку, используйте прокручиваемые простые табы с классом `.simple-tab-buttons-swiper`.
 
 **Примеры**:
 
@@ -51,6 +51,23 @@ function getDirectChildren(parent, selector) {
                 <!-- Swiper контент -->
             </div>
         </div>
+    </div>
+</div>
+
+<!-- ✅ Правильно: прокручиваемые простые табы для большого количества -->
+<div class="simple-tab-group">
+    <div class="swiper simple-tab-buttons-swiper">
+        <div class="swiper-wrapper simple-tab-buttons material-tabs">
+            <div class="swiper-slide">
+                <button class="simple-tab-btn material-tab active">Пак 1</button>
+            </div>
+            <div class="swiper-slide">
+                <button class="simple-tab-btn material-tab">Пак 2</button>
+            </div>
+        </div>
+    </div>
+    <div class="simple-tab-content">
+        <!-- Контент -->
     </div>
 </div>
 
@@ -73,6 +90,7 @@ function getDirectChildren(parent, selector) {
 - Не требуется синхронизация высоты между уровнями
 - Swiper с autoHeight работает корректно только на одном уровне
 - Избегаем сложной логики с событиями `*TransitionEnd`
+- Прокручиваемые простые табы реализуются через класс `.simple-tab-buttons-swiper` вместо `.simple-tab-buttons`
 
 **Исключения**: Нет. Всегда используйте простые табы для родительского уровня при вложенности.
 

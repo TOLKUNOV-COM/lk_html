@@ -134,10 +134,38 @@
     <div class="mt-14 mb-10">
         <div class="simple-tab-group">
             <!-- Табы -->
-            <div class="simple-tab-buttons material-tabs mb-5">
-                <button class="simple-tab-btn material-tab active">Пак 1, Дизайнер</button>
-                <button class="simple-tab-btn material-tab">Пак 2, Маркетолог</button>
-                <button class="simple-tab-btn material-tab">Пак 3, Печать</button>
+            <div class="relative">
+                <div class="swiper simple-tab-buttons-swiper mb-5 material-tabs">
+                    <div class="swiper-wrapper simple-tab-buttons">
+                        <div class="swiper-slide">
+                            <a class="simple-tab-btn material-tab active">Пак 1, Хватит ждать подвох</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="simple-tab-btn material-tab">Пак 2, Вакансий буквально миллионы</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="simple-tab-btn material-tab">Пак 3, Мало платят</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="simple-tab-btn material-tab">Пак 4, Реальная работа, а вот так</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="simple-tab-btn material-tab">Пак 5, Ещё одно длинное название</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопки навигации -->
+                <div class="simple-tab-swiper-button-prev">
+                    <svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="simple-tab-swiper-button-next">
+                    <svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
 
             <!-- Контент -->

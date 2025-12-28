@@ -23,9 +23,12 @@
   - `.simple-tab-buttons` - контейнер кнопок
   - `.simple-tab-btn` - кнопка таба
   - `.simple-tab-content` - панель контента
+  - `.simple-tab-buttons-swiper` - Swiper-контейнер для прокручиваемых кнопок (опционально)
 - **Стилизация**: Используются существующие классы `.material-tab` для визуального оформления кнопок
 
 #### Структура компонента
+
+**Стандартная структура (без прокрутки):**
 
 ```html
 <div class="simple-tab-group">
@@ -41,6 +44,55 @@
     </div>
 </div>
 ```
+
+**Структура с прокручиваемыми кнопками (для большого количества табов):**
+
+```html
+<div class="simple-tab-group">
+    <div class="relative">
+        <div class="swiper simple-tab-buttons-swiper">
+            <div class="swiper-wrapper simple-tab-buttons material-tabs">
+                <div class="swiper-slide">
+                    <button class="simple-tab-btn material-tab active">Таб 1</button>
+                </div>
+                <div class="swiper-slide">
+                    <button class="simple-tab-btn material-tab">Таб 2</button>
+                </div>
+                <!-- Дополнительные табы -->
+            </div>
+        </div>
+
+        <!-- Кнопки навигации (опционально) -->
+        <div class="simple-tab-swiper-button-prev">
+            <svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="simple-tab-swiper-button-next">
+            <svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+    <div class="simple-tab-content">
+        <!-- Контент первого таба -->
+    </div>
+    <div class="simple-tab-content">
+        <!-- Контент второго таба -->
+    </div>
+</div>
+```
+
+**Особенности прокручиваемых табов:**
+- Кнопки располагаются в одну строку
+- Возможность прокрутки мышью (drag) или тач-жестами
+- `slidesPerView: 'auto'` - автоматическая ширина слайдов
+- `freeMode: true` - свободная прокрутка без привязки к слайдам
+- `mousewheel: { forceToAxis: true }` - поддержка прокрутки колесом мыши
+- Используется класс `.simple-tab-buttons-swiper` вместо `.simple-tab-buttons`
+- Максимальная ширина каждого таба - 286px, длинный текст обрезается троеточием
+- Навигационные кнопки появляются/скрываются автоматически в зависимости от возможности прокрутки
+- Кнопки навигации имеют класс `.swiper-button-disabled` когда прокрутка невозможна
 
 ### Swiper-табы (для вложенного контента)
 

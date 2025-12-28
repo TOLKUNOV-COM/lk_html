@@ -10,3 +10,95 @@
     @apply hidden opacity-0;
 }
 
+.simple-tab-buttons-swiper {
+    @apply overflow-hidden;
+
+    .swiper-slide {
+        width: auto !important;
+    }
+
+    .simple-tab-btn {
+        @apply block relative;
+        max-width: 286px;
+        user-select: none;
+        -webkit-user-drag: none;
+        touch-action: pan-y;
+    }
+
+    .simple-tab-btn-text {
+        @apply overflow-hidden text-ellipsis whitespace-nowrap;
+        @apply block;
+    }
+}
+
+.simple-tab-buttons.swiper-wrapper {
+    overflow: visible !important;
+}
+
+/* Глобальный тултип */
+.simple-tab-tooltip-global {
+    @apply fixed z-[9999] pointer-events-none;
+    @apply opacity-0 invisible;
+    @apply transition-opacity duration-500;
+}
+
+.simple-tab-tooltip-global.visible {
+    @apply opacity-100 visible;
+}
+
+.simple-tab-tooltip-global__body {
+    @apply bg-white rounded-2xl px-4 py-4;
+    @apply text-sm font-medium leading-[18px] tracking-[0.28px] text-blue-900;
+    @apply whitespace-normal;
+    box-shadow: 0px 2px 8px 0px rgba(33, 37, 75, 0.11);
+    max-width: 300px;
+}
+
+.simple-tab-tooltip-global__arrow {
+    @apply absolute left-1/2 -translate-x-1/2;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid white;
+    filter: drop-shadow(0px 2px 2px rgba(33, 37, 75, 0.05));
+}
+
+/* Стрелка когда тултип снизу */
+.simple-tab-tooltip-global.below .simple-tab-tooltip-global__arrow {
+    top: auto;
+    bottom: 100%;
+    border-top: none;
+    border-bottom: 10px solid white;
+}
+
+.simple-tab-swiper-button-prev,
+.simple-tab-swiper-button-next {
+    @apply absolute -top-2 z-10;
+    @apply bg-white rounded-full;
+    @apply size-10 flex items-center justify-center;
+    @apply cursor-pointer transition;
+    @apply text-blue-900;
+    box-shadow: 0px 2px 4px 0px rgba(53, 74, 135, 0.08);
+
+    &:hover {
+        @apply bg-slate-50;
+    }
+
+    &:active {
+        @apply bg-slate-100;
+    }
+
+    &.swiper-button-disabled {
+        @apply opacity-0 pointer-events-none;
+    }
+}
+
+.simple-tab-swiper-button-prev {
+    @apply -left-0 -translate-x-1/2;
+}
+
+.simple-tab-swiper-button-next {
+    @apply -right-0 translate-x-1/2;
+}
